@@ -1,15 +1,16 @@
 import React from 'react';
 
 class MovieNameSearch extends React.Component {
-	handleChangeMovieNameSearch (event) {
-		const {value} = event.target;
-		this.setState({
-			value: value
-		});
+	handleOnChange (event) {
+		const value = event.target.value.trim().toLowerCase();
+		this.props.filterMoviesByName(value);
 	}
 	render () {
 		return (
-			<input className="form-control" placeholder="search for movie..." type="text" onChange={this.handleChangeMovieNameSearch} />
+			<div className="mb-3">
+				<hr className="border-secondary" />
+				<input className="form-control" placeholder="search for movie..." type="text" onChange={(event) => this.handleOnChange(event)} />
+			</div>
 		)
 	}
 }

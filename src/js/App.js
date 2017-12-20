@@ -3,10 +3,15 @@ import Footer from './Footer';
 import Header from './Header';
 import Info from './Info';
 import MovieList from './MovieList';
+import MovieNameSearch from './MovieNameSearch';
 
 import '../css/bootstrap.min.css'
 
 class App extends React.Component {
+	constructor() {
+		super()
+		this.filterMoviesByName = this.filterMoviesByName.bind(this)
+	}
 	state = {
 		movies: []
 	}
@@ -24,10 +29,21 @@ class App extends React.Component {
 				return movie;
 			});
 			this.setState({
+				allMovies: json,
 				movies: json
 			});
 		}).catch(function () {
 			console.log('erro');
+		});
+	}
+	filterMoviesByName (value) {
+		let movies = this.state.allMovies;
+		movies = movies.filter(movie => {
+			const movieName = movie.Name.toString().toLowerCase();
+			return (movieName.includes(value));
+		});
+		this.setState({
+			movies: movies
 		});
 	}
 	render () {
@@ -37,6 +53,7 @@ class App extends React.Component {
 				<div className="justify-content-center mb-3 row">
 					<div className="col-12 col-md-3">
 						<Info />
+						<MovieNameSearch filterMoviesByName={this.filterMoviesByName} />
 					</div>
 					<div className="col-12 col-md-6">
 						<MovieList movies={this.state.movies} />
