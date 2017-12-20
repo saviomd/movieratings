@@ -10,10 +10,12 @@ import '../css/bootstrap.min.css'
 class App extends React.Component {
 	constructor() {
 		super()
+		this.handleOnChangeMovieNameSearch = this.handleOnChangeMovieNameSearch.bind(this)
 		this.filterMoviesByName = this.filterMoviesByName.bind(this)
 	}
 	state = {
-		movies: []
+		movies: [],
+		movieSearchString: ''
 	}
 	componentDidMount () {
 		fetch('https://saviomd.com/movieratings/data/ratings.json').then((response) => {
@@ -29,34 +31,36 @@ class App extends React.Component {
 				return movie;
 			});
 			this.setState({
-				allMovies: json,
 				movies: json
 			});
 		}).catch(function () {
-			console.log('erro');
+			console.log('error');
 		});
 	}
-	filterMoviesByName (value) {
-		let movies = this.state.allMovies;
-		movies = movies.filter((movie) => {
+	handleOnChangeMovieNameSearch (value) {
+		value.trim().toLowerCase();
+		this.setState({
+			movieSearchString: value
+		});
+	}
+	filterMoviesByName (movies, value) {
+		return movies = movies.filter((movie) => {
 			const movieName = movie.Name.toString().toLowerCase();
 			return (movieName.includes(value));
 		});
-		this.setState({
-			movies: movies
-		});
 	}
 	render () {
+		const moviesToRender = this.filterMoviesByName(this.state.movies, this.state.movieSearchString);
 		return (
 			<div className="container-fluid">
 				<Header />
 				<div className="justify-content-center mb-3 row">
 					<div className="col-12 col-md-3">
 						<Info />
-						<MovieNameSearch filterMoviesByName={this.filterMoviesByName} />
+						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieSearchString={this.state.movieSearchString} />
 					</div>
 					<div className="col-12 col-md-6">
-						<MovieList movies={this.state.movies} />
+						<MovieList movies={moviesToRender} />
 					</div>
 				</div>
 				<Footer />
