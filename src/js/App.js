@@ -11,7 +11,7 @@ class App extends React.Component {
 		movies: []
 	}
 	componentDidMount () {
-		fetch('/data/ratings.json').then(response => {
+		fetch('https://saviomd.com/movieratings/data/ratings.json').then(response => {
 			return response.json();
 		}).then(json => {
 			json.reverse();
