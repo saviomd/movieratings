@@ -16,11 +16,11 @@ class App extends React.Component {
 		movies: []
 	}
 	componentDidMount () {
-		fetch('https://saviomd.com/movieratings/data/ratings.json').then(response => {
+		fetch('https://saviomd.com/movieratings/data/ratings.json').then((response) => {
 			return response.json();
-		}).then(json => {
+		}).then((json) => {
 			json.reverse();
-			json = json.map(movie => {
+			json = json.map((movie) => {
 				let ratingFormatted = '';
 				for (var i = 0; i < movie.Rating; i++) {
 					ratingFormatted += ' ⭐';
@@ -38,7 +38,7 @@ class App extends React.Component {
 	}
 	filterMoviesByName (value) {
 		let movies = this.state.allMovies;
-		movies = movies.filter(movie => {
+		movies = movies.filter((movie) => {
 			const movieName = movie.Name.toString().toLowerCase();
 			return (movieName.includes(value));
 		});
