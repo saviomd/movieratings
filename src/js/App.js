@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Footer from './Footer';
 import Header from './Header';
 import Info from './Info';
@@ -14,8 +15,8 @@ class App extends React.Component {
 		this.filterMoviesByName = this.filterMoviesByName.bind(this)
 	}
 	state = {
-		movies: [],
-		movieSearchString: ''
+		movieRatings: [],
+		movieRatingsSearchString: ''
 	}
 	componentDidMount () {
 		fetch('https://saviomd.com/movieratings/data/ratings.json').then((response) => {
@@ -31,7 +32,7 @@ class App extends React.Component {
 				return movie;
 			});
 			this.setState({
-				movies: json
+				movieRatings: json
 			});
 		}).catch(function () {
 			console.log('error');
@@ -40,27 +41,27 @@ class App extends React.Component {
 	handleOnChangeMovieNameSearch (value) {
 		value.trim().toLowerCase();
 		this.setState({
-			movieSearchString: value
+			movieRatingsSearchString: value
 		});
 	}
-	filterMoviesByName (movies, value) {
-		return movies = movies.filter((movie) => {
+	filterMoviesByName (movieRatings, value) {
+		return movieRatings.filter((movie) => {
 			const movieName = movie.Name.toString().toLowerCase();
 			return (movieName.includes(value));
 		});
 	}
 	render () {
-		const moviesToRender = this.filterMoviesByName(this.state.movies, this.state.movieSearchString);
+		const movieRatingsToRender = this.filterMoviesByName(this.state.movieRatings, this.state.movieRatingsSearchString);
 		return (
 			<div className="container-fluid">
 				<Header />
 				<div className="justify-content-center mb-3 row">
-					<div className="col-12 col-md-3">
+					<div className="col-12 col-sm-4 col-lg-3">
 						<Info />
-						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieSearchString={this.state.movieSearchString} />
+						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieSearchString={this.state.movieRatingsSearchString} />
 					</div>
-					<div className="col-12 col-md-6">
-						<MovieList movies={moviesToRender} />
+					<div className="col-12 col-sm-8 col-lg-6">
+						<MovieList movies={movieRatingsToRender} />
 					</div>
 				</div>
 				<Footer />

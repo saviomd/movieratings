@@ -8,7 +8,7 @@ class MovieNameSearch extends React.Component {
 				<label htmlFor="search-movie">Search:</label>
 				<div className="input-group">
 					<input id="search-movie" className="form-control" type="text" value={this.props.movieSearchString} onChange={(event) => this.props.handleOnChangeMovieNameSearch(event.target.value)} />
-					<span className="input-group-btn">
+					<span className="input-group-append">
 						<button className="btn btn-secondary" type="button" onClick={() => this.props.handleOnChangeMovieNameSearch('')}>&times;</button>
 					</span>
 				</div>
