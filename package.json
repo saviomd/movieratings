@@ -1,12 +1,13 @@
 {
   "name": "movieratings",
-  "version": "1.0.20171228",
+  "version": "1.0.20171229",
   "private": true,
   "homepage": "https://saviomd.com/movieratings",
   "dependencies": {
     "bootstrap": "^4.0.0-beta.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17"
   },
   "scripts": {

@@ -1,22 +1,18 @@
 import React from 'react';
 
-import Footer from './Footer';
-import Header from './Header';
 import Info from './Info';
 import MovieList from './MovieList';
 import MovieNameSearch from './MovieNameSearch';
 
-import '../css/bootstrap.min.css'
-
-class App extends React.Component {
-	constructor() {
-		super()
+class Ratings extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			movieRatings: [],
+			movieRatingsSearchString: ''
+		}
 		this.handleOnChangeMovieNameSearch = this.handleOnChangeMovieNameSearch.bind(this)
 		this.filterMoviesByName = this.filterMoviesByName.bind(this)
-	}
-	state = {
-		movieRatings: [],
-		movieRatingsSearchString: ''
 	}
 	componentDidMount () {
 		fetch('https://saviomd.com/movieratings/data/ratings.json').then((response) => {
@@ -53,8 +49,7 @@ class App extends React.Component {
 	render () {
 		const movieRatingsToRender = this.filterMoviesByName(this.state.movieRatings, this.state.movieRatingsSearchString);
 		return (
-			<div className="container-fluid">
-				<Header />
+			<div>
 				<div className="justify-content-center mb-3 row">
 					<div className="col-12 col-sm-4 col-lg-3">
 						<Info />
@@ -64,10 +59,9 @@ class App extends React.Component {
 						<MovieList movies={movieRatingsToRender} />
 					</div>
 				</div>
-				<Footer />
 			</div>
 		)
 	}
 }
 
-export default App
+export default Ratings
