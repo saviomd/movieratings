@@ -26,7 +26,7 @@ class Nav extends React.Component {
 			)
 		});
 		return (
-			<div className="text-right">
+			<div className="text-center">
 				<div className="btn-group mb-3">
 					{htmlLinks}
 				</div>
