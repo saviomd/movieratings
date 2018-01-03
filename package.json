@@ -1,6 +1,6 @@
 {
   "name": "movieratings",
-  "version": "1.0.20171229",
+  "version": "1.0.20180103",
   "private": true,
   "homepage": "https://saviomd.com/movieratings",
   "dependencies": {
@@ -11,8 +11,10 @@
     "react-scripts": "1.0.17"
   },
   "scripts": {
+    "postinstall": "cp node_modules/bootstrap/dist/css/bootstrap.min.css src/css/",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "rm -r docs && mv build docs",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
