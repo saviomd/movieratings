@@ -53,7 +53,7 @@ class Ratings extends React.Component {
 				<div className="justify-content-center mb-3 row">
 					<div className="col-12 col-sm-4 col-lg-3">
 						<Info />
-						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieSearchString={this.state.movieRatingsSearchString} />
+						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieCount={movieRatingsToRender.length} movieSearchString={this.state.movieRatingsSearchString} />
 					</div>
 					<div className="col-12 col-sm-8 col-lg-6">
 						<MovieList movies={movieRatingsToRender} type="ratings" />

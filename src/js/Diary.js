@@ -53,7 +53,7 @@ class Diary extends React.Component {
 				<div className="justify-content-center mb-3 row">
 					<div className="col-12 col-sm-4 col-lg-3">
 						<Info />
-						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieSearchString={this.state.movieDiarySearchString} />
+						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieCount={movieDiaryToRender.length} movieSearchString={this.state.movieDiarySearchString} />
 					</div>
 					<div className="col-12 col-sm-8 col-lg-6">
 						<MovieList movies={movieDiaryToRender} type="diary" />
