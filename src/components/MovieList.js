@@ -1,10 +1,16 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import Movie from './Movie';
+
+import MovieButton from './MovieButton';
+
+const propTypes = {
+	movies: PropTypes.arrayOf(PropTypes.object).isRequired
+}
 
 class MovieList extends React.Component {
 	render () {
 		const movies = this.props.movies.map((movie, index) =>
-			<Movie key={movie.LetterboxdURI} movie={movie} type={this.props.type} />
+			<MovieButton key={movie.LetterboxdURI} movie={movie} type={this.props.type} />
 		);
 		return (
 			<ul className="list-unstyled">
@@ -13,5 +19,7 @@ class MovieList extends React.Component {
 		)
 	}
 }
+
+MovieList.propTypes = propTypes;
 
 export default MovieList;

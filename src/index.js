@@ -2,14 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
 
-import Layout from './components/Layout';
+import App from './components/App';
 
-const App = () => {
-	return (
-		<Router>
-			<Layout />
-		</Router>
-	)
-}
+const router =  (
+	<Router>
+		<App />
+	</Router>
+)
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(router, document.getElementById('root'));

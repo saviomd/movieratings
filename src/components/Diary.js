@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Info from './Info';
@@ -5,27 +6,18 @@ import MovieList from './MovieList';
 import MovieNameSearch from './MovieNameSearch';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
-import formatMovieList from '../helpers/formatMovieList';
+
+const propTypes = {
+	movieDiary: PropTypes.arrayOf(PropTypes.object).isRequired
+}
 
 class Diary extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			movieDiary: [],
 			movieDiarySearchString: ''
 		}
 		this.handleOnChangeMovieNameSearch = this.handleOnChangeMovieNameSearch.bind(this)
-	}
-	componentDidMount () {
-		fetch('https://saviomd.com/movieratings/data/diary.json').then((response) => {
-			return response.json();
-		}).then((json) => {
-			this.setState({
-				movieDiary: formatMovieList(json)
-			});
-		}).catch(function () {
-			console.log('error');
-		});
 	}
 	handleOnChangeMovieNameSearch (value) {
 		value.trim().toLowerCase();
@@ -34,7 +26,7 @@ class Diary extends React.Component {
 		});
 	}
 	render () {
-		const movieDiaryToRender = filterMoviesByName(this.state.movieDiary, this.state.movieDiarySearchString);
+		const movieDiaryToRender = filterMoviesByName(this.props.movieDiary, this.state.movieDiarySearchString);
 		return (
 			<div>
 				<div className="justify-content-center mb-3 row">
@@ -50,5 +42,7 @@ class Diary extends React.Component {
 		)
 	}
 }
+
+Diary.propTypes = propTypes;
 
 export default Diary;

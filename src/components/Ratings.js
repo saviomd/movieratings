@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Info from './Info';
@@ -5,27 +6,18 @@ import MovieList from './MovieList';
 import MovieNameSearch from './MovieNameSearch';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
-import formatMovieList from '../helpers/formatMovieList';
+
+const propTypes = {
+	movieRatings: PropTypes.arrayOf(PropTypes.object).isRequired
+}
 
 class Ratings extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			movieRatings: [],
 			movieRatingsSearchString: ''
 		}
 		this.handleOnChangeMovieNameSearch = this.handleOnChangeMovieNameSearch.bind(this)
-	}
-	componentDidMount () {
-		fetch('https://saviomd.com/movieratings/data/ratings.json').then((response) => {
-			return response.json();
-		}).then((json) => {
-			this.setState({
-				movieRatings: formatMovieList(json)
-			});
-		}).catch(function () {
-			console.log('error');
-		});
 	}
 	handleOnChangeMovieNameSearch (value) {
 		value.trim().toLowerCase();
@@ -34,7 +26,7 @@ class Ratings extends React.Component {
 		});
 	}
 	render () {
-		const movieRatingsToRender = filterMoviesByName(this.state.movieRatings, this.state.movieRatingsSearchString);
+		const movieRatingsToRender = filterMoviesByName(this.props.movieRatings, this.state.movieRatingsSearchString);
 		return (
 			<div>
 				<div className="justify-content-center mb-3 row">
@@ -50,5 +42,7 @@ class Ratings extends React.Component {
 		)
 	}
 }
+
+Ratings.propTypes = propTypes;
 
 export default Ratings;

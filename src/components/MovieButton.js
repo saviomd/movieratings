@@ -4,30 +4,28 @@ import React from 'react';
 const propTypes = {
 	movie: PropTypes.shape({
 		Date: PropTypes.string.isRequired,
+		DateFormatted: PropTypes.string.isRequired,
 		LetterboxdURI: PropTypes.string.isRequired,
 		Name: PropTypes.string.isRequired,
 		Rating: PropTypes.number.isRequired,
 		RatingFormatted: PropTypes.string.isRequired,
 		WatchedDate: PropTypes.string,
+		WatchedDateFormatted: PropTypes.string,
 		Year: PropTypes.number.isRequired
 	}),
 	type: PropTypes.string.isRequired
 }
 
-class Movie extends React.Component {
+class MovieButton extends React.Component {
 	render () {
 		const movie = this.props.movie;
 		const type = this.props.type;
 		let dateText;
-		let movieDate;
 		if (type === 'diary') {
-			dateText = 'watched in ';
-			movieDate = new Date(movie.WatchedDate);
+			dateText = 'watched in ' + movie.WatchedDateFormatted;
 		} else if (type === 'ratings') {
-			dateText = 'rated in ';
-			movieDate = new Date(movie.Date);
+			dateText = 'rated in ' + movie.DateFormatted;
 		}
-		dateText += movieDate.toLocaleDateString('en-GB', {day: '2-digit', month: 'short', year: 'numeric'});
 		return (
 			<li className="mb-3">
 				<a className="btn btn-secondary btn-block" href={movie.LetterboxdURI} target="_blank" rel="noopener noreferrer">
@@ -49,6 +47,6 @@ class Movie extends React.Component {
 	}
 }
 
-Movie.propTypes = propTypes;
+MovieButton.propTypes = propTypes;
 
-export default Movie;
+export default MovieButton;
