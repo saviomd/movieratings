@@ -1,6 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+const propTypes = {
+	movie: PropTypes.shape({
+		Date: PropTypes.string.isRequired,
+		LetterboxdURI: PropTypes.string.isRequired,
+		Name: PropTypes.string.isRequired,
+		Rating: PropTypes.number.isRequired,
+		RatingFormatted: PropTypes.string.isRequired,
+		WatchedDate: PropTypes.string,
+		Year: PropTypes.number.isRequired
+	}),
+	type: PropTypes.string.isRequired
+}
+
 class Movie extends React.Component {
 	render () {
 		const movie = this.props.movie;
@@ -22,9 +35,13 @@ class Movie extends React.Component {
 						{movie.Name}
 						<span className="ml-1 small">({movie.Year})</span>
 					</div>
-					<div className="small text-right">
-						{movie.RatingFormatted}<br />
-						{dateText}
+					<div className="align-items-end row small">
+						<div className="col text-left">
+							{movie.RatingFormatted}
+						</div>
+						<div className="col small text-right">
+							{dateText}
+						</div>
 					</div>
 				</a>
 			</li>
@@ -32,17 +49,6 @@ class Movie extends React.Component {
 	}
 }
 
-Movie.propTypes = {
-	movie: PropTypes.shape({
-		Date: PropTypes.string.isRequired,
-		LetterboxdURI: PropTypes.string.isRequired,
-		Name: PropTypes.string.isRequired,
-		Rating: PropTypes.number.isRequired,
-		RatingFormatted: PropTypes.string.isRequired,
-		WatchedDate: PropTypes.string,
-		Year: PropTypes.number.isRequired
-	}),
-	type: PropTypes.string.isRequired
-}
+Movie.propTypes = propTypes;
 
 export default Movie;

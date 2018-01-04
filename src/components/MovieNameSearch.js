@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+const propTypes = {
+	handleOnChangeMovieNameSearch: PropTypes.func.isRequired,
+	movieCount: PropTypes.number.isRequired,
+	movieSearchString: PropTypes.string.isRequired,
+}
+
 class MovieNameSearch extends React.Component {
 	render () {
 		return (
@@ -19,10 +25,6 @@ class MovieNameSearch extends React.Component {
 	}
 }
 
-MovieNameSearch.propTypes = {
-	handleOnChangeMovieNameSearch: PropTypes.func.isRequired,
-	movieCount: PropTypes.number.isRequired,
-	movieSearchString: PropTypes.string.isRequired,
-}
+MovieNameSearch.propTypes = propTypes;
 
 export default MovieNameSearch;
