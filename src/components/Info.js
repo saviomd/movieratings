@@ -11,4 +11,4 @@ class Info extends React.Component {
 	}
 }
 
-export default Info
+export default Info;

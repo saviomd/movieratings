@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 class Movie extends React.Component {
@@ -31,4 +32,16 @@ class Movie extends React.Component {
 	}
 }
 
-export default Movie
+Movie.propTypes = {
+	movie: PropTypes.shape({
+		Date: PropTypes.string.isRequired,
+		LetterboxdURI: PropTypes.string.isRequired,
+		Name: PropTypes.string.isRequired,
+		Rating: PropTypes.number.isRequired,
+		RatingFormatted: PropTypes.string.isRequired,
+		Year: PropTypes.number.isRequired
+	}),
+	type: PropTypes.string.isRequired
+}
+
+export default Movie;

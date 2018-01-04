@@ -20,6 +20,7 @@ class Diary extends React.Component {
 		}).then((json) => {
 			json.reverse();
 			json = json.map((movie) => {
+				movie.Name = movie.Name.toString();
 				let ratingFormatted = '';
 				for (var i = 0; i < movie.Rating; i++) {
 					ratingFormatted += ' ⭐';
@@ -42,7 +43,7 @@ class Diary extends React.Component {
 	}
 	filterMoviesByName (movieDiary, value) {
 		return movieDiary.filter((movie) => {
-			const movieName = movie.Name.toString().toLowerCase();
+			const movieName = movie.Name.toLowerCase();
 			return (movieName.includes(value));
 		});
 	}
@@ -64,4 +65,4 @@ class Diary extends React.Component {
 	}
 }
 
-export default Diary
+export default Diary;

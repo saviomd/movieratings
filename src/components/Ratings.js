@@ -20,6 +20,7 @@ class Ratings extends React.Component {
 		}).then((json) => {
 			json.reverse();
 			json = json.map((movie) => {
+				movie.Name = movie.Name.toString();
 				let ratingFormatted = '';
 				for (var i = 0; i < movie.Rating; i++) {
 					ratingFormatted += ' ⭐';
@@ -42,7 +43,7 @@ class Ratings extends React.Component {
 	}
 	filterMoviesByName (movieRatings, value) {
 		return movieRatings.filter((movie) => {
-			const movieName = movie.Name.toString().toLowerCase();
+			const movieName = movie.Name.toLowerCase();
 			return (movieName.includes(value));
 		});
 	}
@@ -64,4 +65,4 @@ class Ratings extends React.Component {
 	}
 }
 
-export default Ratings
+export default Ratings;
