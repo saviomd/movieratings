@@ -4,6 +4,9 @@ import Info from './Info';
 import MovieList from './MovieList';
 import MovieNameSearch from './MovieNameSearch';
 
+import filterMoviesByName from '../helpers/filterMoviesByName';
+import formatMovieList from '../helpers/formatMovieList';
+
 class Diary extends React.Component {
 	constructor(props) {
 		super(props)
@@ -12,24 +15,13 @@ class Diary extends React.Component {
 			movieDiarySearchString: ''
 		}
 		this.handleOnChangeMovieNameSearch = this.handleOnChangeMovieNameSearch.bind(this)
-		this.filterMoviesByName = this.filterMoviesByName.bind(this)
 	}
 	componentDidMount () {
 		fetch('https://saviomd.com/movieratings/data/diary.json').then((response) => {
 			return response.json();
 		}).then((json) => {
-			json.reverse();
-			json = json.map((movie) => {
-				movie.Name = movie.Name.toString();
-				let ratingFormatted = '';
-				for (var i = 0; i < movie.Rating; i++) {
-					ratingFormatted += ' ⭐';
-				};
-				movie.RatingFormatted = ratingFormatted;
-				return movie;
-			});
 			this.setState({
-				movieDiary: json
+				movieDiary: formatMovieList(json)
 			});
 		}).catch(function () {
 			console.log('error');
@@ -41,14 +33,8 @@ class Diary extends React.Component {
 			movieDiarySearchString: value
 		});
 	}
-	filterMoviesByName (movieDiary, value) {
-		return movieDiary.filter((movie) => {
-			const movieName = movie.Name.toLowerCase();
-			return (movieName.includes(value));
-		});
-	}
 	render () {
-		const movieDiaryToRender = this.filterMoviesByName(this.state.movieDiary, this.state.movieDiarySearchString);
+		const movieDiaryToRender = filterMoviesByName(this.state.movieDiary, this.state.movieDiarySearchString);
 		return (
 			<div>
 				<div className="justify-content-center mb-3 row">

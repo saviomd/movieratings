@@ -39,6 +39,7 @@ Movie.propTypes = {
 		Name: PropTypes.string.isRequired,
 		Rating: PropTypes.number.isRequired,
 		RatingFormatted: PropTypes.string.isRequired,
+		WatchedDate: PropTypes.string,
 		Year: PropTypes.number.isRequired
 	}),
 	type: PropTypes.string.isRequired

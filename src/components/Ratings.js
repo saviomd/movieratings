@@ -4,6 +4,9 @@ import Info from './Info';
 import MovieList from './MovieList';
 import MovieNameSearch from './MovieNameSearch';
 
+import filterMoviesByName from '../helpers/filterMoviesByName';
+import formatMovieList from '../helpers/formatMovieList';
+
 class Ratings extends React.Component {
 	constructor(props) {
 		super(props)
@@ -12,24 +15,13 @@ class Ratings extends React.Component {
 			movieRatingsSearchString: ''
 		}
 		this.handleOnChangeMovieNameSearch = this.handleOnChangeMovieNameSearch.bind(this)
-		this.filterMoviesByName = this.filterMoviesByName.bind(this)
 	}
 	componentDidMount () {
 		fetch('https://saviomd.com/movieratings/data/ratings.json').then((response) => {
 			return response.json();
 		}).then((json) => {
-			json.reverse();
-			json = json.map((movie) => {
-				movie.Name = movie.Name.toString();
-				let ratingFormatted = '';
-				for (var i = 0; i < movie.Rating; i++) {
-					ratingFormatted += ' ⭐';
-				};
-				movie.RatingFormatted = ratingFormatted;
-				return movie;
-			});
 			this.setState({
-				movieRatings: json
+				movieRatings: formatMovieList(json)
 			});
 		}).catch(function () {
 			console.log('error');
@@ -41,14 +33,8 @@ class Ratings extends React.Component {
 			movieRatingsSearchString: value
 		});
 	}
-	filterMoviesByName (movieRatings, value) {
-		return movieRatings.filter((movie) => {
-			const movieName = movie.Name.toLowerCase();
-			return (movieName.includes(value));
-		});
-	}
 	render () {
-		const movieRatingsToRender = this.filterMoviesByName(this.state.movieRatings, this.state.movieRatingsSearchString);
+		const movieRatingsToRender = filterMoviesByName(this.state.movieRatings, this.state.movieRatingsSearchString);
 		return (
 			<div>
 				<div className="justify-content-center mb-3 row">
