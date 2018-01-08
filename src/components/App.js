@@ -16,28 +16,54 @@ class App extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			movieDiary: [],
-			movieRatings: []
+			movieDiaryList: [],
+			movieDiaryListError: false,
+			movieDiaryListLoading: false,
+			movieRatingsList: [],
+			movieRatingsListError: false,
+			movieRatingsListLoading: false
 		}
 	}
 	componentDidMount () {
+		this.setState({
+			movieDiaryListLoading: true,
+			movieRatingsListLoading: true
+		});
 		fetch('https://saviomd.com/movieratings/data/diary.json').then((response) => {
+			if (!response.ok) {
+				throw Error(response.statusText);
+			}
 			return response.json();
 		}).then((json) => {
 			this.setState({
-				movieDiary: formatMovieList(json)
+				movieDiaryList: formatMovieList(json),
+				movieDiaryListError: false,
+				movieDiaryListLoading: false
 			});
-		}).catch(function () {
-			console.log('error fetch diary');
+		}).catch((error) => {
+			this.setState({
+				movieDiaryListError: true,
+				movieDiaryListLoading: false
+			});
+			console.log(error.message);
 		});
 		fetch('https://saviomd.com/movieratings/data/ratings.json').then((response) => {
+			if (!response.ok) {
+				throw Error(response.statusText);
+			}
 			return response.json();
 		}).then((json) => {
 			this.setState({
-				movieRatings: formatMovieList(json)
+				movieRatingsList: formatMovieList(json),
+				movieRatingsListError: false,
+				movieRatingsListLoading: false
 			});
-		}).catch(function () {
-			console.log('error fetch ratings');
+		}).catch((error) => {
+			this.setState({
+				movieRatingsListError: true,
+				movieRatingsListLoading: false
+			});
+			console.log(error.message);
 		});
 	}
 	render () {
@@ -46,8 +72,8 @@ class App extends React.Component {
 				<Header />
 				<Nav />
 				<Switch>
-					<Route path="/" exact render={() => <Ratings movieRatings={this.state.movieRatings} />} />
-					<Route path="/diary" render={() => <Diary movieDiary={this.state.movieDiary} />} />
+					<Route path="/" exact render={() => <Ratings movieList={this.state.movieRatingsList} movieListError={this.state.movieRatingsListError} movieListLoading={this.state.movieRatingsListLoading} />} />
+					<Route path="/diary" render={() => <Diary movieList={this.state.movieDiaryList} movieListError={this.state.movieDiaryListError} movieListLoading={this.state.movieDiaryListLoading} />} />
 					<Route component={NotFound} />
 				</Switch>
 				<Footer />

@@ -8,34 +8,46 @@ import MovieNameSearch from './MovieNameSearch';
 import filterMoviesByName from '../helpers/filterMoviesByName';
 
 const propTypes = {
-	movieRatings: PropTypes.arrayOf(PropTypes.object).isRequired
+	movieList: PropTypes.arrayOf(PropTypes.object).isRequired,
+	movieListError: PropTypes.bool.isRequired,
+	movieListLoading: PropTypes.bool.isRequired
 }
 
 class Ratings extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			movieRatingsSearchString: ''
+			movieSearchString: ''
 		}
 		this.handleOnChangeMovieNameSearch = this.handleOnChangeMovieNameSearch.bind(this)
 	}
 	handleOnChangeMovieNameSearch (value) {
 		value.trim().toLowerCase();
 		this.setState({
-			movieRatingsSearchString: value
+			movieSearchString: value
 		});
 	}
 	render () {
-		const movieRatingsToRender = filterMoviesByName(this.props.movieRatings, this.state.movieRatingsSearchString);
+		const movieListToRender = filterMoviesByName(this.props.movieList, this.state.movieSearchString);
+		let html = '';
+		if (this.props.movieListLoading) {
+			html = <div className="text-center">Loading...</div>;
+		} else if (this.props.movieListError) {
+			html = <div className="text-center">Error :(</div>;
+		} else if (movieListToRender.length) {
+			html = <MovieList movies={movieListToRender} type="ratings" />;
+		} else {
+			html = <div className="text-center">No movies to show</div>;
+		}
 		return (
 			<div>
 				<div className="justify-content-center mb-3 row">
 					<div className="col-12 col-sm-4 col-lg-3">
 						<Info />
-						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieCount={movieRatingsToRender.length} movieSearchString={this.state.movieRatingsSearchString} />
+						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieCount={movieListToRender.length} movieSearchString={this.state.movieSearchString} />
 					</div>
 					<div className="col-12 col-sm-8 col-lg-6">
-						<MovieList movies={movieRatingsToRender} type="ratings" />
+						{html}
 					</div>
 				</div>
 			</div>

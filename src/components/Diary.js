@@ -8,34 +8,46 @@ import MovieNameSearch from './MovieNameSearch';
 import filterMoviesByName from '../helpers/filterMoviesByName';
 
 const propTypes = {
-	movieDiary: PropTypes.arrayOf(PropTypes.object).isRequired
+	movieList: PropTypes.arrayOf(PropTypes.object).isRequired,
+	movieListError: PropTypes.bool.isRequired,
+	movieListLoading: PropTypes.bool.isRequired
 }
 
 class Diary extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			movieDiarySearchString: ''
+			movieSearchString: ''
 		}
 		this.handleOnChangeMovieNameSearch = this.handleOnChangeMovieNameSearch.bind(this)
 	}
 	handleOnChangeMovieNameSearch (value) {
 		value.trim().toLowerCase();
 		this.setState({
-			movieDiarySearchString: value
+			movieSearchString: value
 		});
 	}
 	render () {
-		const movieDiaryToRender = filterMoviesByName(this.props.movieDiary, this.state.movieDiarySearchString);
+		const movieListToRender = filterMoviesByName(this.props.movieList, this.state.movieSearchString);
+		let html = '';
+		if (this.props.movieListLoading) {
+			html = <div className="text-center">Loading...</div>;
+		} else if (this.props.movieListError) {
+			html = <div className="text-center">Error :(</div>;
+		} else if (movieListToRender.length) {
+			html = <MovieList movies={movieListToRender} type="diary" />;
+		} else {
+			html = <div className="text-center">No movies to show</div>;
+		}
 		return (
 			<div>
 				<div className="justify-content-center mb-3 row">
 					<div className="col-12 col-sm-4 col-lg-3">
 						<Info />
-						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieCount={movieDiaryToRender.length} movieSearchString={this.state.movieDiarySearchString} />
+						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieCount={movieListToRender.length} movieSearchString={this.state.movieSearchString} />
 					</div>
 					<div className="col-12 col-sm-8 col-lg-6">
-						<MovieList movies={movieDiaryToRender} type="diary" />
+						{html}
 					</div>
 				</div>
 			</div>
