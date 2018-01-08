@@ -10,7 +10,7 @@ const propTypes = {
 class MovieList extends React.Component {
 	render () {
 		const movies = this.props.movies.map((movie, index) =>
-			<MovieButton key={movie.LetterboxdURI} movie={movie} type={this.props.type} />
+			<MovieButton key={movie.Id} movie={movie} type={this.props.type} />
 		);
 		return (
 			<ul className="list-unstyled">

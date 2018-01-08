@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const propTypes = {
 	movie: PropTypes.shape({
+		Id: PropTypes.string.isRequired,
 		Date: PropTypes.string.isRequired,
 		DateFormatted: PropTypes.string.isRequired,
 		LetterboxdURI: PropTypes.string.isRequired,
@@ -28,7 +30,7 @@ class MovieButton extends React.Component {
 		}
 		return (
 			<li className="mb-3">
-				<a className="btn btn-secondary btn-block" href={movie.LetterboxdURI} target="_blank" rel="noopener noreferrer">
+				<Link className="btn btn-secondary btn-block" to={`/movie/${movie.Id}`}>
 					<div className="text-left text-truncate">
 						{movie.Name}
 						<span className="ml-1 small">({movie.Year})</span>
@@ -41,7 +43,7 @@ class MovieButton extends React.Component {
 							{dateText}
 						</div>
 					</div>
-				</a>
+				</Link>
 			</li>
 		)
 	}

@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Diary from './Diary';
 import Footer from './Footer';
 import Header from './Header';
-import Nav from './Nav';
+import MovieInfo from './MovieInfo';
 import NotFound from './NotFound';
 import Ratings from './Ratings';
 
@@ -70,10 +70,10 @@ class App extends React.Component {
 		return (
 			<div className="container-fluid">
 				<Header />
-				<Nav />
 				<Switch>
 					<Route path="/" exact render={() => <Ratings movieList={this.state.movieRatingsList} movieListError={this.state.movieRatingsListError} movieListLoading={this.state.movieRatingsListLoading} />} />
 					<Route path="/diary" render={() => <Diary movieList={this.state.movieDiaryList} movieListError={this.state.movieDiaryListError} movieListLoading={this.state.movieDiaryListLoading} />} />
+					<Route path="/movie/:movieId" render={({ match }) => <MovieInfo match={match} movieList={this.state.movieRatingsList} />} />
 					<Route component={NotFound} />
 				</Switch>
 				<Footer />

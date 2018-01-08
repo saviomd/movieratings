@@ -4,6 +4,7 @@ import React from 'react';
 import Info from './Info';
 import MovieList from './MovieList';
 import MovieNameSearch from './MovieNameSearch';
+import Nav from './Nav';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
 
@@ -41,6 +42,7 @@ class Ratings extends React.Component {
 		}
 		return (
 			<div>
+				<Nav />
 				<div className="justify-content-center mb-3 row">
 					<div className="col-12 col-sm-4 col-lg-3">
 						<Info />
