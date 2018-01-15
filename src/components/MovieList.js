@@ -9,7 +9,7 @@ const propTypes = {
 
 class MovieList extends React.Component {
 	render () {
-		const movies = this.props.movies.map((movie, index) =>
+		const movies = this.props.movies.map((movie) =>
 			<MovieButton key={movie.Id} movie={movie} type={this.props.type} />
 		);
 		return (
