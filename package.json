@@ -1,7 +1,14 @@
 {
   "name": "movieratings",
   "version": "1.0.20180226",
+  "description": "My movie ratings from Letterboxd",
+  "author": "Sávio Mendes",
+  "license": "UNLICENSED",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saviomd/movieratings"
+  },
   "homepage": "https://saviomd.com/movieratings",
   "dependencies": {
     "bootstrap": "^4.0.0",

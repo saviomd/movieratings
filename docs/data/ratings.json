@@ -4110,7 +4110,7 @@
   },
   {
     "Date": "2013-05-13",
-    "Name": "Dude, Where’s My Car?",
+    "Name": "Dude, Where's My Car?",
     "Year": 2000,
     "LetterboxdURI": "https://letterboxd.com/film/dude-wheres-my-car/",
     "Rating": 3
@@ -7400,9 +7400,9 @@
   },
   {
     "Date": "2014-03-30",
-    "Name": "Injustice",
+    "Name": "Puncture",
     "Year": 2011,
-    "LetterboxdURI": "https://letterboxd.com/film/injustice-2011/",
+    "LetterboxdURI": "https://letterboxd.com/film/puncture/",
     "Rating": 4
   },
   {
@@ -9199,7 +9199,7 @@
   },
   {
     "Date": "2017-12-09",
-    "Name": "Kevin Hart: What Now ?",
+    "Name": "Kevin Hart: What Now?",
     "Year": 2016,
     "LetterboxdURI": "https://letterboxd.com/film/kevin-hart-what-now/",
     "Rating": 4
@@ -9273,5 +9273,166 @@
     "Year": 2017,
     "LetterboxdURI": "https://letterboxd.com/film/bright/",
     "Rating": 2
+  },
+  {
+    "Date": "2018-01-04",
+    "Name": "Wheelman",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/wheelman/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-01-07",
+    "Name": "Coco",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/coco-2017/",
+    "Rating": 5
+  },
+  {
+    "Date": "2018-01-10",
+    "Name": "Your Name.",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/your-name/",
+    "Rating": 5
+  },
+  {
+    "Date": "2018-01-13",
+    "Name": "Norm Macdonald: Hitler's Dog, Gossip & Trickery",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/norm-macdonald-hitlers-dog-gossip-trickery/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-01-13",
+    "Name": "Argo",
+    "Year": 2012,
+    "LetterboxdURI": "https://letterboxd.com/film/argo/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-01-15",
+    "Name": "2001: A Space Odyssey",
+    "Year": 1968,
+    "LetterboxdURI": "https://letterboxd.com/film/2001-a-space-odyssey/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-01-16",
+    "Name": "Hacksaw Ridge",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/hacksaw-ridge/",
+    "Rating": 5
+  },
+  {
+    "Date": "2018-01-17",
+    "Name": "American Hustle",
+    "Year": 2013,
+    "LetterboxdURI": "https://letterboxd.com/film/american-hustle/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-01-19",
+    "Name": "Dave Chappelle: Equanimity",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/dave-chappelle-equanimity/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-01-19",
+    "Name": "Dave Chappelle: The Bird Revelation",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/dave-chappelle-the-bird-revelation/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-01-23",
+    "Name": "Prisoners",
+    "Year": 2013,
+    "LetterboxdURI": "https://letterboxd.com/film/prisoners/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-01-24",
+    "Name": "Jerry Before Seinfeld",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/jerry-before-seinfeld/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-02-02",
+    "Name": "What Doesn't Kill You",
+    "Year": 2008,
+    "LetterboxdURI": "https://letterboxd.com/film/what-doesnt-kill-you/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-02-02",
+    "Name": "Batman: Gotham by Gaslight",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/batman-gotham-by-gaslight/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-02-03",
+    "Name": "Dawn of the Planet of the Apes",
+    "Year": 2014,
+    "LetterboxdURI": "https://letterboxd.com/film/dawn-of-the-planet-of-the-apes/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-02-03",
+    "Name": "La Maison en Petits Cubes",
+    "Year": 2008,
+    "LetterboxdURI": "https://letterboxd.com/film/la-maison-en-petits-cubes/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-02-06",
+    "Name": "10 Cloverfield Lane",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/10-cloverfield-lane/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-02-09",
+    "Name": "Olympus Has Fallen",
+    "Year": 2013,
+    "LetterboxdURI": "https://letterboxd.com/film/olympus-has-fallen/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-02-16",
+    "Name": "The Cloverfield Paradox",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/the-cloverfield-paradox/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-02-16",
+    "Name": "Southpaw",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/film/southpaw-2015/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-02-16",
+    "Name": "Shame",
+    "Year": 2011,
+    "LetterboxdURI": "https://letterboxd.com/film/shame-2011/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-02-19",
+    "Name": "Black Panther",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/black-panther-2018/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-02-19",
+    "Name": "Chris Rock: Tamborine",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/chris-rock-tamborine/",
+    "Rating": 4
   }
 ]
