@@ -5307,9 +5307,9 @@
   },
   {
     "Date": "2013-05-15",
-    "Name": "The End of Evangelion",
+    "Name": "Neon Genesis Evangelion: The End of Evangelion",
     "Year": 1997,
-    "LetterboxdURI": "https://letterboxd.com/film/the-end-of-evangelion/",
+    "LetterboxdURI": "https://letterboxd.com/film/neon-genesis-evangelion-the-end-of-evangelion/",
     "Rating": 4
   },
   {
@@ -9434,5 +9434,159 @@
     "Year": 2018,
     "LetterboxdURI": "https://letterboxd.com/film/chris-rock-tamborine/",
     "Rating": 4
+  },
+  {
+    "Date": "2018-03-02",
+    "Name": "Fred Armisen: Standup for Drummers",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/fred-armisen-standup-for-drummers/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-03-04",
+    "Name": "Ted 2",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/film/ted-2/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-03-04",
+    "Name": "The Foreigner",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/the-foreigner-2017/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-03-04",
+    "Name": "Wonder",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/wonder-2017/",
+    "Rating": 5
+  },
+  {
+    "Date": "2018-03-05",
+    "Name": "Marco Luque - We are together",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/marco-luque-we-are-together/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-03-07",
+    "Name": "Murilo Couto - Eu, eu, Murilo",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/murilo-couto-eu-eu-murilo/",
+    "Rating": 5
+  },
+  {
+    "Date": "2018-03-13",
+    "Name": "Marlon Wayans: Woke-ish",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/marlon-wayans-woke-ish/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-03-14",
+    "Name": "The Hitman's Bodyguard",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/the-hitmans-bodyguard/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-03-19",
+    "Name": "Tomb Raider",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/tomb-raider/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-03-21",
+    "Name": "Office Christmas Party",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/office-christmas-party/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-03-24",
+    "Name": "War for the Planet of the Apes",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/war-for-the-planet-of-the-apes/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-03-26",
+    "Name": "Maze Runner: The Scorch Trials",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/film/maze-runner-the-scorch-trials/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-04-01",
+    "Name": "Norbit",
+    "Year": 2007,
+    "LetterboxdURI": "https://letterboxd.com/film/norbit/",
+    "Rating": 2
+  },
+  {
+    "Date": "2018-04-04",
+    "Name": "99 Homes",
+    "Year": 2014,
+    "LetterboxdURI": "https://letterboxd.com/film/99-homes/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-04-10",
+    "Name": "A Most Violent Year",
+    "Year": 2014,
+    "LetterboxdURI": "https://letterboxd.com/film/a-most-violent-year/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-04-13",
+    "Name": "Liberal Arts",
+    "Year": 2012,
+    "LetterboxdURI": "https://letterboxd.com/film/liberal-arts/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-04-14",
+    "Name": "Morning Glory",
+    "Year": 2010,
+    "LetterboxdURI": "https://letterboxd.com/film/morning-glory-2010/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-04-16",
+    "Name": "Seth Rogen's Hilarity for Charity",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/seth-rogens-hilarity-for-charity/",
+    "Rating": 1
+  },
+  {
+    "Date": "2018-04-18",
+    "Name": "Good Burger",
+    "Year": 1997,
+    "LetterboxdURI": "https://letterboxd.com/film/good-burger/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-04-19",
+    "Name": "Blame!",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/blame-2017/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-04-20",
+    "Name": "Self/less",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/film/self-less/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-04-21",
+    "Name": "Hail, Caesar!",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/hail-caesar-2016/",
+    "Rating": 3
   }
 ]
