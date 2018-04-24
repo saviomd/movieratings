@@ -9,12 +9,15 @@ import Nav from './Nav';
 import filterMoviesByName from '../helpers/filterMoviesByName';
 
 const propTypes = {
-	movieList: PropTypes.arrayOf(PropTypes.object).isRequired,
-	movieListError: PropTypes.bool.isRequired,
-	movieListLoading: PropTypes.bool.isRequired
+	movies: PropTypes.shape({
+		list: PropTypes.arrayOf(PropTypes.object).isRequired,
+		listError: PropTypes.bool.isRequired,
+		listLoading: PropTypes.bool.isRequired
+	}),
+	type: PropTypes.string.isRequired
 }
 
-class Ratings extends React.Component {
+class PageMovies extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -29,14 +32,14 @@ class Ratings extends React.Component {
 		});
 	}
 	render () {
-		const movieListToRender = filterMoviesByName(this.props.movieList, this.state.movieSearchString);
+		const movieListToRender = filterMoviesByName(this.props.movies.list, this.state.movieSearchString);
 		let html = '';
-		if (this.props.movieListLoading) {
+		if (this.props.movies.listLoading) {
 			html = <div className="text-center">Loading...</div>;
-		} else if (this.props.movieListError) {
+		} else if (this.props.movies.listError) {
 			html = <div className="text-center">Error :(</div>;
 		} else if (movieListToRender.length) {
-			html = <MovieList movies={movieListToRender} type="ratings" />;
+			html = <MovieList movies={movieListToRender} type={this.props.type} />;
 		} else {
 			html = <div className="text-center">No movies to show</div>;
 		}
@@ -57,6 +60,6 @@ class Ratings extends React.Component {
 	}
 }
 
-Ratings.propTypes = propTypes;
+PageMovies.propTypes = propTypes;
 
-export default Ratings;
+export default PageMovies;

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Diary from './Diary';
 import Footer from './Footer';
 import Header from './Header';
-import MovieInfo from './MovieInfo';
-import NotFound from './NotFound';
-import Ratings from './Ratings';
+import PageMovieInfo from './PageMovieInfo';
+import PageMovies from './PageMovies';
+import PageNotFound from './PageNotFound';
 
 import formatMovieList from '../helpers/formatMovieList';
 
@@ -16,18 +15,28 @@ class App extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			movieDiaryList: [],
-			movieDiaryListError: false,
-			movieDiaryListLoading: false,
-			movieRatingsList: [],
-			movieRatingsListError: false,
-			movieRatingsListLoading: false
+			movieDiary: {
+				list: [],
+				listError: false,
+				listLoading: false
+			},
+			movieRatings: {
+				list: [],
+				listError: false,
+				listLoading: false
+			}
 		}
 	}
 	componentDidMount () {
 		this.setState({
-			movieDiaryListLoading: true,
-			movieRatingsListLoading: true
+			movieDiary: {
+				...this.state.movieDiary,
+				listLoading: true
+			},
+			movieRatings: {
+				...this.state.movieRatings,
+				listLoading: true
+			}
 		});
 		fetch('https://saviomd.com/movieratings/data/diary.json').then((response) => {
 			if (!response.ok) {
@@ -36,14 +45,20 @@ class App extends React.Component {
 			return response.json();
 		}).then((json) => {
 			this.setState({
-				movieDiaryList: formatMovieList(json),
-				movieDiaryListError: false,
-				movieDiaryListLoading: false
+				movieDiary: {
+					...this.state.movieDiary,
+					list: formatMovieList(json),
+					listError: false,
+					listLoading: false
+				}
 			});
 		}).catch((error) => {
 			this.setState({
-				movieDiaryListError: true,
-				movieDiaryListLoading: false
+				movieDiary: {
+					...this.state.movieDiary,
+					listError: true,
+					listLoading: false
+				}
 			});
 			console.log(error.message);
 		});
@@ -54,14 +69,20 @@ class App extends React.Component {
 			return response.json();
 		}).then((json) => {
 			this.setState({
-				movieRatingsList: formatMovieList(json),
-				movieRatingsListError: false,
-				movieRatingsListLoading: false
+				movieRatings: {
+					...this.state.movieRatings,
+					list: formatMovieList(json),
+					listError: false,
+					listLoading: false
+				}
 			});
 		}).catch((error) => {
 			this.setState({
-				movieRatingsListError: true,
-				movieRatingsListLoading: false
+				movieRatings: {
+					...this.state.movieRatings,
+					listError: true,
+					listLoading: false
+				}
 			});
 			console.log(error.message);
 		});
@@ -71,10 +92,19 @@ class App extends React.Component {
 			<div className="container-fluid">
 				<Header />
 				<Switch>
-					<Route path="/" exact render={() => <Ratings movieList={this.state.movieRatingsList} movieListError={this.state.movieRatingsListError} movieListLoading={this.state.movieRatingsListLoading} />} />
-					<Route path="/diary" render={() => <Diary movieList={this.state.movieDiaryList} movieListError={this.state.movieDiaryListError} movieListLoading={this.state.movieDiaryListLoading} />} />
-					<Route path="/movie/:movieId" render={({ match }) => <MovieInfo match={match} movieList={this.state.movieRatingsList} />} />
-					<Route component={NotFound} />
+					<Route path="/" exact render={() => <PageMovies
+						movies={this.state.movieRatings}
+						type='ratings'
+					/>} />
+					<Route path="/diary" render={() => <PageMovies
+						movies={this.state.movieDiary}
+						type='diary'
+					/>} />
+					<Route path="/movie/:movieId" render={({ match }) => <PageMovieInfo
+						match={match}
+						movieList={this.state.movieRatings.list}
+					/>} />
+					<Route component={PageNotFound} />
 				</Switch>
 				<Footer />
 			</div>

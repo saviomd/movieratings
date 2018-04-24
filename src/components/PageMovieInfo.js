@@ -13,7 +13,7 @@ const propTypes = {
 	movieList: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
-class MovieInfo extends React.Component {
+class PageMovieInfo extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -142,6 +142,6 @@ class MovieInfo extends React.Component {
 	}
 }
 
-MovieInfo.propTypes = propTypes;
+PageMovieInfo.propTypes = propTypes;
 
-export default MovieInfo;
+export default PageMovieInfo;
