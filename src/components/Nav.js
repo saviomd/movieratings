@@ -13,6 +13,10 @@ class Nav extends React.Component {
 				{
 					id: '/diary',
 					name: 'Diary'
+				},
+				{
+					id: '/stats',
+					name: 'Stats'
 				}
 			]
 		}
