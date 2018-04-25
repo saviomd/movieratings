@@ -10,35 +10,52 @@ const propTypes = {
 			movieId: PropTypes.string.isRequired
 		})
 	}),
-	movieList: PropTypes.arrayOf(PropTypes.object).isRequired,
+	movies: PropTypes.shape({
+		list: PropTypes.arrayOf(PropTypes.object).isRequired,
+		listError: PropTypes.bool.isRequired,
+		listLoading: PropTypes.bool.isRequired
+	})
 }
 
 class PageMovieInfo extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			apiError: false,
-			apiLoading: false,
-			backdrop_url: tmdbApi.img.fallbackUrl,
-			id: '',
-			LetterboxdURI: '',
-			overview: '',
-			poster_url: tmdbApi.img.fallbackUrl,
-			Rating: '',
-			title: '',
-			vote_average: ''
+			dataLetterboxd: {
+				LetterboxdURI: '',
+				Rating: ''
+			},
+			dataTmdb: {
+				apiError: false,
+				apiLoading: false,
+				backdrop_url: tmdbApi.img.fallbackUrl,
+				id: '',
+				overview: '',
+				poster_url: tmdbApi.img.fallbackUrl,
+				title: '',
+				vote_average: ''
+			}
 		}
 	}
 	fetchMovieData (props) {
 		const { movieId } = props.match.params;
-		const movieListMovie = props.movieList.find((obj) => {
+		const listMovie = props.movies.list.find((obj) => {
 			return obj.Id === movieId;
 		});
-		if (movieListMovie !== undefined) {
+		if (listMovie !== undefined) {
 			this.setState({
-				apiLoading: true
+				dataLetterboxd: {
+					...this.state.dataLetterboxd,
+					LetterboxdURI: listMovie.LetterboxdURI,
+					Rating: listMovie.Rating
+				},
+				dataTmdb: {
+					...this.state.dataTmdb,
+					apiError: false,
+					apiLoading: true
+				}
 			});
-			fetch(`${tmdbApi.url}${tmdbApi.pathSearchMovies}?${tmdbApi.key}&query=${movieListMovie.Name}&year=${movieListMovie.Year}`).then((response) => {
+			fetch(`${tmdbApi.url}${tmdbApi.pathSearchMovies}?${tmdbApi.key}&query=${listMovie.Name}&year=${listMovie.Year}`).then((response) => {
 				if (!response.ok) {
 					throw Error(response.statusText);
 				}
@@ -46,20 +63,20 @@ class PageMovieInfo extends React.Component {
 			}).then((json) => {
 				if (json.results.length) {
 					const movie = json.results.find((obj) => {
-						return (obj.title === movieListMovie.Name && obj.release_date.indexOf(movieListMovie.Year) > -1)
+						return (obj.title === listMovie.Name && obj.release_date.indexOf(listMovie.Year) > -1)
 					});
 					if (movie !== undefined) {
 						this.setState({
-							apiError: false,
-							apiLoading: false,
-							backdrop_url: tmdbApi.img.baseUrl + tmdbApi.img.backdropSize + '/' + movie.backdrop_path,
-							id: movie.id,
-							LetterboxdURI: movieListMovie.LetterboxdURI,
-							title: movie.title,
-							overview: movie.overview,
-							poster_url: tmdbApi.img.baseUrl + tmdbApi.img.posterSize + '/' + movie.poster_path,
-							Rating: movieListMovie.Rating,
-							vote_average: movie.vote_average
+							dataTmdb: {
+								apiError: false,
+								apiLoading: false,
+								backdrop_url: tmdbApi.img.baseUrl + tmdbApi.img.backdropSize + '/' + movie.backdrop_path,
+								id: movie.id,
+								title: movie.title,
+								overview: movie.overview,
+								poster_url: tmdbApi.img.baseUrl + tmdbApi.img.posterSize + '/' + movie.poster_path,
+								vote_average: movie.vote_average
+							}
 						});
 					} else {
 						throw Error('No movie found');
@@ -69,8 +86,11 @@ class PageMovieInfo extends React.Component {
 				}
 			}).catch((error) => {
 				this.setState({
-					apiError: true,
-					apiLoading: false
+					dataTmdb: {
+						...this.state.dataTmdb,
+						apiError: true,
+						apiLoading: false
+					}
 				});
 				console.log(error.message);
 			});
@@ -83,44 +103,47 @@ class PageMovieInfo extends React.Component {
 		this.fetchMovieData(this.props);
 	}
 	render () {
+		const dataLetterboxd = this.state.dataLetterboxd;
+		const dataTmdb = this.state.dataTmdb;
+		const movies = this.props.movies;
 		let html = '';
-		if (this.state.apiLoading) {
+		if (movies.listLoading || dataTmdb.apiLoading) {
 			html = <div className="p-3 text-center">Loading...</div>
-		} else if (this.state.apiError) {
+		} else if (movies.listError || dataTmdb.apiError) {
 			html = <div className="p-3 text-center">Error :(</div>
-		} else if (this.state.id !== '') {
+		} else if (dataTmdb.id !== '') {
 			html = <div>
 				<div className="border border-secondary rounded">
 					<div className="p-3 row">
 						<div className="col-6">
-							<img alt={`poster for ${this.state.title}`} className="img-fluid" src={this.state.poster_url} />
+							<img alt={`poster for ${dataTmdb.title}`} className="img-fluid" src={dataTmdb.poster_url} />
 						</div>
 						<div className="col-6 text-right">
 							<div className="mb-3">
-								{this.state.Rating} of 5
+								{dataLetterboxd.Rating} of 5
 								<span aria-label="stars" className="ml-1" role="img">⭐</span>
 								<div className="small">by me</div>
 							</div>
 							<div className="mb-3">
-								{this.state.vote_average} of 10
+								{dataTmdb.vote_average} of 10
 								<span aria-label="stars" className="ml-1" role="img">⭐</span>
 								<div className="small">by TMDb users</div>
 							</div>
 						</div>
 					</div>
-					<h1 className="bg-secondary h3 mb-0 p-3">{this.state.title}</h1>
+					<h1 className="bg-secondary h3 mb-0 p-3">{dataTmdb.title}</h1>
 					<div className="p-3">
-						<p className="lead">{this.state.overview}</p>
+						<p className="lead">{dataTmdb.overview}</p>
 						<div className="text-right">
 							<div className="mb-3">
-								<a className="btn btn-danger btn-sm" href={this.state.LetterboxdURI} target="_blank" rel="noopener noreferrer">View movie at Letterboxd</a>
+								<a className="btn btn-danger btn-sm" href={dataLetterboxd.LetterboxdURI} target="_blank" rel="noopener noreferrer">View movie at Letterboxd</a>
 							</div>
 							<div className="mb-3">
-								<a className="btn btn-danger btn-sm" href={`https://www.themoviedb.org/movie/${this.state.id}`} target="_blank" rel="noopener noreferrer">View movie at TMDB</a>
+								<a className="btn btn-danger btn-sm" href={`https://www.themoviedb.org/movie/${dataTmdb.id}`} target="_blank" rel="noopener noreferrer">View movie at TMDB</a>
 							</div>
 						</div>
 					</div>
-					<img alt={`backdrop for ${this.state.title}`} className="img-fluid rounded-bottom" src={this.state.backdrop_url} />
+					<img alt={`backdrop for ${dataTmdb.title}`} className="img-fluid rounded-bottom" src={dataTmdb.backdrop_url} />
 				</div>
 				<div className="p-3 small text-center">
 					<img alt="Powered by TMDB" className="mr-1" src={tmdbApi.img.attributionUrl} height="32" />

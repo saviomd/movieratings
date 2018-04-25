@@ -44,10 +44,12 @@ class App extends React.Component {
 		this.setState({
 			movieDiary: {
 				...this.state.movieDiary,
+				listError: false,
 				listLoading: true
 			},
 			movieRatings: {
 				...this.state.movieRatings,
+				listError: false,
 				listLoading: true
 			}
 		});
@@ -156,7 +158,7 @@ class App extends React.Component {
 					/>} />
 					<Route path="/movie/:movieId" render={({ match }) => <PageMovieInfo
 						match={match}
-						movieList={this.state.movieRatings.list}
+						movies={this.state.movieRatings}
 					/>} />
 					<Route path="/stats" render={({ match }) => <PageStats
 						movieDiary={this.state.movieDiary}
