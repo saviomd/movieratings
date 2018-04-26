@@ -29,22 +29,20 @@ class MovieButton extends React.Component {
 			dateText = 'rated in ' + movie.DateFormatted;
 		}
 		return (
-			<li className="mb-3">
-				<Link className="btn btn-secondary btn-block" to={`/movie/${movie.Id}`}>
-					<div className="text-left text-truncate">
-						{movie.Name}
-						<span className="ml-1 small">({movie.Year})</span>
+			<Link className="btn btn-secondary btn-block" to={`/movie/${movie.Id}`}>
+				<div className="text-left text-truncate">
+					{movie.Name}
+					<span className="ml-1 small">({movie.Year})</span>
+				</div>
+				<div className="align-items-end row small">
+					<div className="col text-left">
+						{movie.RatingFormatted}
 					</div>
-					<div className="align-items-end row small">
-						<div className="col text-left">
-							{movie.RatingFormatted}
-						</div>
-						<div className="col small text-right">
-							{dateText}
-						</div>
+					<div className="col small text-right">
+						{dateText}
 					</div>
-				</Link>
-			</li>
+				</div>
+			</Link>
 		)
 	}
 }

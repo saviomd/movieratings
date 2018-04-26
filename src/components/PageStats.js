@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Message from './Message';
 import ProgressBar from './ProgressBar';
-import Nav from './Nav';
 
 const propTypes = {
 	movieDiary: PropTypes.shape({
@@ -33,16 +33,16 @@ class PageStats extends React.Component {
 	renderMovieStats (movies, source, type) {
 		let stats = [];
 		if (source.listLoading) {
-			stats.push(<div className="text-center" key="loading">Loading...</div>);
+			stats.push(<Message key="loading" type="loading" />);
 		} else if (source.listError) {
-			stats.push(<div className="text-center" key="error">Error :(</div>);
+			stats.push(<Message key="error" type="error" />);
 		} else if (movies.groups) {
 			for (const item in movies.groups) {
 				const text = (type === 'moviesPerRatingGiven' ? '⭐ '.repeat(item) : item);
 				const width = movies.groups[item] * 100 / movies.max;
 				stats.unshift(
 					<div className="mb-2" key={item}>
-						<div className="row">
+						<div className="no-gutters row">
 							<div className="col-auto">{text}</div>
 							<div className="col font-weight-bold text-right">{movies.groups[item]}</div>
 						</div>
@@ -51,7 +51,7 @@ class PageStats extends React.Component {
 				);
 			}
 		} else {
-			stats.push(<div className="text-center" key="none">No stats to show</div>);
+			stats.push(<Message key="noStats" type="noStats" />);
 		}
 		return stats;
 	}
@@ -60,29 +60,29 @@ class PageStats extends React.Component {
 		const moviesPerRatingGiven = this.renderMovieStats(this.props.moviesPerRatingGiven, this.props.movieRatings, 'moviesPerRatingGiven');
 		const moviesPerYearWatched = this.renderMovieStats(this.props.moviesPerYearWatched, this.props.movieDiary, 'moviesPerYearWatched');
 		return (
-			<div>
-				<Nav />
-				<div className="justify-content-center mb-3 row">
-					<div className="col-12 col-md-4 col-lg-3 mb-3">
+			<React.Fragment>
+				<h1 className="h4">Stats</h1>
+				<div className="row">
+					<div className="col-12 col-sm-6 col-md-4 mb-3">
 						<div className="border border-secondary p-3 rounded">
 							<h1 className="h5">Per year watched</h1>
 							{moviesPerYearWatched}
 						</div>
 					</div>
-					<div className="col-12 col-md-4 col-lg-3 mb-3">
+					<div className="col-12 col-sm-6 col-md-4 mb-3">
 						<div className="border border-secondary p-3 rounded">
 							<h1 className="h5">Per rating given</h1>
 							{moviesPerRatingGiven}
 						</div>
 					</div>
-					<div className="col-12 col-md-4 col-lg-3 mb-3">
+					<div className="col-12 col-sm-6 col-md-4 mb-3">
 						<div className="border border-secondary p-3 rounded">
 							<h1 className="h5">Per decade released</h1>
 							{moviesPerDecadeReleased}
 						</div>
 					</div>
 				</div>
-			</div>
+			</React.Fragment>
 		)
 	}
 }

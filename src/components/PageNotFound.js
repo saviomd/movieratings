@@ -1,9 +1,9 @@
 import React from 'react';
 
+import Message from './Message';
+
 const PageNotFound = () => (
-	<div>
-		<h1 className="text-center">Page not found</h1>
-	</div>
+	<Message type="pageNotFound" />
 )
 
 export default PageNotFound;

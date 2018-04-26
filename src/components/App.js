@@ -7,6 +7,7 @@ import PageMovieInfo from './PageMovieInfo';
 import PageMovies from './PageMovies';
 import PageNotFound from './PageNotFound';
 import PageStats from './PageStats';
+import SiteInfo from './SiteInfo';
 
 import formatMovieList from '../helpers/formatMovieList';
 
@@ -146,30 +147,35 @@ class App extends React.Component {
 	render () {
 		return (
 			<div className="container-fluid">
-				<Header />
-				<Switch>
-					<Route path="/" exact render={() => <PageMovies
-						movies={this.state.movieRatings}
-						type='ratings'
-					/>} />
-					<Route path="/diary" render={() => <PageMovies
-						movies={this.state.movieDiary}
-						type='diary'
-					/>} />
-					<Route path="/movie/:movieId" render={({ match }) => <PageMovieInfo
-						match={match}
-						movies={this.state.movieRatings}
-					/>} />
-					<Route path="/stats" render={({ match }) => <PageStats
-						movieDiary={this.state.movieDiary}
-						movieRatings={this.state.movieRatings}
-						moviesPerDecadeReleased={this.state.moviesPerDecadeReleased}
-						moviesPerRatingGiven={this.state.moviesPerRatingGiven}
-						moviesPerYearWatched={this.state.moviesPerYearWatched}
-					/>} />
-					<Route component={PageNotFound} />
-				</Switch>
-				<Footer />
+				<div className="justify-content-center row">
+					<div className="col-12 col-md-10">
+						<Header />
+						<Switch>
+							<Route path="/" exact render={() => <PageMovies
+								movies={this.state.movieRatings}
+								type='Ratings'
+							/>} />
+							<Route path="/diary" render={() => <PageMovies
+								movies={this.state.movieDiary}
+								type='Diary'
+							/>} />
+							<Route path="/movie/:movieId" render={({ match }) => <PageMovieInfo
+								match={match}
+								movies={this.state.movieRatings}
+							/>} />
+							<Route path="/stats" render={({ match }) => <PageStats
+								movieDiary={this.state.movieDiary}
+								movieRatings={this.state.movieRatings}
+								moviesPerDecadeReleased={this.state.moviesPerDecadeReleased}
+								moviesPerRatingGiven={this.state.moviesPerRatingGiven}
+								moviesPerYearWatched={this.state.moviesPerYearWatched}
+							/>} />
+							<Route component={PageNotFound} />
+						</Switch>
+						<SiteInfo />
+						<Footer />
+					</div>
+				</div>
 			</div>
 		)
 	}

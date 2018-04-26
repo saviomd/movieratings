@@ -24,17 +24,15 @@ class Nav extends React.Component {
 	render () {
 		const htmlLinks = this.state.links.map((link, index) => {
 			return (
-				<NavLink key={link.id} to={link.id} exact activeClassName="active" className="btn btn-danger btn-sm">
+				<NavLink key={link.id} to={link.id} exact activeClassName="active" className="btn btn-danger">
 					{link.name}
 				</NavLink>
 			)
 		});
 		return (
-			<div className="text-center">
-				<div className="btn-group mb-3">
-					{htmlLinks}
-				</div>
-			</div>
+			<nav className="btn-group">
+				{htmlLinks}
+			</nav>
 		)
 	}
 }

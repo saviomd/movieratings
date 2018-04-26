@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import Message from './Message';
 
 import tmdbApi from '../helpers/tmdbApi';
 
@@ -108,17 +109,17 @@ class PageMovieInfo extends React.Component {
 		const movies = this.props.movies;
 		let html = '';
 		if (movies.listLoading || dataTmdb.apiLoading) {
-			html = <div className="p-3 text-center">Loading...</div>
+			html = <Message type="loading" />
 		} else if (movies.listError || dataTmdb.apiError) {
-			html = <div className="p-3 text-center">Error :(</div>
+			html = <Message type="error" />
 		} else if (dataTmdb.id !== '') {
-			html = <div>
+			html = (
 				<div className="border border-secondary rounded">
 					<div className="p-3 row">
-						<div className="col-6">
+						<div className="col-6 col-sm-4">
 							<img alt={`poster for ${dataTmdb.title}`} className="img-fluid" src={dataTmdb.poster_url} />
 						</div>
-						<div className="col-6 text-right">
+						<div className="col-6 col-sm-8 text-right">
 							<div className="mb-3">
 								{dataLetterboxd.Rating} of 5
 								<span aria-label="stars" className="ml-1" role="img">⭐</span>
@@ -145,21 +146,11 @@ class PageMovieInfo extends React.Component {
 					</div>
 					<img alt={`backdrop for ${dataTmdb.title}`} className="img-fluid rounded-bottom" src={dataTmdb.backdrop_url} />
 				</div>
-				<div className="p-3 small text-center">
-					<img alt="Powered by TMDB" className="mr-1" src={tmdbApi.img.attributionUrl} height="32" />
-					<br />
-					This product uses the TMDb API but is not endorsed or certified by TMDb.
-				</div>
-			</div>
+			)
 		}
 		return (
-			<div>
-				<div className="justify-content-center row">
-					<div className="col-12 col-md-9 col-lg-6">
-						<Link className="btn btn-danger btn-sm mb-3" to="/">&lt; Home</Link>
-						{html}
-					</div>
-				</div>
+			<div className="mb-3">
+				{html}
 			</div>
 		)
 	}

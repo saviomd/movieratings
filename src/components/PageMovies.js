@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Info from './Info';
+import Message from './Message';
 import MovieList from './MovieList';
 import MovieNameSearch from './MovieNameSearch';
-import Nav from './Nav';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
 
@@ -35,27 +34,26 @@ class PageMovies extends React.Component {
 		const movieListToRender = filterMoviesByName(this.props.movies.list, this.state.movieSearchString);
 		let html = '';
 		if (this.props.movies.listLoading) {
-			html = <div className="text-center">Loading...</div>;
+			html = <Message type="loading" />
 		} else if (this.props.movies.listError) {
-			html = <div className="text-center">Error :(</div>;
+			html = <Message type="error" />
 		} else if (movieListToRender.length) {
-			html = <MovieList movies={movieListToRender} type={this.props.type} />;
+			html = <MovieList movies={movieListToRender} type={this.props.type} />
 		} else {
-			html = <div className="text-center">No movies to show</div>;
+			html = <Message type="noMovies" />
 		}
 		return (
-			<div>
-				<Nav />
-				<div className="justify-content-center mb-3 row">
-					<div className="col-12 col-sm-4 col-lg-3">
-						<Info />
+			<React.Fragment>
+				<h1 className="h4">{this.props.type}</h1>
+				<div className="row">
+					<div className="col-12 col-sm-4">
 						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieCount={movieListToRender.length} movieSearchString={this.state.movieSearchString} />
 					</div>
-					<div className="col-12 col-sm-8 col-lg-6">
+					<div className="col-12 col-sm-8">
 						{html}
 					</div>
 				</div>
-			</div>
+			</React.Fragment>
 		)
 	}
 }
