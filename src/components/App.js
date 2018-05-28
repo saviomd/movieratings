@@ -39,14 +39,10 @@ class App extends React.Component {
 			}
 		}
 	}
-	componentDidMount () {
+	fetchMovieDiary = () => {
 		this.setState({
 			movieDiary: {
 				...this.state.movieDiary,
-				listStatus: 'loading'
-			},
-			movieRatings: {
-				...this.state.movieRatings,
 				listStatus: 'loading'
 			}
 		});
@@ -56,27 +52,7 @@ class App extends React.Component {
 			}
 			return response.json();
 		}).then((json) => {
-			const movieList = formatMovieList(json);
-			const moviesPerYearWatched = movieList.reduce((acc, curr) => {
-				const year = curr.WatchedDate.split('-')[0];
-				acc[year] ? acc[year]++ : acc[year] = 1;
-				return acc;
-			}, {});
-			let moviesPerYearWatchedMax = 0;
-			for (const year in moviesPerYearWatched) {
-				moviesPerYearWatchedMax = (moviesPerYearWatched[year] > moviesPerYearWatchedMax ? moviesPerYearWatched[year] : moviesPerYearWatchedMax);
-			}
-			this.setState({
-				movieDiary: {
-					...this.state.movieDiary,
-					list: movieList,
-					listStatus: 'loaded'
-				},
-				moviesPerYearWatched: {
-					groups: moviesPerYearWatched,
-					max: moviesPerYearWatchedMax
-				}
-			});
+			this.populateMovieDiary(json);
 		}).catch((error) => {
 			this.setState({
 				movieDiary: {
@@ -85,6 +61,14 @@ class App extends React.Component {
 				}
 			});
 			console.log(error.message);
+		});
+	}
+	fetchMovieRatings = () => {
+		this.setState({
+			movieRatings: {
+				...this.state.movieRatings,
+				listStatus: 'loading'
+			}
 		});
 		fetch('https://saviomd.com/movieratings/data/ratings.json').then((response) => {
 			if (!response.ok) {
@@ -92,40 +76,7 @@ class App extends React.Component {
 			}
 			return response.json();
 		}).then((json) => {
-			const movieList = formatMovieList(json);
-			const moviesPerDecadeReleased = movieList.reduce((acc, curr) => {
-				const decade = `${curr.Year.toString().substr(0, 3)}0`;
-				acc[decade] ? acc[decade]++ : acc[decade] = 1;
-				return acc;
-			}, {});
-			let moviesPerDecadeReleasedMax = 0;
-			for (const decade in moviesPerDecadeReleased) {
-				moviesPerDecadeReleasedMax = (moviesPerDecadeReleased[decade] > moviesPerDecadeReleasedMax ? moviesPerDecadeReleased[decade] : moviesPerDecadeReleasedMax);
-			}
-			const moviesPerRatingGiven = movieList.reduce((acc, curr) => {
-				const rating = curr.Rating;
-				acc[rating] ? acc[rating]++ : acc[rating] = 1;
-				return acc;
-			}, {});
-			let moviesPerRatingGivenMax = 0;
-			for (const rating in moviesPerRatingGiven) {
-				moviesPerRatingGivenMax = (moviesPerRatingGiven[rating] > moviesPerRatingGivenMax ? moviesPerRatingGiven[rating] : moviesPerRatingGivenMax);
-			}
-			this.setState({
-				movieRatings: {
-					...this.state.movieRatings,
-					list: movieList,
-					listStatus: 'loaded'
-				},
-				moviesPerDecadeReleased: {
-					groups: moviesPerDecadeReleased,
-					max: moviesPerDecadeReleasedMax
-				},
-				moviesPerRatingGiven: {
-					groups: moviesPerRatingGiven,
-					max: moviesPerRatingGivenMax
-				}
-			});
+			this.populateMovieRatings(json);
 		}).catch((error) => {
 			this.setState({
 				movieRatings: {
@@ -135,6 +86,84 @@ class App extends React.Component {
 			});
 			console.log(error.message);
 		});
+	}
+	populateMovieDiary = (json) => {
+		const movieList = formatMovieList(json);
+		this.setState({
+			movieDiary: {
+				...this.state.movieDiary,
+				list: movieList,
+				listStatus: 'loaded'
+			}
+		});
+		this.populateMoviesPerYearWatched(movieList);
+	}
+	populateMovieRatings = (json) => {
+		const movieList = formatMovieList(json);
+		this.setState({
+			movieRatings: {
+				...this.state.movieRatings,
+				list: movieList,
+				listStatus: 'loaded'
+			}
+		});
+		this.populateMoviesPerDecadeReleased(movieList);
+		this.populateMoviesPerRatingGiven(movieList);
+	}
+	populateMoviesPerDecadeReleased = (movieList) => {
+		const moviesPerDecadeReleased = movieList.reduce((acc, curr) => {
+			const decade = `${curr.Year.toString().substr(0, 3)}0`;
+			acc[decade] ? acc[decade]++ : acc[decade] = 1;
+			return acc;
+		}, {});
+		let moviesPerDecadeReleasedMax = 0;
+		for (const decade in moviesPerDecadeReleased) {
+			moviesPerDecadeReleasedMax = (moviesPerDecadeReleased[decade] > moviesPerDecadeReleasedMax ? moviesPerDecadeReleased[decade] : moviesPerDecadeReleasedMax);
+		}
+		this.setState({
+			moviesPerDecadeReleased: {
+				groups: moviesPerDecadeReleased,
+				max: moviesPerDecadeReleasedMax
+			}
+		});
+	}
+	populateMoviesPerRatingGiven = (movieList) => {
+		const moviesPerRatingGiven = movieList.reduce((acc, curr) => {
+			const rating = curr.Rating;
+			acc[rating] ? acc[rating]++ : acc[rating] = 1;
+			return acc;
+		}, {});
+		let moviesPerRatingGivenMax = 0;
+		for (const rating in moviesPerRatingGiven) {
+			moviesPerRatingGivenMax = (moviesPerRatingGiven[rating] > moviesPerRatingGivenMax ? moviesPerRatingGiven[rating] : moviesPerRatingGivenMax);
+		}
+		this.setState({
+			moviesPerRatingGiven: {
+				groups: moviesPerRatingGiven,
+				max: moviesPerRatingGivenMax
+			}
+		});
+	}
+	populateMoviesPerYearWatched = (movieList) => {
+		const moviesPerYearWatched = movieList.reduce((acc, curr) => {
+			const year = curr.WatchedDate.split('-')[0];
+			acc[year] ? acc[year]++ : acc[year] = 1;
+			return acc;
+		}, {});
+		let moviesPerYearWatchedMax = 0;
+		for (const year in moviesPerYearWatched) {
+			moviesPerYearWatchedMax = (moviesPerYearWatched[year] > moviesPerYearWatchedMax ? moviesPerYearWatched[year] : moviesPerYearWatchedMax);
+		}
+		this.setState({
+			moviesPerYearWatched: {
+				groups: moviesPerYearWatched,
+				max: moviesPerYearWatchedMax
+			}
+		});
+	}
+	componentDidMount () {
+		this.fetchMovieDiary();
+		this.fetchMovieRatings();
 	}
 	render () {
 		return (
