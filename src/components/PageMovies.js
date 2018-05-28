@@ -10,8 +10,7 @@ import filterMoviesByName from '../helpers/filterMoviesByName';
 const propTypes = {
 	movies: PropTypes.shape({
 		list: PropTypes.arrayOf(PropTypes.object).isRequired,
-		listError: PropTypes.bool.isRequired,
-		listLoading: PropTypes.bool.isRequired
+		listStatus: PropTypes.string.isRequired
 	}),
 	type: PropTypes.string.isRequired
 }
@@ -32,11 +31,10 @@ class PageMovies extends React.Component {
 	}
 	render () {
 		const movieListToRender = filterMoviesByName(this.props.movies.list, this.state.movieSearchString);
+		const movieListStatus = this.props.movies.listStatus;
 		let html = '';
-		if (this.props.movies.listLoading) {
-			html = <Message type="loading" />
-		} else if (this.props.movies.listError) {
-			html = <Message type="error" />
+		if (movieListStatus === 'loading' || movieListStatus === 'error') {
+			html = <Message type={movieListStatus} />
 		} else if (movieListToRender.length) {
 			html = <MovieList movies={movieListToRender} type={this.props.type} />
 		} else {

@@ -19,13 +19,11 @@ class App extends React.Component {
 		this.state = {
 			movieDiary: {
 				list: [],
-				listError: false,
-				listLoading: false
+				listStatus: ''
 			},
 			movieRatings: {
 				list: [],
-				listError: false,
-				listLoading: false
+				listStatus: ''
 			},
 			moviesPerDecadeReleased: {
 				groups: {},
@@ -45,13 +43,11 @@ class App extends React.Component {
 		this.setState({
 			movieDiary: {
 				...this.state.movieDiary,
-				listError: false,
-				listLoading: true
+				listStatus: 'loading'
 			},
 			movieRatings: {
 				...this.state.movieRatings,
-				listError: false,
-				listLoading: true
+				listStatus: 'loading'
 			}
 		});
 		fetch('https://saviomd.com/movieratings/data/diary.json').then((response) => {
@@ -74,8 +70,7 @@ class App extends React.Component {
 				movieDiary: {
 					...this.state.movieDiary,
 					list: movieList,
-					listError: false,
-					listLoading: false
+					listStatus: 'loaded'
 				},
 				moviesPerYearWatched: {
 					groups: moviesPerYearWatched,
@@ -86,8 +81,7 @@ class App extends React.Component {
 			this.setState({
 				movieDiary: {
 					...this.state.movieDiary,
-					listError: true,
-					listLoading: false
+					listStatus: 'error'
 				}
 			});
 			console.log(error.message);
@@ -121,8 +115,7 @@ class App extends React.Component {
 				movieRatings: {
 					...this.state.movieRatings,
 					list: movieList,
-					listError: false,
-					listLoading: false
+					listStatus: 'loaded'
 				},
 				moviesPerDecadeReleased: {
 					groups: moviesPerDecadeReleased,
@@ -137,8 +130,7 @@ class App extends React.Component {
 			this.setState({
 				movieRatings: {
 					...this.state.movieRatings,
-					listError: true,
-					listLoading: false
+					listStatus: 'error'
 				}
 			});
 			console.log(error.message);

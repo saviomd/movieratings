@@ -13,8 +13,7 @@ const propTypes = {
 	}),
 	movies: PropTypes.shape({
 		list: PropTypes.arrayOf(PropTypes.object).isRequired,
-		listError: PropTypes.bool.isRequired,
-		listLoading: PropTypes.bool.isRequired
+		listStatus: PropTypes.string.isRequired
 	})
 }
 
@@ -27,8 +26,7 @@ class PageMovieInfo extends React.Component {
 				Rating: ''
 			},
 			dataTmdb: {
-				apiError: false,
-				apiLoading: false,
+				apiStatus: '',
 				backdrop_url: tmdbApi.img.fallbackUrl,
 				id: '',
 				overview: '',
@@ -52,8 +50,7 @@ class PageMovieInfo extends React.Component {
 				},
 				dataTmdb: {
 					...this.state.dataTmdb,
-					apiError: false,
-					apiLoading: true
+					apiStatus: 'loading'
 				}
 			});
 			fetch(`${tmdbApi.url}${tmdbApi.pathSearchMovies}?${tmdbApi.key}&query=${listMovie.Name}&year=${listMovie.Year}`).then((response) => {
@@ -69,8 +66,7 @@ class PageMovieInfo extends React.Component {
 					if (movie !== undefined) {
 						this.setState({
 							dataTmdb: {
-								apiError: false,
-								apiLoading: false,
+								apiStatus: 'loaded',
 								backdrop_url: tmdbApi.img.baseUrl + tmdbApi.img.backdropSize + '/' + movie.backdrop_path,
 								id: movie.id,
 								title: movie.title,
@@ -89,8 +85,7 @@ class PageMovieInfo extends React.Component {
 				this.setState({
 					dataTmdb: {
 						...this.state.dataTmdb,
-						apiError: true,
-						apiLoading: false
+						apiStatus: 'error'
 					}
 				});
 				console.log(error.message);
@@ -108,10 +103,10 @@ class PageMovieInfo extends React.Component {
 		const dataTmdb = this.state.dataTmdb;
 		const movies = this.props.movies;
 		let html = '';
-		if (movies.listLoading || dataTmdb.apiLoading) {
-			html = <Message type="loading" />
-		} else if (movies.listError || dataTmdb.apiError) {
-			html = <Message type="error" />
+		if (movies.listStatus === 'loading' || dataTmdb.apiStatus === 'loading') {
+			html = <Message type='loading' />
+		} else if (movies.listStatus === 'error' || dataTmdb.apiStatus === 'error') {
+			html = <Message type='error' />
 		} else if (dataTmdb.id !== '') {
 			html = (
 				<div className="border border-secondary rounded">

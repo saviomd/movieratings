@@ -7,13 +7,11 @@ import ProgressBar from './ProgressBar';
 const propTypes = {
 	movieDiary: PropTypes.shape({
 		list: PropTypes.arrayOf(PropTypes.object).isRequired,
-		listError: PropTypes.bool.isRequired,
-		listLoading: PropTypes.bool.isRequired
+		listStatus: PropTypes.string.isRequired
 	}),
 	movieRatings: PropTypes.shape({
 		list: PropTypes.arrayOf(PropTypes.object).isRequired,
-		listError: PropTypes.bool.isRequired,
-		listLoading: PropTypes.bool.isRequired
+		listStatus: PropTypes.string.isRequired
 	}),
 	moviesPerDecadeReleased: PropTypes.shape({
 		groups: PropTypes.object.isRequired,
@@ -32,10 +30,8 @@ const propTypes = {
 class PageStats extends React.Component {
 	renderMovieStats (movies, source, type) {
 		let stats = [];
-		if (source.listLoading) {
-			stats.push(<Message key="loading" type="loading" />);
-		} else if (source.listError) {
-			stats.push(<Message key="error" type="error" />);
+		if (source.listStatus === 'loading' || source.listStatus === 'error') {
+			stats.push(<Message key={source.listStatus} type={source.listStatus} />);
 		} else if (movies.groups) {
 			for (const item in movies.groups) {
 				const text = (type === 'moviesPerRatingGiven' ? '⭐ '.repeat(item) : item);
