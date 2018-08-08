@@ -903,7 +903,7 @@
     "Date": "2015-04-19",
     "Name": "Batman vs. Robin",
     "Year": 2015,
-    "LetterboxdURI": "https://letterboxd.com/saviomd/film/batman-vs-robin/",
+    "LetterboxdURI": "",
     "Rating": 3,
     "Tags": "",
     "WatchedDate": "2015-04-18"
@@ -928,9 +928,9 @@
   },
   {
     "Date": "2015-05-12",
-    "Name": "Springsteen & I",
+    "Name": "Bruce Springsteen: Springsteen & I",
     "Year": 2013,
-    "LetterboxdURI": "https://letterboxd.com/saviomd/film/springsteen-i/",
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/bruce-springsteen-springsteen-i/",
     "Rating": 4,
     "Tags": "",
     "WatchedDate": "2015-05-11"
@@ -2154,7 +2154,7 @@
     "Date": "2017-09-29",
     "Name": "Dave Chappelle: The Age of Spin",
     "Year": 2017,
-    "LetterboxdURI": "https://letterboxd.com/saviomd/film/dave-chappelle-the-age-of-spin/",
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/film:377211/",
     "Rating": 4,
     "Tags": "",
     "WatchedDate": "2017-09-28"
@@ -2163,7 +2163,7 @@
     "Date": "2017-09-29",
     "Name": "Dave Chappelle: Deep in the Heart of Texas",
     "Year": 2017,
-    "LetterboxdURI": "https://letterboxd.com/saviomd/film/dave-chappelle-deep-in-the-heart-of-texas/",
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/film:377208/",
     "Rating": 3,
     "Tags": "",
     "WatchedDate": "2017-09-28"
@@ -2190,7 +2190,7 @@
     "Date": "2017-10-07",
     "Name": "Louis C.K.: Live at The Comedy Store",
     "Year": 2015,
-    "LetterboxdURI": "https://letterboxd.com/saviomd/film/louis-ck-live-at-the-comedy-store/",
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/film:248548/",
     "Rating": 3,
     "Tags": "",
     "WatchedDate": "2017-10-06"
@@ -2217,7 +2217,7 @@
     "Date": "2017-10-16",
     "Name": "Louis C.K.: Hilarious",
     "Year": 2010,
-    "LetterboxdURI": "https://letterboxd.com/saviomd/film/louis-ck-hilarious/",
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/film:19727/",
     "Rating": 4,
     "Tags": "",
     "WatchedDate": "2017-10-14"
@@ -2226,7 +2226,7 @@
     "Date": "2017-10-18",
     "Name": "Louis C.K.: Live at the Beacon Theater",
     "Year": 2011,
-    "LetterboxdURI": "https://letterboxd.com/saviomd/film/louis-ck-live-at-the-beacon-theater/",
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/film:66835/",
     "Rating": 4,
     "Tags": "",
     "WatchedDate": "2017-10-17"
@@ -2487,7 +2487,7 @@
     "Date": "2018-01-19",
     "Name": "Dave Chappelle: Equanimity",
     "Year": 2017,
-    "LetterboxdURI": "https://letterboxd.com/saviomd/film/dave-chappelle-equanimity/",
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/film:418894/",
     "Rating": 4,
     "Tags": "",
     "WatchedDate": "2018-01-18"
@@ -2815,5 +2815,176 @@
     "Rating": 3,
     "Tags": "",
     "WatchedDate": "2018-04-20"
+  },
+  {
+    "Date": "2018-04-27",
+    "Name": "The Whole Truth",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/the-whole-truth-2016/",
+    "Rating": 3,
+    "Tags": "",
+    "WatchedDate": "2018-04-26"
+  },
+  {
+    "Date": "2018-04-29",
+    "Name": "A Quiet Place",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/a-quiet-place-2018/",
+    "Rating": 5,
+    "Tags": "",
+    "WatchedDate": "2018-04-27"
+  },
+  {
+    "Date": "2018-04-29",
+    "Name": "Avengers: Infinity War",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/avengers-infinity-war/",
+    "Rating": 4,
+    "Tags": "",
+    "WatchedDate": "2018-04-28"
+  },
+  {
+    "Date": "2018-05-04",
+    "Name": "Knock Knock",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/knock-knock-2015/",
+    "Rating": 3,
+    "Tags": "",
+    "WatchedDate": "2018-05-03"
+  },
+  {
+    "Date": "2018-05-14",
+    "Name": "Winchester",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/winchester/",
+    "Rating": 2,
+    "Tags": "",
+    "WatchedDate": "2018-05-11"
+  },
+  {
+    "Date": "2018-05-14",
+    "Name": "The Week Of",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/the-week-of/",
+    "Rating": 3,
+    "Tags": "",
+    "WatchedDate": "2018-05-13"
+  },
+  {
+    "Date": "2018-05-16",
+    "Name": "5 Centimeters per Second",
+    "Year": 2007,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/5-centimeters-per-second/",
+    "Rating": 4,
+    "Tags": "",
+    "WatchedDate": "2018-05-14"
+  },
+  {
+    "Date": "2018-05-16",
+    "Name": "127 Hours",
+    "Year": 2010,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/127-hours/",
+    "Rating": 4,
+    "Tags": "",
+    "WatchedDate": "2018-05-15"
+  },
+  {
+    "Date": "2018-05-20",
+    "Name": "Deadpool 2",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/deadpool-2/",
+    "Rating": 3,
+    "Tags": "",
+    "WatchedDate": "2018-05-19"
+  },
+  {
+    "Date": "2018-05-21",
+    "Name": "Game Night",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/game-night/",
+    "Rating": 4,
+    "Tags": "",
+    "WatchedDate": "2018-05-20"
+  },
+  {
+    "Date": "2018-05-23",
+    "Name": "Sex Tape",
+    "Year": 2014,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/sex-tape/",
+    "Rating": 3,
+    "Tags": "",
+    "WatchedDate": "2018-05-22"
+  },
+  {
+    "Date": "2018-05-24",
+    "Name": "The Dreamers",
+    "Year": 2003,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/the-dreamers/",
+    "Rating": 4,
+    "Tags": "",
+    "WatchedDate": "2018-05-23"
+  },
+  {
+    "Date": "2018-06-04",
+    "Name": "Before We Go",
+    "Year": 2014,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/before-we-go/",
+    "Rating": 4,
+    "Tags": "",
+    "WatchedDate": "2018-06-03"
+  },
+  {
+    "Date": "2018-06-07",
+    "Name": "Identity Thief",
+    "Year": 2013,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/identity-thief/",
+    "Rating": 3,
+    "Tags": "",
+    "WatchedDate": "2018-06-06"
+  },
+  {
+    "Date": "2018-07-04",
+    "Name": "Hereditary",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/hereditary/",
+    "Rating": 4,
+    "Tags": "",
+    "WatchedDate": "2018-07-02"
+  },
+  {
+    "Date": "2018-07-09",
+    "Name": "Ant-Man and the Wasp",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/ant-man-and-the-wasp/",
+    "Rating": 4,
+    "Tags": "",
+    "WatchedDate": "2018-07-06"
+  },
+  {
+    "Date": "2018-07-30",
+    "Name": "Mission: Impossible - Fallout",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/mission-impossible-fallout/",
+    "Rating": 5,
+    "Tags": "",
+    "WatchedDate": "2018-07-28"
+  },
+  {
+    "Date": "2018-07-30",
+    "Name": "Ghost Ship",
+    "Year": 2002,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/ghost-ship/",
+    "Rating": 2,
+    "Tags": "",
+    "WatchedDate": "2018-07-29"
+  },
+  {
+    "Date": "2018-08-06",
+    "Name": "Ready Player One",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/ready-player-one/",
+    "Rating": 4,
+    "Tags": "",
+    "WatchedDate": "2018-08-05"
   }
 ]

@@ -6392,9 +6392,9 @@
   },
   {
     "Date": "2013-05-19",
-    "Name": "Ong-Bak: The Thai Warrior",
+    "Name": "Ong Bak: Muay Thai Warrior",
     "Year": 2003,
-    "LetterboxdURI": "https://letterboxd.com/film/ong-bak-the-thai-warrior/",
+    "LetterboxdURI": "https://letterboxd.com/film/ong-bak-muay-thai-warrior/",
     "Rating": 4
   },
   {
@@ -7610,7 +7610,7 @@
   },
   {
     "Date": "2014-06-01",
-    "Name": "Alien: Resurrection",
+    "Name": "Alien Resurrection",
     "Year": 1997,
     "LetterboxdURI": "https://letterboxd.com/film/alien-resurrection/",
     "Rating": 2
@@ -8025,7 +8025,7 @@
     "Date": "2015-04-19",
     "Name": "Batman vs. Robin",
     "Year": 2015,
-    "LetterboxdURI": "https://letterboxd.com/film/batman-vs-robin/",
+    "LetterboxdURI": "",
     "Rating": 3
   },
   {
@@ -8051,9 +8051,9 @@
   },
   {
     "Date": "2015-05-12",
-    "Name": "Springsteen & I",
+    "Name": "Bruce Springsteen: Springsteen & I",
     "Year": 2013,
-    "LetterboxdURI": "https://letterboxd.com/film/springsteen-i/",
+    "LetterboxdURI": "https://letterboxd.com/film/bruce-springsteen-springsteen-i/",
     "Rating": 4
   },
   {
@@ -9068,14 +9068,14 @@
     "Date": "2017-09-29",
     "Name": "Dave Chappelle: The Age of Spin",
     "Year": 2017,
-    "LetterboxdURI": "https://letterboxd.com/film/dave-chappelle-the-age-of-spin/",
+    "LetterboxdURI": "https://letterboxd.com/film/film:377211/",
     "Rating": 4
   },
   {
     "Date": "2017-09-29",
     "Name": "Dave Chappelle: Deep in the Heart of Texas",
     "Year": 2017,
-    "LetterboxdURI": "https://letterboxd.com/film/dave-chappelle-deep-in-the-heart-of-texas/",
+    "LetterboxdURI": "https://letterboxd.com/film/film:377208/",
     "Rating": 3
   },
   {
@@ -9096,7 +9096,7 @@
     "Date": "2017-10-07",
     "Name": "Louis C.K.: Live at The Comedy Store",
     "Year": 2015,
-    "LetterboxdURI": "https://letterboxd.com/film/louis-ck-live-at-the-comedy-store/",
+    "LetterboxdURI": "https://letterboxd.com/film/film:248548/",
     "Rating": 3
   },
   {
@@ -9117,14 +9117,14 @@
     "Date": "2017-10-16",
     "Name": "Louis C.K.: Hilarious",
     "Year": 2010,
-    "LetterboxdURI": "https://letterboxd.com/film/louis-ck-hilarious/",
+    "LetterboxdURI": "https://letterboxd.com/film/film:19727/",
     "Rating": 4
   },
   {
     "Date": "2017-10-18",
     "Name": "Louis C.K.: Live at the Beacon Theater",
     "Year": 2011,
-    "LetterboxdURI": "https://letterboxd.com/film/louis-ck-live-at-the-beacon-theater/",
+    "LetterboxdURI": "https://letterboxd.com/film/film:66835/",
     "Rating": 4
   },
   {
@@ -9334,7 +9334,7 @@
     "Date": "2018-01-19",
     "Name": "Dave Chappelle: Equanimity",
     "Year": 2017,
-    "LetterboxdURI": "https://letterboxd.com/film/dave-chappelle-equanimity/",
+    "LetterboxdURI": "https://letterboxd.com/film/film:418894/",
     "Rating": 4
   },
   {
@@ -9588,5 +9588,145 @@
     "Year": 2016,
     "LetterboxdURI": "https://letterboxd.com/film/hail-caesar-2016/",
     "Rating": 3
+  },
+  {
+    "Date": "2018-04-27",
+    "Name": "The Whole Truth",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/the-whole-truth-2016/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-04-27",
+    "Name": "Table for Three",
+    "Year": 2009,
+    "LetterboxdURI": "https://letterboxd.com/film/table-for-three/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-04-29",
+    "Name": "A Quiet Place",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/a-quiet-place-2018/",
+    "Rating": 5
+  },
+  {
+    "Date": "2018-04-29",
+    "Name": "Avengers: Infinity War",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/avengers-infinity-war/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-05-04",
+    "Name": "Knock Knock",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/film/knock-knock-2015/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-05-14",
+    "Name": "Winchester",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/winchester/",
+    "Rating": 2
+  },
+  {
+    "Date": "2018-05-14",
+    "Name": "The Week Of",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/the-week-of/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-05-16",
+    "Name": "5 Centimeters per Second",
+    "Year": 2007,
+    "LetterboxdURI": "https://letterboxd.com/film/5-centimeters-per-second/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-05-16",
+    "Name": "127 Hours",
+    "Year": 2010,
+    "LetterboxdURI": "https://letterboxd.com/film/127-hours/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-05-20",
+    "Name": "Deadpool 2",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/deadpool-2/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-05-21",
+    "Name": "Game Night",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/game-night/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-05-23",
+    "Name": "Sex Tape",
+    "Year": 2014,
+    "LetterboxdURI": "https://letterboxd.com/film/sex-tape/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-05-24",
+    "Name": "The Dreamers",
+    "Year": 2003,
+    "LetterboxdURI": "https://letterboxd.com/film/the-dreamers/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-06-04",
+    "Name": "Before We Go",
+    "Year": 2014,
+    "LetterboxdURI": "https://letterboxd.com/film/before-we-go/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-06-07",
+    "Name": "Identity Thief",
+    "Year": 2013,
+    "LetterboxdURI": "https://letterboxd.com/film/identity-thief/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-07-04",
+    "Name": "Hereditary",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/hereditary/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-07-09",
+    "Name": "Ant-Man and the Wasp",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/ant-man-and-the-wasp/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-07-30",
+    "Name": "Mission: Impossible - Fallout",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/mission-impossible-fallout/",
+    "Rating": 5
+  },
+  {
+    "Date": "2018-07-30",
+    "Name": "Ghost Ship",
+    "Year": 2002,
+    "LetterboxdURI": "https://letterboxd.com/film/ghost-ship/",
+    "Rating": 2
+  },
+  {
+    "Date": "2018-08-06",
+    "Name": "Ready Player One",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/ready-player-one/",
+    "Rating": 4
   }
 ]
