@@ -1,6 +1,6 @@
 {
   "name": "movieratings",
-  "version": "1.0.20180501",
+  "version": "1.0.20180823",
   "description": "My movie ratings from Letterboxd",
   "author": "Sávio Mendes",
   "license": "UNLICENSED",
@@ -16,7 +16,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^1.1.4"
+    "react-scripts": "^1.1.5"
   },
   "scripts": {
     "postinstall": "cp node_modules/bootstrap/dist/css/bootstrap.min.css src/css/",

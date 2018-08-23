@@ -1,0 +1,14 @@
+{
+  "short_name": "movieratings",
+  "name": "Movie Ratings",
+  "icons": [
+    {
+      "src": "img/appicon.png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#343a40",
+  "background_color": "#343a40"
+}
