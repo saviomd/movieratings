@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Message from './Message';
-import ProgressBar from './ProgressBar';
+import Message from '../components/Message';
+import ProgressBar from '../components/ProgressBar';
 
 const propTypes = {
 	movieDiary: PropTypes.shape({

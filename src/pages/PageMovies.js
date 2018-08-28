@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Message from './Message';
-import MovieList from './MovieList';
-import MovieNameSearch from './MovieNameSearch';
+import Message from '../components/Message';
+import MovieList from '../components/MovieList';
+import MovieNameSearch from '../components/MovieNameSearch';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
 

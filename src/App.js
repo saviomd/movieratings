@@ -1,17 +1,17 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Footer from './Footer';
-import Header from './Header';
-import PageMovieInfo from './PageMovieInfo';
-import PageMovies from './PageMovies';
-import PageNotFound from './PageNotFound';
-import PageStats from './PageStats';
-import SiteInfo from './SiteInfo';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import PageMovieInfo from './pages/PageMovieInfo';
+import PageMovies from './pages/PageMovies';
+import PageNotFound from './pages/PageNotFound';
+import PageStats from './pages/PageStats';
+import SiteInfo from './components/SiteInfo';
 
-import formatMovieList from '../helpers/formatMovieList';
+import formatMovieList from './helpers/formatMovieList';
 
-import '../css/bootstrap.min.css'
+import './css/bootstrap.min.css'
 
 class App extends React.Component {
 	constructor(props) {
