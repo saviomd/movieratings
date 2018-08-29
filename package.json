@@ -22,7 +22,6 @@
     "react-scripts": "^1.1.5"
   },
   "scripts": {
-    "postinstall": "cp node_modules/bootstrap/dist/css/bootstrap.min.css src/css/",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "postbuild": "rm -r docs && mv build docs",

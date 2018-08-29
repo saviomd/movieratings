@@ -13,7 +13,7 @@ import SiteInfo from './components/SiteInfo';
 
 import formatMovieList from './helpers/formatMovieList';
 
-import './css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 library.add(faCalendarAlt, faChartBar, faDizzy, faFrown, faHourglassHalf, faSadTear, faStar, faTimes);
 
