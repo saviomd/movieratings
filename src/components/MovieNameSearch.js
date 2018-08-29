@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -14,7 +15,9 @@ class MovieNameSearch extends React.Component {
 				<div className="input-group input-group-sm mb-1">
 					<input id="search-movie" className="form-control" placeholder="Search..." type="text" value={this.props.movieSearchString} onChange={(event) => this.props.handleOnChangeMovieNameSearch(event.target.value)} />
 					<span className="input-group-append">
-						<button className="btn btn-secondary" type="button" onClick={() => this.props.handleOnChangeMovieNameSearch('')}>&times;</button>
+						<button className="btn btn-secondary" type="button" onClick={() => this.props.handleOnChangeMovieNameSearch('')}>
+							<FontAwesomeIcon icon="times" />
+						</button>
 					</span>
 				</div>
 				<p className="small text-right">{this.props.movieCount} movies</p>

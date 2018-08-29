@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -10,23 +11,23 @@ class Message extends React.Component {
 		super(props)
 		this.state = {
 			error: {
-				icon: '😢',
+				icon: 'sad-tear',
 				message: 'An error has ocurred'
 			},
 			loading: {
-				icon: '⏳',
+				icon: 'hourglass-half',
 				message: 'Loading...'
 			},
 			noMovies: {
-				icon: '💔',
+				icon: 'frown',
 				message: 'No movies to show'
 			},
 			noStats: {
-				icon: '💔',
+				icon: 'frown',
 				message: 'No stats to show'
 			},
 			pageNotFound: {
-				icon: '😵',
+				icon: 'dizzy',
 				message: 'Page not found'
 			},
 		}
@@ -35,7 +36,9 @@ class Message extends React.Component {
 		return (
 			<div className="lead p-3 text-center">
 				<div className="h3 mb-3">
-					<span className="bg-secondary p-2 rounded-circle">{this.state[this.props.type].icon}</span>
+					<span className="bg-secondary p-2 rounded">
+						<FontAwesomeIcon icon={this.state[this.props.type].icon} />
+					</span>
 				</div>
 				{this.state[this.props.type].message}
 			</div>

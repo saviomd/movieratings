@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -7,16 +8,19 @@ class Nav extends React.Component {
 		this.state = {
 			links: [
 				{
-					id: '/',
-					name: 'Ratings'
+					icon: 'star',
+					name: 'Ratings',
+					path: '/'
 				},
 				{
-					id: '/diary',
-					name: 'Diary'
+					icon: 'calendar-alt',
+					name: 'Diary',
+					path: '/diary'
 				},
 				{
-					id: '/stats',
-					name: 'Stats'
+					icon: 'chart-bar',
+					name: 'Stats',
+					path: '/stats'
 				}
 			]
 		}
@@ -24,8 +28,9 @@ class Nav extends React.Component {
 	render () {
 		const htmlLinks = this.state.links.map((link, index) => {
 			return (
-				<NavLink key={link.id} to={link.id} exact activeClassName="active" className="btn btn-danger">
-					{link.name}
+				<NavLink key={link.path} to={link.path} exact activeClassName="active" className="btn btn-danger btn-sm">
+					<FontAwesomeIcon icon={link.icon} />
+					<span className="d-none d-sm-inline-block ml-1">{link.name}</span>
 				</NavLink>
 			)
 		});

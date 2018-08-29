@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types'
 import React from 'react';
 
@@ -117,12 +118,12 @@ class PageMovieInfo extends React.Component {
 						<div className="col-6 col-sm-8 text-right">
 							<div className="mb-3">
 								{dataLetterboxd.Rating} of 5
-								<span aria-label="stars" className="ml-1" role="img">⭐</span>
+								<FontAwesomeIcon className="ml-1 text-warning" icon="star" />
 								<div className="small">by me</div>
 							</div>
 							<div className="mb-3">
 								{dataTmdb.vote_average} of 10
-								<span aria-label="stars" className="ml-1" role="img">⭐</span>
+								<FontAwesomeIcon className="ml-1 text-warning" icon="star" />
 								<div className="small">by TMDb users</div>
 							</div>
 						</div>

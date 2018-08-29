@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCalendarAlt, faChartBar, faDizzy, faFrown, faHourglassHalf, faSadTear, faStar, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -11,7 +13,9 @@ import SiteInfo from './components/SiteInfo';
 
 import formatMovieList from './helpers/formatMovieList';
 
-import './css/bootstrap.min.css'
+import './css/bootstrap.min.css';
+
+library.add(faCalendarAlt, faChartBar, faDizzy, faFrown, faHourglassHalf, faSadTear, faStar, faTimes);
 
 class App extends React.Component {
 	constructor(props) {

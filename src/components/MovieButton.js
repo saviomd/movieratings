@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -10,7 +11,6 @@ const propTypes = {
 		LetterboxdURI: PropTypes.string.isRequired,
 		Name: PropTypes.string.isRequired,
 		Rating: PropTypes.number.isRequired,
-		RatingFormatted: PropTypes.string.isRequired,
 		WatchedDate: PropTypes.string,
 		WatchedDateFormatted: PropTypes.string,
 		Year: PropTypes.number.isRequired
@@ -23,10 +23,14 @@ class MovieButton extends React.Component {
 		const movie = this.props.movie;
 		const type = this.props.type;
 		let dateText;
-		if (type === 'diary') {
+		if (type === 'Diary') {
 			dateText = 'watched in ' + movie.WatchedDateFormatted;
-		} else if (type === 'ratings') {
+		} else if (type === 'Ratings') {
 			dateText = 'rated in ' + movie.DateFormatted;
+		}
+		let stars = [];
+		for (let i = 0; i < movie.Rating; i++) {
+			stars.push(<FontAwesomeIcon key={i} className="mr-1 text-warning" icon="star" />);
 		}
 		return (
 			<Link className="btn btn-secondary btn-block" to={`/movie/${movie.Id}`}>
@@ -36,7 +40,7 @@ class MovieButton extends React.Component {
 				</div>
 				<div className="align-items-end row small">
 					<div className="col text-left">
-						{movie.RatingFormatted}
+						{stars}
 					</div>
 					<div className="col small text-right">
 						{dateText}
