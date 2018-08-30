@@ -40,7 +40,24 @@ class App extends React.Component {
 			moviesPerYearWatched: {
 				groups: {},
 				max: 0
-			}
+			},
+			navLinks: [
+				{
+					icon: 'star',
+					name: 'Ratings',
+					path: '/'
+				},
+				{
+					icon: 'calendar-alt',
+					name: 'Diary',
+					path: '/diary'
+				},
+				{
+					icon: 'chart-bar',
+					name: 'Stats',
+					path: '/stats'
+				}
+			]
 		}
 	}
 	fetchMovieDiary = () => {
@@ -174,7 +191,7 @@ class App extends React.Component {
 			<div className="container-fluid">
 				<div className="justify-content-center row">
 					<div className="col-12 col-md-10">
-						<Header />
+						<Header navLinks={this.state.navLinks} />
 						<Switch>
 							<Route path="/" exact render={() => <PageMovies
 								movies={this.state.movieRatings}

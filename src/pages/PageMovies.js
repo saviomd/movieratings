@@ -30,19 +30,20 @@ class PageMovies extends React.Component {
 		});
 	}
 	render () {
-		const movieListToRender = filterMoviesByName(this.props.movies.list, this.state.movieSearchString);
-		const movieListStatus = this.props.movies.listStatus;
+		const { movies, type } = this.props;
+		const movieListToRender = filterMoviesByName(movies.list, this.state.movieSearchString);
+		const movieListStatus = movies.listStatus;
 		let html = '';
 		if (movieListStatus === 'loading' || movieListStatus === 'error') {
 			html = <Message type={movieListStatus} />
 		} else if (movieListToRender.length) {
-			html = <MovieList movies={movieListToRender} type={this.props.type} />
+			html = <MovieList movies={movieListToRender} type={type} />
 		} else {
 			html = <Message type="noMovies" />
 		}
 		return (
 			<React.Fragment>
-				<h1 className="h4">{this.props.type}</h1>
+				<h1 className="h4">{type}</h1>
 				<div className="row">
 					<div className="col-12 col-sm-4">
 						<MovieNameSearch handleOnChangeMovieNameSearch={this.handleOnChangeMovieNameSearch} movieCount={movieListToRender.length} movieSearchString={this.state.movieSearchString} />

@@ -100,9 +100,8 @@ class PageMovieInfo extends React.Component {
 		this.fetchMovieData(this.props);
 	}
 	render () {
-		const dataLetterboxd = this.state.dataLetterboxd;
-		const dataTmdb = this.state.dataTmdb;
-		const movies = this.props.movies;
+		const { dataLetterboxd, dataTmdb } = this.state;
+		const { movies } = this.props;
 		let html = '';
 		if (movies.listStatus === 'loading' || dataTmdb.apiStatus === 'loading') {
 			html = <Message type='loading' />

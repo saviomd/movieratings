@@ -3,7 +3,36 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const propTypes = {
+const MovieButton = ({ movie, type }) => {
+	let dateText;
+	if (type === 'Diary') {
+		dateText = `watched in ${movie.WatchedDateFormatted}`;
+	} else if (type === 'Ratings') {
+		dateText = `rated in ${movie.DateFormatted}`;
+	}
+	let stars = [];
+	for (let i = 0; i < movie.Rating; i++) {
+		stars.push(<FontAwesomeIcon key={i} className="mr-1" icon="star" />);
+	}
+	return (
+		<Link className="btn btn-secondary btn-block" to={`/movie/${movie.Id}`}>
+			<div className="text-left text-truncate">
+				{movie.Name}
+				<span className="ml-1 small">({movie.Year})</span>
+			</div>
+			<div className="align-items-end row small">
+				<div className="col text-left text-warning">
+					{stars}
+				</div>
+				<div className="col small text-right">
+					{dateText}
+				</div>
+			</div>
+		</Link>
+	)
+}
+
+MovieButton.propTypes = {
 	movie: PropTypes.shape({
 		Id: PropTypes.string.isRequired,
 		Date: PropTypes.string.isRequired,
@@ -16,41 +45,6 @@ const propTypes = {
 		Year: PropTypes.number.isRequired
 	}),
 	type: PropTypes.string.isRequired
-}
-
-class MovieButton extends React.Component {
-	render () {
-		const movie = this.props.movie;
-		const type = this.props.type;
-		let dateText;
-		if (type === 'Diary') {
-			dateText = 'watched in ' + movie.WatchedDateFormatted;
-		} else if (type === 'Ratings') {
-			dateText = 'rated in ' + movie.DateFormatted;
-		}
-		let stars = [];
-		for (let i = 0; i < movie.Rating; i++) {
-			stars.push(<FontAwesomeIcon key={i} className="mr-1 text-warning" icon="star" />);
-		}
-		return (
-			<Link className="btn btn-secondary btn-block" to={`/movie/${movie.Id}`}>
-				<div className="text-left text-truncate">
-					{movie.Name}
-					<span className="ml-1 small">({movie.Year})</span>
-				</div>
-				<div className="align-items-end row small">
-					<div className="col text-left">
-						{stars}
-					</div>
-					<div className="col small text-right">
-						{dateText}
-					</div>
-				</div>
-			</Link>
-		)
-	}
-}
-
-MovieButton.propTypes = propTypes;
+};
 
 export default MovieButton;
