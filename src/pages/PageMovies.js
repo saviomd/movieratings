@@ -21,9 +21,8 @@ class PageMovies extends React.Component {
 		this.state = {
 			movieSearchString: ''
 		}
-		this.handleOnChangeMovieNameSearch = this.handleOnChangeMovieNameSearch.bind(this)
 	}
-	handleOnChangeMovieNameSearch (value) {
+	handleOnChangeMovieNameSearch = (value) => {
 		value.trim().toLowerCase();
 		this.setState({
 			movieSearchString: value
