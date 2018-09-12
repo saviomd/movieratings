@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import {connect} from 'react-redux';
 
 import Message from '../components/Message';
 import MovieList from '../components/MovieList';
 import MovieNameSearch from '../components/MovieNameSearch';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
+import {loadMovieDiary} from '../reducers/movieDiary';
+import {loadMovieRatings} from '../reducers/movieRatings';
 
 const propTypes = {
 	movies: PropTypes.shape({
@@ -28,8 +31,30 @@ class PageMovies extends React.Component {
 			movieSearchString: value
 		});
 	}
+	componentDidMount() {
+		if (this.props.type === 'Diary') {
+			this.props.loadMovieDiary();
+		} else if	(this.props.type === 'Ratings') {
+			this.props.loadMovieRatings();
+		}
+	}
+	componentDidUpdate(prevProps) {
+		if (this.props.type !== prevProps.type) {
+			if (this.props.type === 'Diary') {
+				this.props.loadMovieDiary();
+			} else if	(this.props.type === 'Ratings') {
+				this.props.loadMovieRatings();
+			}
+		}
+	}
 	render () {
-		const { movies, type } = this.props;
+		const { movieDiary, movieRatings, type } = this.props;
+		let movies;
+		if (type === 'Diary') {
+			movies = movieDiary;
+		} else if (type === 'Ratings') {
+			movies = movieRatings;
+		}
 		const movieListToRender = filterMoviesByName(movies.list, this.state.movieSearchString);
 		const movieListStatus = movies.listStatus;
 		let html = '';
@@ -58,4 +83,7 @@ class PageMovies extends React.Component {
 
 PageMovies.propTypes = propTypes;
 
-export default PageMovies;
+export default connect(
+	(state) => ({movieDiary: state.movieDiary, movieRatings: state.movieRatings}),
+	{loadMovieDiary, loadMovieRatings}
+)(PageMovies);
