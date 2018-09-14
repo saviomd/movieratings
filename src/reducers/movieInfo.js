@@ -33,12 +33,12 @@ export const loadMovieInfo = (movieId) => {
 								if (movie !== undefined) {
 									const movieInfo = {
 										...getState().movieInfo,
-										backdrop_url: tmdbApi.img.baseUrl + tmdbApi.img.backdropSize + '/' + movie.backdrop_path,
+										backdrop_url: tmdbApi.img.baseUrl + tmdbApi.img.backdropSize + movie.backdrop_path,
 										dataStatus: 'loaded',
 										id: movie.id,
 										LetterboxdURI: movieFromList.LetterboxdURI,
 										overview: movie.overview,
-										poster_url: tmdbApi.img.baseUrl + tmdbApi.img.posterSize + '/' + movie.poster_path,
+										poster_url: tmdbApi.img.baseUrl + tmdbApi.img.posterSize + movie.poster_path,
 										Rating: movieFromList.Rating,
 										title: movie.title,
 										vote_average: movie.vote_average
