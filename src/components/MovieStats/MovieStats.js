@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Message from '../components/Message';
-import ProgressBar from '../components/ProgressBar';
+import Message from '../Message';
+import ProgressBar from '../ProgressBar';
 
 const MovieStats = ({ movies, source, type }) => {
 	let stats = [];

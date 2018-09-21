@@ -1,6 +1,6 @@
 import React from 'react';
 
-import tmdbApi from '../helpers/tmdbApi';
+import tmdbApi from '../../helpers/tmdbApi';
 
 const SiteInfo = () => (
 	<div className="border-secondary border-top pt-3 small text-center">

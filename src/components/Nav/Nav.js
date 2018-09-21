@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import NavItem from './NavItem';
+import NavItem from '../NavItem';
 
 const Nav = ({ navLinks }) => (
 	<nav className="btn-group">

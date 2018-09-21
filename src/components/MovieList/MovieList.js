@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import MovieButton from './MovieButton';
+import MovieButton from '../MovieButton';
 
 const MovieList = ({ movies, type }) => (
 	<ul className="list-unstyled">

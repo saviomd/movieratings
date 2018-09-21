@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Nav from './Nav';
+import Nav from '../Nav';
 
 const Header = ({ navLinks }) => (
 	<header className="border-bottom border-secondary mb-3">
