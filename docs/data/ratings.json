@@ -1849,7 +1849,7 @@
   },
   {
     "Date": "2013-04-25",
-    "Name": "A Guide To Recognizing Your Saints",
+    "Name": "A Guide to Recognizing Your Saints",
     "Year": 2006,
     "LetterboxdURI": "https://letterboxd.com/film/a-guide-to-recognizing-your-saints/",
     "Rating": 3
@@ -2577,7 +2577,7 @@
   },
   {
     "Date": "2013-04-26",
-    "Name": "Grace is Gone",
+    "Name": "Grace Is Gone",
     "Year": 2007,
     "LetterboxdURI": "https://letterboxd.com/film/grace-is-gone/",
     "Rating": 4
@@ -3090,14 +3090,14 @@
     "Date": "2013-04-28",
     "Name": "Back to the Future Part II",
     "Year": 1989,
-    "LetterboxdURI": "https://letterboxd.com/film/back-to-the-future-ii/",
+    "LetterboxdURI": "https://letterboxd.com/film/back-to-the-future-part-ii/",
     "Rating": 5
   },
   {
     "Date": "2013-04-28",
     "Name": "Back to the Future Part III",
     "Year": 1990,
-    "LetterboxdURI": "https://letterboxd.com/film/back-to-the-future-iii/",
+    "LetterboxdURI": "https://letterboxd.com/film/back-to-the-future-part-iii/",
     "Rating": 3
   },
   {
@@ -3949,9 +3949,9 @@
   },
   {
     "Date": "2013-05-13",
-    "Name": "Fantastic 4: Rise of the Silver Surfer",
+    "Name": "Fantastic Four: Rise of the Silver Surfer",
     "Year": 2007,
-    "LetterboxdURI": "https://letterboxd.com/film/fantastic-4-rise-of-the-silver-surfer/",
+    "LetterboxdURI": "https://letterboxd.com/film/fantastic-four-rise-of-the-silver-surfer/",
     "Rating": 2
   },
   {
@@ -6728,7 +6728,7 @@
   },
   {
     "Date": "2013-06-29",
-    "Name": "Basic Sanitation, the Movie",
+    "Name": "Basic Sanitation, The Movie",
     "Year": 2007,
     "LetterboxdURI": "https://letterboxd.com/film/basic-sanitation-the-movie/",
     "Rating": 4
@@ -8025,7 +8025,7 @@
     "Date": "2015-04-19",
     "Name": "Batman vs. Robin",
     "Year": 2015,
-    "LetterboxdURI": "",
+    "LetterboxdURI": "https://letterboxd.com/film/film:248629/",
     "Rating": 3
   },
   {
@@ -9117,7 +9117,7 @@
     "Date": "2017-10-16",
     "Name": "Louis C.K.: Hilarious",
     "Year": 2010,
-    "LetterboxdURI": "https://letterboxd.com/film/film:19727/",
+    "LetterboxdURI": "https://letterboxd.com/film/louis-ck-hilarious/",
     "Rating": 4
   },
   {
@@ -9728,5 +9728,82 @@
     "Year": 2018,
     "LetterboxdURI": "https://letterboxd.com/film/ready-player-one/",
     "Rating": 4
+  },
+  {
+    "Date": "2018-08-27",
+    "Name": "Tag",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/tag-2018/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-10-08",
+    "Name": "Sicario",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/film/sicario-2015/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-10-15",
+    "Name": "Three Billboards Outside Ebbing, Missouri",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/three-billboards-outside-ebbing-missouri/",
+    "Rating": 5
+  },
+  {
+    "Date": "2018-10-22",
+    "Name": "First Man",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/first-man/",
+    "Rating": 5
+  },
+  {
+    "Date": "2018-11-03",
+    "Name": "When a Man Loves a Woman",
+    "Year": 1994,
+    "LetterboxdURI": "https://letterboxd.com/film/when-a-man-loves-a-woman/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-11-03",
+    "Name": "Orphan",
+    "Year": 2009,
+    "LetterboxdURI": "https://letterboxd.com/film/orphan/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-11-03",
+    "Name": "Adam Sandler: 100% Fresh",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/adam-sandler-100-fresh/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-11-05",
+    "Name": "Halloween",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/halloween-2018/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-11-10",
+    "Name": "Predators",
+    "Year": 2010,
+    "LetterboxdURI": "https://letterboxd.com/film/predators/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-11-11",
+    "Name": "Yellow is the New Black",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/yellow-is-the-new-black/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-11-11",
+    "Name": "The Grinch",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/the-grinch/",
+    "Rating": 3
   }
 ]
