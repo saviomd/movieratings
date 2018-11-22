@@ -1,5 +1,5 @@
 const movieRatings = {
-  list: [
+  movieRatings: [
     {
       Date: '2013-04-22',
       Name: 'Batman: The Dark Knight Returns, Part 2',
@@ -91,7 +91,7 @@ const movieRatings = {
       DateFormatted: '21 Apr 2013'
     }
   ],
-  listStatus: 'loaded'
+  movieRatingsStatus: 'loaded'
 };
 
 export default movieRatings;

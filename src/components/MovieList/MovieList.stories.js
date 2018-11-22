@@ -4,6 +4,8 @@ import { storiesOf } from '@storybook/react';
 
 import MockWrapper from '../MockWrapper';
 import MovieList from './MovieList';
+import MovieDiaryContext from '../../contexts/movieDiaryContext';
+import MovieRatingsContext from '../../contexts/movieRatingsContext';
 import movieDiary from '../../../data-mocks/movieDiary';
 import movieRatings from '../../../data-mocks/movieRatings';
 
@@ -12,12 +14,22 @@ storiesOf('MovieList', module)
     <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
   ))
   .add('movieDiary', () => (
-    <MockWrapper>
-      <MovieList movies={movieDiary.list} type="Diary" />
-    </MockWrapper>
+    <MovieDiaryContext.Provider value={{
+      movieDiary: movieDiary.movieDiary,
+      movieDiaryStatus: movieDiary.movieDiaryStatus,
+    }}>
+      <MockWrapper>
+        <MovieList type="Diary" />
+      </MockWrapper>
+    </MovieDiaryContext.Provider>
   ))
   .add('movieRatings', () => (
-    <MockWrapper>
-      <MovieList movies={movieRatings.list} type="Ratings" />
-    </MockWrapper>
+    <MovieRatingsContext.Provider value={{
+      movieRatings: movieRatings.movieRatings,
+      movieRatingsStatus: movieRatings.movieRatingsStatus,
+    }}>
+      <MockWrapper>
+        <MovieList type="Ratings" />
+      </MockWrapper>
+    </MovieRatingsContext.Provider>
   ))

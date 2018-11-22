@@ -1,28 +1,33 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 
+import { MovieInfoConsumer } from '../../contexts/movieInfoContext';
 import MovieInfoBody from './MovieInfoBody';
 import MovieInfoHeader from './MovieInfoHeader';
+import Message from '../Message';
 
-const MovieInfo = ({ movieInfo }) => (
-	<div className="border border-secondary rounded">
-		<MovieInfoHeader movieInfo={movieInfo} />
-		<MovieInfoBody movieInfo={movieInfo} />
-	</div>
+const MovieInfo = () => (
+	<MovieInfoConsumer>
+		{({ movieInfo, movieInfoStatus }) => {
+			let html;
+			if (movieInfoStatus === 'loaded' && movieInfo.id !== '') {
+				html = (
+					<div className="border border-secondary mb-3 rounded">
+						<MovieInfoHeader />
+						<MovieInfoBody />
+					</div>
+				);
+			} else if (movieInfoStatus === 'loading') {
+				html = (
+					<Message type='loading' />
+				);
+			} else if (movieInfoStatus === 'error') {
+				html = (
+					<Message type='error' />
+				);
+			}
+			return html;
+		}}
+	</MovieInfoConsumer>
 );
-
-MovieInfo.propTypes = {
-	movieInfo: PropTypes.shape({
-		backdrop_url: PropTypes.string.isRequired,
-		dataStatus: PropTypes.string.isRequired,
-		id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-		LetterboxdURI: PropTypes.string.isRequired,
-		overview: PropTypes.string.isRequired,
-		poster_url: PropTypes.string.isRequired,
-		Rating: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-		title: PropTypes.string.isRequired,
-		vote_average: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired
-	})
-};
 
 export default MovieInfo;

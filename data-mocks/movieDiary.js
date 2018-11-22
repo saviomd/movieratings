@@ -1,5 +1,5 @@
 const movieDiary = {
-  list: [
+  movieDiary: [
     {
       Date: '2013-08-23',
       Name: 'Monsters University',
@@ -121,7 +121,7 @@ const movieDiary = {
       WatchedDateFormatted: '11 May 2013'
     }
   ],
-  listStatus: 'loaded'
+  movieDiaryStatus: 'loaded'
 };
 
 export default movieDiary;

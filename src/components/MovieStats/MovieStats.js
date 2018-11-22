@@ -5,10 +5,11 @@ import React from 'react';
 import Message from '../Message';
 import ProgressBar from '../ProgressBar';
 
-const MovieStats = ({ movies, source, type }) => {
+const MovieStats = ({ getMovies, moviesStatus, type }) => {
+	const movies = getMovies();
 	let stats = [];
-	if (source.listStatus === 'loading' || source.listStatus === 'error') {
-		stats.push(<Message key={source.listStatus} type={source.listStatus} />);
+	if (moviesStatus === 'loading' || moviesStatus === 'error') {
+		stats.push(<Message key={moviesStatus} type={moviesStatus} />);
 	} else if (movies.groups) {
 		for (const item in movies.groups) {
 			const text = () => {
@@ -40,14 +41,8 @@ const MovieStats = ({ movies, source, type }) => {
 };
 
 MovieStats.propTypes = {
-	movies: PropTypes.shape({
-		groups: PropTypes.object.isRequired,
-		max: PropTypes.number.isRequired
-	}),
-	source: PropTypes.shape({
-		list: PropTypes.arrayOf(PropTypes.object).isRequired,
-		listStatus: PropTypes.string.isRequired
-	}),
+	getMovies: PropTypes.func.isRequired,
+	moviesStatus: PropTypes.string.isRequired,
 	type: PropTypes.string.isRequired
 };
 
