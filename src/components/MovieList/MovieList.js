@@ -6,19 +6,24 @@ import { MovieRatingsConsumer } from '../../contexts/movieRatingsContext';
 import MovieButton from '../MovieButton';
 import Message from '../Message';
 
-const renderMovieList = ({ movies, moviesStatus, type }) => {
+const renderMovieList = ({ increasePage, moviesFiltered, moviesPaginated, moviesStatus, type }) => {
 	let html;
-	if (moviesStatus === 'loaded' && movies.length) {
+	if (moviesStatus === 'loaded' && moviesFiltered.length) {
 		html = (
-			<ul className="list-unstyled">
-				{movies.map(movie => (
-					<li className="mb-3" key={movie.Id}>
-						<MovieButton movie={movie} type={type} />
-					</li>
-				))}
-			</ul>
+			<>
+				<ul className="list-unstyled">
+					{moviesPaginated.map(movie => (
+						<li className="mb-3" key={movie.Id}>
+							<MovieButton movie={movie} type={type} />
+						</li>
+					))}
+				</ul>
+				{moviesPaginated.length < moviesFiltered.length && <div className="mb-3 text-center">
+					<button className="btn btn-danger" type="button" onClick={increasePage}>Show more</button>
+				</div>}
+			</>
 		);
-	} else if (moviesStatus === 'loaded' && !movies.length) {
+	} else if (moviesStatus === 'loaded' && !moviesFiltered.length) {
 		html = (
 			<Message type="noMovies" />
 		);
@@ -34,12 +39,34 @@ const MovieList = ({ type }) => (
 	<>
 		{type === 'Diary' && (
 			<MovieDiaryConsumer>
-				{({ movieDiary, movieDiaryStatus }) => renderMovieList({ movies: movieDiary, moviesStatus: movieDiaryStatus, type })}
+				{({
+					increaseMovieDiaryPage,
+					movieDiaryFiltered,
+					movieDiaryPaginated,
+					movieDiaryStatus,
+				}) => renderMovieList({
+					increasePage: increaseMovieDiaryPage,
+					moviesFiltered: movieDiaryFiltered,
+					moviesPaginated: movieDiaryPaginated,
+					moviesStatus: movieDiaryStatus,
+					type,
+				})}
 			</MovieDiaryConsumer>
 		)}
 		{type === 'Ratings' && (
 			<MovieRatingsConsumer>
-				{({ movieRatings, movieRatingsStatus }) => renderMovieList({ movies: movieRatings, moviesStatus: movieRatingsStatus, type })}
+				{({
+					increaseMovieRatingsPage,
+					movieRatingsFiltered,
+					movieRatingsPaginated,
+					movieRatingsStatus,
+				}) => renderMovieList({
+					increasePage: increaseMovieRatingsPage,
+					moviesFiltered: movieRatingsFiltered,
+					moviesPaginated: movieRatingsPaginated,
+					moviesStatus: movieRatingsStatus,
+					type,
+				})}
 			</MovieRatingsConsumer>
 		)}
 	</>

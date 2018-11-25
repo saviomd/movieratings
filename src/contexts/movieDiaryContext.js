@@ -14,9 +14,10 @@ class MovieDiaryStore extends React.Component {
 		super(props)
 		this.state = {
 			movieDiary: [],
+			movieDiaryPage: 1,
 			movieDiaryStatus: '',
 		}
-		this.getMoviesFiltered = this.getMoviesFiltered.bind(this);
+		this.increaseMovieDiaryPage = this.increaseMovieDiaryPage.bind(this);
 		this.getMoviesPerYearWatched = this.getMoviesPerYearWatched.bind(this);
 	}
 	componentDidMount() {
@@ -26,6 +27,11 @@ class MovieDiaryStore extends React.Component {
 		const { movieSearchString } = this.context;
 		const { movieDiary } = this.state;
 		return filterMoviesByName(movieDiary, movieSearchString);
+	}
+	getMoviesPaginated() {
+		const { movieDiaryPage } = this.state;
+		const size = movieDiaryPage * 100;
+		return this.getMoviesFiltered().slice(0, size);
 	}
 	getMoviesPerYearWatched() {
 		const groups = this.state.movieDiary.reduce((acc, curr) => {
@@ -38,6 +44,10 @@ class MovieDiaryStore extends React.Component {
 			max = (groups[year] > max ? groups[year] : max);
 		}
 		return { groups, max };
+	}
+	increaseMovieDiaryPage() {
+		const { movieDiaryPage } = this.state;
+		this.setState({ movieDiaryPage: movieDiaryPage + 1 });
 	}
 	loadMovieDiary() {
 		this.setState({ movieDiaryStatus: 'loading' });
@@ -54,11 +64,14 @@ class MovieDiaryStore extends React.Component {
 	}
 	render() {
 		const { children } = this.props;
-		const { movieDiaryStatus } = this.state;
+		const { movieDiary, movieDiaryStatus } = this.state;
 		return (
 			<MovieDiaryContext.Provider value={{
 				getMoviesPerYearWatched: this.getMoviesPerYearWatched,
-				movieDiary: this.getMoviesFiltered(),
+				increaseMovieDiaryPage: this.increaseMovieDiaryPage,
+				movieDiary,
+				movieDiaryFiltered: this.getMoviesFiltered(),
+				movieDiaryPaginated: this.getMoviesPaginated(),
 				movieDiaryStatus,
 			}}>
 				{children}

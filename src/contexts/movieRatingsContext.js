@@ -14,8 +14,10 @@ class MovieRatingsStore extends React.Component {
 		super(props)
 		this.state = {
 			movieRatings: [],
+			movieRatingsPage: 1,
 			movieRatingsStatus: '',
 		}
+		this.increaseMovieRatingsPage = this.increaseMovieRatingsPage.bind(this);
 		this.getMoviesPerDecadeReleased = this.getMoviesPerDecadeReleased.bind(this);
 		this.getMoviesPerRatingGiven = this.getMoviesPerRatingGiven.bind(this);
 	}
@@ -26,6 +28,11 @@ class MovieRatingsStore extends React.Component {
 		const { movieSearchString } = this.context;
 		const { movieRatings } = this.state;
 		return filterMoviesByName(movieRatings, movieSearchString);
+	}
+	getMoviesPaginated() {
+		const { movieRatingsPage } = this.state;
+		const size = movieRatingsPage * 100;
+		return this.getMoviesFiltered().slice(0, size);
 	}
 	getMoviesPerDecadeReleased() {
 		const groups = this.state.movieRatings.reduce((acc, curr) => {
@@ -51,6 +58,10 @@ class MovieRatingsStore extends React.Component {
 		}
 		return { groups, max };
 	}
+	increaseMovieRatingsPage() {
+		const { movieRatingsPage } = this.state;
+		this.setState({ movieRatingsPage: movieRatingsPage + 1 });
+	}
 	loadMovieRatings() {
 		this.setState({ movieRatingsStatus: 'loading' });
 		return fetchMovieRatings()
@@ -66,12 +77,15 @@ class MovieRatingsStore extends React.Component {
 	}
 	render() {
 		const { children } = this.props;
-		const { movieRatingsStatus } = this.state;
+		const { movieRatings, movieRatingsStatus } = this.state;
 		return (
 			<MovieRatingsContext.Provider value={{
 				getMoviesPerDecadeReleased: this.getMoviesPerDecadeReleased,
 				getMoviesPerRatingGiven: this.getMoviesPerRatingGiven,
-				movieRatings: this.getMoviesFiltered(),
+				increaseMovieRatingsPage: this.increaseMovieRatingsPage,
+				movieRatings,
+				movieRatingsFiltered: this.getMoviesFiltered(),
+				movieRatingsPaginated: this.getMoviesPaginated(),
 				movieRatingsStatus,
 			}}>
 				{children}

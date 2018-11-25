@@ -7,7 +7,7 @@ import { MovieSearchConsumer } from '../../contexts/movieSearchContext';
 
 const MovieNameSearch = ({ type }) => (
 	<MovieSearchConsumer>
-		{({ setMovieSearchString, movieSearchString }) => (
+		{({ movieSearchString, setMovieSearchString }) => (
 			<div className="mb-3">
 				<div className="input-group input-group-sm mb-1">
 					<input id="search-movie" className="form-control" placeholder="Search..." type="text" value={movieSearchString} onChange={(event) => setMovieSearchString(event.target.value)} />
@@ -19,15 +19,15 @@ const MovieNameSearch = ({ type }) => (
 				</div>
 				{type === 'Diary' && (
 					<MovieDiaryConsumer>
-						{({ movieDiary }) => (
-							<p className="small text-right">{movieDiary.length} movies</p>
+						{({ movieDiaryFiltered }) => (
+							<p className="small text-right">{movieDiaryFiltered.length} movies</p>
 						)}
 					</MovieDiaryConsumer>
 				)}
 				{type === 'Ratings' && (
 					<MovieRatingsConsumer>
-						{({ movieRatings }) => (
-							<p className="small text-right">{movieRatings.length} movies</p>
+						{({ movieRatingsFiltered }) => (
+							<p className="small text-right">{movieRatingsFiltered.length} movies</p>
 						)}
 					</MovieRatingsConsumer>
 				)}

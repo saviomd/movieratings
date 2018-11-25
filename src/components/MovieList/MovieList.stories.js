@@ -15,7 +15,8 @@ storiesOf('MovieList', module)
   ))
   .add('movieDiary', () => (
     <MovieDiaryContext.Provider value={{
-      movieDiary: movieDiary.movieDiary,
+      movieDiaryFiltered: movieDiary.movieDiary,
+      movieDiaryPaginated: movieDiary.movieDiary,
       movieDiaryStatus: movieDiary.movieDiaryStatus,
     }}>
       <MockWrapper>
@@ -25,7 +26,8 @@ storiesOf('MovieList', module)
   ))
   .add('movieRatings', () => (
     <MovieRatingsContext.Provider value={{
-      movieRatings: movieRatings.movieRatings,
+      movieRatingsFiltered: movieRatings.movieRatings,
+      movieRatingsPaginated: movieRatings.movieRatings,
       movieRatingsStatus: movieRatings.movieRatingsStatus,
     }}>
       <MockWrapper>
