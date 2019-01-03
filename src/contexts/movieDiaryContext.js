@@ -1,6 +1,5 @@
 import React from 'react';
 
-import MovieSearchContext from '../contexts/movieSearchContext';
 import filterMoviesByName from '../helpers/filterMoviesByName';
 import formatMovieList from '../helpers/formatMovieList';
 import { fetchMovieDiary } from '../helpers/movieDiaryServices';
@@ -13,25 +12,28 @@ class MovieDiaryStore extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
+			getMovieDiaryFiltered: this.getMovieDiaryFiltered.bind(this),
+			getMovieDiaryPaginated: this.getMovieDiaryPaginated.bind(this),
+			getMoviesPerYearWatched: this.getMoviesPerYearWatched.bind(this),
+			increaseMovieDiaryPage: this.increaseMovieDiaryPage.bind(this),
 			movieDiary: [],
 			movieDiaryPage: 1,
 			movieDiaryStatus: '',
+			movieSearchString: '',
+			setMovieSearchString: this.setMovieSearchString.bind(this),
 		}
-		this.increaseMovieDiaryPage = this.increaseMovieDiaryPage.bind(this);
-		this.getMoviesPerYearWatched = this.getMoviesPerYearWatched.bind(this);
 	}
 	componentDidMount() {
 		this.loadMovieDiary();
 	}
-	getMoviesFiltered() {
-		const { movieSearchString } = this.context;
-		const { movieDiary } = this.state;
+	getMovieDiaryFiltered() {
+		const { movieDiary, movieSearchString } = this.state;
 		return filterMoviesByName(movieDiary, movieSearchString);
 	}
-	getMoviesPaginated() {
+	getMovieDiaryPaginated() {
 		const { movieDiaryPage } = this.state;
 		const size = movieDiaryPage * 100;
-		return this.getMoviesFiltered().slice(0, size);
+		return this.getMovieDiaryFiltered().slice(0, size);
 	}
 	getMoviesPerYearWatched() {
 		const groups = this.state.movieDiary.reduce((acc, curr) => {
@@ -62,25 +64,21 @@ class MovieDiaryStore extends React.Component {
 				console.log(error.message);
 			});
 	}
+	setMovieSearchString(value) {
+		value.trim().toLowerCase();
+		this.setState({
+			movieSearchString: value,
+		});
+	}
 	render() {
 		const { children } = this.props;
-		const { movieDiary, movieDiaryStatus } = this.state;
 		return (
-			<MovieDiaryContext.Provider value={{
-				getMoviesPerYearWatched: this.getMoviesPerYearWatched,
-				increaseMovieDiaryPage: this.increaseMovieDiaryPage,
-				movieDiary,
-				movieDiaryFiltered: this.getMoviesFiltered(),
-				movieDiaryPaginated: this.getMoviesPaginated(),
-				movieDiaryStatus,
-			}}>
+			<MovieDiaryContext.Provider value={this.state}>
 				{children}
 			</MovieDiaryContext.Provider>
 		);
 	}
 };
-
-MovieDiaryStore.contextType = MovieSearchContext;
 
 export {
 	MovieDiaryContext as default,

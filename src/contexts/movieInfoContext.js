@@ -68,12 +68,8 @@ class MovieInfoStore extends React.Component {
 	}
 	render() {
 		const { children } = this.props;
-		const { movieInfo, movieInfoStatus } = this.state;
 		return (
-			<MovieInfoContext.Provider value={{
-				movieInfo,
-				movieInfoStatus,
-			}}>
+			<MovieInfoContext.Provider value={this.state}>
 				{children}
 			</MovieInfoContext.Provider>
 		);

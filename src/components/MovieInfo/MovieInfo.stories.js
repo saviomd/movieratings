@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import MockWrapper from '../MockWrapper';
 import MovieInfo from './MovieInfo';
 import MovieInfoContext from '../../contexts/movieInfoContext';
-import movieInfo from '../../../data-mocks/movieInfo';
+import movieInfo from '../../../__mocks__/movieInfo';
 
 storiesOf('MovieInfo', module)
   .add('default', () => (

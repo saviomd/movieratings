@@ -582,7 +582,7 @@
   {
     "Date": "2014-08-25",
     "Name": "The Cabin in the Woods",
-    "Year": 2012,
+    "Year": 2011,
     "LetterboxdURI": "https://letterboxd.com/saviomd/film/the-cabin-in-the-woods/",
     "Rating": 4,
     "Rewatch": "",
@@ -3411,7 +3411,7 @@
   },
   {
     "Date": "2018-11-11",
-    "Name": "Yellow is the New Black",
+    "Name": "Yellow Is the New Black",
     "Year": 2018,
     "LetterboxdURI": "https://letterboxd.com/saviomd/film/yellow-is-the-new-black/",
     "Rating": 3,
@@ -3428,5 +3428,85 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2018-11-10"
+  },
+  {
+    "Date": "2018-11-26",
+    "Name": "The Nun",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/the-nun-2018/",
+    "Rating": 1,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2018-11-25"
+  },
+  {
+    "Date": "2018-12-10",
+    "Name": "Fantastic Beasts: The Crimes of Grindelwald",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/fantastic-beasts-the-crimes-of-grindelwald/",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2018-12-09"
+  },
+  {
+    "Date": "2018-12-15",
+    "Name": "Teen Titans Go! To the Movies",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/teen-titans-go-to-the-movies/",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2018-12-14"
+  },
+  {
+    "Date": "2018-12-25",
+    "Name": "Aquaman",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/aquaman-2018/",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2018-12-22"
+  },
+  {
+    "Date": "2018-12-25",
+    "Name": "The Night Before",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/the-night-before-2015/",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2018-12-24"
+  },
+  {
+    "Date": "2018-12-26",
+    "Name": "Hercules",
+    "Year": 1997,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/hercules-1997/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2018-12-25"
+  },
+  {
+    "Date": "2018-12-30",
+    "Name": "War Machine",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/war-machine-2017/",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2018-12-29"
+  },
+  {
+    "Date": "2018-12-31",
+    "Name": "Springsteen On Broadway",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/springsteen-on-broadway/",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2018-12-30"
   }
 ]

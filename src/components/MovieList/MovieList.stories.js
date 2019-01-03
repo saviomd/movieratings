@@ -6,8 +6,8 @@ import MockWrapper from '../MockWrapper';
 import MovieList from './MovieList';
 import MovieDiaryContext from '../../contexts/movieDiaryContext';
 import MovieRatingsContext from '../../contexts/movieRatingsContext';
-import movieDiary from '../../../data-mocks/movieDiary';
-import movieRatings from '../../../data-mocks/movieRatings';
+import movieDiary from '../../../__mocks__/movieDiary';
+import movieRatings from '../../../__mocks__/movieRatings';
 
 storiesOf('MovieList', module)
   .addDecorator(story => (

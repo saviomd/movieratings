@@ -3893,7 +3893,7 @@
   },
   {
     "Date": "2013-05-13",
-    "Name": "Leon: The Professional",
+    "Name": "Léon: The Professional",
     "Year": 1994,
     "LetterboxdURI": "https://letterboxd.com/film/leon-the-professional/",
     "Rating": 5
@@ -7688,7 +7688,7 @@
   {
     "Date": "2014-08-25",
     "Name": "The Cabin in the Woods",
-    "Year": 2012,
+    "Year": 2011,
     "LetterboxdURI": "https://letterboxd.com/film/the-cabin-in-the-woods/",
     "Rating": 4
   },
@@ -9794,7 +9794,7 @@
   },
   {
     "Date": "2018-11-11",
-    "Name": "Yellow is the New Black",
+    "Name": "Yellow Is the New Black",
     "Year": 2018,
     "LetterboxdURI": "https://letterboxd.com/film/yellow-is-the-new-black/",
     "Rating": 3
@@ -9805,5 +9805,61 @@
     "Year": 2018,
     "LetterboxdURI": "https://letterboxd.com/film/the-grinch/",
     "Rating": 3
+  },
+  {
+    "Date": "2018-11-26",
+    "Name": "The Nun",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/the-nun-2018/",
+    "Rating": 1
+  },
+  {
+    "Date": "2018-12-10",
+    "Name": "Fantastic Beasts: The Crimes of Grindelwald",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/fantastic-beasts-the-crimes-of-grindelwald/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-12-15",
+    "Name": "Teen Titans Go! To the Movies",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/teen-titans-go-to-the-movies/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-12-25",
+    "Name": "Aquaman",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/aquaman-2018/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-12-25",
+    "Name": "The Night Before",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/film/the-night-before-2015/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-12-26",
+    "Name": "Hercules",
+    "Year": 1997,
+    "LetterboxdURI": "https://letterboxd.com/film/hercules-1997/",
+    "Rating": 4
+  },
+  {
+    "Date": "2018-12-30",
+    "Name": "War Machine",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/war-machine-2017/",
+    "Rating": 3
+  },
+  {
+    "Date": "2018-12-31",
+    "Name": "Springsteen On Broadway",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/springsteen-on-broadway/",
+    "Rating": 5
   }
 ]

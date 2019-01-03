@@ -1,6 +1,5 @@
 import React from 'react';
 
-import MovieSearchContext from '../contexts/movieSearchContext';
 import filterMoviesByName from '../helpers/filterMoviesByName';
 import formatMovieList from '../helpers/formatMovieList';
 import { fetchMovieRatings } from '../helpers/movieRatingsServices';
@@ -13,26 +12,29 @@ class MovieRatingsStore extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
+			getMovieRatingsFiltered: this.getMovieRatingsFiltered.bind(this),
+			getMovieRatingsPaginated: this.getMovieRatingsPaginated.bind(this),
+			getMoviesPerDecadeReleased: this.getMoviesPerDecadeReleased.bind(this),
+			getMoviesPerRatingGiven: this.getMoviesPerRatingGiven.bind(this),
+			increaseMovieRatingsPage: this.increaseMovieRatingsPage.bind(this),
 			movieRatings: [],
 			movieRatingsPage: 1,
 			movieRatingsStatus: '',
+			movieSearchString: '',
+			setMovieSearchString: this.setMovieSearchString.bind(this),
 		}
-		this.increaseMovieRatingsPage = this.increaseMovieRatingsPage.bind(this);
-		this.getMoviesPerDecadeReleased = this.getMoviesPerDecadeReleased.bind(this);
-		this.getMoviesPerRatingGiven = this.getMoviesPerRatingGiven.bind(this);
 	}
 	componentDidMount() {
 		this.loadMovieRatings();
 	}
-	getMoviesFiltered() {
-		const { movieSearchString } = this.context;
-		const { movieRatings } = this.state;
+	getMovieRatingsFiltered() {
+		const { movieRatings, movieSearchString } = this.state;
 		return filterMoviesByName(movieRatings, movieSearchString);
 	}
-	getMoviesPaginated() {
+	getMovieRatingsPaginated() {
 		const { movieRatingsPage } = this.state;
 		const size = movieRatingsPage * 100;
-		return this.getMoviesFiltered().slice(0, size);
+		return this.getMovieRatingsFiltered().slice(0, size);
 	}
 	getMoviesPerDecadeReleased() {
 		const groups = this.state.movieRatings.reduce((acc, curr) => {
@@ -75,26 +77,21 @@ class MovieRatingsStore extends React.Component {
 				console.log(error.message);
 			});
 	}
+	setMovieSearchString(value) {
+		value.trim().toLowerCase();
+		this.setState({
+			movieSearchString: value,
+		});
+	}
 	render() {
 		const { children } = this.props;
-		const { movieRatings, movieRatingsStatus } = this.state;
 		return (
-			<MovieRatingsContext.Provider value={{
-				getMoviesPerDecadeReleased: this.getMoviesPerDecadeReleased,
-				getMoviesPerRatingGiven: this.getMoviesPerRatingGiven,
-				increaseMovieRatingsPage: this.increaseMovieRatingsPage,
-				movieRatings,
-				movieRatingsFiltered: this.getMoviesFiltered(),
-				movieRatingsPaginated: this.getMoviesPaginated(),
-				movieRatingsStatus,
-			}}>
+			<MovieRatingsContext.Provider value={this.state}>
 				{children}
 			</MovieRatingsContext.Provider>
 		);
 	}
 };
-
-MovieRatingsStore.contextType = MovieSearchContext;
 
 export {
 	MovieRatingsContext as default,

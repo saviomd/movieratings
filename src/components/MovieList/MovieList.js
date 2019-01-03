@@ -40,14 +40,14 @@ const MovieList = ({ type }) => (
 		{type === 'Diary' && (
 			<MovieDiaryConsumer>
 				{({
+					getMovieDiaryFiltered,
+					getMovieDiaryPaginated,
 					increaseMovieDiaryPage,
-					movieDiaryFiltered,
-					movieDiaryPaginated,
 					movieDiaryStatus,
 				}) => renderMovieList({
 					increasePage: increaseMovieDiaryPage,
-					moviesFiltered: movieDiaryFiltered,
-					moviesPaginated: movieDiaryPaginated,
+					moviesFiltered: getMovieDiaryFiltered(),
+					moviesPaginated: getMovieDiaryPaginated(),
 					moviesStatus: movieDiaryStatus,
 					type,
 				})}
@@ -56,14 +56,14 @@ const MovieList = ({ type }) => (
 		{type === 'Ratings' && (
 			<MovieRatingsConsumer>
 				{({
+					getMovieRatingsFiltered,
+					getMovieRatingsPaginated,
 					increaseMovieRatingsPage,
-					movieRatingsFiltered,
-					movieRatingsPaginated,
 					movieRatingsStatus,
 				}) => renderMovieList({
 					increasePage: increaseMovieRatingsPage,
-					moviesFiltered: movieRatingsFiltered,
-					moviesPaginated: movieRatingsPaginated,
+					moviesFiltered: getMovieRatingsFiltered(),
+					moviesPaginated: getMovieRatingsPaginated(),
 					moviesStatus: movieRatingsStatus,
 					type,
 				})}
