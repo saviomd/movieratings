@@ -6,8 +6,8 @@ import MockWrapper from '../MockWrapper';
 import MovieList from './MovieList';
 import MovieDiaryContext from '../../contexts/movieDiaryContext';
 import MovieRatingsContext from '../../contexts/movieRatingsContext';
-import movieDiary from '../../../__mocks__/movieDiary';
-import movieRatings from '../../../__mocks__/movieRatings';
+import movieDiaryMock from '../../../__mocks__/movieDiaryMock';
+import movieRatingsMock from '../../../__mocks__/movieRatingsMock';
 
 storiesOf('MovieList', module)
   .addDecorator(story => (
@@ -15,9 +15,9 @@ storiesOf('MovieList', module)
   ))
   .add('movieDiary', () => (
     <MovieDiaryContext.Provider value={{
-      movieDiaryFiltered: movieDiary.movieDiary,
-      movieDiaryPaginated: movieDiary.movieDiary,
-      movieDiaryStatus: movieDiary.movieDiaryStatus,
+      movieDiaryFiltered: movieDiaryMock.movieDiary,
+      movieDiaryPaginated: movieDiaryMock.movieDiary,
+      movieDiaryStatus: movieDiaryMock.movieDiaryStatus,
     }}>
       <MockWrapper>
         <MovieList type="Diary" />
@@ -26,9 +26,9 @@ storiesOf('MovieList', module)
   ))
   .add('movieRatings', () => (
     <MovieRatingsContext.Provider value={{
-      movieRatingsFiltered: movieRatings.movieRatings,
-      movieRatingsPaginated: movieRatings.movieRatings,
-      movieRatingsStatus: movieRatings.movieRatingsStatus,
+      movieRatingsFiltered: movieRatingsMock.movieRatings,
+      movieRatingsPaginated: movieRatingsMock.movieRatings,
+      movieRatingsStatus: movieRatingsMock.movieRatingsStatus,
     }}>
       <MockWrapper>
         <MovieList type="Ratings" />
