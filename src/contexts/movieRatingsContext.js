@@ -6,8 +6,6 @@ import { fetchMovieRatings } from '../helpers/movieRatingsServices';
 
 const MovieRatingsContext = React.createContext();
 
-const MovieRatingsConsumer = MovieRatingsContext.Consumer;
-
 class MovieRatingsStore extends React.Component {
 	constructor(props) {
 		super(props)
@@ -19,17 +17,17 @@ class MovieRatingsStore extends React.Component {
 			increaseMovieRatingsPage: this.increaseMovieRatingsPage.bind(this),
 			movieRatings: [],
 			movieRatingsPage: 1,
+			movieRatingsSearchString: '',
 			movieRatingsStatus: '',
-			movieSearchString: '',
-			setMovieSearchString: this.setMovieSearchString.bind(this),
+			setMovieRatingsSearchString: this.setMovieRatingsSearchString.bind(this),
 		}
 	}
 	componentDidMount() {
 		this.loadMovieRatings();
 	}
 	getMovieRatingsFiltered() {
-		const { movieRatings, movieSearchString } = this.state;
-		return filterMoviesByName(movieRatings, movieSearchString);
+		const { movieRatings, movieRatingsSearchString } = this.state;
+		return filterMoviesByName(movieRatings, movieRatingsSearchString);
 	}
 	getMovieRatingsPaginated() {
 		const { movieRatingsPage } = this.state;
@@ -77,10 +75,10 @@ class MovieRatingsStore extends React.Component {
 				console.log(error.message);
 			});
 	}
-	setMovieSearchString(value) {
+	setMovieRatingsSearchString(value) {
 		value.trim().toLowerCase();
 		this.setState({
-			movieSearchString: value,
+			movieRatingsSearchString: value,
 		});
 	}
 	render() {
@@ -95,6 +93,5 @@ class MovieRatingsStore extends React.Component {
 
 export {
 	MovieRatingsContext as default,
-	MovieRatingsConsumer,
 	MovieRatingsStore,
 };

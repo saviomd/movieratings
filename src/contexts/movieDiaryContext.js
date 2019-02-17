@@ -6,8 +6,6 @@ import { fetchMovieDiary } from '../helpers/movieDiaryServices';
 
 const MovieDiaryContext = React.createContext();
 
-const MovieDiaryConsumer = MovieDiaryContext.Consumer;
-
 class MovieDiaryStore extends React.Component {
 	constructor(props) {
 		super(props)
@@ -18,17 +16,17 @@ class MovieDiaryStore extends React.Component {
 			increaseMovieDiaryPage: this.increaseMovieDiaryPage.bind(this),
 			movieDiary: [],
 			movieDiaryPage: 1,
+			movieDiarySearchString: '',
 			movieDiaryStatus: '',
-			movieSearchString: '',
-			setMovieSearchString: this.setMovieSearchString.bind(this),
+			setMovieDiarySearchString: this.setMovieDiarySearchString.bind(this),
 		}
 	}
 	componentDidMount() {
 		this.loadMovieDiary();
 	}
 	getMovieDiaryFiltered() {
-		const { movieDiary, movieSearchString } = this.state;
-		return filterMoviesByName(movieDiary, movieSearchString);
+		const { movieDiary, movieDiarySearchString } = this.state;
+		return filterMoviesByName(movieDiary, movieDiarySearchString);
 	}
 	getMovieDiaryPaginated() {
 		const { movieDiaryPage } = this.state;
@@ -64,10 +62,10 @@ class MovieDiaryStore extends React.Component {
 				console.log(error.message);
 			});
 	}
-	setMovieSearchString(value) {
+	setMovieDiarySearchString(value) {
 		value.trim().toLowerCase();
 		this.setState({
-			movieSearchString: value,
+			movieDiarySearchString: value,
 		});
 	}
 	render() {
@@ -82,6 +80,5 @@ class MovieDiaryStore extends React.Component {
 
 export {
 	MovieDiaryContext as default,
-	MovieDiaryConsumer,
 	MovieDiaryStore,
 };

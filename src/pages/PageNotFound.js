@@ -2,7 +2,7 @@ import React from 'react';
 
 import Message from '../components/Message';
 
-const PageNotFound = ({ messages }) => (
+const PageNotFound = () => (
 	<Message type="pageNotFound" />
 )
 

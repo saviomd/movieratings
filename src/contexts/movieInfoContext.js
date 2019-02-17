@@ -5,8 +5,6 @@ import tmdbApi from '../helpers/tmdbApi';
 
 const MovieInfoContext = React.createContext();
 
-const MovieInfoConsumer = MovieInfoContext.Consumer;
-
 class MovieInfoStore extends React.Component {
 	constructor(props) {
 		super(props)
@@ -78,6 +76,5 @@ class MovieInfoStore extends React.Component {
 
 export {
 	MovieInfoContext as default,
-	MovieInfoConsumer,
 	MovieInfoStore,
 };

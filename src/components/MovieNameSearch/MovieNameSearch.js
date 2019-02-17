@@ -1,52 +1,58 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
-import { MovieDiaryConsumer } from '../../contexts/movieDiaryContext';
-import { MovieRatingsConsumer } from '../../contexts/movieRatingsContext';
+import movieDiaryContext from '../../contexts/movieDiaryContext';
+import movieRatingsContext from '../../contexts/movieRatingsContext';
 
-const renderMovieNameSearch = ({ movieSearchString, moviesFiltered, setMovieSearchString }) => (
-	<div className="mb-3">
-		<div className="input-group input-group-sm mb-1">
-			<input id="search-movie" className="form-control" placeholder="Search..." type="text" value={movieSearchString} onChange={(event) => setMovieSearchString(event.target.value)} />
-			<span className="input-group-append">
-				<button className="btn btn-secondary" type="button" onClick={() => setMovieSearchString('')}>
-					<FontAwesomeIcon icon="times" />
-				</button>
-			</span>
+const MovieNameSearch = ({ type }) => {
+	const [state, setState] = useState({
+		movieSearchString: '',
+		moviesFiltered: [],
+		setMovieSearchString: null,
+	});
+	const {
+		getMovieDiaryFiltered,
+		movieDiarySearchString,
+		setMovieDiarySearchString,
+	} = useContext(movieDiaryContext);
+	const {
+		getMovieRatingsFiltered,
+		movieRatingsSearchString,
+		setMovieRatingsSearchString,
+	} = useContext(movieRatingsContext);
+	useEffect(() => {
+		if (type === 'Diary') {
+			setState({
+				movieSearchString: movieDiarySearchString,
+				moviesFiltered: getMovieDiaryFiltered(),
+				setMovieSearchString: setMovieDiarySearchString,
+			});
+		} else if (type === 'Ratings') {
+			setState({
+				movieSearchString: movieRatingsSearchString,
+				moviesFiltered: getMovieRatingsFiltered(),
+				setMovieSearchString: setMovieRatingsSearchString,
+			});
+		};
+	}, [movieDiarySearchString, movieRatingsSearchString, type]);
+	const {
+		movieSearchString,
+		moviesFiltered,
+		setMovieSearchString,
+	} = state;
+	return (
+		<div className="mb-3">
+			<div className="input-group input-group-sm mb-1">
+				<input id="search-movie" className="form-control" placeholder="Search..." type="text" value={movieSearchString} onChange={(event) => setMovieSearchString(event.target.value)} />
+				<span className="input-group-append">
+					<button className="btn btn-secondary" type="button" onClick={() => setMovieSearchString('')}>
+						<FontAwesomeIcon icon="times" />
+					</button>
+				</span>
+			</div>
+			<p className="small text-right">{moviesFiltered.length} movies</p>
 		</div>
-		<p className="small text-right">{moviesFiltered.length} movies</p>
-	</div>
-);
-
-const MovieNameSearch = ({ type }) => (
-	<>
-		{type === 'Diary' && (
-			<MovieDiaryConsumer>
-				{({
-					getMovieDiaryFiltered,
-					movieSearchString,
-					setMovieSearchString,
-				}) => renderMovieNameSearch({
-					movieSearchString,
-					moviesFiltered: getMovieDiaryFiltered(),
-					setMovieSearchString,
-				})}
-			</MovieDiaryConsumer>
-		)}
-		{type === 'Ratings' && (
-			<MovieRatingsConsumer>
-				{({
-					getMovieRatingsFiltered,
-					movieSearchString,
-					setMovieSearchString,
-				}) => renderMovieNameSearch({
-					movieSearchString,
-					moviesFiltered: getMovieRatingsFiltered(),
-					setMovieSearchString,
-				})}
-			</MovieRatingsConsumer>
-		)}
-	</>
-);
+	);
+};
 
 export default MovieNameSearch;

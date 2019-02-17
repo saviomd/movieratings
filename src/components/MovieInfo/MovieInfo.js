@@ -1,33 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { MovieInfoConsumer } from '../../contexts/movieInfoContext';
+import movieInfoContext from '../../contexts/movieInfoContext';
 import MovieInfoBody from './MovieInfoBody';
 import MovieInfoHeader from './MovieInfoHeader';
 import Message from '../Message';
 
-const MovieInfo = () => (
-	<MovieInfoConsumer>
-		{({ movieInfo, movieInfoStatus }) => {
-			let html;
-			if (movieInfoStatus === 'loaded' && movieInfo.id !== '') {
-				html = (
-					<div className="border border-secondary mb-3 rounded">
-						<MovieInfoHeader />
-						<MovieInfoBody />
-					</div>
-				);
-			} else if (movieInfoStatus === 'loading') {
-				html = (
-					<Message type='loading' />
-				);
-			} else if (movieInfoStatus === 'error') {
-				html = (
-					<Message type='error' />
-				);
-			}
-			return html;
-		}}
-	</MovieInfoConsumer>
-);
+const MovieInfo = () => {
+	const { movieInfo, movieInfoStatus } = useContext(movieInfoContext);
+	return (
+		<>
+			{(movieInfoStatus === 'loaded' && movieInfo.id !== '') && (
+				<div className="border border-secondary mb-3 rounded">
+					<MovieInfoHeader />
+					<MovieInfoBody />
+				</div>
+			)}
+			{(movieInfoStatus === 'loading' || movieInfoStatus === 'error') && (
+				<Message type={movieInfoStatus} />
+			)}
+		</>
+	);
+};
 
 export default MovieInfo;
