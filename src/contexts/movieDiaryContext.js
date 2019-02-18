@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
 import formatMovieList from '../helpers/formatMovieList';
@@ -6,35 +6,27 @@ import { fetchMovieDiary } from '../helpers/movieDiaryServices';
 
 const MovieDiaryContext = React.createContext();
 
-class MovieDiaryStore extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			getMovieDiaryFiltered: this.getMovieDiaryFiltered.bind(this),
-			getMovieDiaryPaginated: this.getMovieDiaryPaginated.bind(this),
-			getMoviesPerYearWatched: this.getMoviesPerYearWatched.bind(this),
-			increaseMovieDiaryPage: this.increaseMovieDiaryPage.bind(this),
-			movieDiary: [],
-			movieDiaryPage: 1,
-			movieDiarySearchString: '',
-			movieDiaryStatus: '',
-			setMovieDiarySearchString: this.setMovieDiarySearchString.bind(this),
-		}
-	}
-	componentDidMount() {
-		this.loadMovieDiary();
-	}
-	getMovieDiaryFiltered() {
-		const { movieDiary, movieDiarySearchString } = this.state;
+const MovieDiaryStore = ({ children }) => {
+	const [state, setState] = useState({
+		movieDiary: [],
+		movieDiaryPage: 1,
+		movieDiarySearchString: '',
+		movieDiaryStatus: '',
+	});
+
+	function getMovieDiaryFiltered() {
+		const { movieDiary, movieDiarySearchString } = state;
 		return filterMoviesByName(movieDiary, movieDiarySearchString);
 	}
-	getMovieDiaryPaginated() {
-		const { movieDiaryPage } = this.state;
+
+	function getMovieDiaryPaginated() {
+		const { movieDiaryPage } = state;
 		const size = movieDiaryPage * 100;
-		return this.getMovieDiaryFiltered().slice(0, size);
+		return getMovieDiaryFiltered().slice(0, size);
 	}
-	getMoviesPerYearWatched() {
-		const groups = this.state.movieDiary.reduce((acc, curr) => {
+
+	function getMoviesPerYearWatched() {
+		const groups = state.movieDiary.reduce((acc, curr) => {
 			const year = curr.WatchedDate.split('-')[0];
 			acc[year] ? acc[year]++ : acc[year] = 1;
 			return acc;
@@ -45,37 +37,63 @@ class MovieDiaryStore extends React.Component {
 		}
 		return { groups, max };
 	}
-	increaseMovieDiaryPage() {
-		const { movieDiaryPage } = this.state;
-		this.setState({ movieDiaryPage: movieDiaryPage + 1 });
+
+	function increaseMovieDiaryPage() {
+		const { movieDiaryPage } = state;
+		setState(prevState => ({
+			...prevState,
+			movieDiaryPage: movieDiaryPage + 1,
+		}));
 	}
-	loadMovieDiary() {
-		this.setState({ movieDiaryStatus: 'loading' });
+
+	function loadMovieDiary() {
+		setState(prevState => ({
+			...prevState,
+			movieDiaryStatus: 'loading',
+		}));
 		return fetchMovieDiary()
 			.then(json => {
 				const movieDiaryFormatted = formatMovieList(json);
-				this.setState({ movieDiary: movieDiaryFormatted, movieDiaryStatus: 'loaded' });
+				setState(prevState => ({
+					...prevState,
+					movieDiary: movieDiaryFormatted,
+					movieDiaryStatus: 'loaded',
+				}));
 				return movieDiaryFormatted;
 			})
 			.catch((error) => {
-				this.setState({ movieDiaryStatus: 'error' });
+				setState(prevState => ({
+					...prevState,
+					movieDiaryStatus: 'error',
+				}));
 				console.log(error.message);
 			});
 	}
-	setMovieDiarySearchString(value) {
+
+	function setMovieDiarySearchString(value) {
 		value.trim().toLowerCase();
-		this.setState({
+		setState(prevState => ({
+			...prevState,
 			movieDiarySearchString: value,
-		});
+		}));
 	}
-	render() {
-		const { children } = this.props;
-		return (
-			<MovieDiaryContext.Provider value={this.state}>
-				{children}
-			</MovieDiaryContext.Provider>
-		);
-	}
+
+	useEffect(() => {
+		loadMovieDiary();
+	}, []);
+
+	return (
+		<MovieDiaryContext.Provider value={{
+			...state,
+			getMovieDiaryFiltered,
+			getMovieDiaryPaginated,
+			getMoviesPerYearWatched,
+			increaseMovieDiaryPage,
+			setMovieDiarySearchString,
+		}}>
+			{children}
+		</MovieDiaryContext.Provider>
+	);
 };
 
 export {

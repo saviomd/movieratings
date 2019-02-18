@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCalendarAlt, faChartBar, faDizzy, faFrown, faHourglassHalf, faSadTear, faStar, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -17,53 +17,49 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 library.add(faCalendarAlt, faChartBar, faDizzy, faFrown, faHourglassHalf, faSadTear, faStar, faTimes);
 
-class App extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			navLinks: [
-				{
-					icon: 'star',
-					name: 'Ratings',
-					path: '/'
-				},
-				{
-					icon: 'calendar-alt',
-					name: 'Diary',
-					path: '/diary'
-				},
-				{
-					icon: 'chart-bar',
-					name: 'Stats',
-					path: '/stats'
-				}
-			]
-		}
-	}
-	render () {
-		return (
-			<MovieDiaryStore>
-				<MovieRatingsStore>
-					<div className="container-fluid">
-						<div className="justify-content-center row">
-							<div className="col-12 col-md-10">
-								<Header navLinks={this.state.navLinks} />
-								<Switch>
-									<Route path="/" exact render={() => <PageMovies type='Ratings' />} />
-									<Route path="/diary" render={() => <PageMovies type='Diary' />} />
-									<Route path="/movie/:movieId" render={({ match }) => <PageMovieInfo match={match} />} />
-									<Route path="/stats" render={() => <PageStats />} />
-									<Route component={PageNotFound} />
-								</Switch>
-								<SiteInfo />
-								<Footer />
-							</div>
+const App = () => {
+	const [state] = useState({
+		navLinks: [
+			{
+				icon: 'star',
+				name: 'Ratings',
+				path: '/',
+			},
+			{
+				icon: 'calendar-alt',
+				name: 'Diary',
+				path: '/diary',
+			},
+			{
+				icon: 'chart-bar',
+				name: 'Stats',
+				path: '/stats',
+			},
+		],
+	});
+
+	return (
+		<MovieDiaryStore>
+			<MovieRatingsStore>
+				<div className="container-fluid">
+					<div className="justify-content-center row">
+						<div className="col-12 col-md-10">
+							<Header navLinks={state.navLinks} />
+							<Switch>
+								<Route path="/" exact render={() => <PageMovies type='Ratings' />} />
+								<Route path="/diary" render={() => <PageMovies type='Diary' />} />
+								<Route path="/movie/:movieId" render={({ match }) => <PageMovieInfo match={match} />} />
+								<Route path="/stats" render={() => <PageStats />} />
+								<Route component={PageNotFound} />
+							</Switch>
+							<SiteInfo />
+							<Footer />
 						</div>
 					</div>
-				</MovieRatingsStore>
-			</MovieDiaryStore>
-		)
-	}
-}
+				</div>
+			</MovieRatingsStore>
+		</MovieDiaryStore>
+	);
+};
 
 export default App;

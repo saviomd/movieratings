@@ -1,44 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { fetchMovieInfo } from '../helpers/movieInfoServices';
 import tmdbApi from '../helpers/tmdbApi';
 
 const MovieInfoContext = React.createContext();
 
-class MovieInfoStore extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			movieInfo: {
-				backdrop_url: tmdbApi.img.fallbackUrl,
-				id: '',
-				LetterboxdURI: '',
-				overview: '',
-				poster_url: tmdbApi.img.fallbackUrl,
-				Rating: '',
-				title: '',
-				vote_average: ''
-			},
-			movieInfoStatus: ''
-		}
-	}
-	componentDidMount() {
-		this.loadMovieInfo(this.props.movie);
-	}
-	componentDidUpdate(prevProps) {
-		if (this.props.movie !== prevProps.movie) {
-			this.loadMovieInfo(this.props.movie);
-		}
-	}
-	loadMovieInfo(movie) {
+const MovieInfoStore = ({ children, movie }) => {
+	const [state, setState] = useState({
+		movieInfo: {
+			backdrop_url: tmdbApi.img.fallbackUrl,
+			id: '',
+			LetterboxdURI: '',
+			overview: '',
+			poster_url: tmdbApi.img.fallbackUrl,
+			Rating: '',
+			title: '',
+			vote_average: ''
+		},
+		movieInfoStatus: ''
+	});
+
+	function loadMovieInfo(movie) {
 		if (movie !== undefined) {
-			this.setState({ movieInfoStatus: 'loading' });
+			setState(prevState => ({
+				...prevState,
+				movieInfoStatus: 'loading',
+			}));
 			fetchMovieInfo(movie)
 				.then((json) => {
 					if (json.results.length) {
 						const newMovie = json.results.find(obj => (obj.title === movie.Name && obj.release_date.indexOf(movie.Year) > -1));
 						if (newMovie !== undefined) {
-							this.setState({
+							setState(prevState => ({
+								...prevState,
 								movieInfoStatus: 'loaded',
 								movieInfo: {
 									backdrop_url: tmdbApi.img.baseUrl + tmdbApi.img.backdropSize + newMovie.backdrop_path,
@@ -50,7 +44,7 @@ class MovieInfoStore extends React.Component {
 									title: newMovie.title,
 									vote_average: newMovie.vote_average
 								}
-							});
+							}));
 						} else {
 							throw Error('No movie found');
 						}
@@ -59,19 +53,24 @@ class MovieInfoStore extends React.Component {
 					}
 				})
 				.catch((error) => {
-					this.setState({ movieInfoStatus: 'error' });
+					setState(prevState => ({
+						...prevState,
+						movieInfoStatus: 'error',
+					}));
 					console.log(error.message);
 				});
 		}
 	}
-	render() {
-		const { children } = this.props;
-		return (
-			<MovieInfoContext.Provider value={this.state}>
-				{children}
-			</MovieInfoContext.Provider>
-		);
-	}
+
+	useEffect(() => {
+		loadMovieInfo(movie);
+	}, [movie]);
+
+	return (
+		<MovieInfoContext.Provider value={state}>
+			{children}
+		</MovieInfoContext.Provider>
+	);
 };
 
 export {

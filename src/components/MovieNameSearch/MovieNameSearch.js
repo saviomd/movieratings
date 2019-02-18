@@ -13,28 +13,38 @@ const MovieNameSearch = ({ type }) => {
 	const {
 		getMovieDiaryFiltered,
 		movieDiarySearchString,
+		movieDiaryStatus,
 		setMovieDiarySearchString,
 	} = useContext(movieDiaryContext);
 	const {
 		getMovieRatingsFiltered,
 		movieRatingsSearchString,
+		movieRatingsStatus,
 		setMovieRatingsSearchString,
 	} = useContext(movieRatingsContext);
 	useEffect(() => {
 		if (type === 'Diary') {
-			setState({
+			setState(prevState => ({
+				...prevState,
 				movieSearchString: movieDiarySearchString,
 				moviesFiltered: getMovieDiaryFiltered(),
 				setMovieSearchString: setMovieDiarySearchString,
-			});
+			}));
 		} else if (type === 'Ratings') {
-			setState({
+			setState(prevState => ({
+				...prevState,
 				movieSearchString: movieRatingsSearchString,
 				moviesFiltered: getMovieRatingsFiltered(),
 				setMovieSearchString: setMovieRatingsSearchString,
-			});
+			}));
 		};
-	}, [movieDiarySearchString, movieRatingsSearchString, type]);
+	}, [
+		movieDiarySearchString,
+		movieDiaryStatus,
+		movieRatingsSearchString,
+		movieRatingsStatus,
+		type,
+	]);
 	const {
 		movieSearchString,
 		moviesFiltered,
