@@ -2403,7 +2403,7 @@
   {
     "Date": "2013-04-26",
     "Name": "Brick",
-    "Year": 2005,
+    "Year": 2006,
     "LetterboxdURI": "https://letterboxd.com/film/brick/",
     "Rating": 4
   },
@@ -3922,7 +3922,7 @@
   {
     "Date": "2013-05-13",
     "Name": "V for Vendetta",
-    "Year": 2005,
+    "Year": 2006,
     "LetterboxdURI": "https://letterboxd.com/film/v-for-vendetta/",
     "Rating": 4
   },
@@ -5552,9 +5552,9 @@
   },
   {
     "Date": "2013-05-15",
-    "Name": "Police Story 3: Supercop",
+    "Name": "Supercop",
     "Year": 1992,
-    "LetterboxdURI": "https://letterboxd.com/film/police-story-3-supercop/",
+    "LetterboxdURI": "https://letterboxd.com/film/supercop/",
     "Rating": 4
   },
   {
@@ -7715,9 +7715,9 @@
   },
   {
     "Date": "2014-09-08",
-    "Name": "Catwoman: Chase Me",
+    "Name": "Chase Me",
     "Year": 2003,
-    "LetterboxdURI": "https://letterboxd.com/film/catwoman-chase-me/",
+    "LetterboxdURI": "https://letterboxd.com/film/chase-me-2003/",
     "Rating": 4
   },
   {
@@ -7751,7 +7751,7 @@
   {
     "Date": "2014-09-30",
     "Name": "The Grey",
-    "Year": 2011,
+    "Year": 2012,
     "LetterboxdURI": "https://letterboxd.com/film/the-grey/",
     "Rating": 4
   },
@@ -8030,9 +8030,9 @@
   },
   {
     "Date": "2015-04-19",
-    "Name": "Batman Beyond Darwyn Cooke's Batman 75th Anniversary Short",
+    "Name": "Batman Beyond",
     "Year": 2014,
-    "LetterboxdURI": "https://letterboxd.com/film/batman-beyond-darwyn-cookes-batman-75th-anniversary-short/",
+    "LetterboxdURI": "https://letterboxd.com/film/batman-beyond/",
     "Rating": 4
   },
   {
@@ -8053,7 +8053,7 @@
     "Date": "2015-05-12",
     "Name": "Bruce Springsteen: Springsteen & I",
     "Year": 2013,
-    "LetterboxdURI": "https://letterboxd.com/film/bruce-springsteen-springsteen-i/",
+    "LetterboxdURI": "",
     "Rating": 4
   },
   {
@@ -8653,9 +8653,9 @@
   },
   {
     "Date": "2016-09-30",
-    "Name": "Superman 75",
+    "Name": "Superman 75th Anniversary",
     "Year": 2013,
-    "LetterboxdURI": "https://letterboxd.com/film/superman-75/",
+    "LetterboxdURI": "https://letterboxd.com/film/superman-75th-anniversary/",
     "Rating": 4
   },
   {
@@ -9794,7 +9794,7 @@
   },
   {
     "Date": "2018-11-11",
-    "Name": "Yellow Is the New Black",
+    "Name": "Yellow is the New Black",
     "Year": 2018,
     "LetterboxdURI": "https://letterboxd.com/film/yellow-is-the-new-black/",
     "Rating": 3
@@ -9861,5 +9861,117 @@
     "Year": 2018,
     "LetterboxdURI": "https://letterboxd.com/film/springsteen-on-broadway/",
     "Rating": 5
+  },
+  {
+    "Date": "2019-01-04",
+    "Name": "Uma Loucura de Mulher",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/uma-loucura-de-mulher/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-01-06",
+    "Name": "BlacKkKlansman",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/blackkklansman/",
+    "Rating": 5
+  },
+  {
+    "Date": "2019-01-11",
+    "Name": "The Boss",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/the-boss-2016/",
+    "Rating": 2
+  },
+  {
+    "Date": "2019-01-13",
+    "Name": "Spider-Man: Into the Spider-Verse",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/spider-man-into-the-spider-verse/",
+    "Rating": 5
+  },
+  {
+    "Date": "2019-01-20",
+    "Name": "Batman Ninja",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/batman-ninja/",
+    "Rating": 3
+  },
+  {
+    "Date": "2019-01-20",
+    "Name": "13 Going on 30",
+    "Year": 2004,
+    "LetterboxdURI": "https://letterboxd.com/film/13-going-on-30/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-01-21",
+    "Name": "Can't Buy Me Love",
+    "Year": 1987,
+    "LetterboxdURI": "https://letterboxd.com/film/cant-buy-me-love/",
+    "Rating": 3
+  },
+  {
+    "Date": "2019-02-03",
+    "Name": "Big Eyes",
+    "Year": 2014,
+    "LetterboxdURI": "https://letterboxd.com/film/big-eyes/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-02-05",
+    "Name": "Spotlight",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/film/spotlight/",
+    "Rating": 5
+  },
+  {
+    "Date": "2019-02-08",
+    "Name": "Bird Box",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/bird-box/",
+    "Rating": 3
+  },
+  {
+    "Date": "2019-02-10",
+    "Name": "The Wedding Singer",
+    "Year": 1998,
+    "LetterboxdURI": "https://letterboxd.com/film/the-wedding-singer/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-02-10",
+    "Name": "White House Down",
+    "Year": 2013,
+    "LetterboxdURI": "https://letterboxd.com/film/white-house-down/",
+    "Rating": 3
+  },
+  {
+    "Date": "2019-02-13",
+    "Name": "Room",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/film/room-2015/",
+    "Rating": 5
+  },
+  {
+    "Date": "2019-02-17",
+    "Name": "Big",
+    "Year": 1988,
+    "LetterboxdURI": "https://letterboxd.com/film/big/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-02-17",
+    "Name": "The Favourite",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/the-favourite/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-02-18",
+    "Name": "Ken Jeong: You Complete Me, Ho",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/ken-jeong-you-complete-me-ho/",
+    "Rating": 3
   }
 ]

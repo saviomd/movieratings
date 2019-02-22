@@ -49,7 +49,7 @@ const App = () => {
 								<Route path="/" exact render={() => <PageMovies type='Ratings' />} />
 								<Route path="/diary" render={() => <PageMovies type='Diary' />} />
 								<Route path="/movie/:movieId" render={({ match }) => <PageMovieInfo match={match} />} />
-								<Route path="/stats" render={() => <PageStats />} />
+								<Route path="/stats" component={PageStats} />
 								<Route component={PageNotFound} />
 							</Switch>
 							<SiteInfo />

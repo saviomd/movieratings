@@ -6,13 +6,15 @@ import { fetchMovieDiary } from '../helpers/movieDiaryServices';
 
 const MovieDiaryContext = React.createContext();
 
+const initialState = {
+	movieDiary: [],
+	movieDiaryPage: 1,
+	movieDiarySearchString: '',
+	movieDiaryStatus: '',
+};
+
 const MovieDiaryStore = ({ children }) => {
-	const [state, setState] = useState({
-		movieDiary: [],
-		movieDiaryPage: 1,
-		movieDiarySearchString: '',
-		movieDiaryStatus: '',
-	});
+	const [state, setState] = useState(initialState);
 
 	function getMovieDiaryFiltered() {
 		const { movieDiary, movieDiarySearchString } = state;

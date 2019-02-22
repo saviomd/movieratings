@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { memo } from 'react';
 
 import Message from '../Message';
 import ProgressBar from '../ProgressBar';
 
-const MovieStats = ({ getMovies, moviesStatus, type }) => {
+const MovieStats = memo(function MovieStats({ getMovies, moviesStatus, type }) {
 	const movies = getMovies();
 	let stats = [];
 	if (moviesStatus === 'loading' || moviesStatus === 'error') {
@@ -38,7 +38,7 @@ const MovieStats = ({ getMovies, moviesStatus, type }) => {
 		stats.push(<Message key="noStats" type="noStats" />);
 	}
 	return stats;
-};
+});
 
 MovieStats.propTypes = {
 	getMovies: PropTypes.func.isRequired,

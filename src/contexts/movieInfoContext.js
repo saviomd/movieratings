@@ -5,20 +5,22 @@ import tmdbApi from '../helpers/tmdbApi';
 
 const MovieInfoContext = React.createContext();
 
+const initialState = {
+	movieInfo: {
+		backdrop_url: tmdbApi.img.fallbackUrl,
+		id: '',
+		LetterboxdURI: '',
+		overview: '',
+		poster_url: tmdbApi.img.fallbackUrl,
+		Rating: '',
+		title: '',
+		vote_average: ''
+	},
+	movieInfoStatus: ''
+};
+
 const MovieInfoStore = ({ children, movie }) => {
-	const [state, setState] = useState({
-		movieInfo: {
-			backdrop_url: tmdbApi.img.fallbackUrl,
-			id: '',
-			LetterboxdURI: '',
-			overview: '',
-			poster_url: tmdbApi.img.fallbackUrl,
-			Rating: '',
-			title: '',
-			vote_average: ''
-		},
-		movieInfoStatus: ''
-	});
+	const [state, setState] = useState(initialState);
 
 	function loadMovieInfo(movie) {
 		if (movie !== undefined) {

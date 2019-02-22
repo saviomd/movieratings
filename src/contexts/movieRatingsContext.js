@@ -6,13 +6,15 @@ import { fetchMovieRatings } from '../helpers/movieRatingsServices';
 
 const MovieRatingsContext = React.createContext();
 
+const initialState = {
+	movieRatings: [],
+	movieRatingsPage: 1,
+	movieRatingsSearchString: '',
+	movieRatingsStatus: '',
+};
+
 const MovieRatingsStore = ({ children }) => {
-	const [state, setState] = useState({
-		movieRatings: [],
-		movieRatingsPage: 1,
-		movieRatingsSearchString: '',
-		movieRatingsStatus: '',
-	});
+	const [state, setState] = useState(initialState);
 
 	function getMovieRatingsFiltered() {
 		const { movieRatings, movieRatingsSearchString } = state;

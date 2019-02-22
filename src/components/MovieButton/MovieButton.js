@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 
-const MovieButton = ({ movie, type }) => {
+const MovieButton = memo(function MovieButton({ movie, type }) {
 	let dateText;
 	if (type === 'Diary') {
 		dateText = `watched in ${movie.WatchedDateFormatted}`;
@@ -30,7 +30,7 @@ const MovieButton = ({ movie, type }) => {
 			</div>
 		</Link>
 	)
-}
+});
 
 MovieButton.propTypes = {
 	movie: PropTypes.shape({

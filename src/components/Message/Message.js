@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { memo } from 'react';
 
-const Message = ({ type }) => {
+const Message = memo(function Message({ type }) {
 	const messages = {
 		error: {
 			icon: 'sad-tear',
@@ -35,7 +35,7 @@ const Message = ({ type }) => {
 			{messages[type].text}
 		</div>
 	);
-};
+});
 
 Message.propTypes = {
 	type: PropTypes.string.isRequired

@@ -15,7 +15,7 @@ const Header = ({ navLinks }) => (
 			</div>
 		</div>
 	</header>
-)
+);
 
 Header.propTypes = {
 	navLinks: PropTypes.array.isRequired
