@@ -12,6 +12,10 @@ const Message = memo(function Message({ type }) {
 			icon: 'hourglass-half',
 			text: 'Loading...'
 		},
+		noData: {
+			icon: 'frown',
+			text: 'No data to show'
+		},
 		noMovies: {
 			icon: 'frown',
 			text: 'No movies to show'

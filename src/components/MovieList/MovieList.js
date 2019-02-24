@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { memo, useContext, useEffect, useState } from 'react';
 
 import movieDiaryContext from '../../contexts/movieDiaryContext';
 import movieRatingsContext from '../../contexts/movieRatingsContext';
+import LoadingHandler from '../LoadingHandler';
 import MovieButton from '../MovieButton';
-import Message from '../Message';
 
-const MovieList = ({ type }) => {
+const MovieList = memo(function MovieList ({ type }) {
 	const [state, setState] = useState({
 		increasePage: null,
 		moviesFiltered: [],
@@ -29,6 +29,7 @@ const MovieList = ({ type }) => {
 		movieRatingsSearchString,
 		movieRatingsStatus,
 	} = useContext(movieRatingsContext);
+
 	useEffect(() => {
 		if (type === 'Diary') {
 			setState(prevState => ({
@@ -56,6 +57,7 @@ const MovieList = ({ type }) => {
 		movieRatingsStatus,
 		type,
 	]);
+
 	const {
 		increasePage,
 		moviesFiltered,
@@ -63,30 +65,22 @@ const MovieList = ({ type }) => {
 		moviesStatus,
 	} = state;
 	return (
-		<>
-			{(moviesStatus === 'loaded' && !!moviesFiltered.length) && (
-				<>
-					<ul className="list-unstyled">
-						{moviesPaginated.map(movie => (
-							<li className="mb-3" key={movie.Id}>
-								<MovieButton movie={movie} type={type} />
-							</li>
-						))}
-					</ul>
-					{moviesPaginated.length < moviesFiltered.length && <div className="mb-3 text-center">
-						<button className="btn btn-danger" type="button" onClick={increasePage}>Show more</button>
-					</div>}
-				</>
-			)}
-			{(moviesStatus === 'loaded' && !moviesFiltered.length) && (
-				<Message type="noMovies" />
-			)}
-			{(moviesStatus === 'loading' || moviesStatus === 'error') && (
-				<Message type={moviesStatus} />
-			)}
-		</>
+		<LoadingHandler dataStatus={moviesStatus} hasData={(!!moviesFiltered.length)} messageNoData="noMovies">
+			<>
+				<ul className="list-unstyled">
+					{moviesPaginated.map(movie => (
+						<li className="mb-3" key={movie.Id}>
+							<MovieButton movie={movie} type={type} />
+						</li>
+					))}
+				</ul>
+				{moviesPaginated.length < moviesFiltered.length && <div className="mb-3 text-center">
+					<button className="btn btn-danger" type="button" onClick={increasePage}>Show more</button>
+				</div>}
+			</>
+		</LoadingHandler>
 	);
-};
+});
 
 MovieList.propTypes = {
 	type: PropTypes.string.isRequired

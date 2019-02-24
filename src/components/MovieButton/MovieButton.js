@@ -5,14 +5,10 @@ import { Link } from 'react-router-dom';
 
 const MovieButton = memo(function MovieButton({ movie, type }) {
 	let dateText;
-	if (type === 'Diary') {
+	if (type === 'Diary' && movie.WatchedDateFormatted) {
 		dateText = `watched in ${movie.WatchedDateFormatted}`;
-	} else if (type === 'Ratings') {
+	} else if (type === 'Ratings' && movie.DateFormatted) {
 		dateText = `rated in ${movie.DateFormatted}`;
-	}
-	let stars = [];
-	for (let i = 0; i < movie.Rating; i++) {
-		stars.push(<FontAwesomeIcon key={i} className="mr-1" icon="star" />);
 	}
 	return (
 		<Link className="btn btn-secondary btn-block" to={`/movie/${movie.Id}`}>
@@ -22,14 +18,16 @@ const MovieButton = memo(function MovieButton({ movie, type }) {
 			</div>
 			<div className="align-items-end row small">
 				<div className="col text-left text-warning">
-					{stars}
+					{Array.from(Array(movie.Rating)).map((item, i) => (
+						<FontAwesomeIcon key={i} className="mr-1" icon="star" />
+					))}
 				</div>
 				<div className="col small text-right">
 					{dateText}
 				</div>
 			</div>
 		</Link>
-	)
+	);
 });
 
 MovieButton.propTypes = {

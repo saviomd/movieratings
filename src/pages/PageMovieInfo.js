@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { MovieInfoStore } from '../contexts/movieInfoContext';
 import movieRatingsContext from '../contexts/movieRatingsContext';
-import Message from '../components/Message';
+import LoadingHandler from '../components/LoadingHandler';
 import MovieInfo from '../components/MovieInfo';
 
 const PageMovieInfo = ({ match }) => {
@@ -10,16 +10,11 @@ const PageMovieInfo = ({ match }) => {
 	const { movieId } = match.params;
 	const movie = movieRatings.find((obj) => (obj.Id === movieId));
 	return (
-		<>
-			{movieRatingsStatus === 'loaded' && (
-				<MovieInfoStore movie={movie}>
-					<MovieInfo />
-				</MovieInfoStore>
-			)}
-			{(movieRatingsStatus === 'loading' || movieRatingsStatus === 'error') && (
-				<Message type={movieRatingsStatus} />
-			)}
-		</>
+		<LoadingHandler dataStatus={movieRatingsStatus}>
+			<MovieInfoStore movie={movie}>
+				<MovieInfo />
+			</MovieInfoStore>
+		</LoadingHandler>
 	);
 };
 
