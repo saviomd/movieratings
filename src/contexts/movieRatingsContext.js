@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
 import formatMovieList from '../helpers/formatMovieList';
@@ -97,16 +97,17 @@ const MovieRatingsStore = ({ children }) => {
 		loadMovieRatings();
 	}, []);
 
+	const providerValue = useMemo(() => ({
+		...state,
+		getMovieRatingsFiltered,
+		getMovieRatingsPaginated,
+		getMoviesPerDecadeReleased,
+		getMoviesPerRatingGiven,
+		increaseMovieRatingsPage,
+		setMovieRatingsSearchString,
+	}), [state]);
 	return (
-		<MovieRatingsContext.Provider value={{
-			...state,
-			getMovieRatingsFiltered,
-			getMovieRatingsPaginated,
-			getMoviesPerDecadeReleased,
-			getMoviesPerRatingGiven,
-			increaseMovieRatingsPage,
-			setMovieRatingsSearchString,
-		}}>
+		<MovieRatingsContext.Provider value={providerValue}>
 			{children}
 		</MovieRatingsContext.Provider>
 	);

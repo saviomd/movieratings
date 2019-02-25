@@ -1,8 +1,8 @@
 import React from 'react';
 
-const MockWrapper = (props) => (
+const MockWrapper = ({ children }) => (
   <div className="bg-dark p-3 text-white">
-    {props.children}
+    {children}
   </div>
 );
 

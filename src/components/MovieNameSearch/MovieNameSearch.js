@@ -22,6 +22,7 @@ const MovieNameSearch = ({ type }) => {
 		movieRatingsStatus,
 		setMovieRatingsSearchString,
 	} = useContext(movieRatingsContext);
+
 	useEffect(() => {
 		if (type === 'Diary') {
 			setState(prevState => ({
@@ -45,6 +46,7 @@ const MovieNameSearch = ({ type }) => {
 		movieRatingsStatus,
 		type,
 	]);
+
 	const {
 		movieSearchString,
 		moviesFiltered,

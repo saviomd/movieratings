@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
 import formatMovieList from '../helpers/formatMovieList';
@@ -84,15 +84,16 @@ const MovieDiaryStore = ({ children }) => {
 		loadMovieDiary();
 	}, []);
 
+	const providerValue = useMemo(() => ({
+		...state,
+		getMovieDiaryFiltered,
+		getMovieDiaryPaginated,
+		getMoviesPerYearWatched,
+		increaseMovieDiaryPage,
+		setMovieDiarySearchString,
+	}), [state]);
 	return (
-		<MovieDiaryContext.Provider value={{
-			...state,
-			getMovieDiaryFiltered,
-			getMovieDiaryPaginated,
-			getMoviesPerYearWatched,
-			increaseMovieDiaryPage,
-			setMovieDiarySearchString,
-		}}>
+		<MovieDiaryContext.Provider value={providerValue}>
 			{children}
 		</MovieDiaryContext.Provider>
 	);

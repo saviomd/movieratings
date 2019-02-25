@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import { fetchMovieInfo } from '../helpers/movieInfoServices';
 import tmdbApi from '../helpers/tmdbApi';
@@ -68,8 +68,9 @@ const MovieInfoStore = ({ children, movie }) => {
 		loadMovieInfo(movie);
 	}, [movie]);
 
+	const providerValue = useMemo(() => state, [state]);
 	return (
-		<MovieInfoContext.Provider value={state}>
+		<MovieInfoContext.Provider value={providerValue}>
 			{children}
 		</MovieInfoContext.Provider>
 	);

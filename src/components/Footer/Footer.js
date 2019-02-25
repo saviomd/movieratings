@@ -1,7 +1,7 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 
 const Footer = memo(function Footer () {
-	const year = (new Date()).getFullYear();
+	const year = useMemo(() => (new Date()).getFullYear());
 	return (
 		<footer className="border-secondary border-top mb-3 pt-3 small text-center">
 			&copy; 2017-{year}

@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "a6d3c028027b5f543002",
-    "url": "/movieratings/static/js/main.a6d3c028.chunk.js"
+    "revision": "acdcf38d12e2f244e97e",
+    "url": "/movieratings/static/js/main.acdcf38d.chunk.js"
   },
   {
     "revision": "9d5cda29e4c4acb3df2a",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/movieratings/static/js/2.557b6d7f.chunk.js"
   },
   {
-    "revision": "dbe79f7608bed2da02741235ae8f40f7",
+    "revision": "fadb821a080b4cdedecca0a232c48870",
     "url": "/movieratings/index.html"
   }
 ];
