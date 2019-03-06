@@ -5,8 +5,7 @@ import React, { memo } from 'react';
 import LoadingHandler from '../LoadingHandler';
 import ProgressBar from '../ProgressBar';
 
-const MovieStats = memo(function MovieStats({ getMovies, moviesStatus, type }) {
-	const movies = getMovies();
+const MovieStats = memo(function MovieStats({ movies, moviesStatus, type }) {
 	return (
 		<LoadingHandler dataStatus={moviesStatus} hasData={!!movies.groups} messageNoData="noStats">
 			<ul className="list-unstyled">
@@ -39,7 +38,10 @@ const MovieStats = memo(function MovieStats({ getMovies, moviesStatus, type }) {
 });
 
 MovieStats.propTypes = {
-	getMovies: PropTypes.func.isRequired,
+	movies: PropTypes.shape({
+		groups: PropTypes.object.isRequired,
+		max: PropTypes.number.isRequired
+	}),
 	moviesStatus: PropTypes.string.isRequired,
 	type: PropTypes.string.isRequired
 };

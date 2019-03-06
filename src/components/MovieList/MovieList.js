@@ -14,18 +14,18 @@ const MovieList = memo(function MovieList ({ type }) {
 		moviesStatus: null,
 	});
 	const {
-		getMovieDiaryFiltered,
-		getMovieDiaryPaginated,
 		increaseMovieDiaryPage,
+		movieDiaryFiltered,
 		movieDiaryPage,
+		movieDiaryPaginated,
 		movieDiarySearchString,
 		movieDiaryStatus,
 	} = useContext(movieDiaryContext);
 	const {
-		getMovieRatingsFiltered,
-		getMovieRatingsPaginated,
 		increaseMovieRatingsPage,
+		movieRatingsFiltered,
 		movieRatingsPage,
+		movieRatingsPaginated,
 		movieRatingsSearchString,
 		movieRatingsStatus,
 	} = useContext(movieRatingsContext);
@@ -35,16 +35,16 @@ const MovieList = memo(function MovieList ({ type }) {
 			setState(prevState => ({
 				...prevState,
 				increasePage: increaseMovieDiaryPage,
-				moviesFiltered: getMovieDiaryFiltered(),
-				moviesPaginated: getMovieDiaryPaginated(),
+				moviesFiltered: movieDiaryFiltered,
+				moviesPaginated: movieDiaryPaginated,
 				moviesStatus: movieDiaryStatus,
 			}));
 		} else if (type === 'Ratings') {
 			setState(prevState => ({
 				...prevState,
 				increasePage: increaseMovieRatingsPage,
-				moviesFiltered: getMovieRatingsFiltered(),
-				moviesPaginated: getMovieRatingsPaginated(),
+				moviesFiltered: movieRatingsFiltered,
+				moviesPaginated: movieRatingsPaginated,
 				moviesStatus: movieRatingsStatus,
 			}));
 		}

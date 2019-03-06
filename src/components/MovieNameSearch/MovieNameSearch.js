@@ -11,13 +11,13 @@ const MovieNameSearch = ({ type }) => {
 		setMovieSearchString: null,
 	});
 	const {
-		getMovieDiaryFiltered,
+		movieDiaryFiltered,
 		movieDiarySearchString,
 		movieDiaryStatus,
 		setMovieDiarySearchString,
 	} = useContext(movieDiaryContext);
 	const {
-		getMovieRatingsFiltered,
+		movieRatingsFiltered,
 		movieRatingsSearchString,
 		movieRatingsStatus,
 		setMovieRatingsSearchString,
@@ -28,14 +28,14 @@ const MovieNameSearch = ({ type }) => {
 			setState(prevState => ({
 				...prevState,
 				movieSearchString: movieDiarySearchString,
-				moviesFiltered: getMovieDiaryFiltered(),
+				moviesFiltered: movieDiaryFiltered,
 				setMovieSearchString: setMovieDiarySearchString,
 			}));
 		} else if (type === 'Ratings') {
 			setState(prevState => ({
 				...prevState,
 				movieSearchString: movieRatingsSearchString,
-				moviesFiltered: getMovieRatingsFiltered(),
+				moviesFiltered: movieRatingsFiltered,
 				setMovieSearchString: setMovieRatingsSearchString,
 			}));
 		};

@@ -5,8 +5,8 @@ import movieDiaryContext from '../contexts/movieDiaryContext';
 import movieRatingsContext from '../contexts/movieRatingsContext';
 
 const PageStats = () => {
-	const { getMoviesPerYearWatched, movieDiaryStatus } = useContext(movieDiaryContext);
-	const { getMoviesPerDecadeReleased, getMoviesPerRatingGiven, movieRatingsStatus } = useContext(movieRatingsContext);
+	const { moviesPerYearWatched, movieDiaryStatus } = useContext(movieDiaryContext);
+	const { moviesPerDecadeReleased, moviesPerRatingGiven, movieRatingsStatus } = useContext(movieRatingsContext);
 	return (
 		<>
 			<h1 className="h4">Stats</h1>
@@ -15,7 +15,7 @@ const PageStats = () => {
 					<div className="border border-secondary p-3 rounded">
 						<h1 className="h5">Per year watched</h1>
 						<MovieStats
-							getMovies={getMoviesPerYearWatched}
+							movies={moviesPerYearWatched}
 							moviesStatus={movieDiaryStatus}
 							type="moviesPerYearWatched"
 						/>
@@ -25,7 +25,7 @@ const PageStats = () => {
 					<div className="border border-secondary p-3 rounded">
 						<h1 className="h5">Per rating given</h1>
 						<MovieStats
-							getMovies={getMoviesPerRatingGiven}
+							movies={moviesPerRatingGiven}
 							moviesStatus={movieRatingsStatus}
 							type="moviesPerRatingGiven"
 						/>
@@ -35,7 +35,7 @@ const PageStats = () => {
 					<div className="border border-secondary p-3 rounded">
 						<h1 className="h5">Per decade released</h1>
 						<MovieStats
-							getMovies={getMoviesPerDecadeReleased}
+							movies={moviesPerDecadeReleased}
 							moviesStatus={movieRatingsStatus}
 							type="moviesPerDecadeReleased"
 						/>

@@ -16,18 +16,18 @@ const initialState = {
 const MovieDiaryStore = ({ children }) => {
 	const [state, setState] = useState(initialState);
 
-	function getMovieDiaryFiltered() {
+	const movieDiaryFiltered = useMemo(() => {
 		const { movieDiary, movieDiarySearchString } = state;
 		return filterMoviesByName(movieDiary, movieDiarySearchString);
-	}
+	}, [state.movieDiary, state.movieDiarySearchString]);
 
-	function getMovieDiaryPaginated() {
+	const movieDiaryPaginated = useMemo(() => {
 		const { movieDiaryPage } = state;
 		const size = movieDiaryPage * 100;
-		return getMovieDiaryFiltered().slice(0, size);
-	}
+		return movieDiaryFiltered.slice(0, size);
+	}, [movieDiaryFiltered, state.movieDiaryPage]);
 
-	function getMoviesPerYearWatched() {
+	const moviesPerYearWatched = useMemo(() => {
 		const groups = state.movieDiary.reduce((acc, curr) => {
 			const year = curr.WatchedDate.split('-')[0];
 			acc[year] ? acc[year]++ : acc[year] = 1;
@@ -38,7 +38,7 @@ const MovieDiaryStore = ({ children }) => {
 			max = (groups[year] > max ? groups[year] : max);
 		}
 		return { groups, max };
-	}
+	}, [state.movieDiary]);
 
 	function increaseMovieDiaryPage() {
 		const { movieDiaryPage } = state;
@@ -86,10 +86,10 @@ const MovieDiaryStore = ({ children }) => {
 
 	const providerValue = useMemo(() => ({
 		...state,
-		getMovieDiaryFiltered,
-		getMovieDiaryPaginated,
-		getMoviesPerYearWatched,
 		increaseMovieDiaryPage,
+		movieDiaryFiltered,
+		movieDiaryPaginated,
+		moviesPerYearWatched,
 		setMovieDiarySearchString,
 	}), [state]);
 	return (
