@@ -5,11 +5,16 @@ import movieInfoContext from '../../../contexts/movieInfoContext';
 
 const MovieInfoHeader = () => {
 	const { movieInfo } = useContext(movieInfoContext);
+	const moviePosterStyle = {
+		paddingTop: `${450/300*100}%`,
+	};
 	return (
 		<>
 			<div className="p-3 row">
 				<div className="col-6 col-sm-4">
-					<img alt={`poster for ${movieInfo.title}`} className="img-fluid" src={movieInfo.poster_url} />
+					<div className="bg-secondary embed-responsive" style={moviePosterStyle}>
+						<img alt={`poster for ${movieInfo.title}`} className="embed-responsive-item" src={movieInfo.poster_url} />
+					</div>
 				</div>
 				<div className="col-6 col-sm-8 text-right">
 					<div className="mb-3">

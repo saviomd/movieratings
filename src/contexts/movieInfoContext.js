@@ -44,6 +44,7 @@ const MovieInfoStore = ({ children, movie }) => {
 									poster_url: tmdbApi.img.baseUrl + tmdbApi.img.posterSize + newMovie.poster_path,
 									Rating: movie.Rating,
 									title: newMovie.title,
+									tmdbURI: `https://www.themoviedb.org/movie/${newMovie.id}`,
 									vote_average: newMovie.vote_average
 								}
 							}));

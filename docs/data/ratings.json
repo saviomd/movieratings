@@ -2403,7 +2403,7 @@
   {
     "Date": "2013-04-26",
     "Name": "Brick",
-    "Year": 2006,
+    "Year": 2005,
     "LetterboxdURI": "https://letterboxd.com/film/brick/",
     "Rating": 4
   },
@@ -3922,7 +3922,7 @@
   {
     "Date": "2013-05-13",
     "Name": "V for Vendetta",
-    "Year": 2006,
+    "Year": 2005,
     "LetterboxdURI": "https://letterboxd.com/film/v-for-vendetta/",
     "Rating": 4
   },
@@ -9291,7 +9291,7 @@
   {
     "Date": "2018-01-10",
     "Name": "Your Name.",
-    "Year": 2016,
+    "Year": 2008,
     "LetterboxdURI": "https://letterboxd.com/film/your-name/",
     "Rating": 5
   },
@@ -9973,5 +9973,47 @@
     "Year": 2019,
     "LetterboxdURI": "https://letterboxd.com/film/ken-jeong-you-complete-me-ho/",
     "Rating": 3
+  },
+  {
+    "Date": "2019-02-23",
+    "Name": "Batman: Bad Blood",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/batman-bad-blood/",
+    "Rating": 2
+  },
+  {
+    "Date": "2019-03-03",
+    "Name": "The Discovery",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/the-discovery/",
+    "Rating": 3
+  },
+  {
+    "Date": "2019-03-04",
+    "Name": "Lady Bird",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/lady-bird/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-03-10",
+    "Name": "Captain Marvel",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/captain-marvel/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-03-12",
+    "Name": "Julie & Julia",
+    "Year": 2009,
+    "LetterboxdURI": "https://letterboxd.com/film/julie-julia/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-03-15",
+    "Name": "Zeitgeist",
+    "Year": 2007,
+    "LetterboxdURI": "https://letterboxd.com/film/zeitgeist/",
+    "Rating": 1
   }
 ]

@@ -54,7 +54,7 @@ const MovieNameSearch = ({ type }) => {
 	} = state;
 	return (
 		<div className="mb-3">
-			<div className="input-group input-group-sm mb-1">
+			<div className="input-group mb-1">
 				<input id="search-movie" className="form-control" placeholder="Search..." type="text" value={movieSearchString} onChange={(event) => setMovieSearchString(event.target.value)} />
 				<span className="input-group-append">
 					<button className="btn btn-secondary" type="button" onClick={() => setMovieSearchString('')}>
