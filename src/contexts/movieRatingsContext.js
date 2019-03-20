@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
 import formatMovieList from '../helpers/formatMovieList';
-import { fetchMovieRatings } from '../helpers/movieRatingsServices';
+import { fetchMovieRatings } from '../helpers/letterboxdServices';
 
 const MovieRatingsContext = React.createContext();
 

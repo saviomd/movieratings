@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
-import { fetchMovieInfo } from '../helpers/movieInfoServices';
+import { fetchMovieInfo } from '../helpers/tmdbServices';
 import tmdbApi from '../helpers/tmdbApi';
 
 const MovieInfoContext = React.createContext();
@@ -37,11 +37,11 @@ const MovieInfoStore = ({ children, movie }) => {
 								...prevState,
 								movieInfoStatus: 'loaded',
 								movieInfo: {
-									backdrop_url: tmdbApi.img.baseUrl + tmdbApi.img.backdropSize + newMovie.backdrop_path,
+									backdrop_url: (newMovie.backdrop_path ? tmdbApi.img.baseUrl + tmdbApi.img.backdropSize + newMovie.backdrop_path : null),
 									id: newMovie.id,
 									LetterboxdURI: movie.LetterboxdURI,
 									overview: newMovie.overview,
-									poster_url: tmdbApi.img.baseUrl + tmdbApi.img.posterSize + newMovie.poster_path,
+									poster_url: (newMovie.poster_path ? tmdbApi.img.baseUrl + tmdbApi.img.posterSize + newMovie.poster_path : null),
 									Rating: movie.Rating,
 									title: newMovie.title,
 									tmdbURI: `https://www.themoviedb.org/movie/${newMovie.id}`,

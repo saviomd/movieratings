@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
-import { fetchMovieCredits } from '../helpers/movieCreditsServices';
+import { fetchMovieCredits } from '../helpers/tmdbServices';
 
 const MovieCreditsContext = React.createContext();
 

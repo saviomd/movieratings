@@ -2,13 +2,11 @@ import React, { useContext } from 'react';
 
 import { MovieCreditsStore } from '../../../contexts/movieCreditsContext';
 import movieInfoContext from '../../../contexts/movieInfoContext';
+import MovieBackdrop from '../../MovieBackdrop';
 import MovieInfoCastCrew from '../MovieInfoCastCrew';
 
 const MovieInfoBody = () => {
 	const { movieInfo } = useContext(movieInfoContext);
-	const movieBackdropStyle = {
-		paddingTop: `${300/533*100}%`,
-	};
 	return (
 		<>
 			<div className="p-3">
@@ -25,9 +23,7 @@ const MovieInfoBody = () => {
 					</div>
 				</div>
 			</div>
-			<div className="bg-secondary embed-responsive" style={movieBackdropStyle}>
-				<img alt={`backdrop for ${movieInfo.title}`} className="embed-responsive-item rounded-bottom" src={movieInfo.backdrop_url} />
-			</div>
+			<MovieBackdrop backdrop_url={movieInfo.backdrop_url} title={movieInfo.title} />
 		</>
 	);
 };

@@ -12,27 +12,35 @@ const MovieInfoCastCrew = () => {
 	return (
 		<LoadingHandler dataStatus={movieCreditsStatus} hasData={!!movieCredits.id}>
 			<h2 className="h4">Cast</h2>
-			<ul className="flex-nowrap form-row list-unstyled mb-0" style={verticalListStyle}>
-				{movieCredits.cast.map(person => (
-					<li className="col-auto mb-3" key={person.credit_id}>
-						<a className="btn btn-secondary btn-sm" href={person.tmdbURI} rel="noopener noreferrer" target="_blank">
-							{person.name}
-							<div className="small">{person.character}</div>
-						</a>
-					</li>
-				))}
-			</ul>
+			{!!movieCredits.cast.length ? (
+				<ul className="flex-nowrap form-row list-unstyled mb-0" style={verticalListStyle}>
+					{movieCredits.cast.map(person => (
+						<li className="col-auto mb-3" key={person.credit_id}>
+							<a className="btn btn-secondary btn-sm" href={person.tmdbURI} rel="noopener noreferrer" target="_blank">
+								{person.name}
+								<div className="small">{person.character}</div>
+							</a>
+						</li>
+					))}
+				</ul>
+			) : (
+				<p>No data available</p>
+			)}
 			<h2 className="h4">Crew</h2>
-			<ul className="flex-nowrap form-row list-unstyled mb-0" style={verticalListStyle}>
-				{movieCredits.crew.map(person => (
-					<li className="col-auto mb-3" key={person.credit_id}>
-						<a className="btn btn-secondary btn-sm" href={person.tmdbURI} rel="noopener noreferrer" target="_blank">
-							{person.name}
-							<div className="small">{person.job}</div>
-						</a>
-					</li>
-				))}
-			</ul>
+			{!!movieCredits.crew.length ? (
+				<ul className="flex-nowrap form-row list-unstyled mb-0" style={verticalListStyle}>
+					{movieCredits.crew.map(person => (
+						<li className="col-auto mb-3" key={person.credit_id}>
+							<a className="btn btn-secondary btn-sm" href={person.tmdbURI} rel="noopener noreferrer" target="_blank">
+								{person.name}
+								<div className="small">{person.job}</div>
+							</a>
+						</li>
+					))}
+				</ul>
+			) : (
+				<p>No data available</p>
+			)}
 		</LoadingHandler>
 	);
 };
