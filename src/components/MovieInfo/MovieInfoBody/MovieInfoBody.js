@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 
 import { MovieCreditsStore } from '../../../contexts/movieCreditsContext';
+import { MovieRecommendationsStore } from '../../../contexts/movieRecommendationsContext';
 import movieInfoContext from '../../../contexts/movieInfoContext';
 import MovieBackdrop from '../../MovieBackdrop';
 import MovieInfoCastCrew from '../MovieInfoCastCrew';
+import MovieInfoRecommendations from '../MovieInfoRecommendations';
 
 const MovieInfoBody = () => {
 	const { movieInfo } = useContext(movieInfoContext);
@@ -24,6 +26,9 @@ const MovieInfoBody = () => {
 				</div>
 			</div>
 			<MovieBackdrop backdrop_url={movieInfo.backdrop_url} title={movieInfo.title} />
+			<MovieRecommendationsStore movieId={movieInfo.id}>
+				<MovieInfoRecommendations />
+			</MovieRecommendationsStore>
 		</>
 	);
 };

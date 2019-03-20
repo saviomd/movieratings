@@ -18,3 +18,13 @@ export const fetchMovieInfo = (movie) => {
 		return response.json();
 	});
 };
+
+export const fetchMovieRecommendations = (movieId) => {
+	const url = `${tmdbApi.url}${tmdbApi.pathMovieRecommendations}?${tmdbApi.key}`.replace('{movie_id}', movieId);
+	return fetch(url).then((response) => {
+		if (!response.ok) {
+			throw Error(response.status);
+		}
+		return response.json();
+	});
+};

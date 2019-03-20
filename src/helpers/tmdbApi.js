@@ -8,6 +8,7 @@ export default {
 	},
 	key: 'api_key=6f875d4fba2e999f480afa6275a08f75',
 	pathMovieCredits: 'movie/{movie_id}/credits',
+	pathMovieRecommendations: 'movie/{movie_id}/recommendations',
 	pathSearchMovies: 'search/movie',
 	url: 'https://api.themoviedb.org/3/'
 }
