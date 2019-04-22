@@ -5552,9 +5552,9 @@
   },
   {
     "Date": "2013-05-15",
-    "Name": "Supercop",
+    "Name": "Police Story 3: Super Cop",
     "Year": 1992,
-    "LetterboxdURI": "https://letterboxd.com/film/supercop/",
+    "LetterboxdURI": "https://letterboxd.com/film/police-story-3-super-cop/",
     "Rating": 4
   },
   {
@@ -6693,9 +6693,9 @@
   },
   {
     "Date": "2013-06-23",
-    "Name": "Genova",
+    "Name": "A Summer in Genoa",
     "Year": 2008,
-    "LetterboxdURI": "https://letterboxd.com/film/genova/",
+    "LetterboxdURI": "https://letterboxd.com/film/a-summer-in-genoa/",
     "Rating": 4
   },
   {
@@ -7751,7 +7751,7 @@
   {
     "Date": "2014-09-30",
     "Name": "The Grey",
-    "Year": 2012,
+    "Year": 2011,
     "LetterboxdURI": "https://letterboxd.com/film/the-grey/",
     "Rating": 4
   },
@@ -8053,7 +8053,7 @@
     "Date": "2015-05-12",
     "Name": "Bruce Springsteen: Springsteen & I",
     "Year": 2013,
-    "LetterboxdURI": "",
+    "LetterboxdURI": "https://letterboxd.com/film/film:143326/",
     "Rating": 4
   },
   {
@@ -9039,7 +9039,7 @@
   {
     "Date": "2017-09-25",
     "Name": "Kingsman: The Secret Service",
-    "Year": 2014,
+    "Year": 2015,
     "LetterboxdURI": "https://letterboxd.com/film/kingsman-the-secret-service/",
     "Rating": 4
   },
@@ -9291,7 +9291,7 @@
   {
     "Date": "2018-01-10",
     "Name": "Your Name.",
-    "Year": 2008,
+    "Year": 2016,
     "LetterboxdURI": "https://letterboxd.com/film/your-name/",
     "Rating": 5
   },
@@ -10015,5 +10015,68 @@
     "Year": 2007,
     "LetterboxdURI": "https://letterboxd.com/film/zeitgeist/",
     "Rating": 1
+  },
+  {
+    "Date": "2019-03-24",
+    "Name": "Us",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/us-2019/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-04-06",
+    "Name": "Sunshine Cleaning",
+    "Year": 2008,
+    "LetterboxdURI": "https://letterboxd.com/film/sunshine-cleaning/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-04-08",
+    "Name": "Shazam!",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/shazam/",
+    "Rating": 3
+  },
+  {
+    "Date": "2019-04-10",
+    "Name": "Justice League vs. the Fatal Five",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/justice-league-vs-the-fatal-five/",
+    "Rating": 3
+  },
+  {
+    "Date": "2019-04-14",
+    "Name": "Triple Frontier",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/triple-frontier/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-04-14",
+    "Name": "The Space Between Us",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/the-space-between-us/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-04-20",
+    "Name": "The Vow",
+    "Year": 2012,
+    "LetterboxdURI": "https://letterboxd.com/film/the-vow/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-04-20",
+    "Name": "Glass",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/glass-2019/",
+    "Rating": 3
+  },
+  {
+    "Date": "2019-04-23",
+    "Name": "How to Train Your Dragon: The Hidden World",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/how-to-train-your-dragon-the-hidden-world/",
+    "Rating": 4
   }
 ]

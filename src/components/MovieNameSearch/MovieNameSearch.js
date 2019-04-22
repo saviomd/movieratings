@@ -40,10 +40,14 @@ const MovieNameSearch = ({ type }) => {
 			}));
 		};
 	}, [
+		movieDiaryFiltered,
 		movieDiarySearchString,
 		movieDiaryStatus,
+		movieRatingsFiltered,
 		movieRatingsSearchString,
 		movieRatingsStatus,
+		setMovieDiarySearchString,
+		setMovieRatingsSearchString,
 		type,
 	]);
 

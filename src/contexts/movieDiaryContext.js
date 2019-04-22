@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
 import formatMovieList from '../helpers/formatMovieList';
@@ -15,17 +15,21 @@ const initialState = {
 
 const MovieDiaryStore = ({ children }) => {
 	const [state, setState] = useState(initialState);
+	const { movieDiary, movieDiaryPage, movieDiarySearchString } = state;
 
-	const movieDiaryFiltered = useMemo(() => {
-		const { movieDiary, movieDiarySearchString } = state;
-		return filterMoviesByName(movieDiary, movieDiarySearchString);
-	}, [state.movieDiary, state.movieDiarySearchString]);
+	const increaseMovieDiaryPage = useCallback(() => {
+		setState(prevState => ({
+			...prevState,
+			movieDiaryPage: movieDiaryPage + 1,
+		}));
+	}, [movieDiaryPage]);
+
+	const movieDiaryFiltered = useMemo(() => filterMoviesByName(movieDiary, movieDiarySearchString), [movieDiary, movieDiarySearchString]);
 
 	const movieDiaryPaginated = useMemo(() => {
-		const { movieDiaryPage } = state;
 		const size = movieDiaryPage * 100;
 		return movieDiaryFiltered.slice(0, size);
-	}, [movieDiaryFiltered, state.movieDiaryPage]);
+	}, [movieDiaryFiltered, movieDiaryPage]);
 
 	const moviesPerYearWatched = useMemo(() => {
 		const groups = state.movieDiary.reduce((acc, curr) => {
@@ -39,14 +43,6 @@ const MovieDiaryStore = ({ children }) => {
 		}
 		return { groups, max };
 	}, [state.movieDiary]);
-
-	function increaseMovieDiaryPage() {
-		const { movieDiaryPage } = state;
-		setState(prevState => ({
-			...prevState,
-			movieDiaryPage: movieDiaryPage + 1,
-		}));
-	}
 
 	function loadMovieDiary() {
 		setState(prevState => ({
@@ -91,7 +87,13 @@ const MovieDiaryStore = ({ children }) => {
 		movieDiaryPaginated,
 		moviesPerYearWatched,
 		setMovieDiarySearchString,
-	}), [state]);
+	}), [
+		increaseMovieDiaryPage,
+		movieDiaryFiltered,
+		movieDiaryPaginated,
+		moviesPerYearWatched,
+		state,
+	]);
 	return (
 		<MovieDiaryContext.Provider value={providerValue}>
 			{children}

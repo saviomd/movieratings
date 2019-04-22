@@ -10,16 +10,16 @@ import movieDiaryMock from '../../../__mocks__/movieDiaryMock';
 import movieRatingsMock from '../../../__mocks__/movieRatingsMock';
 
 const movieDiaryProviderState = {
-  getMovieDiaryFiltered: () => movieDiaryMock.movieDiary,
-  getMovieDiaryPaginated: () => movieDiaryMock.movieDiary,
   increaseMovieDiaryPage: null,
+  movieDiaryFiltered: movieDiaryMock.movieDiary,
+  movieDiaryPaginated: movieDiaryMock.movieDiary,
   movieDiarySearchString: '',
   movieDiaryStatus: movieDiaryMock.movieDiaryStatus,
 };
 const movieRatingsProviderState = {
-  getMovieRatingsFiltered: () => movieRatingsMock.movieRatings,
-  getMovieRatingsPaginated: () => movieRatingsMock.movieRatings,
   increaseMovieRatingsPage: null,
+  movieRatingsFiltered: movieRatingsMock.movieRatings,
+  movieRatingsPaginated: movieRatingsMock.movieRatings,
   movieRatingsSearchString: '',
   movieRatingsStatus: movieRatingsMock.movieRatingsStatus,
 };

@@ -49,10 +49,16 @@ const MovieList = memo(function MovieList ({ type }) {
 			}));
 		}
 	}, [
+		increaseMovieDiaryPage,
+		increaseMovieRatingsPage,
+		movieDiaryFiltered,
 		movieDiaryPage,
+		movieDiaryPaginated,
 		movieDiarySearchString,
 		movieDiaryStatus,
+		movieRatingsFiltered,
 		movieRatingsPage,
+		movieRatingsPaginated,
 		movieRatingsSearchString,
 		movieRatingsStatus,
 		type,

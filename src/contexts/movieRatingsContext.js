@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
 import formatMovieList from '../helpers/formatMovieList';
@@ -15,17 +15,21 @@ const initialState = {
 
 const MovieRatingsStore = ({ children }) => {
 	const [state, setState] = useState(initialState);
+	const { movieRatings, movieRatingsPage, movieRatingsSearchString } = state;
 
-	const movieRatingsFiltered = useMemo(() => {
-		const { movieRatings, movieRatingsSearchString } = state;
-		return filterMoviesByName(movieRatings, movieRatingsSearchString);
-	}, [state.movieRatings, state.movieRatingsSearchString]);
+	const increaseMovieRatingsPage = useCallback(() => {
+		setState(prevState => ({
+			...prevState,
+			movieRatingsPage: movieRatingsPage + 1,
+		}));
+	}, [movieRatingsPage]);
+
+	const movieRatingsFiltered = useMemo(() => filterMoviesByName(movieRatings, movieRatingsSearchString), [movieRatings, movieRatingsSearchString]);
 
 	const movieRatingsPaginated = useMemo(() => {
-		const { movieRatingsPage } = state;
 		const size = movieRatingsPage * 100;
 		return movieRatingsFiltered.slice(0, size);
-	}, [movieRatingsFiltered, state.movieRatingsPage]);
+	}, [movieRatingsFiltered, movieRatingsPage]);
 
 	const moviesPerDecadeReleased = useMemo(() => {
 		const groups = state.movieRatings.reduce((acc, curr) => {
@@ -52,14 +56,6 @@ const MovieRatingsStore = ({ children }) => {
 		}
 		return { groups, max };
 	}, [state.movieRatings]);
-
-	function increaseMovieRatingsPage() {
-		const { movieRatingsPage } = state;
-		setState(prevState => ({
-			...prevState,
-			movieRatingsPage: movieRatingsPage + 1,
-		}));
-	}
 
 	function loadMovieRatings() {
 		setState(prevState => ({
@@ -105,7 +101,14 @@ const MovieRatingsStore = ({ children }) => {
 		moviesPerDecadeReleased,
 		moviesPerRatingGiven,
 		setMovieRatingsSearchString,
-	}), [state]);
+	}), [
+		increaseMovieRatingsPage,
+		movieRatingsFiltered,
+		movieRatingsPaginated,
+		moviesPerDecadeReleased,
+		moviesPerRatingGiven,
+		state,
+	]);
 	return (
 		<MovieRatingsContext.Provider value={providerValue}>
 			{children}
