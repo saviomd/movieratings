@@ -1,6 +1,6 @@
 {
   "name": "movieratings",
-  "version": "1.0.20190422",
+  "version": "1.0.20190622",
   "description": "My movie ratings from Letterboxd",
   "author": "Sávio Mendes",
   "license": "UNLICENSED",
@@ -19,19 +19,19 @@
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.17",
-    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@storybook/addon-info": "^5.0.10",
-    "@storybook/addon-knobs": "^5.0.10",
-    "@storybook/addon-viewport": "^5.0.10",
-    "@storybook/react": "^5.0.10",
+    "@storybook/addon-info": "^5.1.9",
+    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/addon-viewport": "^5.1.9",
+    "@storybook/react": "^5.1.9",
     "bootstrap": "^4.3.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "^3.0.0"
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.0.1"
   },
   "browserslist": [
     ">0.2%",
