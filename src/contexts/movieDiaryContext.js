@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useReducer } from 'react';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
 import formatMovieList from '../helpers/formatMovieList';
@@ -13,23 +13,30 @@ const initialState = {
 	movieDiaryStatus: '',
 };
 
+function reducer(state, action) {
+	switch (action.type) {
+		case 'setMovieDiary':
+			return { ...state, movieDiary: action.payload, movieDiaryStatus: 'loaded' };
+		case 'setMovieDiaryPage':
+			return { ...state, movieDiaryPage: state.movieDiaryPage + 1 };
+		case 'setMovieDiarySearchString':
+			return { ...state, movieDiarySearchString: action.payload.trim().toLowerCase() };
+		case 'setMovieDiaryStatus':
+			return { ...state, movieDiaryStatus: action.payload };
+		default:
+			throw new Error();
+	}
+}
+
 const MovieDiaryStore = ({ children }) => {
-	const [state, setState] = useState(initialState);
-	const { movieDiary, movieDiaryPage, movieDiarySearchString } = state;
+	const [state, dispatchMovieDiary] = useReducer(reducer, initialState);
 
-	const increaseMovieDiaryPage = useCallback(() => {
-		setState(prevState => ({
-			...prevState,
-			movieDiaryPage: movieDiaryPage + 1,
-		}));
-	}, [movieDiaryPage]);
-
-	const movieDiaryFiltered = useMemo(() => filterMoviesByName(movieDiary, movieDiarySearchString), [movieDiary, movieDiarySearchString]);
+	const movieDiaryFiltered = useMemo(() => filterMoviesByName(state.movieDiary, state.movieDiarySearchString), [state.movieDiary, state.movieDiarySearchString]);
 
 	const movieDiaryPaginated = useMemo(() => {
-		const size = movieDiaryPage * 100;
+		const size = state.movieDiaryPage * 100;
 		return movieDiaryFiltered.slice(0, size);
-	}, [movieDiaryFiltered, movieDiaryPage]);
+	}, [movieDiaryFiltered, state.movieDiaryPage]);
 
 	const moviesPerYearWatched = useMemo(() => {
 		const groups = state.movieDiary.reduce((acc, curr) => {
@@ -45,35 +52,17 @@ const MovieDiaryStore = ({ children }) => {
 	}, [state.movieDiary]);
 
 	function loadMovieDiary() {
-		setState(prevState => ({
-			...prevState,
-			movieDiaryStatus: 'loading',
-		}));
+		dispatchMovieDiary({ type: 'setMovieDiaryStatus', payload: 'loading' });
 		return fetchMovieDiary()
 			.then(json => {
 				const movieDiaryFormatted = formatMovieList(json);
-				setState(prevState => ({
-					...prevState,
-					movieDiary: movieDiaryFormatted,
-					movieDiaryStatus: 'loaded',
-				}));
+				dispatchMovieDiary({ type: 'setMovieDiary', payload: movieDiaryFormatted });
 				return movieDiaryFormatted;
 			})
 			.catch((error) => {
-				setState(prevState => ({
-					...prevState,
-					movieDiaryStatus: 'error',
-				}));
+				dispatchMovieDiary({ type: 'setMovieDiaryStatus', payload: 'error' });
 				console.log(error.message);
 			});
-	}
-
-	function setMovieDiarySearchString(value) {
-		value.trim().toLowerCase();
-		setState(prevState => ({
-			...prevState,
-			movieDiarySearchString: value,
-		}));
 	}
 
 	useEffect(() => {
@@ -82,13 +71,11 @@ const MovieDiaryStore = ({ children }) => {
 
 	const providerValue = useMemo(() => ({
 		...state,
-		increaseMovieDiaryPage,
+		dispatchMovieDiary,
 		movieDiaryFiltered,
 		movieDiaryPaginated,
 		moviesPerYearWatched,
-		setMovieDiarySearchString,
 	}), [
-		increaseMovieDiaryPage,
 		movieDiaryFiltered,
 		movieDiaryPaginated,
 		moviesPerYearWatched,

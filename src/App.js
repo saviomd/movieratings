@@ -17,26 +17,28 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 library.add(faCalendarAlt, faChartBar, faDizzy, faFrown, faHourglassHalf, faSadTear, faStar, faTimes);
 
+const initialState = {
+	navLinks: [
+		{
+			icon: 'star',
+			name: 'Ratings',
+			path: '/',
+		},
+		{
+			icon: 'calendar-alt',
+			name: 'Diary',
+			path: '/diary',
+		},
+		{
+			icon: 'chart-bar',
+			name: 'Stats',
+			path: '/stats',
+		},
+	],
+};
+
 const App = () => {
-	const [state] = useState({
-		navLinks: [
-			{
-				icon: 'star',
-				name: 'Ratings',
-				path: '/',
-			},
-			{
-				icon: 'calendar-alt',
-				name: 'Diary',
-				path: '/diary',
-			},
-			{
-				icon: 'chart-bar',
-				name: 'Stats',
-				path: '/stats',
-			},
-		],
-	});
+	const [state] = useState(initialState);
 
 	return (
 		<MovieDiaryStore>

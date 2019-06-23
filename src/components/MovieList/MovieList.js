@@ -1,20 +1,32 @@
 import PropTypes from 'prop-types';
-import React, { memo, useContext, useEffect, useState } from 'react';
+import React, { memo, useContext, useEffect, useReducer } from 'react';
 
 import movieDiaryContext from '../../contexts/movieDiaryContext';
 import movieRatingsContext from '../../contexts/movieRatingsContext';
 import LoadingHandler from '../LoadingHandler';
 import MovieButton from '../MovieButton';
 
+const initialState = {
+	dispatchMovie: null,
+	dispatchMovieType: '',
+	moviesFiltered: [],
+	moviesPaginated: [],
+	moviesStatus: null,
+};
+
+function reducer(state, action) {
+	switch (action.type) {
+		case 'setAll':
+			return { ...state, ...action.payload };
+		default:
+			throw new Error();
+	}
+}
+
 const MovieList = memo(function MovieList ({ type }) {
-	const [state, setState] = useState({
-		increasePage: null,
-		moviesFiltered: [],
-		moviesPaginated: [],
-		moviesStatus: null,
-	});
+	const [state, dispatchMovieList] = useReducer(reducer, initialState);
 	const {
-		increaseMovieDiaryPage,
+		dispatchMovieDiary,
 		movieDiaryFiltered,
 		movieDiaryPage,
 		movieDiaryPaginated,
@@ -22,7 +34,7 @@ const MovieList = memo(function MovieList ({ type }) {
 		movieDiaryStatus,
 	} = useContext(movieDiaryContext);
 	const {
-		increaseMovieRatingsPage,
+		dispatchMovieRatings,
 		movieRatingsFiltered,
 		movieRatingsPage,
 		movieRatingsPaginated,
@@ -31,26 +43,28 @@ const MovieList = memo(function MovieList ({ type }) {
 	} = useContext(movieRatingsContext);
 
 	useEffect(() => {
+		let payload;
 		if (type === 'Diary') {
-			setState(prevState => ({
-				...prevState,
-				increasePage: increaseMovieDiaryPage,
+			payload = {
+				dispatchMovie: dispatchMovieDiary,
+				dispatchMovieType: 'setMovieDiaryPage',
 				moviesFiltered: movieDiaryFiltered,
 				moviesPaginated: movieDiaryPaginated,
 				moviesStatus: movieDiaryStatus,
-			}));
+			};
 		} else if (type === 'Ratings') {
-			setState(prevState => ({
-				...prevState,
-				increasePage: increaseMovieRatingsPage,
+			payload = {
+				dispatchMovie: dispatchMovieRatings,
+				dispatchMovieType: 'setMovieRatingsPage',
 				moviesFiltered: movieRatingsFiltered,
 				moviesPaginated: movieRatingsPaginated,
 				moviesStatus: movieRatingsStatus,
-			}));
+			};
 		}
+		dispatchMovieList({ type: 'setAll', payload });
 	}, [
-		increaseMovieDiaryPage,
-		increaseMovieRatingsPage,
+		dispatchMovieDiary,
+		dispatchMovieRatings,
 		movieDiaryFiltered,
 		movieDiaryPage,
 		movieDiaryPaginated,
@@ -64,24 +78,18 @@ const MovieList = memo(function MovieList ({ type }) {
 		type,
 	]);
 
-	const {
-		increasePage,
-		moviesFiltered,
-		moviesPaginated,
-		moviesStatus,
-	} = state;
 	return (
-		<LoadingHandler dataStatus={moviesStatus} hasData={(!!moviesFiltered.length)} messageNoData="noMovies">
+		<LoadingHandler dataStatus={state.moviesStatus} hasData={(!!state.moviesFiltered.length)} messageNoData="noMovies">
 			<>
 				<ul className="list-unstyled">
-					{moviesPaginated.map(movie => (
+					{state.moviesPaginated.map(movie => (
 						<li className="mb-3" key={movie.Id}>
 							<MovieButton movie={movie} type={type} />
 						</li>
 					))}
 				</ul>
-				{moviesPaginated.length < moviesFiltered.length && <div className="mb-3 text-center">
-					<button className="btn btn-danger" type="button" onClick={increasePage}>Show more</button>
+				{state.moviesPaginated.length < state.moviesFiltered.length && <div className="mb-3 text-center">
+					<button className="btn btn-danger" type="button" onClick={() => state.dispatchMovie({ type: state.dispatchMovieType })}>Show more</button>
 				</div>}
 			</>
 		</LoadingHandler>

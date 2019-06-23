@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useReducer } from 'react';
 
 import filterMoviesByName from '../helpers/filterMoviesByName';
 import formatMovieList from '../helpers/formatMovieList';
@@ -13,23 +13,30 @@ const initialState = {
 	movieRatingsStatus: '',
 };
 
+function reducer(state, action) {
+	switch (action.type) {
+		case 'setMovieRatings':
+			return { ...state, movieRatings: action.payload, movieRatingsStatus: 'loaded' };
+		case 'setMovieRatingsPage':
+			return { ...state, movieRatingsPage: state.movieRatingsPage + 1 };
+		case 'setMovieRatingsSearchString':
+			return { ...state, movieRatingsSearchString: action.payload.trim().toLowerCase() };
+		case 'setMovieRatingsStatus':
+			return { ...state, movieRatingsStatus: action.payload };
+		default:
+			throw new Error();
+	}
+}
+
 const MovieRatingsStore = ({ children }) => {
-	const [state, setState] = useState(initialState);
-	const { movieRatings, movieRatingsPage, movieRatingsSearchString } = state;
+	const [state, dispatchMovieRatings] = useReducer(reducer, initialState);
 
-	const increaseMovieRatingsPage = useCallback(() => {
-		setState(prevState => ({
-			...prevState,
-			movieRatingsPage: movieRatingsPage + 1,
-		}));
-	}, [movieRatingsPage]);
-
-	const movieRatingsFiltered = useMemo(() => filterMoviesByName(movieRatings, movieRatingsSearchString), [movieRatings, movieRatingsSearchString]);
+	const movieRatingsFiltered = useMemo(() => filterMoviesByName(state.movieRatings, state.movieRatingsSearchString), [state.movieRatings, state.movieRatingsSearchString]);
 
 	const movieRatingsPaginated = useMemo(() => {
-		const size = movieRatingsPage * 100;
+		const size = state.movieRatingsPage * 100;
 		return movieRatingsFiltered.slice(0, size);
-	}, [movieRatingsFiltered, movieRatingsPage]);
+	}, [movieRatingsFiltered, state.movieRatingsPage]);
 
 	const moviesPerDecadeReleased = useMemo(() => {
 		const groups = state.movieRatings.reduce((acc, curr) => {
@@ -58,35 +65,17 @@ const MovieRatingsStore = ({ children }) => {
 	}, [state.movieRatings]);
 
 	function loadMovieRatings() {
-		setState(prevState => ({
-			...prevState,
-			movieRatingsStatus: 'loading',
-		}));
+		dispatchMovieRatings({ type: 'setMovieRatingsStatus', payload: 'loading' });
 		return fetchMovieRatings()
 			.then(json => {
 				const movieRatingsFormatted = formatMovieList(json);
-				setState(prevState => ({
-					...prevState,
-					movieRatings: movieRatingsFormatted,
-					movieRatingsStatus: 'loaded',
-				}));
+				dispatchMovieRatings({ type: 'setMovieRatings', payload: movieRatingsFormatted });
 				return movieRatingsFormatted;
 			})
 			.catch((error) => {
-				setState(prevState => ({
-					...prevState,
-					movieRatingsStatus: 'error',
-				}));
+				dispatchMovieRatings({ type: 'setMovieRatingsStatus', payload: 'error' });
 				console.log(error.message);
 			});
-	}
-
-	function setMovieRatingsSearchString(value) {
-		value.trim().toLowerCase();
-		setState(prevState => ({
-			...prevState,
-			movieRatingsSearchString: value,
-		}));
 	}
 
 	useEffect(() => {
@@ -95,14 +84,12 @@ const MovieRatingsStore = ({ children }) => {
 
 	const providerValue = useMemo(() => ({
 		...state,
-		increaseMovieRatingsPage,
+		dispatchMovieRatings,
 		movieRatingsFiltered,
 		movieRatingsPaginated,
 		moviesPerDecadeReleased,
 		moviesPerRatingGiven,
-		setMovieRatingsSearchString,
 	}), [
-		increaseMovieRatingsPage,
 		movieRatingsFiltered,
 		movieRatingsPaginated,
 		moviesPerDecadeReleased,

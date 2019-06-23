@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useReducer } from 'react';
 
 import tmdbApi from '../helpers/tmdbApi';
 import { fetchMovieRecommendations } from '../helpers/tmdbServices';
@@ -10,31 +10,32 @@ const initialState = {
 	movieRecommendationsStatus: ''
 };
 
+function reducer(state, action) {
+	switch (action.type) {
+		case 'setMovieRecommendations':
+			return { ...state, movieRecommendations: action.payload, movieRecommendationsStatus: 'loaded' };
+		case 'setMovieRecommendationsStatus':
+			return { ...state, movieRecommendationsStatus: action.payload };
+		default:
+			throw new Error();
+	}
+}
+
 const MovieRecommendationsStore = ({ children, movieId }) => {
-	const [state, setState] = useState(initialState);
+	const [state, dispatchMovieRecommendations] = useReducer(reducer, initialState);
 
 	function loadMovieRecommendations(movieId) {
-		setState(prevState => ({
-			...prevState,
-			movieRecommendationsStatus: 'loading',
-		}));
+		dispatchMovieRecommendations({ type: 'setMovieRecommendationsStatus', payload: 'loading' });
 		fetchMovieRecommendations(movieId)
 			.then((json) => {
 				json.results.forEach(movie => {
 					movie.poster_url = (movie.poster_path ? tmdbApi.img.baseUrl + tmdbApi.img.posterSize + movie.poster_path : null);
 					movie.tmdbURI = `https://www.themoviedb.org/movie/${movie.id}`;
 				});
-				setState(prevState => ({
-					...prevState,
-					movieRecommendations: json.results,
-					movieRecommendationsStatus: 'loaded',
-				}));
+				dispatchMovieRecommendations({ type: 'setMovieRecommendations', payload: json.results });
 			})
 			.catch((error) => {
-				setState(prevState => ({
-					...prevState,
-					movieRecommendationsStatus: 'error',
-				}));
+				dispatchMovieRecommendations({ type: 'setMovieRecommendationsStatus', payload: 'error' });
 				console.log(error.message);
 			});
 	}
@@ -43,7 +44,7 @@ const MovieRecommendationsStore = ({ children, movieId }) => {
 		loadMovieRecommendations(movieId);
 	}, [movieId]);
 
-	const providerValue = useMemo(() => ({ ...state }), [state]);
+	const providerValue = useMemo(() => state, [state]);
 	return (
 		<MovieRecommendationsContext.Provider value={providerValue}>
 			{children}

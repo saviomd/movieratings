@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useReducer } from 'react';
 
 import { fetchMovieCredits } from '../helpers/tmdbServices';
 
@@ -13,14 +13,22 @@ const initialState = {
 	movieCreditsStatus: ''
 };
 
+function reducer(state, action) {
+	switch (action.type) {
+		case 'setMovieCredits':
+			return { ...state, movieCredits: action.payload, movieCreditsStatus: 'loaded' };
+		case 'setMovieCreditsStatus':
+			return { ...state, movieCreditsStatus: action.payload };
+		default:
+			throw new Error();
+	}
+}
+
 const MovieCreditsStore = ({ children, movieId }) => {
-	const [state, setState] = useState(initialState);
+	const [state, dispatchMovieCredits] = useReducer(reducer, initialState);
 
 	function loadMovieCredits(movieId) {
-		setState(prevState => ({
-			...prevState,
-			movieCreditsStatus: 'loading',
-		}));
+		dispatchMovieCredits({ type: 'setMovieCreditsStatus', payload: 'loading' });
 		fetchMovieCredits(movieId)
 			.then((json) => {
 				json.cast.forEach(person => {
@@ -29,17 +37,10 @@ const MovieCreditsStore = ({ children, movieId }) => {
 				json.crew.forEach(person => {
 					person.tmdbURI = `https://www.themoviedb.org/person/${person.id}`;
 				});
-				setState(prevState => ({
-					...prevState,
-					movieCredits: json,
-					movieCreditsStatus: 'loaded',
-				}));
+				dispatchMovieCredits({ type: 'setMovieCredits', payload: json });
 			})
 			.catch((error) => {
-				setState(prevState => ({
-					...prevState,
-					movieCreditsStatus: 'error',
-				}));
+				dispatchMovieCredits({ type: 'setMovieCreditsStatus', payload: 'error' });
 				console.log(error.message);
 			});
 	}
@@ -48,7 +49,7 @@ const MovieCreditsStore = ({ children, movieId }) => {
 		loadMovieCredits(movieId);
 	}, [movieId]);
 
-	const providerValue = useMemo(() => ({ ...state }), [state]);
+	const providerValue = useMemo(() => state, [state]);
 	return (
 		<MovieCreditsContext.Provider value={providerValue}>
 			{children}
