@@ -1003,7 +1003,7 @@
     "Date": "2015-04-19",
     "Name": "Batman vs. Robin",
     "Year": 2015,
-    "LetterboxdURI": "https://letterboxd.com/saviomd/film/film:248629/",
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/batman-vs-robin/",
     "Rating": 3,
     "Rewatch": "",
     "Tags": "",
@@ -2381,7 +2381,7 @@
   },
   {
     "Date": "2017-09-28",
-    "Name": "Louis C.K. 2017",
+    "Name": "Louis C.K.: 2017",
     "Year": 2017,
     "LetterboxdURI": "https://letterboxd.com/saviomd/film/louis-ck-2017/",
     "Rating": 4,
@@ -3411,7 +3411,7 @@
   },
   {
     "Date": "2018-11-11",
-    "Name": "Yellow is the New Black",
+    "Name": "Yellow Is the New Black",
     "Year": 2018,
     "LetterboxdURI": "https://letterboxd.com/saviomd/film/yellow-is-the-new-black/",
     "Rating": 3,
@@ -3831,7 +3831,7 @@
   },
   {
     "Date": "2019-05-19",
-    "Name": "John Wick: Chapter 3 – Parabellum",
+    "Name": "John Wick: Chapter 3 - Parabellum",
     "Year": 2019,
     "LetterboxdURI": "https://letterboxd.com/saviomd/film/john-wick-chapter-3-parabellum/",
     "Rating": 4,
@@ -4038,5 +4038,165 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2019-08-11"
+  },
+  {
+    "Date": "2019-08-15",
+    "Name": "Mulan",
+    "Year": 1998,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/mulan/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-08-14"
+  },
+  {
+    "Date": "2019-08-18",
+    "Name": "The Choice",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/the-choice-2016/",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-08-17"
+  },
+  {
+    "Date": "2019-08-25",
+    "Name": "Booksmart",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/booksmart/",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-08-24"
+  },
+  {
+    "Date": "2019-09-01",
+    "Name": "The Shawshank Redemption",
+    "Year": 1994,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/the-shawshank-redemption/",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-08-31"
+  },
+  {
+    "Date": "2019-09-02",
+    "Name": "Batman & Bill",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/batman-bill/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-09-01"
+  },
+  {
+    "Date": "2019-09-08",
+    "Name": "Dave Chappelle: Sticks & Stones",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/dave-chappelle-sticks-stones/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-09-07"
+  },
+  {
+    "Date": "2019-09-09",
+    "Name": "Django Unchained",
+    "Year": 2012,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/django-unchained/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-09-08"
+  },
+  {
+    "Date": "2019-09-09",
+    "Name": "Def Comedy Jam 25",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/def-comedy-jam-25/",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-09-08"
+  },
+  {
+    "Date": "2019-10-06",
+    "Name": "Sully",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/sully/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-10-05"
+  },
+  {
+    "Date": "2019-10-07",
+    "Name": "Joker",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/joker-2019/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-10-06"
+  },
+  {
+    "Date": "2019-10-13",
+    "Name": "Taking Lives",
+    "Year": 2004,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/taking-lives/",
+    "Rating": 2,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-10-12"
+  },
+  {
+    "Date": "2019-10-19",
+    "Name": "Yesterday",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/yesterday-2019/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-10-18"
+  },
+  {
+    "Date": "2019-10-28",
+    "Name": "Bad Moms",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/bad-moms/",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-10-27"
+  },
+  {
+    "Date": "2019-11-03",
+    "Name": "Blinded by the Light",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/blinded-by-the-light-2019/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-11-01"
+  },
+  {
+    "Date": "2019-11-17",
+    "Name": "Ford v Ferrari",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/ford-v-ferrari/",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-11-15"
+  },
+  {
+    "Date": "2019-11-17",
+    "Name": "Bumblebee",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/bumblebee/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2019-11-16\n"
   }
 ]

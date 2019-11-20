@@ -2577,7 +2577,7 @@
   },
   {
     "Date": "2013-04-26",
-    "Name": "Grace is Gone",
+    "Name": "Grace Is Gone",
     "Year": 2007,
     "LetterboxdURI": "https://letterboxd.com/film/grace-is-gone/",
     "Rating": 4
@@ -3866,7 +3866,7 @@
   {
     "Date": "2013-05-13",
     "Name": "Charlie Bartlett",
-    "Year": 2008,
+    "Year": 2007,
     "LetterboxdURI": "https://letterboxd.com/film/charlie-bartlett/",
     "Rating": 4
   },
@@ -5573,9 +5573,9 @@
   },
   {
     "Date": "2013-05-15",
-    "Name": "First Strike",
+    "Name": "Police Story 4: First Strike",
     "Year": 1996,
-    "LetterboxdURI": "https://letterboxd.com/film/first-strike-1996/",
+    "LetterboxdURI": "https://letterboxd.com/film/police-story-4-first-strike/",
     "Rating": 4
   },
   {
@@ -7302,9 +7302,9 @@
   },
   {
     "Date": "2013-12-12",
-    "Name": "C'était Un Rendez-Vous",
+    "Name": "Rendezvous",
     "Year": 1976,
-    "LetterboxdURI": "https://letterboxd.com/film/cetait-un-rendez-vous/",
+    "LetterboxdURI": "https://letterboxd.com/film/rendezvous-1976/",
     "Rating": 5
   },
   {
@@ -8025,7 +8025,7 @@
     "Date": "2015-04-19",
     "Name": "Batman vs. Robin",
     "Year": 2015,
-    "LetterboxdURI": "https://letterboxd.com/film/film:248629/",
+    "LetterboxdURI": "https://letterboxd.com/film/batman-vs-robin/",
     "Rating": 3
   },
   {
@@ -9059,7 +9059,7 @@
   },
   {
     "Date": "2017-09-28",
-    "Name": "Louis C.K. 2017",
+    "Name": "Louis C.K.: 2017",
     "Year": 2017,
     "LetterboxdURI": "https://letterboxd.com/film/louis-ck-2017/",
     "Rating": 4
@@ -9794,7 +9794,7 @@
   },
   {
     "Date": "2018-11-11",
-    "Name": "Yellow is the New Black",
+    "Name": "Yellow Is the New Black",
     "Year": 2018,
     "LetterboxdURI": "https://letterboxd.com/film/yellow-is-the-new-black/",
     "Rating": 3
@@ -10095,7 +10095,7 @@
   },
   {
     "Date": "2019-05-19",
-    "Name": "John Wick: Chapter 3 – Parabellum",
+    "Name": "John Wick: Chapter 3 - Parabellum",
     "Year": 2019,
     "LetterboxdURI": "https://letterboxd.com/film/john-wick-chapter-3-parabellum/",
     "Rating": 4
@@ -10238,6 +10238,118 @@
     "Name": "Sweeney Todd: The Demon Barber of Fleet Street",
     "Year": 2007,
     "LetterboxdURI": "https://letterboxd.com/film/sweeney-todd-the-demon-barber-of-fleet-street-2007/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-08-15",
+    "Name": "Mulan",
+    "Year": 1998,
+    "LetterboxdURI": "https://letterboxd.com/film/mulan/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-08-18",
+    "Name": "The Choice",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/the-choice-2016/",
+    "Rating": 3
+  },
+  {
+    "Date": "2019-08-25",
+    "Name": "Booksmart",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/booksmart/",
+    "Rating": 5
+  },
+  {
+    "Date": "2019-09-01",
+    "Name": "The Shawshank Redemption",
+    "Year": 1994,
+    "LetterboxdURI": "https://letterboxd.com/film/the-shawshank-redemption/",
+    "Rating": 5
+  },
+  {
+    "Date": "2019-09-02",
+    "Name": "Batman & Bill",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/batman-bill/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-09-08",
+    "Name": "Dave Chappelle: Sticks & Stones",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/dave-chappelle-sticks-stones/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-09-09",
+    "Name": "Django Unchained",
+    "Year": 2012,
+    "LetterboxdURI": "https://letterboxd.com/film/django-unchained/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-09-09",
+    "Name": "Def Comedy Jam 25",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/def-comedy-jam-25/",
+    "Rating": 3
+  },
+  {
+    "Date": "2019-10-06",
+    "Name": "Sully",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/sully/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-10-07",
+    "Name": "Joker",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/joker-2019/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-10-13",
+    "Name": "Taking Lives",
+    "Year": 2004,
+    "LetterboxdURI": "https://letterboxd.com/film/taking-lives/",
+    "Rating": 2
+  },
+  {
+    "Date": "2019-10-19",
+    "Name": "Yesterday",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/yesterday-2019/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-10-28",
+    "Name": "Bad Moms",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/bad-moms/",
+    "Rating": 3
+  },
+  {
+    "Date": "2019-11-03",
+    "Name": "Blinded by the Light",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/blinded-by-the-light-2019/",
+    "Rating": 4
+  },
+  {
+    "Date": "2019-11-17",
+    "Name": "Ford v Ferrari",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/ford-v-ferrari/",
+    "Rating": 5
+  },
+  {
+    "Date": "2019-11-17",
+    "Name": "Bumblebee",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/bumblebee/",
     "Rating": 4
   }
 ]
