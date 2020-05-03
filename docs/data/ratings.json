@@ -3873,7 +3873,7 @@
   {
     "Date": "2013-05-13",
     "Name": "London",
-    "Year": 2006,
+    "Year": 2005,
     "LetterboxdURI": "https://letterboxd.com/film/london/",
     "Rating": 2
   },
@@ -8059,8 +8059,8 @@
   {
     "Date": "2015-05-24",
     "Name": "Ex Machina",
-    "Year": 2015,
-    "LetterboxdURI": "https://letterboxd.com/film/film:187986/",
+    "Year": 2014,
+    "LetterboxdURI": "https://letterboxd.com/film/ex-machina-2014/",
     "Rating": 5
   },
   {
@@ -10526,5 +10526,61 @@
     "Year": 2011,
     "LetterboxdURI": "https://letterboxd.com/film/the-man-from-the-future/",
     "Rating": 3
+  },
+  {
+    "Date": "2020-03-30",
+    "Name": "Jojo Rabbit",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/jojo-rabbit/",
+    "Rating": 5
+  },
+  {
+    "Date": "2020-03-30",
+    "Name": "The Way Back",
+    "Year": 2020,
+    "LetterboxdURI": "https://letterboxd.com/film/the-way-back-2020/",
+    "Rating": 5
+  },
+  {
+    "Date": "2020-04-06",
+    "Name": "Portrait of a Lady on Fire",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/portrait-of-a-lady-on-fire/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-04-13",
+    "Name": "Good Bye Lenin!",
+    "Year": 2003,
+    "LetterboxdURI": "https://letterboxd.com/film/good-bye-lenin/",
+    "Rating": 5
+  },
+  {
+    "Date": "2020-04-20",
+    "Name": "Sergio",
+    "Year": 2020,
+    "LetterboxdURI": "https://letterboxd.com/film/sergio-2020/",
+    "Rating": 2
+  },
+  {
+    "Date": "2020-04-23",
+    "Name": "Sharp Objects",
+    "Year": 2018,
+    "LetterboxdURI": "https://letterboxd.com/film/sharp-objects/",
+    "Rating": 5
+  },
+  {
+    "Date": "2020-04-27",
+    "Name": "The Invisible Guest",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/the-invisible-guest/",
+    "Rating": 5
+  },
+  {
+    "Date": "2020-05-04",
+    "Name": "Mississippi Burning",
+    "Year": 1988,
+    "LetterboxdURI": "https://letterboxd.com/film/mississippi-burning/",
+    "Rating": 4
   }
 ]
