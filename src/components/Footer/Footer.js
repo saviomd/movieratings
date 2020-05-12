@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { memo } from 'react';
 
 const Footer = memo(function Footer () {
@@ -8,6 +9,7 @@ const Footer = memo(function Footer () {
 			<a className="ml-1 text-danger" href="http://saviomd.com/" target="_blank" rel="noopener noreferrer">
 				<img alt="saviomd.com" className="mr-1" src="https://saviomd.com/img/favicon.png" height="15" width="15" />
 				Sávio Mendes
+				<FontAwesomeIcon className="ml-1 small" icon="external-link-alt" />
 			</a>
 		</footer>
 	)

@@ -6,24 +6,30 @@ import movieInfoContext from '../../../contexts/movieInfoContext';
 import MovieBackdrop from '../../MovieBackdrop';
 import MovieInfoCastCrew from '../MovieInfoCastCrew';
 import MovieInfoRecommendations from '../MovieInfoRecommendations';
+import MoviePoster from '../../MoviePoster';
 
 const MovieInfoBody = () => {
 	const { movieInfo } = useContext(movieInfoContext);
 	return (
 		<>
 			<div className="p-3">
-				<p className="lead">{movieInfo.overview}</p>
+				<div className="mb-3 row">
+					<div className="col-6 col-lg-4">
+						<MoviePoster poster_url={movieInfo.poster_url} title={movieInfo.title} />
+					</div>
+					<div className="col-12 col-sm-6 col-lg-8 text-right">
+						<p className="lead text-left">{movieInfo.overview}</p>
+						<div className="mb-3">
+							<a className="btn btn-danger btn-sm" href={movieInfo.LetterboxdURI} target="_blank" rel="noopener noreferrer">View movie at Letterboxd</a>
+						</div>
+						<div className="mb-3">
+							<a className="btn btn-danger btn-sm" href={movieInfo.tmdbURI} target="_blank" rel="noopener noreferrer">View movie at TMDB</a>
+						</div>
+					</div>
+				</div>
 				<MovieCreditsStore movieId={movieInfo.id}>
 					<MovieInfoCastCrew />
 				</MovieCreditsStore>
-				<div className="text-right">
-					<div className="mb-3">
-						<a className="btn btn-danger btn-sm" href={movieInfo.LetterboxdURI} target="_blank" rel="noopener noreferrer">View movie at Letterboxd</a>
-					</div>
-					<div className="mb-3">
-						<a className="btn btn-danger btn-sm" href={movieInfo.tmdbURI} target="_blank" rel="noopener noreferrer">View movie at TMDB</a>
-					</div>
-				</div>
 			</div>
 			<MovieBackdrop backdrop_url={movieInfo.backdrop_url} title={movieInfo.title} />
 			<MovieRecommendationsStore movieId={movieInfo.id}>

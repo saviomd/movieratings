@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext } from 'react';
 
 import movieCreditsContext from '../../../contexts/movieCreditsContext';
@@ -11,7 +12,10 @@ const MovieInfoCastCrew = () => {
 	};
 	return (
 		<LoadingHandler dataStatus={movieCreditsStatus} hasData={!!movieCredits.id}>
-			<h2 className="h4">Cast</h2>
+			<h2 className="h4">
+				Cast
+				<FontAwesomeIcon className="ml-1 small" icon="external-link-alt" />
+			</h2>
 			{!!movieCredits.cast.length ? (
 				<ul className="flex-nowrap form-row list-unstyled mb-0" style={verticalListStyle}>
 					{movieCredits.cast.map(person => (
@@ -26,7 +30,10 @@ const MovieInfoCastCrew = () => {
 			) : (
 				<p>No data available</p>
 			)}
-			<h2 className="h4">Crew</h2>
+			<h2 className="h4">
+				Crew
+				<FontAwesomeIcon className="ml-1 small" icon="external-link-alt" />
+			</h2>
 			{!!movieCredits.crew.length ? (
 				<ul className="flex-nowrap form-row list-unstyled mb-0" style={verticalListStyle}>
 					{movieCredits.crew.map(person => (

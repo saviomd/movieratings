@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCalendarAlt, faChartBar, faDizzy, faFrown, faHourglassHalf, faSadTear, faStar, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt, faChartBar, faDizzy, faExternalLinkAlt, faFrown, faHourglassHalf, faSadTear, faStar, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { MovieDiaryStore } from './contexts/movieDiaryContext';
 import { MovieRatingsStore } from './contexts/movieRatingsContext';
@@ -15,7 +15,7 @@ import SiteInfo from './components/SiteInfo';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-library.add(faCalendarAlt, faChartBar, faDizzy, faFrown, faHourglassHalf, faSadTear, faStar, faTimes);
+library.add(faCalendarAlt, faChartBar, faDizzy, faExternalLinkAlt, faFrown, faHourglassHalf, faSadTear, faStar, faTimes);
 
 const initialState = {
 	navLinks: [
