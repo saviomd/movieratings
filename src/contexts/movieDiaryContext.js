@@ -20,7 +20,7 @@ function reducer(state, action) {
 		case 'setMovieDiaryPage':
 			return { ...state, movieDiaryPage: state.movieDiaryPage + 1 };
 		case 'setMovieDiarySearchString':
-			return { ...state, movieDiarySearchString: action.payload.trim().toLowerCase() };
+			return { ...state, movieDiarySearchString: action.payload.toLowerCase() };
 		case 'setMovieDiaryStatus':
 			return { ...state, movieDiaryStatus: action.payload };
 		default:

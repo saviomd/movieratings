@@ -750,7 +750,7 @@
   },
   {
     "Date": "2013-04-25",
-    "Name": "I'm Not There.",
+    "Name": "I'm Not There",
     "Year": 2007,
     "LetterboxdURI": "https://letterboxd.com/film/im-not-there/",
     "Rating": 3
@@ -8051,9 +8051,9 @@
   },
   {
     "Date": "2015-05-12",
-    "Name": "Bruce Springsteen: Springsteen & I",
+    "Name": "Springsteen & I",
     "Year": 2013,
-    "LetterboxdURI": "https://letterboxd.com/film/bruce-springsteen-springsteen-i/",
+    "LetterboxdURI": "https://letterboxd.com/film/springsteen-i/",
     "Rating": 4
   },
   {
@@ -10582,5 +10582,33 @@
     "Year": 1988,
     "LetterboxdURI": "https://letterboxd.com/film/mississippi-burning/",
     "Rating": 4
+  },
+  {
+    "Date": "2020-05-18",
+    "Name": "The Platform",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/the-platform/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-06-02",
+    "Name": "Ready or Not",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/ready-or-not-2019/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-06-02",
+    "Name": "Logan Lucky",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/logan-lucky/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-06-08",
+    "Name": "The Babadook",
+    "Year": 2014,
+    "LetterboxdURI": "https://letterboxd.com/film/the-babadook/",
+    "Rating": 3
   }
 ]

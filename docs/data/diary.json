@@ -1031,9 +1031,9 @@
   },
   {
     "Date": "2015-05-12",
-    "Name": "Bruce Springsteen: Springsteen & I",
+    "Name": "Springsteen & I",
     "Year": 2013,
-    "LetterboxdURI": "https://letterboxd.com/saviomd/film/bruce-springsteen-springsteen-i/",
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/springsteen-i/",
     "Rating": 4,
     "Rewatch": "",
     "Tags": "",
@@ -4528,5 +4528,45 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2020-05-03"
+  },
+  {
+    "Date": "2020-05-18",
+    "Name": "The Platform",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/the-platform/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2020-05-17"
+  },
+  {
+    "Date": "2020-06-02",
+    "Name": "Ready or Not",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/ready-or-not-2019/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2020-05-31"
+  },
+  {
+    "Date": "2020-06-02",
+    "Name": "Logan Lucky",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/logan-lucky/",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2020-05-31"
+  },
+  {
+    "Date": "2020-06-08",
+    "Name": "The Babadook",
+    "Year": 2014,
+    "LetterboxdURI": "https://letterboxd.com/saviomd/film/the-babadook/",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2020-06-07"
   }
 ]

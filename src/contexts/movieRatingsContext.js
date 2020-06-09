@@ -20,7 +20,7 @@ function reducer(state, action) {
 		case 'setMovieRatingsPage':
 			return { ...state, movieRatingsPage: state.movieRatingsPage + 1 };
 		case 'setMovieRatingsSearchString':
-			return { ...state, movieRatingsSearchString: action.payload.trim().toLowerCase() };
+			return { ...state, movieRatingsSearchString: action.payload.toLowerCase() };
 		case 'setMovieRatingsStatus':
 			return { ...state, movieRatingsStatus: action.payload };
 		default:
