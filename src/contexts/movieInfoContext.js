@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useReducer } from 'react';
 
 import { fetchMovieInfo } from '../helpers/tmdbServices';
 import tmdbApi from '../helpers/tmdbApi';
+import formatMovieInfo from '../helpers/formatMovieInfo';
 
 const MovieInfoContext = React.createContext();
 
@@ -41,22 +42,7 @@ const MovieInfoStore = ({ children, movie }) => {
 					if (json.results.length) {
 						const newMovie = json.results.find(obj => (obj.title === movie.Name && obj.release_date.indexOf(movie.Year) > -1));
 						if (newMovie !== undefined) {
-							const payload = {
-								backdrop_url: (newMovie.backdrop_path ? tmdbApi.img.baseUrl + tmdbApi.img.backdropSize + newMovie.backdrop_path : null),
-								id: newMovie.id,
-								LetterboxdURI: movie.LetterboxdURI,
-								original_language: newMovie.original_language.toUpperCase(),
-								original_title: newMovie.original_title,
-								overview: newMovie.overview,
-								poster_url: (newMovie.poster_path ? tmdbApi.img.baseUrl + tmdbApi.img.posterSize + newMovie.poster_path : null),
-								Rating: movie.Rating,
-								release_year: newMovie.release_date.split('-')[0],
-								title: newMovie.title,
-								tmdbURI: `https://www.themoviedb.org/movie/${newMovie.id}`,
-								vote_average: newMovie.vote_average,
-								vote_count: newMovie.vote_count,
-							};
-							dispatchMovieInfo({ type: 'setMovieInfo', payload });
+							dispatchMovieInfo({ type: 'setMovieInfo', payload: formatMovieInfo(movie, newMovie) });
 						} else {
 							throw Error('No movie found');
 						}

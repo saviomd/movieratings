@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useReducer } from 'react';
 
-import tmdbApi from '../helpers/tmdbApi';
+import formatMovieRecommendations from '../helpers/formatMovieRecommendations';
 import { fetchMovieRecommendations } from '../helpers/tmdbServices';
 
 const MovieRecommendationsContext = React.createContext();
@@ -28,11 +28,7 @@ const MovieRecommendationsStore = ({ children, movieId }) => {
 		dispatchMovieRecommendations({ type: 'setMovieRecommendationsStatus', payload: 'loading' });
 		fetchMovieRecommendations(movieId)
 			.then((json) => {
-				json.results.forEach(movie => {
-					movie.poster_url = (movie.poster_path ? tmdbApi.img.baseUrl + tmdbApi.img.posterSize + movie.poster_path : null);
-					movie.tmdbURI = `https://www.themoviedb.org/movie/${movie.id}`;
-				});
-				dispatchMovieRecommendations({ type: 'setMovieRecommendations', payload: json.results });
+				dispatchMovieRecommendations({ type: 'setMovieRecommendations', payload: formatMovieRecommendations(json.results) });
 			})
 			.catch((error) => {
 				dispatchMovieRecommendations({ type: 'setMovieRecommendationsStatus', payload: 'error' });

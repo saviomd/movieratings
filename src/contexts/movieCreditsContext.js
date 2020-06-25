@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useReducer } from 'react';
 
+import formatMovieCredits from '../helpers/formatMovieCredits';
 import { fetchMovieCredits } from '../helpers/tmdbServices';
 
 const MovieCreditsContext = React.createContext();
@@ -31,13 +32,7 @@ const MovieCreditsStore = ({ children, movieId }) => {
 		dispatchMovieCredits({ type: 'setMovieCreditsStatus', payload: 'loading' });
 		fetchMovieCredits(movieId)
 			.then((json) => {
-				json.cast.forEach(person => {
-					person.tmdbURI = `https://www.themoviedb.org/person/${person.id}`;
-				});
-				json.crew.forEach(person => {
-					person.tmdbURI = `https://www.themoviedb.org/person/${person.id}`;
-				});
-				dispatchMovieCredits({ type: 'setMovieCredits', payload: json });
+				dispatchMovieCredits({ type: 'setMovieCredits', payload: formatMovieCredits(json) });
 			})
 			.catch((error) => {
 				dispatchMovieCredits({ type: 'setMovieCreditsStatus', payload: 'error' });
