@@ -29,9 +29,10 @@ const Message = memo(function Message({ type }) {
 			text: 'Page not found'
 		},
 	};
+	const animation = `animate__${type === 'loading' ? 'heartBeat' : 'headShake'}`;
 	return (
 		<div className="lead p-3 text-center">
-			<div className="h3 mb-3">
+			<div className={`animate__animated ${animation} h3 mb-3`}>
 				<span className="bg-secondary p-2 rounded">
 					<FontAwesomeIcon icon={messages[type].icon} />
 				</span>

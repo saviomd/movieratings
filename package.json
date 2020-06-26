@@ -26,6 +26,7 @@
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-viewport": "^5.3.19",
     "@storybook/react": "^5.3.19",
+    "animate.css": "^4.1.0",
     "bootstrap": "^4.5.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

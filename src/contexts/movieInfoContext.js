@@ -54,6 +54,8 @@ const MovieInfoStore = ({ children, movie }) => {
 					dispatchMovieInfo({ type: 'setMovieInfoStatus', payload: 'error' });
 					console.log(error.message);
 				});
+		} else {
+			dispatchMovieInfo({ type: 'setMovieInfoStatus', payload: 'error' });
 		}
 	}
 

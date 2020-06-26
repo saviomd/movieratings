@@ -13,6 +13,7 @@ import PageNotFound from './pages/PageNotFound';
 import PageStats from './pages/PageStats';
 import SiteInfo from './components/SiteInfo';
 
+import '../node_modules/animate.css/animate.min.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 library.add(faCalendarAlt, faChartBar, faDizzy, faExternalLinkAlt, faFrown, faHourglassHalf, faSadTear, faStar, faTimes);

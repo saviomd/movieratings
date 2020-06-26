@@ -13,7 +13,7 @@ const MovieInfoBody = () => {
 	return (
 		<>
 			<div className="p-3">
-				<div className="mb-3 row">
+				<div className="animate__animated animate__fadeInUp mb-3 row">
 					<div className="col-6 col-lg-4">
 						<MoviePoster poster_url={movieInfo.poster_url} title={movieInfo.title} />
 					</div>

@@ -3,8 +3,8 @@ import React, { memo } from 'react';
 
 const ProgressBar = memo(function ProgressBar({ width }) {
 	return (
-		<div className="bg-secondary rounded">
-			<div className="bg-danger pb-2 rounded" style={{width: `${width}%`}}></div>
+		<div className="bg-secondary overflow-hidden rounded">
+			<div className="animate__animated animate__slideInLeft bg-danger pb-2 rounded" style={{width: `${width}%`}}></div>
 		</div>
 	);
 });
