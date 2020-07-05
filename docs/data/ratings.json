@@ -10610,5 +10610,54 @@
     "Year": 2014,
     "LetterboxdURI": "https://letterboxd.com/film/the-babadook/",
     "Rating": 3
+  },
+  {
+    "Date": "2020-06-14",
+    "Name": "San Andreas",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/film/san-andreas/",
+    "Rating": 3
+  },
+  {
+    "Date": "2020-06-15",
+    "Name": "Manchester by the Sea",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/manchester-by-the-sea/",
+    "Rating": 5
+  },
+  {
+    "Date": "2020-06-19",
+    "Name": "I Lost My Body",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/i-lost-my-body/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-06-21",
+    "Name": "The Batmobile",
+    "Year": 2012,
+    "LetterboxdURI": "https://letterboxd.com/film/the-batmobile/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-06-22",
+    "Name": "Live Flesh",
+    "Year": 1997,
+    "LetterboxdURI": "https://letterboxd.com/film/live-flesh/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-06-22",
+    "Name": "Long Shot",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/long-shot-2019/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-06-25",
+    "Name": "The English Patient",
+    "Year": 1996,
+    "LetterboxdURI": "https://letterboxd.com/film/the-english-patient/",
+    "Rating": 5
   }
 ]
