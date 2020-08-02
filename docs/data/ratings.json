@@ -10659,5 +10659,40 @@
     "Year": 1996,
     "LetterboxdURI": "https://letterboxd.com/film/the-english-patient/",
     "Rating": 5
+  },
+  {
+    "Date": "2020-07-12",
+    "Name": "Focus",
+    "Year": 2015,
+    "LetterboxdURI": "https://letterboxd.com/film/focus-2015/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-07-15",
+    "Name": "Isi & Ossi",
+    "Year": 2020,
+    "LetterboxdURI": "https://letterboxd.com/film/isi-ossi/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-07-20",
+    "Name": "Thiago Ventura: POKAS",
+    "Year": 2020,
+    "LetterboxdURI": "https://letterboxd.com/film/thiago-ventura-pokas/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-07-28",
+    "Name": "Mauricio Meirelles: Generating Chaos",
+    "Year": 2020,
+    "LetterboxdURI": "https://letterboxd.com/film/mauricio-meirelles-generating-chaos/",
+    "Rating": 3
+  },
+  {
+    "Date": "2020-08-03",
+    "Name": "Scent of a Woman",
+    "Year": 1992,
+    "LetterboxdURI": "https://letterboxd.com/film/scent-of-a-woman/",
+    "Rating": 4
   }
 ]
