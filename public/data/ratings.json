@@ -10694,5 +10694,40 @@
     "Year": 1992,
     "LetterboxdURI": "https://letterboxd.com/film/scent-of-a-woman/",
     "Rating": 4
+  },
+  {
+    "Date": "2020-08-09",
+    "Name": "The Art of Racing in the Rain",
+    "Year": 2019,
+    "LetterboxdURI": "https://letterboxd.com/film/the-art-of-racing-in-the-rain/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-08-12",
+    "Name": "Texas Chainsaw 3D",
+    "Year": 2013,
+    "LetterboxdURI": "https://letterboxd.com/film/texas-chainsaw-3d/",
+    "Rating": 1
+  },
+  {
+    "Date": "2020-08-22",
+    "Name": "The Invention of Lying",
+    "Year": 2009,
+    "LetterboxdURI": "https://letterboxd.com/film/the-invention-of-lying/",
+    "Rating": 3
+  },
+  {
+    "Date": "2020-08-23",
+    "Name": "The Spectacular Now",
+    "Year": 2013,
+    "LetterboxdURI": "https://letterboxd.com/film/the-spectacular-now/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-08-30",
+    "Name": "Frankie and Johnny",
+    "Year": 1991,
+    "LetterboxdURI": "https://letterboxd.com/film/frankie-and-johnny-1991/",
+    "Rating": 4
   }
 ]
