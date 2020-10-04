@@ -10729,5 +10729,33 @@
     "Year": 1991,
     "LetterboxdURI": "https://letterboxd.com/film/frankie-and-johnny-1991/",
     "Rating": 4
+  },
+  {
+    "Date": "2020-09-13",
+    "Name": "Ice Age: Collision Course",
+    "Year": 2016,
+    "LetterboxdURI": "https://letterboxd.com/film/ice-age-collision-course/",
+    "Rating": 2
+  },
+  {
+    "Date": "2020-09-28",
+    "Name": "Afonso Padilha: Classless",
+    "Year": 2020,
+    "LetterboxdURI": "https://letterboxd.com/film/afonso-padilha-classless/",
+    "Rating": 3
+  },
+  {
+    "Date": "2020-10-02",
+    "Name": "The Social Dilemma",
+    "Year": 2020,
+    "LetterboxdURI": "https://letterboxd.com/film/the-social-dilemma/",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-10-04",
+    "Name": "CHiPS",
+    "Year": 2017,
+    "LetterboxdURI": "https://letterboxd.com/film/chips-2017/",
+    "Rating": 3
   }
 ]
