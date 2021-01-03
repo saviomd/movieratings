@@ -8653,7 +8653,7 @@
   },
   {
     "Date": "2016-09-30",
-    "Name": "Superman 75th Anniversary",
+    "Name": "Superman: 75th Anniversary Short",
     "Year": 2013,
     "LetterboxdURI": "https://boxd.it/7yUA",
     "Rating": 4
@@ -10834,5 +10834,75 @@
     "Year": 2017,
     "LetterboxdURI": "https://boxd.it/bAHw",
     "Rating": 3
+  },
+  {
+    "Date": "2020-12-12",
+    "Name": "I Feel Pretty",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/gt1o",
+    "Rating": 3
+  },
+  {
+    "Date": "2020-12-16",
+    "Name": "Canvas",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/sYQG",
+    "Rating": 3
+  },
+  {
+    "Date": "2020-12-16",
+    "Name": "If Anything Happens I Love You",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/qIv4",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-12-18",
+    "Name": "Kevin Hart: Zero F**ks Given",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/sI92",
+    "Rating": 2
+  },
+  {
+    "Date": "2020-12-19",
+    "Name": "Jurassic World: Fallen Kingdom",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/bOnU",
+    "Rating": 2
+  },
+  {
+    "Date": "2020-12-20",
+    "Name": "WHAT DID JACK DO?",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/jcWe",
+    "Rating": 4
+  },
+  {
+    "Date": "2020-12-25",
+    "Name": "The Midnight Sky",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/mK6C",
+    "Rating": 3
+  },
+  {
+    "Date": "2020-12-27",
+    "Name": "Zach Galifianakis: Live at the Purple Onion",
+    "Year": 2007,
+    "LetterboxdURI": "https://boxd.it/1K40",
+    "Rating": 1
+  },
+  {
+    "Date": "2020-12-29",
+    "Name": "Wonder Woman 1984",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/gBtA",
+    "Rating": 2
+  },
+  {
+    "Date": "2021-01-01",
+    "Name": "Death to 2020",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/t4EQ",
+    "Rating": 2
   }
 ]
