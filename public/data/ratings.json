@@ -8653,7 +8653,7 @@
   },
   {
     "Date": "2016-09-30",
-    "Name": "Superman: 75th Anniversary Short",
+    "Name": "Superman 75",
     "Year": 2013,
     "LetterboxdURI": "https://boxd.it/7yUA",
     "Rating": 4
@@ -9160,7 +9160,7 @@
     "Name": "Justice League",
     "Year": 2017,
     "LetterboxdURI": "https://boxd.it/4w68",
-    "Rating": 4
+    "Rating": 2
   },
   {
     "Date": "2017-11-29",
@@ -11008,6 +11008,27 @@
     "Name": "State of Play",
     "Year": 2009,
     "LetterboxdURI": "https://boxd.it/1JnA",
+    "Rating": 4
+  },
+  {
+    "Date": "2021-03-19",
+    "Name": "Zack Snyder's Justice League",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/tLOk",
+    "Rating": 4
+  },
+  {
+    "Date": "2021-03-22",
+    "Name": "Clue",
+    "Year": 1985,
+    "LetterboxdURI": "https://boxd.it/1MDQ",
+    "Rating": 4
+  },
+  {
+    "Date": "2021-03-22",
+    "Name": "Captain Phillips",
+    "Year": 2013,
+    "LetterboxdURI": "https://boxd.it/3GPK",
     "Rating": 4
   }
 ]
