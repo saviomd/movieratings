@@ -11,9 +11,9 @@ const SiteInfo = memo(function SiteInfo() {
 				<br />
 				My Ratings and Diary data are exported from Letterboxd from time to time.<br />
 				My
-				<a className="mx-1 text-danger" href="https://letterboxd.com/saviomd" target="_blank" rel="noopener noreferrer">
+				<a className="mx-1 text-danger text-decoration-none" href="https://letterboxd.com/saviomd" target="_blank" rel="noopener noreferrer">
 					profile
-					<FontAwesomeIcon className="ml-1 small" icon="external-link-alt" />
+					<FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
 				</a>
 				will have more up to date information.
 			</div>

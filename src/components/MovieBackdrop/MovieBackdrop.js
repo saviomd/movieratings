@@ -6,11 +6,11 @@ const MovieBackdrop = ({ backdrop_url, title }) => {
 		paddingTop: `${300/533*100}%`,
 	};
 	return (
-		<div className="bg-secondary embed-responsive text-white" style={movieBackdropStyle}>
+		<div className="bg-secondary ratio text-white" style={movieBackdropStyle}>
 			{backdrop_url ? (
-				<img alt={`Backdrop for ${title}`} className="embed-responsive-item" src={backdrop_url} />
+				<img alt={`Backdrop for ${title}`} src={backdrop_url} />
 			) : (
-				<div className="embed-responsive-item text-center">
+				<div className="text-center">
 					{`No backdrop available for ${title}`}
 				</div>
 			)}

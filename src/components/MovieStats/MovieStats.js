@@ -22,7 +22,7 @@ const MovieStats = memo(function MovieStats({ movies, moviesStatus, type }) {
 							if (type === 'moviesPerRatingGiven') {
 								let stars = [];
 								for (let i = 0; i < key; i++) {
-									stars.push(<FontAwesomeIcon key={i} className="mr-1 text-warning" icon="star" />);
+									stars.push(<FontAwesomeIcon key={i} className="me-1 text-warning" icon="star" />);
 								}
 								return stars;
 							} else {
@@ -32,9 +32,9 @@ const MovieStats = memo(function MovieStats({ movies, moviesStatus, type }) {
 						const width = value * 100 / movies.max;
 						return (
 							<li className="mb-2" key={key}>
-								<div className="no-gutters row">
-									<div className="col-auto">{text()}</div>
-									<div className="col font-weight-bold text-right">{value}</div>
+								<div className="g-0 row">
+									<div className="col">{text()}</div>
+									<div className="col-auto fw-bold">{value}</div>
 								</div>
 								<ProgressBar width={width} />
 							</li>

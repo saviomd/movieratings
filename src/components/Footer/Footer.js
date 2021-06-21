@@ -6,10 +6,10 @@ const Footer = memo(function Footer () {
 	return (
 		<footer className="border-secondary border-top mb-3 pt-3 small text-center">
 			&copy; 2017-{year}
-			<a className="ml-1 text-danger" href="http://saviomd.com/" target="_blank" rel="noopener noreferrer">
-				<img alt="saviomd.com" className="mr-1" src="https://saviomd.com/img/favicon.png" height="15" width="15" />
+			<a className="ms-1 text-danger text-decoration-none" href="http://saviomd.com/" target="_blank" rel="noopener noreferrer">
+				<img alt="saviomd.com" className="me-1" src="https://saviomd.com/img/favicon.png" height="15" width="15" />
 				Sávio Mendes
-				<FontAwesomeIcon className="ml-1 small" icon="external-link-alt" />
+				<FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
 			</a>
 		</footer>
 	)

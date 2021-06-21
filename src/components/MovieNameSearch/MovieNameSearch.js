@@ -69,13 +69,11 @@ const MovieNameSearch = ({ type }) => {
 		<div className="mb-3">
 			<div className="input-group mb-1">
 				<input id="search-movie" className="form-control" placeholder="Search..." type="text" value={state.movieSearchString} onChange={event => state.dispatchMovie({ type: state.dispatchMovieType, payload: event.target.value })} />
-				<span className="input-group-append">
-					<button className="btn btn-secondary" type="button" onClick={() => state.dispatchMovie({ type: state.dispatchMovieType, payload: '' })}>
-						<FontAwesomeIcon icon="times" />
-					</button>
-				</span>
+				<button className="btn btn-secondary" type="button" onClick={() => state.dispatchMovie({ type: state.dispatchMovieType, payload: '' })}>
+					<FontAwesomeIcon icon="times" />
+				</button>
 			</div>
-			<p className="small text-right">{state.moviesFiltered.length} movies</p>
+			<p className="small text-end">{state.moviesFiltered.length} movies</p>
 		</div>
 	);
 };

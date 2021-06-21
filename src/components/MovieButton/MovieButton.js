@@ -11,18 +11,18 @@ const MovieButton = memo(function MovieButton({ movie, type }) {
 		dateText = `rated in ${movie.DateFormatted}`;
 	}
 	return (
-		<Link className="btn btn-secondary btn-block" to={`/movie/${movie.Id}`}>
-			<div className="text-left text-truncate">
+		<Link className="btn btn-secondary d-block" to={`/movie/${movie.Id}`}>
+			<div className="text-start text-truncate">
 				{movie.Name}
-				<span className="ml-1 small">({movie.Year})</span>
+				<span className="ms-1 small">({movie.Year})</span>
 			</div>
 			<div className="align-items-end row small">
-				<div className="col text-left text-warning">
+				<div className="col text-start text-warning">
 					{Array.from(Array(movie.Rating)).map((item, i) => (
-						<FontAwesomeIcon key={i} className="mr-1" icon="star" />
+						<FontAwesomeIcon key={i} className="me-1" icon="star" />
 					))}
 				</div>
-				<div className="col small text-right">
+				<div className="col small text-end">
 					{dateText}
 				</div>
 			</div>

@@ -17,10 +17,10 @@ const MovieInfoBody = () => {
 					<div className="col-6 col-lg-4">
 						<MoviePoster poster_url={movieInfo.poster_url} title={movieInfo.title} />
 					</div>
-					<div className="col-12 col-sm-6 col-lg-8 text-right">
-						<div className="lead text-left">{movieInfo.overview}</div>
+					<div className="col-12 col-sm-6 col-lg-8 text-end">
+						<div className="lead text-start">{movieInfo.overview}</div>
 						<div className="mb-3">
-							<span className="badge badge-secondary ml-2">{movieInfo.original_language}</span>
+							<span className="badge bg-secondary ms-2">{movieInfo.original_language}</span>
 						</div>
 						<div className="mb-3">
 							<a className="btn btn-danger btn-sm" href={movieInfo.LetterboxdURI} target="_blank" rel="noopener noreferrer">View movie at Letterboxd</a>

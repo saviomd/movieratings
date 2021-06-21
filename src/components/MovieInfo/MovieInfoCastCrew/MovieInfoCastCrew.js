@@ -14,10 +14,10 @@ const MovieInfoCastCrew = () => {
 		<LoadingHandler dataStatus={movieCreditsStatus} hasData={!!movieCredits.id}>
 			<h2 className="h4">
 				Cast
-				<FontAwesomeIcon className="ml-1 small" icon="external-link-alt" />
+				<FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
 			</h2>
 			{!!movieCredits.cast.length ? (
-				<ul className="flex-nowrap form-row list-unstyled mb-0" style={verticalListStyle}>
+				<ul className="flex-nowrap g-3 list-unstyled mb-0 row" style={verticalListStyle}>
 					{movieCredits.cast.map(person => (
 						<li className="col-auto mb-3" key={person.credit_id}>
 							<a className="btn btn-secondary btn-sm" href={person.tmdbURI} rel="noopener noreferrer" target="_blank">
@@ -32,10 +32,10 @@ const MovieInfoCastCrew = () => {
 			)}
 			<h2 className="h4">
 				Crew
-				<FontAwesomeIcon className="ml-1 small" icon="external-link-alt" />
+				<FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
 			</h2>
 			{!!movieCredits.crew.length ? (
-				<ul className="flex-nowrap form-row list-unstyled mb-0" style={verticalListStyle}>
+				<ul className="flex-nowrap g-3 list-unstyled mb-0 row" style={verticalListStyle}>
 					{movieCredits.crew.map(person => (
 						<li className="col-auto mb-3" key={person.credit_id}>
 							<a className="btn btn-secondary btn-sm" href={person.tmdbURI} rel="noopener noreferrer" target="_blank">

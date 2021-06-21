@@ -16,12 +16,12 @@ const MovieInfoRecommendations = () => {
 			<div className="p-3">
 				<h2 className="h4">
 					Recommendations
-					<FontAwesomeIcon className="ml-1 small" icon="external-link-alt" />
+					<FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
 				</h2>
-				<ul className="flex-nowrap form-row list-unstyled mb-0" style={verticalListStyle}>
+				<ul className="flex-nowrap g-3 list-unstyled mb-0 row" style={verticalListStyle}>
 					{movieRecommendations.map(movie => (
 						<li className="col-5 col-md-3 col-lg-2 mb-3" key={movie.id}>
-							<a className="text-danger" href={movie.tmdbURI} rel="noopener noreferrer" target="_blank">
+							<a className="text-danger text-decoration-none" href={movie.tmdbURI} rel="noopener noreferrer" target="_blank">
 								<MoviePoster poster_url={movie.poster_url} title={movie.title} />
 								{movie.title}
 							</a>

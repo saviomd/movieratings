@@ -9,7 +9,7 @@ const MovieInfoHeader = () => {
 		<div className="bg-secondary p-3">
 			<h1 className="h3">
 				{movieInfo.title}
-				<span className="font-italic ml-2 small">{`(${movieInfo.release_year}${movieInfo.title !== movieInfo.original_title ? `, "${movieInfo.original_title}"` : ''})`}</span>
+				<span className="font-italic ms-2 small">{`(${movieInfo.release_year}${movieInfo.title !== movieInfo.original_title ? `, "${movieInfo.original_title}"` : ''})`}</span>
 			</h1>
 			<div className="small">
 				{movieInfo.Rating} of 5
