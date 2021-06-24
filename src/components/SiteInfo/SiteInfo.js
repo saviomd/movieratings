@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { memo } from 'react';
 
+import Anchor from '../Anchor';
 import tmdbApi from '../../helpers/tmdbApi';
 
 const SiteInfo = memo(function SiteInfo() {
@@ -11,10 +12,10 @@ const SiteInfo = memo(function SiteInfo() {
 				<br />
 				My Ratings and Diary data are exported from Letterboxd from time to time.<br />
 				My
-				<a className="mx-1 text-danger text-decoration-none" href="https://letterboxd.com/saviomd" target="_blank" rel="noopener noreferrer">
+				<Anchor href="https://letterboxd.com/saviomd" margin="both" target="_blank">
 					profile
 					<FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
-				</a>
+				</Anchor>
 				will have more up to date information.
 			</div>
 			<div className="mb-3">

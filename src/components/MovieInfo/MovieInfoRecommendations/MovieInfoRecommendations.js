@@ -2,15 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext } from 'react';
 
 import movieRecommendationsContext from '../../../contexts/movieRecommendationsContext';
+import Anchor from '../../Anchor';
+import Image from '../../Image';
 import LoadingHandler from '../../LoadingHandler';
-import MoviePoster from '../../MoviePoster';
+import ScrollableHorizontalList from '../../ScrollableHorizontalList';
 
 const MovieInfoRecommendations = () => {
 	const { movieRecommendations, movieRecommendationsStatus } = useContext(movieRecommendationsContext);
-	const verticalListStyle = {
-		overflowX: 'scroll',
-		WebkitOverflowScrolling: 'touch',
-	};
 	return (
 		<LoadingHandler dataStatus={movieRecommendationsStatus} hasData={!!movieRecommendations.length}>
 			<div className="p-3">
@@ -18,16 +16,16 @@ const MovieInfoRecommendations = () => {
 					Recommendations
 					<FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
 				</h2>
-				<ul className="flex-nowrap g-3 list-unstyled mb-0 row" style={verticalListStyle}>
+				<ScrollableHorizontalList>
 					{movieRecommendations.map(movie => (
-						<li className="col-5 col-md-3 col-lg-2 mb-3" key={movie.id}>
-							<a className="text-danger text-decoration-none" href={movie.tmdbURI} rel="noopener noreferrer" target="_blank">
-								<MoviePoster poster_url={movie.poster_url} title={movie.title} />
+						<li className="col-5 col-md-3 col-lg-2" key={movie.id}>
+							<Anchor href={movie.tmdbURI} target="_blank">
+								<Image src={movie.poster_url} title={movie.title} type="poster" />
 								{movie.title}
-							</a>
+							</Anchor>
 						</li>
 					))}
-				</ul>
+				</ScrollableHorizontalList>
 			</div>
 		</LoadingHandler>
 	);

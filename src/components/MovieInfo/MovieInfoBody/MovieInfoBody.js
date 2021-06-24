@@ -3,10 +3,9 @@ import React, { useContext } from 'react';
 import { MovieCreditsStore } from '../../../contexts/movieCreditsContext';
 import { MovieRecommendationsStore } from '../../../contexts/movieRecommendationsContext';
 import movieInfoContext from '../../../contexts/movieInfoContext';
-import MovieBackdrop from '../../MovieBackdrop';
+import Image from '../../Image';
 import MovieInfoCastCrew from '../MovieInfoCastCrew';
 import MovieInfoRecommendations from '../MovieInfoRecommendations';
-import MoviePoster from '../../MoviePoster';
 
 const MovieInfoBody = () => {
 	const { movieInfo } = useContext(movieInfoContext);
@@ -15,7 +14,7 @@ const MovieInfoBody = () => {
 			<div className="p-3">
 				<div className="animate__animated animate__fadeInUp mb-3 row">
 					<div className="col-6 col-lg-4">
-						<MoviePoster poster_url={movieInfo.poster_url} title={movieInfo.title} />
+						<Image src={movieInfo.poster_url} title={movieInfo.title} type="poster" />
 					</div>
 					<div className="col-12 col-sm-6 col-lg-8 text-end">
 						<div className="lead text-start">{movieInfo.overview}</div>
@@ -34,7 +33,7 @@ const MovieInfoBody = () => {
 					<MovieInfoCastCrew />
 				</MovieCreditsStore>
 			</div>
-			<MovieBackdrop backdrop_url={movieInfo.backdrop_url} title={movieInfo.title} />
+			<Image src={movieInfo.backdrop_url} title={movieInfo.title} type="backdrop" />
 			<MovieRecommendationsStore movieId={movieInfo.id}>
 				<MovieInfoRecommendations />
 			</MovieRecommendationsStore>
