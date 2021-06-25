@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCalendarAlt, faChartBar, faDizzy, faExternalLinkAlt, faFrown, faHourglassHalf, faSadTear, faStar, faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -42,26 +42,28 @@ const App = () => {
 	const [state] = useState(initialState);
 
 	return (
-		<MovieDiaryStore>
-			<MovieRatingsStore>
-				<div className="container-fluid">
-					<div className="justify-content-center row">
-						<div className="col-12 col-md-10">
-							<Header navLinks={state.navLinks} />
-							<Switch>
-								<Route path="/" exact render={() => <PageMovies type='Ratings' />} />
-								<Route path="/diary" render={() => <PageMovies type='Diary' />} />
-								<Route path="/movie/:movieId" render={({ match }) => <PageMovieInfo match={match} />} />
-								<Route path="/stats" component={PageStats} />
-								<Route component={PageNotFound} />
-							</Switch>
-							<SiteInfo />
-							<Footer />
+		<Router>
+			<MovieDiaryStore>
+				<MovieRatingsStore>
+					<div className="container-fluid">
+						<div className="justify-content-center row">
+							<div className="col-12 col-md-10">
+								<Header navLinks={state.navLinks} />
+								<Switch>
+									<Route path="/" exact render={() => <PageMovies type='Ratings' />} />
+									<Route path="/diary" render={() => <PageMovies type='Diary' />} />
+									<Route path="/movie/:movieId" render={({ match }) => <PageMovieInfo match={match} />} />
+									<Route path="/stats" component={PageStats} />
+									<Route component={PageNotFound} />
+								</Switch>
+								<SiteInfo />
+								<Footer />
+							</div>
 						</div>
 					</div>
-				</div>
-			</MovieRatingsStore>
-		</MovieDiaryStore>
+				</MovieRatingsStore>
+			</MovieDiaryStore>
+		</Router>
 	);
 };
 

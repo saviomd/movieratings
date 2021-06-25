@@ -19,7 +19,7 @@ const Image = ({ src, title, type }) => {
 	return (
 		<div className="bg-secondary ratio text-white" style={style}>
 			{src ? (
-				<img alt={`${type} for ${title}`} src={src} />
+				<img alt={`${type} for ${title}`} loading="lazy" src={src} />
 			) : (
 				<div className="p-3 text-center">{`No ${type} available for ${title}`}</div>
 			)}
