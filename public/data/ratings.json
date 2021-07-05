@@ -5188,7 +5188,7 @@
   },
   {
     "Date": "2013-05-15",
-    "Name": "Jack and Jill vs. the World",
+    "Name": "Jack and Jill vs. The World",
     "Year": 2008,
     "LetterboxdURI": "https://boxd.it/1KzM",
     "Rating": 4
@@ -8876,13 +8876,6 @@
     "Rating": 5
   },
   {
-    "Date": "2017-04-19",
-    "Name": "The Fate of the Furious",
-    "Year": 2017,
-    "LetterboxdURI": "https://boxd.it/bbCw",
-    "Rating": 4
-  },
-  {
     "Date": "2017-04-24",
     "Name": "Life",
     "Year": 2017,
@@ -11079,5 +11072,47 @@
     "Year": 2020,
     "LetterboxdURI": "https://boxd.it/rHZE",
     "Rating": 4
+  },
+  {
+    "Date": "2021-06-20",
+    "Name": "Those Who Wish Me Dead",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/lgeu",
+    "Rating": 2
+  },
+  {
+    "Date": "2021-06-25",
+    "Name": "Ghost in the Shell",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/abTA",
+    "Rating": 3
+  },
+  {
+    "Date": "2021-06-28",
+    "Name": "Soul",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/ioLA",
+    "Rating": 4
+  },
+  {
+    "Date": "2021-07-01",
+    "Name": "The Fate of the Furious",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/bbCw",
+    "Rating": 3
+  },
+  {
+    "Date": "2021-07-01",
+    "Name": "F9",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/dqsU",
+    "Rating": 3
+  },
+  {
+    "Date": "2021-07-03",
+    "Name": "Console Wars",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/buaw",
+    "Rating": 3
   }
 ]
