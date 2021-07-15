@@ -1,3 +1,3 @@
-import MovieInfoRecommendations from './MovieInfoRecommendations';
+import MovieInfoRecommendations from "./MovieInfoRecommendations";
 
 export default MovieInfoRecommendations;

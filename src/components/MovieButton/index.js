@@ -1,3 +1,3 @@
-import MovieButton from './MovieButton';
+import MovieButton from "./MovieButton";
 
 export default MovieButton;

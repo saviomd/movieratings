@@ -1,3 +1,3 @@
-import ScrollableHorizontalList from './ScrollableHorizontalList';
+import ScrollableHorizontalList from "./ScrollableHorizontalList";
 
 export default ScrollableHorizontalList;

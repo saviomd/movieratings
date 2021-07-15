@@ -1,3 +1,3 @@
-import MovieInfoBody from './MovieInfoBody';
+import MovieInfoBody from "./MovieInfoBody";
 
 export default MovieInfoBody;

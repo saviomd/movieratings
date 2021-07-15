@@ -1,3 +1,3 @@
-import MovieInfoHeader from './MovieInfoHeader';
+import MovieInfoHeader from "./MovieInfoHeader";
 
 export default MovieInfoHeader;

@@ -1,3 +1,3 @@
-import MovieNameSearch from './MovieNameSearch';
+import MovieNameSearch from "./MovieNameSearch";
 
 export default MovieNameSearch;

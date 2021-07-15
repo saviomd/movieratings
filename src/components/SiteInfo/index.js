@@ -1,3 +1,3 @@
-import SiteInfo from './SiteInfo';
+import SiteInfo from "./SiteInfo";
 
 export default SiteInfo;

@@ -1,3 +1,3 @@
-import MovieInfo from './MovieInfo';
+import MovieInfo from "./MovieInfo";
 
 export default MovieInfo;

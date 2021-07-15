@@ -1,3 +1,3 @@
-import LoadingHandler from './LoadingHandler';
+import LoadingHandler from "./LoadingHandler";
 
 export default LoadingHandler;

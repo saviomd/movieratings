@@ -1,34 +1,34 @@
-import React from 'react';
-import { MemoryRouter } from 'react-router';
-import { storiesOf } from '@storybook/react';
+import React from "react";
+import { MemoryRouter } from "react-router";
+import { storiesOf } from "@storybook/react";
 
-import MockWrapper from '../MockWrapper';
-import MovieList from './MovieList';
-import MovieDiaryContext from '../../contexts/movieDiaryContext';
-import MovieRatingsContext from '../../contexts/movieRatingsContext';
-import movieDiaryMock from '../../../__mocks__/movieDiaryMock';
-import movieRatingsMock from '../../../__mocks__/movieRatingsMock';
+import MockWrapper from "../MockWrapper";
+import MovieList from "./MovieList";
+import MovieDiaryContext from "../../contexts/movieDiaryContext";
+import MovieRatingsContext from "../../contexts/movieRatingsContext";
+import movieDiaryMock from "../../../__mocks__/movieDiaryMock";
+import movieRatingsMock from "../../../__mocks__/movieRatingsMock";
 
 const movieDiaryProviderState = {
   increaseMovieDiaryPage: null,
   movieDiaryFiltered: movieDiaryMock.movieDiary,
   movieDiaryPaginated: movieDiaryMock.movieDiary,
-  movieDiarySearchString: '',
+  movieDiarySearchString: "",
   movieDiaryStatus: movieDiaryMock.movieDiaryStatus,
 };
 const movieRatingsProviderState = {
   increaseMovieRatingsPage: null,
   movieRatingsFiltered: movieRatingsMock.movieRatings,
   movieRatingsPaginated: movieRatingsMock.movieRatings,
-  movieRatingsSearchString: '',
+  movieRatingsSearchString: "",
   movieRatingsStatus: movieRatingsMock.movieRatingsStatus,
 };
 
-storiesOf('MovieList', module)
-  .addDecorator(story => (
-    <MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
+storiesOf("MovieList", module)
+  .addDecorator((story) => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
   ))
-  .add('movieDiary', () => (
+  .add("movieDiary", () => (
     <MovieDiaryContext.Provider value={movieDiaryProviderState}>
       <MovieRatingsContext.Provider value={movieRatingsProviderState}>
         <MockWrapper>
@@ -37,7 +37,7 @@ storiesOf('MovieList', module)
       </MovieRatingsContext.Provider>
     </MovieDiaryContext.Provider>
   ))
-  .add('movieRatings', () => (
+  .add("movieRatings", () => (
     <MovieDiaryContext.Provider value={movieDiaryProviderState}>
       <MovieRatingsContext.Provider value={movieRatingsProviderState}>
         <MockWrapper>
@@ -45,4 +45,4 @@ storiesOf('MovieList', module)
         </MockWrapper>
       </MovieRatingsContext.Provider>
     </MovieDiaryContext.Provider>
-  ))
+  ));

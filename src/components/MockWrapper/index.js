@@ -1,3 +1,3 @@
-import MockWrapper from './MockWrapper';
+import MockWrapper from "./MockWrapper";
 
 export default MockWrapper;

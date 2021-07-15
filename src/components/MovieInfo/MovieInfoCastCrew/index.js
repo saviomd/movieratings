@@ -1,3 +1,3 @@
-import MovieInfoCastCrew from './MovieInfoCastCrew';
+import MovieInfoCastCrew from "./MovieInfoCastCrew";
 
 export default MovieInfoCastCrew;
