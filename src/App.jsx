@@ -1,20 +1,9 @@
 import React, { useState } from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faCalendarAlt,
-  faChartBar,
-  faDizzy,
-  faExternalLinkAlt,
-  faFrown,
-  faHourglassHalf,
-  faSadTear,
-  faStar,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+import { Route, Switch } from "react-router-dom";
 
 import { MovieDiaryStore } from "./contexts/movieDiaryContext";
 import { MovieRatingsStore } from "./contexts/movieRatingsContext";
+import AppWrapper from "./components/AppWrapper";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import PageMovieInfo from "./pages/PageMovieInfo";
@@ -22,21 +11,6 @@ import PageMovies from "./pages/PageMovies";
 import PageNotFound from "./pages/PageNotFound";
 import PageStats from "./pages/PageStats";
 import SiteInfo from "./components/SiteInfo";
-
-import "../node_modules/animate.css/animate.min.css";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
-library.add(
-  faCalendarAlt,
-  faChartBar,
-  faDizzy,
-  faExternalLinkAlt,
-  faFrown,
-  faHourglassHalf,
-  faSadTear,
-  faStar,
-  faTimes
-);
 
 const initialState = {
   navLinks: [
@@ -62,7 +36,7 @@ const App = () => {
   const [state] = useState(initialState);
 
   return (
-    <Router>
+    <AppWrapper>
       <MovieDiaryStore>
         <MovieRatingsStore>
           <div className="container-fluid">
@@ -93,7 +67,7 @@ const App = () => {
           </div>
         </MovieRatingsStore>
       </MovieDiaryStore>
-    </Router>
+    </AppWrapper>
   );
 };
 

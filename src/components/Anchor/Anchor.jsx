@@ -22,10 +22,7 @@ const Anchor = ({ children, href, margin, target }) => {
 };
 
 Anchor.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
+  children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
   margin: PropTypes.oneOf(["both", "left", "none", "right"]),
   target: PropTypes.oneOf(["_blank", "_parent", "_self", "_top"]),

@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
+const types = ["Diary", "Ratings"];
+
 const MovieButton = memo(({ movie, type }) => {
   let dateText;
   if (type === "Diary" && movie.WatchedDateFormatted) {
@@ -41,7 +43,8 @@ MovieButton.propTypes = {
     WatchedDateFormatted: PropTypes.string,
     Year: PropTypes.number.isRequired,
   }).isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(types).isRequired,
 };
 
 export default MovieButton;
+export { types };

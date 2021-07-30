@@ -3,6 +3,8 @@ import React, { memo } from "react";
 
 import Message from "../Message";
 
+const dataStatuses = ["", "error", "loading", "loaded"];
+
 const LoadingHandler = memo(
   ({ children, dataStatus, hasData, messageNoData }) => (
     <>
@@ -16,19 +18,17 @@ const LoadingHandler = memo(
 );
 
 LoadingHandler.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-  dataStatus: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  dataStatus: PropTypes.oneOf(dataStatuses),
   hasData: PropTypes.bool,
   messageNoData: PropTypes.string,
 };
 
 LoadingHandler.defaultProps = {
-  dataStatus: "",
+  dataStatus: dataStatuses[0],
   hasData: true,
   messageNoData: "noData",
 };
 
 export default LoadingHandler;
+export { dataStatuses };

@@ -1,20 +1,23 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
 
-import MockWrapper from "../MockWrapper";
 import MovieInfo from "./MovieInfo";
 import MovieInfoContext from "../../contexts/movieInfoContext";
-import movieInfoMock from "../../../__mocks__/movieInfoMock";
+import movieInfoMock from "../../__mocks__/movieInfoMock";
 
-storiesOf("MovieInfo", module).add("default", () => (
+export default {
+  title: "Example/MovieInfo",
+  component: MovieInfo,
+};
+
+const Template = (args) => (
   <MovieInfoContext.Provider
     value={{
       movieInfo: movieInfoMock.movieInfo,
       movieInfoStatus: movieInfoMock.movieInfoStatus,
     }}
   >
-    <MockWrapper>
-      <MovieInfo />
-    </MockWrapper>
+    <MovieInfo {...args} />
   </MovieInfoContext.Provider>
-));
+);
+
+export const Default = Template.bind({});

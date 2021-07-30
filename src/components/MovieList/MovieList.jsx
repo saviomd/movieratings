@@ -111,7 +111,7 @@ const MovieList = memo(({ type }) => {
 });
 
 MovieList.propTypes = {
-  type: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(["Diary", "Ratings"]).isRequired,
 };
 
 export default MovieList;

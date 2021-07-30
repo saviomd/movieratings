@@ -1,6 +1,6 @@
 {
   "name": "movieratings",
-  "version": "1.0.20210714",
+  "version": "1.0.20210729",
   "description": "My movie ratings from Letterboxd",
   "author": "Sávio Mendes",
   "license": "UNLICENSED",
@@ -16,19 +16,16 @@
     "postbuild": "rm -r docs && mv build docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-knobs": "^6.3.0",
-    "@storybook/addon-viewport": "^6.3.4",
-    "@storybook/react": "^6.3.4",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^13.1.9",
+    "@testing-library/user-event": "^13.2.1",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.0.2",
     "prop-types": "^15.7.2",
@@ -39,7 +36,13 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "eslint": "^7.30.0",
+    "@storybook/addon-actions": "^6.3.6",
+    "@storybook/addon-essentials": "^6.3.6",
+    "@storybook/addon-links": "^6.3.6",
+    "@storybook/node-logger": "^6.3.6",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.6",
+    "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
@@ -71,10 +74,22 @@
       "react-app",
       "react-app/jest",
       "airbnb",
-      "prettier"
+      "airbnb/hooks",
+      "plugin:prettier/recommended"
     ],
     "ignorePatterns": [
       "src/reportWebVitals.js"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off",
+          "react/jsx-props-no-spreading": "off"
+        }
+      }
     ],
     "parserOptions": {
       "ecmaFeatures": {
@@ -84,11 +99,7 @@
       "sourceType": "module"
     },
     "plugins": [
-      "react",
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": "error"
-    }
+      "react"
+    ]
   }
 }
