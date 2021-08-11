@@ -18,13 +18,14 @@ const LoadingHandler = memo(
 );
 
 LoadingHandler.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   dataStatus: PropTypes.oneOf(dataStatuses),
   hasData: PropTypes.bool,
   messageNoData: PropTypes.string,
 };
 
 LoadingHandler.defaultProps = {
+  children: null,
   dataStatus: dataStatuses[0],
   hasData: true,
   messageNoData: "noData",

@@ -1,10 +1,9 @@
-import PropTypes from "prop-types";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
 import Nav from "../Nav";
 
-const Header = ({ navLinks }) => (
+const Header = () => (
   <header className="border-bottom border-secondary mb-3">
     <div className="align-items-center my-2 row">
       <h1 className="col h5 mb-0">
@@ -13,20 +12,10 @@ const Header = ({ navLinks }) => (
         </NavLink>
       </h1>
       <div className="col-auto">
-        <Nav navLinks={navLinks} />
+        <Nav />
       </div>
     </div>
   </header>
 );
-
-Header.propTypes = {
-  navLinks: PropTypes.arrayOf(
-    PropTypes.shape({
-      icon: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      path: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
 
 export default Header;

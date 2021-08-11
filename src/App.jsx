@@ -1,74 +1,30 @@
-import React, { useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import React from "react";
 
 import { MovieDiaryStore } from "./contexts/movieDiaryContext";
 import { MovieRatingsStore } from "./contexts/movieRatingsContext";
 import AppWrapper from "./components/AppWrapper";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import PageMovieInfo from "./pages/PageMovieInfo";
-import PageMovies from "./pages/PageMovies";
-import PageNotFound from "./pages/PageNotFound";
-import PageStats from "./pages/PageStats";
 import SiteInfo from "./components/SiteInfo";
+import Pages from "./pages";
 
-const initialState = {
-  navLinks: [
-    {
-      icon: "star",
-      name: "Ratings",
-      path: "/",
-    },
-    {
-      icon: "calendar-alt",
-      name: "Diary",
-      path: "/diary",
-    },
-    {
-      icon: "chart-bar",
-      name: "Stats",
-      path: "/stats",
-    },
-  ],
-};
-
-const App = () => {
-  const [state] = useState(initialState);
-
-  return (
-    <AppWrapper>
-      <MovieDiaryStore>
-        <MovieRatingsStore>
-          <div className="container-fluid">
-            <div className="justify-content-center row">
-              <div className="col-12 col-md-10">
-                <Header navLinks={state.navLinks} />
-                <Switch>
-                  <Route
-                    path="/"
-                    exact
-                    render={() => <PageMovies type="Ratings" />}
-                  />
-                  <Route
-                    path="/diary"
-                    render={() => <PageMovies type="Diary" />}
-                  />
-                  <Route
-                    path="/movie/:movieId"
-                    render={({ match }) => <PageMovieInfo match={match} />}
-                  />
-                  <Route path="/stats" component={PageStats} />
-                  <Route component={PageNotFound} />
-                </Switch>
-                <SiteInfo />
-                <Footer />
-              </div>
+const App = () => (
+  <AppWrapper>
+    <MovieDiaryStore>
+      <MovieRatingsStore>
+        <div className="container-fluid">
+          <div className="justify-content-center row">
+            <div className="col-12 col-md-10">
+              <Header />
+              <Pages />
+              <SiteInfo />
+              <Footer />
             </div>
           </div>
-        </MovieRatingsStore>
-      </MovieDiaryStore>
-    </AppWrapper>
-  );
-};
+        </div>
+      </MovieRatingsStore>
+    </MovieDiaryStore>
+  </AppWrapper>
+);
 
 export default App;
