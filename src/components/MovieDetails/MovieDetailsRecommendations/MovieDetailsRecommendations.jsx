@@ -7,7 +7,7 @@ import Image from "../../Image";
 import LoadingHandler from "../../LoadingHandler";
 import ScrollableHorizontalList from "../../ScrollableHorizontalList";
 
-const MovieInfoRecommendations = () => {
+const MovieDetailsRecommendations = () => {
   const { movieRecommendations, movieRecommendationsStatus } = useContext(
     movieRecommendationsContext
   );
@@ -40,4 +40,4 @@ const MovieInfoRecommendations = () => {
   );
 };
 
-export default MovieInfoRecommendations;
+export default MovieDetailsRecommendations;

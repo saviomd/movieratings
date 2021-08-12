@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useMemo, useReducer } from "react";
+import React, { useCallback, useEffect, useMemo, useReducer } from "react";
 
 import formatMovieRecommendations from "../helpers/formatMovieRecommendations";
-import { fetchMovieRecommendations } from "../helpers/tmdbServices";
+import { getMovieRecommendations } from "../helpers/tmdbServices";
 
 const MovieRecommendationsContext = React.createContext();
 
@@ -32,12 +32,12 @@ const MovieRecommendationsStore = ({ children, movieId }) => {
     initialState
   );
 
-  function loadMovieRecommendations(id) {
+  const loadMovieRecommendations = useCallback(() => {
     dispatchMovieRecommendations({
       type: "setMovieRecommendationsStatus",
       payload: "loading",
     });
-    fetchMovieRecommendations(id)
+    getMovieRecommendations({ movieId })
       .then((json) => {
         dispatchMovieRecommendations({
           type: "setMovieRecommendations",
@@ -50,11 +50,11 @@ const MovieRecommendationsStore = ({ children, movieId }) => {
           payload: "error",
         });
       });
-  }
+  }, [movieId]);
 
   useEffect(() => {
-    loadMovieRecommendations(movieId);
-  }, [movieId]);
+    loadMovieRecommendations();
+  }, [loadMovieRecommendations]);
 
   const providerValue = useMemo(() => state, [state]);
   return (

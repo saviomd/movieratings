@@ -8,10 +8,12 @@ const tmdbApi = {
       "https://www.themoviedb.org/assets/1/v4/logos/293x302-powered-by-square-blue-ee05c47ab249273a6f9f1dcafec63daba386ca30544567629deb1809395d8516.png",
     posterSize: "w780",
   },
-  key: "api_key=6f875d4fba2e999f480afa6275a08f75",
-  pathMovieCredits: "movie/{movie_id}/credits",
-  pathMovieRecommendations: "movie/{movie_id}/recommendations",
-  pathSearchMovies: "search/movie",
+  key: "6f875d4fba2e999f480afa6275a08f75",
+  methods: {
+    movieCredits: ({ movieId }) => `movie/${movieId}/credits`,
+    movieRecommendations: ({ movieId }) => `movie/${movieId}/recommendations`,
+    searchMovies: () => "search/movie",
+  },
   url: "https://api.themoviedb.org/3/",
 };
 

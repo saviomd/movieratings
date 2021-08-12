@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import React, { useContext } from "react";
 
-import { MovieInfoStore } from "../contexts/movieInfoContext";
+import { MovieDetailsStore } from "../contexts/movieDetailsContext";
 import movieDiaryContext from "../contexts/movieDiaryContext";
 import movieRatingsContext from "../contexts/movieRatingsContext";
-import MovieInfo from "../components/MovieInfo";
+import MovieDetails from "../components/MovieDetails";
 
-const PageMovieInfo = ({ match }) => {
+const PageMovieDetails = ({ match }) => {
   const { movieDiary } = useContext(movieDiaryContext);
   const { movieRatings } = useContext(movieRatingsContext);
   const { movieId } = match.params;
@@ -14,13 +14,13 @@ const PageMovieInfo = ({ match }) => {
     (obj) => obj.Id === movieId
   );
   return (
-    <MovieInfoStore movie={movie}>
-      <MovieInfo />
-    </MovieInfoStore>
+    <MovieDetailsStore movie={movie}>
+      <MovieDetails />
+    </MovieDetailsStore>
   );
 };
 
-PageMovieInfo.propTypes = {
+PageMovieDetails.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       movieId: PropTypes.string.isRequired,
@@ -28,4 +28,4 @@ PageMovieInfo.propTypes = {
   }).isRequired,
 };
 
-export default PageMovieInfo;
+export default PageMovieDetails;

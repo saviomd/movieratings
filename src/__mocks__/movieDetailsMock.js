@@ -1,5 +1,5 @@
-const movieInfo = {
-  movieInfo: {
+const movieDetails = {
+  movieDetails: {
     backdrop_url:
       "https://image.tmdb.org/t/p/w1280/rBN6GPKUDZ6ZKAQiEZegZ0DZb6V.jpg",
     dataStatus: "loaded",
@@ -17,7 +17,7 @@ const movieInfo = {
     vote_average: 7.1,
     vote_count: 4741,
   },
-  movieInfoStatus: "loaded",
+  movieDetailsStatus: "loaded",
 };
 
-export default movieInfo;
+export default movieDetails;

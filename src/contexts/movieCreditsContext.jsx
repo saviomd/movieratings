@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useMemo, useReducer } from "react";
+import React, { useCallback, useEffect, useMemo, useReducer } from "react";
 
 import formatMovieCredits from "../helpers/formatMovieCredits";
-import { fetchMovieCredits } from "../helpers/tmdbServices";
+import { getMovieCredits } from "../helpers/tmdbServices";
 
 const MovieCreditsContext = React.createContext();
 
@@ -33,9 +33,9 @@ function reducer(state, action) {
 const MovieCreditsStore = ({ children, movieId }) => {
   const [state, dispatchMovieCredits] = useReducer(reducer, initialState);
 
-  function loadMovieCredits(id) {
+  const loadMovieCredits = useCallback(() => {
     dispatchMovieCredits({ type: "setMovieCreditsStatus", payload: "loading" });
-    fetchMovieCredits(id)
+    getMovieCredits({ movieId })
       .then((json) => {
         dispatchMovieCredits({
           type: "setMovieCredits",
@@ -48,11 +48,11 @@ const MovieCreditsStore = ({ children, movieId }) => {
           payload: "error",
         });
       });
-  }
+  }, [movieId]);
 
   useEffect(() => {
-    loadMovieCredits(movieId);
-  }, [movieId]);
+    loadMovieCredits();
+  }, [loadMovieCredits]);
 
   const providerValue = useMemo(() => state, [state]);
   return (

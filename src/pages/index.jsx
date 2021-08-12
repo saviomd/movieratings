@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import LoadingHandler from "../components/LoadingHandler";
 
-const PageMovieInfo = lazy(() => import("./PageMovieInfo"));
+const PageMovieDetails = lazy(() => import("./PageMovieDetails"));
 const PageMovies = lazy(() => import("./PageMovies"));
 const PageNotFound = lazy(() => import("./PageNotFound"));
 const PageStats = lazy(() => import("./PageStats"));
@@ -23,7 +23,7 @@ const pages = [
     exact: true,
     path: "/movie/:movieId",
     // eslint-disable-next-line react/prop-types
-    render: ({ match }) => <PageMovieInfo match={match} />,
+    render: ({ match }) => <PageMovieDetails match={match} />,
   },
   {
     exact: true,

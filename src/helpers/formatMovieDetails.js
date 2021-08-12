@@ -1,6 +1,6 @@
 import tmdbApi from "./tmdbApi";
 
-const formatMovieInfo = (movie, newMovie) => ({
+const formatMovieDetails = (movie, newMovie) => ({
   backdrop_url: newMovie.backdrop_path
     ? tmdbApi.img.baseUrl + tmdbApi.img.backdropSize + newMovie.backdrop_path
     : null,
@@ -20,4 +20,4 @@ const formatMovieInfo = (movie, newMovie) => ({
   vote_count: newMovie.vote_count,
 });
 
-export default formatMovieInfo;
+export default formatMovieDetails;

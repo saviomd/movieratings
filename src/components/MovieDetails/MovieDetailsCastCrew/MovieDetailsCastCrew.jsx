@@ -5,7 +5,7 @@ import movieCreditsContext from "../../../contexts/movieCreditsContext";
 import LoadingHandler from "../../LoadingHandler";
 import ScrollableHorizontalList from "../../ScrollableHorizontalList";
 
-const MovieInfoCastCrew = () => {
+const MovieDetailsCastCrew = () => {
   const { movieCredits, movieCreditsStatus } = useContext(movieCreditsContext);
   return (
     <LoadingHandler dataStatus={movieCreditsStatus} hasData={!!movieCredits.id}>
@@ -59,4 +59,4 @@ const MovieInfoCastCrew = () => {
   );
 };
 
-export default MovieInfoCastCrew;
+export default MovieDetailsCastCrew;
