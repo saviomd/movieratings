@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import React, { memo, useContext, useEffect, useReducer } from "react";
 
-import movieDiaryContext from "../../contexts/movieDiaryContext";
-import movieRatingsContext from "../../contexts/movieRatingsContext";
+import MovieDiaryContext from "../../contexts/MovieDiaryContext";
+import MovieRatingsContext from "../../contexts/MovieRatingsContext";
 import LoadingHandler from "../LoadingHandler";
 import MovieButton from "../MovieButton";
 
@@ -32,7 +32,7 @@ const MovieList = memo(({ type }) => {
     movieDiaryPaginated,
     movieDiarySearchString,
     movieDiaryStatus,
-  } = useContext(movieDiaryContext);
+  } = useContext(MovieDiaryContext);
   const {
     dispatchMovieRatings,
     movieRatingsFiltered,
@@ -40,7 +40,7 @@ const MovieList = memo(({ type }) => {
     movieRatingsPaginated,
     movieRatingsSearchString,
     movieRatingsStatus,
-  } = useContext(movieRatingsContext);
+  } = useContext(MovieRatingsContext);
 
   useEffect(() => {
     let payload;

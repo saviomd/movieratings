@@ -1,7 +1,7 @@
 import React from "react";
 
-import { MovieDiaryStore } from "./contexts/movieDiaryContext";
-import { MovieRatingsStore } from "./contexts/movieRatingsContext";
+import { MovieDiaryStore } from "./contexts/MovieDiaryContext";
+import { MovieRatingsStore } from "./contexts/MovieRatingsContext";
 import AppWrapper from "./components/AppWrapper";
 import Footer from "./components/Footer";
 import Header from "./components/Header";

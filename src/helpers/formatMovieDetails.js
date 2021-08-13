@@ -1,23 +1,26 @@
+import formatMovieCredits from "./formatMovieCredits";
+import formatMovieRecommendations from "./formatMovieRecommendations";
 import tmdbApi from "./tmdbApi";
 
-const formatMovieDetails = (movie, newMovie) => ({
-  backdrop_url: newMovie.backdrop_path
-    ? tmdbApi.img.baseUrl + tmdbApi.img.backdropSize + newMovie.backdrop_path
-    : null,
-  id: newMovie.id,
+const { backdrop, poster } = tmdbApi.img;
+
+const formatMovieDetails = ({ movie, movieDetails }) => ({
+  ...movieDetails,
+  backdrop_url: backdrop({
+    path: movieDetails.backdrop_path,
+  }),
+  credits: formatMovieCredits({ credits: movieDetails.credits }),
   LetterboxdURI: movie.LetterboxdURI,
-  original_language: newMovie.original_language.toUpperCase(),
-  original_title: newMovie.original_title,
-  overview: newMovie.overview,
-  poster_url: newMovie.poster_path
-    ? tmdbApi.img.baseUrl + tmdbApi.img.posterSize + newMovie.poster_path
-    : null,
+  original_language: movieDetails.original_language.toUpperCase(),
+  poster_url: poster({
+    path: movieDetails.poster_path,
+  }),
   Rating: movie.Rating,
-  release_year: newMovie.release_date.split("-")[0],
-  title: newMovie.title,
-  tmdbURI: `https://www.themoviedb.org/movie/${newMovie.id}`,
-  vote_average: newMovie.vote_average,
-  vote_count: newMovie.vote_count,
+  recommendations: formatMovieRecommendations({
+    movies: movieDetails.recommendations.results,
+  }),
+  release_year: movieDetails.release_date.split("-")[0],
+  tmdbURI: `https://www.themoviedb.org/movie/${movieDetails.id}`,
 });
 
 export default formatMovieDetails;

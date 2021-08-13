@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 
-import { MovieCreditsStore } from "../../../contexts/movieCreditsContext";
-import { MovieRecommendationsStore } from "../../../contexts/movieRecommendationsContext";
-import MovieDetailsContext from "../../../contexts/movieDetailsContext";
+import MovieDetailsContext from "../../../contexts/MovieDetailsContext";
 import Image from "../../Image";
 import MovieDetailsCastCrew from "../MovieDetailsCastCrew";
 import MovieDetailsRecommendations from "../MovieDetailsRecommendations";
@@ -49,18 +47,14 @@ const MovieDetailsBody = () => {
             </div>
           </div>
         </div>
-        <MovieCreditsStore movieId={movieDetails.id}>
-          <MovieDetailsCastCrew />
-        </MovieCreditsStore>
+        <MovieDetailsCastCrew />
       </div>
       <Image
         src={movieDetails.backdrop_url}
         title={movieDetails.title}
         type="backdrop"
       />
-      <MovieRecommendationsStore movieId={movieDetails.id}>
-        <MovieDetailsRecommendations />
-      </MovieRecommendationsStore>
+      <MovieDetailsRecommendations />
     </>
   );
 };

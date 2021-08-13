@@ -1,10 +1,10 @@
-const formatMovieCredits = (movieCredits) => ({
-  ...movieCredits,
-  cast: movieCredits.cast.map((person) => ({
+const formatMovieCredits = ({ credits }) => ({
+  ...credits,
+  cast: credits?.cast.map((person) => ({
     ...person,
     tmdbURI: `https://www.themoviedb.org/person/${person.id}`,
   })),
-  crew: movieCredits.crew.map((person) => ({
+  crew: credits?.crew.map((person) => ({
     ...person,
     tmdbURI: `https://www.themoviedb.org/person/${person.id}`,
   })),

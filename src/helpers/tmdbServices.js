@@ -1,14 +1,12 @@
 import fetchTmdb from "./fetchTmdb";
 import tmdbApi from "./tmdbApi";
 
-const { movieCredits, movieRecommendations, searchMovies } = tmdbApi.methods;
+const { movieDetails, searchMovies } = tmdbApi.methods;
 
-export const getMovieCredits = ({ movieId }) =>
-  fetchTmdb({ path: movieCredits({ movieId }) });
-
-export const getMovieRecommendations = ({ movieId }) =>
+export const getMovieDetails = ({ movieId }) =>
   fetchTmdb({
-    path: movieRecommendations({ movieId }),
+    path: movieDetails({ movieId }),
+    queryString: "&append_to_response=credits,recommendations",
   });
 
 export const getSearchMovies = ({ Name, Year }) =>

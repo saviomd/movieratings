@@ -1,11 +1,11 @@
 import tmdbApi from "./tmdbApi";
 
-const formatMovieRecommendations = (results) =>
-  results.map((movie) => ({
+const { poster } = tmdbApi.img;
+
+const formatMovieRecommendations = ({ movies }) =>
+  movies.map((movie) => ({
     ...movie,
-    poster_url: movie.poster_path
-      ? tmdbApi.img.baseUrl + tmdbApi.img.posterSize + movie.poster_path
-      : null,
+    poster_url: poster({ path: movie.poster_path }),
     tmdbURI: `https://www.themoviedb.org/movie/${movie.id}`,
   }));
 

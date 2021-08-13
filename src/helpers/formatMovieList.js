@@ -1,3 +1,5 @@
+import formatDate from "./formatDate";
+
 const formatMovieList = (movieList) => {
   movieList.reverse();
   return movieList.map((movie, index) => ({
@@ -6,20 +8,9 @@ const formatMovieList = (movieList) => {
       ? movie.LetterboxdURI.split("boxd.it/")[1]
       : index.toString(),
     Name: movie.Name.toString(),
-    DateFormatted: new Date(movie.Date).toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    }),
+    DateFormatted: formatDate({ date: movie.Date }),
     ...(movie.WatchedDate && {
-      WatchedDateFormatted: new Date(movie.WatchedDate).toLocaleDateString(
-        "en-GB",
-        {
-          day: "2-digit",
-          month: "short",
-          year: "numeric",
-        }
-      ),
+      WatchedDateFormatted: formatDate({ date: movie.WatchedDate }),
     }),
   }));
 };

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import MovieDetailsContext from "../../contexts/movieDetailsContext";
+import MovieDetailsContext from "../../contexts/MovieDetailsContext";
 import LoadingHandler from "../LoadingHandler";
 import MovieDetailsBody from "./MovieDetailsBody";
 import MovieDetailsHeader from "./MovieDetailsHeader";

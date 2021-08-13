@@ -1,23 +1,13 @@
 import PropTypes from "prop-types";
 import React, { useCallback, useEffect, useMemo, useReducer } from "react";
 
-import { getSearchMovies } from "../helpers/tmdbServices";
-import tmdbApi from "../helpers/tmdbApi";
+import { getMovieDetails, getSearchMovies } from "../helpers/tmdbServices";
 import formatMovieDetails from "../helpers/formatMovieDetails";
 
 const MovieDetailsContext = React.createContext();
 
 const initialState = {
-  movieDetails: {
-    backdrop_url: tmdbApi.img.fallbackUrl,
-    id: "",
-    LetterboxdURI: "",
-    overview: "",
-    poster_url: tmdbApi.img.fallbackUrl,
-    Rating: "",
-    title: "",
-    vote_average: "",
-  },
+  movieDetails: {},
   movieDetailsStatus: "",
 };
 
@@ -53,9 +43,11 @@ const MovieDetailsStore = ({ children, movie }) => {
               (obj) => obj.title === Name && obj.release_date.indexOf(Year) > -1
             );
             if (newMovie !== undefined) {
-              dispatchMovieDetails({
-                type: "setMovieDetails",
-                payload: formatMovieDetails(movie, newMovie),
+              getMovieDetails({ movieId: newMovie.id }).then((movieDetails) => {
+                dispatchMovieDetails({
+                  type: "setMovieDetails",
+                  payload: formatMovieDetails({ movie, movieDetails }),
+                });
               });
             } else {
               throw Error("No movie found");

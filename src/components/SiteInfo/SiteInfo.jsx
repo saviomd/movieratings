@@ -27,7 +27,7 @@ const SiteInfo = memo(() => (
       will have more up to date information.
     </div>
     <div className="mb-3">
-      <img alt="TMDb" src={tmdbApi.img.attributionUrl} height="48" />
+      <img alt="TMDb" src={tmdbApi.img.attribution()} height="48" />
       <br />
       This product uses the TMDb API but is not endorsed or certified by TMDb.
     </div>

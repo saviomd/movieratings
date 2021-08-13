@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 
 import MovieStats from "../components/MovieStats";
-import movieDiaryContext from "../contexts/movieDiaryContext";
-import movieRatingsContext from "../contexts/movieRatingsContext";
+import MovieDiaryContext from "../contexts/MovieDiaryContext";
+import MovieRatingsContext from "../contexts/MovieRatingsContext";
 
 const PageStats = () => {
   const { moviesPerYearWatched, movieDiaryStatus } =
-    useContext(movieDiaryContext);
+    useContext(MovieDiaryContext);
   const { moviesPerDecadeReleased, moviesPerRatingGiven, movieRatingsStatus } =
-    useContext(movieRatingsContext);
+    useContext(MovieRatingsContext);
   return (
     <>
       <h1 className="h4">Stats</h1>
