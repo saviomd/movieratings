@@ -13,7 +13,7 @@ const movie = {
   Rating: 5,
 };
 
-const value = {
+const providerValue = {
   movieDetails: formatMovieDetails({
     movie,
     movieDetails: movieDetailsMock,
@@ -27,7 +27,7 @@ export default {
 };
 
 const Template = (args) => (
-  <MovieDetailsContext.Provider value={value}>
+  <MovieDetailsContext.Provider value={providerValue}>
     <MovieDetails {...args} />
   </MovieDetailsContext.Provider>
 );

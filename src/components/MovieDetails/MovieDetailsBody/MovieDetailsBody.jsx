@@ -1,12 +1,18 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
 
 import MovieDetailsContext from "../../../contexts/MovieDetailsContext";
 import Image from "../../Image";
 import MovieDetailsCastCrew from "../MovieDetailsCastCrew";
 import MovieDetailsRecommendations from "../MovieDetailsRecommendations";
+import MovieDetailsStats from "../MovieDetailsStats";
 
 const MovieDetailsBody = () => {
   const { movieDetails } = useContext(MovieDetailsContext);
+  const links = [
+    { href: "LetterboxdURI", name: "Letterboxd" },
+    { href: "tmdbURI", name: "TMDb" },
+  ];
   return (
     <>
       <div className="p-3">
@@ -18,42 +24,41 @@ const MovieDetailsBody = () => {
               type="poster"
             />
           </div>
-          <div className="col-12 col-sm-6 col-lg-8 text-end">
-            <div className="lead text-start">{movieDetails.overview}</div>
-            <div className="mb-3">
-              <span className="badge bg-secondary ms-2">
-                {movieDetails.original_language}
-              </span>
-            </div>
-            <div className="mb-3">
-              <a
-                className="btn btn-danger btn-sm"
-                href={movieDetails.LetterboxdURI}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View movie at Letterboxd
-              </a>
-            </div>
-            <div className="mb-3">
-              <a
-                className="btn btn-danger btn-sm"
-                href={movieDetails.tmdbURI}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View movie at TMDB
-              </a>
-            </div>
+          <div className="col-12 col-sm-6 col-lg-8 lead">
+            {movieDetails.overview}
           </div>
         </div>
+        <MovieDetailsStats />
         <MovieDetailsCastCrew />
+        {movieDetails.tagline && (
+          <blockquote className="blockquote px-5 text-center">{`"${movieDetails.tagline}"`}</blockquote>
+        )}
       </div>
       <Image
         src={movieDetails.backdrop_url}
         title={movieDetails.title}
         type="backdrop"
       />
+      <div className="p-3 text-end">
+        <div>
+          View movie at
+          <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
+        </div>
+        <ul className="list-inline">
+          {links.map(({ href, name }) => (
+            <li className="list-inline-item" key={name}>
+              <a
+                className="btn btn-danger btn-sm"
+                href={movieDetails[href]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
       <MovieDetailsRecommendations />
     </>
   );

@@ -7,10 +7,7 @@ const ScrollableHorizontalList = ({ children }) => {
     WebkitOverflowScrolling: "touch",
   };
   return (
-    <ul
-      className="flex-nowrap g-3 list-unstyled mb-0 pb-3 row"
-      style={verticalListStyle}
-    >
+    <ul className="flex-nowrap g-3 list-unstyled row" style={verticalListStyle}>
       {children}
     </ul>
   );
