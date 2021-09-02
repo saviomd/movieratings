@@ -6728,7 +6728,7 @@
   },
   {
     "Date": "2013-06-29",
-    "Name": "Basic Sanitation, The Movie",
+    "Name": "Basic Sanitation: The Movie",
     "Year": 2007,
     "LetterboxdURI": "https://boxd.it/1oC",
     "Rating": 4
@@ -11128,5 +11128,54 @@
     "Year": 2021,
     "LetterboxdURI": "https://boxd.it/ipjC",
     "Rating": 4
+  },
+  {
+    "Date": "2021-08-10",
+    "Name": "The Suicide Squad",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/fw6O",
+    "Rating": 4
+  },
+  {
+    "Date": "2021-08-17",
+    "Name": "Evangelion: 1.0 You Are (Not) Alone",
+    "Year": 2007,
+    "LetterboxdURI": "https://boxd.it/1MKi",
+    "Rating": 4
+  },
+  {
+    "Date": "2021-08-17",
+    "Name": "Evangelion: 2.0 You Can (Not) Advance",
+    "Year": 2009,
+    "LetterboxdURI": "https://boxd.it/1zYm",
+    "Rating": 4
+  },
+  {
+    "Date": "2021-08-17",
+    "Name": "Evangelion: 3.0 You Can (Not) Redo",
+    "Year": 2012,
+    "LetterboxdURI": "https://boxd.it/2BwG",
+    "Rating": 2
+  },
+  {
+    "Date": "2021-08-17",
+    "Name": "Evangelion: 3.0+1.0 Thrice Upon a Time",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/8LnQ",
+    "Rating": 3
+  },
+  {
+    "Date": "2021-08-17",
+    "Name": "A Quiet Place Part II",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/iTx0",
+    "Rating": 4
+  },
+  {
+    "Date": "2021-08-30",
+    "Name": "Space Jam: A New Legacy",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/dd9A",
+    "Rating": 2
   }
 ]
