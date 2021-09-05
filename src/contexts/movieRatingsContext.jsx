@@ -1,11 +1,18 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useMemo, useReducer } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useReducer,
+} from "react";
 
 import filterMoviesByName from "../helpers/filterMoviesByName";
 import formatMovieList from "../helpers/formatMovieList";
 import { fetchMovieRatings } from "../helpers/letterboxdServices";
 
-const MovieRatingsContext = React.createContext();
+const MovieRatingsContext = createContext();
+const useMovieRatings = () => useContext(MovieRatingsContext);
 
 const initialState = {
   movieRatings: [],
@@ -36,7 +43,7 @@ function reducer(state, action) {
   }
 }
 
-const MovieRatingsStore = ({ children }) => {
+const MovieRatingsProvider = ({ children }) => {
   const [state, dispatchMovieRatings] = useReducer(reducer, initialState);
 
   const movieRatingsFiltered = useMemo(
@@ -123,8 +130,8 @@ const MovieRatingsStore = ({ children }) => {
   );
 };
 
-MovieRatingsStore.propTypes = {
+MovieRatingsProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { MovieRatingsContext as default, MovieRatingsStore };
+export { MovieRatingsProvider, useMovieRatings };

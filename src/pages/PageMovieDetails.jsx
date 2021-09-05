@@ -1,22 +1,22 @@
 import PropTypes from "prop-types";
-import React, { useContext } from "react";
+import React from "react";
 
-import { MovieDetailsStore } from "../contexts/MovieDetailsContext";
-import MovieDiaryContext from "../contexts/MovieDiaryContext";
-import MovieRatingsContext from "../contexts/MovieRatingsContext";
+import { MovieDetailsProvider } from "../contexts/MovieDetailsContext";
+import { useMovieDiary } from "../contexts/MovieDiaryContext";
+import { useMovieRatings } from "../contexts/MovieRatingsContext";
 import MovieDetails from "../components/MovieDetails";
 
 const PageMovieDetails = ({ match }) => {
-  const { movieDiary } = useContext(MovieDiaryContext);
-  const { movieRatings } = useContext(MovieRatingsContext);
+  const { movieDiary } = useMovieDiary();
+  const { movieRatings } = useMovieRatings();
   const { movieId } = match.params;
   const movie = [...movieDiary, ...movieRatings].find(
     (obj) => obj.Id === movieId
   );
   return (
-    <MovieDetailsStore movie={movie}>
+    <MovieDetailsProvider movie={movie}>
       <MovieDetails />
-    </MovieDetailsStore>
+    </MovieDetailsProvider>
   );
 };
 

@@ -1,14 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext } from "react";
+import React from "react";
 
-import MovieDetailsContext from "../../../contexts/MovieDetailsContext";
+import { useMovieDetails } from "../../../contexts/MovieDetailsContext";
 import Image from "../../Image";
 import MovieDetailsCastCrew from "../MovieDetailsCastCrew";
 import MovieDetailsRecommendations from "../MovieDetailsRecommendations";
 import MovieDetailsStats from "../MovieDetailsStats";
 
 const MovieDetailsBody = () => {
-  const { movieDetails } = useContext(MovieDetailsContext);
+  const { movieDetails } = useMovieDetails();
   const links = [
     { href: "LetterboxdURI", name: "Letterboxd" },
     { href: "tmdbURI", name: "TMDb" },

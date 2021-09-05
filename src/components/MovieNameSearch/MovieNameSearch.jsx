@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
-import React, { useContext, useEffect, useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 
-import MovieDiaryContext from "../../contexts/MovieDiaryContext";
-import MovieRatingsContext from "../../contexts/MovieRatingsContext";
+import { useMovieDiary } from "../../contexts/MovieDiaryContext";
+import { useMovieRatings } from "../../contexts/MovieRatingsContext";
 
 const initialState = {
   dispatchMovie: null,
@@ -28,13 +28,13 @@ const MovieNameSearch = ({ type }) => {
     movieDiaryFiltered,
     movieDiarySearchString,
     movieDiaryStatus,
-  } = useContext(MovieDiaryContext);
+  } = useMovieDiary();
   const {
     dispatchMovieRatings,
     movieRatingsFiltered,
     movieRatingsSearchString,
     movieRatingsStatus,
-  } = useContext(MovieRatingsContext);
+  } = useMovieRatings();
 
   useEffect(() => {
     let payload;

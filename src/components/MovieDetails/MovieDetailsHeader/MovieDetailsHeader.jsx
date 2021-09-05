@@ -1,21 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext } from "react";
+import React from "react";
 
-import MovieDetailsContext from "../../../contexts/MovieDetailsContext";
+import { useMovieDetails } from "../../../contexts/MovieDetailsContext";
 
 const MovieDetailsHeader = () => {
-  const { movieDetails } = useContext(MovieDetailsContext);
+  const { movieDetails } = useMovieDetails();
   return (
     <div className="bg-secondary p-3">
       <h1 className="h3">
         {movieDetails.title}
-        <span className="font-italic ms-2 small">{`(${
-          movieDetails.release_year
-        }${
-          movieDetails.title !== movieDetails.original_title
-            ? `, "${movieDetails.original_title}"`
-            : ""
-        })`}</span>
+        <span className="font-italic ms-2 small">
+          {`(${movieDetails.release_year}`}
+          {movieDetails.title !== movieDetails.original_title &&
+            `, "${movieDetails.original_title}"`}
+          {")"}
+        </span>
       </h1>
       <div className="small">
         {movieDetails.Rating} of 5

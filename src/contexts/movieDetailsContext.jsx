@@ -1,10 +1,18 @@
 import PropTypes from "prop-types";
-import React, { useCallback, useEffect, useMemo, useReducer } from "react";
+import React, {
+  createContext,
+  useContext,
+  useCallback,
+  useEffect,
+  useMemo,
+  useReducer,
+} from "react";
 
 import { getMovieDetails, getSearchMovies } from "../helpers/tmdbServices";
 import formatMovieDetails from "../helpers/formatMovieDetails";
 
-const MovieDetailsContext = React.createContext();
+const MovieDetailsContext = createContext();
+const useMovieDetails = () => useContext(MovieDetailsContext);
 
 const initialState = {
   movieDetails: {},
@@ -26,7 +34,7 @@ function reducer(state, action) {
   }
 }
 
-const MovieDetailsStore = ({ children, movie }) => {
+const MovieDetailsProvider = ({ children, movie }) => {
   const [state, dispatchMovieDetails] = useReducer(reducer, initialState);
 
   const loadMovieDetails = useCallback(() => {
@@ -79,7 +87,7 @@ const MovieDetailsStore = ({ children, movie }) => {
   );
 };
 
-MovieDetailsStore.propTypes = {
+MovieDetailsProvider.propTypes = {
   children: PropTypes.node.isRequired,
   movie: PropTypes.shape({
     Name: PropTypes.string.isRequired,
@@ -87,8 +95,8 @@ MovieDetailsStore.propTypes = {
   }),
 };
 
-MovieDetailsStore.defaultProps = {
+MovieDetailsProvider.defaultProps = {
   movie: undefined,
 };
 
-export { MovieDetailsContext as default, MovieDetailsStore };
+export { MovieDetailsProvider, useMovieDetails };

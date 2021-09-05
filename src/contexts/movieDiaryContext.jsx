@@ -1,11 +1,18 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useMemo, useReducer } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useReducer,
+} from "react";
 
 import filterMoviesByName from "../helpers/filterMoviesByName";
 import formatMovieList from "../helpers/formatMovieList";
 import { fetchMovieDiary } from "../helpers/letterboxdServices";
 
-const MovieDiaryContext = React.createContext();
+const MovieDiaryContext = createContext();
+const useMovieDiary = () => useContext(MovieDiaryContext);
 
 const initialState = {
   movieDiary: [],
@@ -33,7 +40,7 @@ function reducer(state, action) {
   }
 }
 
-const MovieDiaryStore = ({ children }) => {
+const MovieDiaryProvider = ({ children }) => {
   const [state, dispatchMovieDiary] = useReducer(reducer, initialState);
 
   const movieDiaryFiltered = useMemo(
@@ -96,8 +103,8 @@ const MovieDiaryStore = ({ children }) => {
   );
 };
 
-MovieDiaryStore.propTypes = {
+MovieDiaryProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { MovieDiaryContext as default, MovieDiaryStore };
+export { MovieDiaryProvider, useMovieDiary };

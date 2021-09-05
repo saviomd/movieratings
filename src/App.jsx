@@ -1,7 +1,7 @@
 import React from "react";
 
-import { MovieDiaryStore } from "./contexts/MovieDiaryContext";
-import { MovieRatingsStore } from "./contexts/MovieRatingsContext";
+import { MovieDiaryProvider } from "./contexts/MovieDiaryContext";
+import { MovieRatingsProvider } from "./contexts/MovieRatingsContext";
 import AppWrapper from "./components/AppWrapper";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -10,8 +10,8 @@ import Pages from "./pages";
 
 const App = () => (
   <AppWrapper>
-    <MovieDiaryStore>
-      <MovieRatingsStore>
+    <MovieDiaryProvider>
+      <MovieRatingsProvider>
         <div className="container-fluid">
           <div className="justify-content-center row">
             <div className="col-12 col-md-10">
@@ -22,8 +22,8 @@ const App = () => (
             </div>
           </div>
         </div>
-      </MovieRatingsStore>
-    </MovieDiaryStore>
+      </MovieRatingsProvider>
+    </MovieDiaryProvider>
   </AppWrapper>
 );
 
