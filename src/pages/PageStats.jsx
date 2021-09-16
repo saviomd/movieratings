@@ -1,6 +1,7 @@
 import React from "react";
 
 import MovieStats from "../components/MovieStats";
+import ScrollableHorizontalList from "../components/ScrollableHorizontalList";
 import { useMovieDiary } from "../contexts/MovieDiaryContext";
 import { useMovieRatings } from "../contexts/MovieRatingsContext";
 
@@ -11,29 +12,29 @@ const PageStats = () => {
   return (
     <>
       <h1 className="h4">Stats</h1>
-      <div className="row">
-        <div className="col-12 col-sm-6 col-md-4 mb-3">
+      <ScrollableHorizontalList>
+        <div className="col-9 col-sm-5 col-md-4">
           <MovieStats
             movies={moviesPerYearWatched}
             moviesStatus={movieDiaryStatus}
             type="moviesPerYearWatched"
           />
         </div>
-        <div className="col-12 col-sm-6 col-md-4 mb-3">
+        <div className="col-9 col-sm-5 col-md-4">
           <MovieStats
             movies={moviesPerRatingGiven}
             moviesStatus={movieRatingsStatus}
             type="moviesPerRatingGiven"
           />
         </div>
-        <div className="col-12 col-sm-6 col-md-4 mb-3">
+        <div className="col-9 col-sm-5 col-md-4">
           <MovieStats
             movies={moviesPerDecadeReleased}
             moviesStatus={movieRatingsStatus}
             type="moviesPerDecadeReleased"
           />
         </div>
-      </div>
+      </ScrollableHorizontalList>
     </>
   );
 };

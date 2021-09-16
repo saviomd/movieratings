@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.js": "/movieratings/static/js/main.7eb2b45c.chunk.js",
-    "main.js.map": "/movieratings/static/js/main.7eb2b45c.chunk.js.map",
-    "runtime-main.js": "/movieratings/static/js/runtime-main.38eb0b11.js",
-    "runtime-main.js.map": "/movieratings/static/js/runtime-main.38eb0b11.js.map",
-    "static/css/2.b49007a3.chunk.css": "/movieratings/static/css/2.b49007a3.chunk.css",
-    "static/js/2.beab7066.chunk.js": "/movieratings/static/js/2.beab7066.chunk.js",
-    "static/js/2.beab7066.chunk.js.map": "/movieratings/static/js/2.beab7066.chunk.js.map",
-    "static/js/3.6c48f8df.chunk.js": "/movieratings/static/js/3.6c48f8df.chunk.js",
-    "static/js/3.6c48f8df.chunk.js.map": "/movieratings/static/js/3.6c48f8df.chunk.js.map",
-    "static/js/4.4fff5c57.chunk.js": "/movieratings/static/js/4.4fff5c57.chunk.js",
-    "static/js/4.4fff5c57.chunk.js.map": "/movieratings/static/js/4.4fff5c57.chunk.js.map",
-    "static/js/5.7fd5af5b.chunk.js": "/movieratings/static/js/5.7fd5af5b.chunk.js",
-    "static/js/5.7fd5af5b.chunk.js.map": "/movieratings/static/js/5.7fd5af5b.chunk.js.map",
-    "static/js/6.69512333.chunk.js": "/movieratings/static/js/6.69512333.chunk.js",
-    "static/js/6.69512333.chunk.js.map": "/movieratings/static/js/6.69512333.chunk.js.map",
-    "static/js/7.16094d33.chunk.js": "/movieratings/static/js/7.16094d33.chunk.js",
-    "static/js/7.16094d33.chunk.js.map": "/movieratings/static/js/7.16094d33.chunk.js.map",
+    "main.js": "/movieratings/static/js/main.8a0b822d.chunk.js",
+    "main.js.map": "/movieratings/static/js/main.8a0b822d.chunk.js.map",
+    "runtime-main.js": "/movieratings/static/js/runtime-main.80297348.js",
+    "runtime-main.js.map": "/movieratings/static/js/runtime-main.80297348.js.map",
+    "static/css/2.192fda3d.chunk.css": "/movieratings/static/css/2.192fda3d.chunk.css",
+    "static/js/2.8f9a5f78.chunk.js": "/movieratings/static/js/2.8f9a5f78.chunk.js",
+    "static/js/2.8f9a5f78.chunk.js.map": "/movieratings/static/js/2.8f9a5f78.chunk.js.map",
+    "static/js/3.4ceca39c.chunk.js": "/movieratings/static/js/3.4ceca39c.chunk.js",
+    "static/js/3.4ceca39c.chunk.js.map": "/movieratings/static/js/3.4ceca39c.chunk.js.map",
+    "static/js/4.8db83484.chunk.js": "/movieratings/static/js/4.8db83484.chunk.js",
+    "static/js/4.8db83484.chunk.js.map": "/movieratings/static/js/4.8db83484.chunk.js.map",
+    "static/js/5.d55433b8.chunk.js": "/movieratings/static/js/5.d55433b8.chunk.js",
+    "static/js/5.d55433b8.chunk.js.map": "/movieratings/static/js/5.d55433b8.chunk.js.map",
+    "static/js/6.6e193357.chunk.js": "/movieratings/static/js/6.6e193357.chunk.js",
+    "static/js/6.6e193357.chunk.js.map": "/movieratings/static/js/6.6e193357.chunk.js.map",
+    "static/js/7.fcbe42a7.chunk.js": "/movieratings/static/js/7.fcbe42a7.chunk.js",
+    "static/js/7.fcbe42a7.chunk.js.map": "/movieratings/static/js/7.fcbe42a7.chunk.js.map",
     "index.html": "/movieratings/index.html",
-    "static/css/2.b49007a3.chunk.css.map": "/movieratings/static/css/2.b49007a3.chunk.css.map",
-    "static/js/2.beab7066.chunk.js.LICENSE.txt": "/movieratings/static/js/2.beab7066.chunk.js.LICENSE.txt"
+    "static/css/2.192fda3d.chunk.css.map": "/movieratings/static/css/2.192fda3d.chunk.css.map",
+    "static/js/2.8f9a5f78.chunk.js.LICENSE.txt": "/movieratings/static/js/2.8f9a5f78.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.38eb0b11.js",
-    "static/css/2.b49007a3.chunk.css",
-    "static/js/2.beab7066.chunk.js",
-    "static/js/main.7eb2b45c.chunk.js"
+    "static/js/runtime-main.80297348.js",
+    "static/css/2.192fda3d.chunk.css",
+    "static/js/2.8f9a5f78.chunk.js",
+    "static/js/main.8a0b822d.chunk.js"
   ]
 }
