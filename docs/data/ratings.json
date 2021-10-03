@@ -5573,7 +5573,7 @@
   },
   {
     "Date": "2013-05-15",
-    "Name": "Police Story 4: First Strike",
+    "Name": "First Strike",
     "Year": 1996,
     "LetterboxdURI": "https://boxd.it/1YLC",
     "Rating": 4
@@ -11177,5 +11177,54 @@
     "Year": 2021,
     "LetterboxdURI": "https://boxd.it/dd9A",
     "Rating": 2
+  },
+  {
+    "Date": "2021-09-05",
+    "Name": "Jumanji: Welcome to the Jungle",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/bUeE",
+    "Rating": 4
+  },
+  {
+    "Date": "2021-09-05",
+    "Name": "Jumanji: The Next Level",
+    "Year": 2019,
+    "LetterboxdURI": "https://boxd.it/ixu4",
+    "Rating": 3
+  },
+  {
+    "Date": "2021-09-06",
+    "Name": "Ronny Chieng: Asian Comedian Destroys America!",
+    "Year": 2019,
+    "LetterboxdURI": "https://boxd.it/o8SC",
+    "Rating": 5
+  },
+  {
+    "Date": "2021-09-14",
+    "Name": "National Lampoon's Vacation",
+    "Year": 1983,
+    "LetterboxdURI": "https://boxd.it/1Uvq",
+    "Rating": 2
+  },
+  {
+    "Date": "2021-09-27",
+    "Name": "Old",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/npKI",
+    "Rating": 4
+  },
+  {
+    "Date": "2021-09-28",
+    "Name": "Vacation",
+    "Year": 2015,
+    "LetterboxdURI": "https://boxd.it/9n9M",
+    "Rating": 3
+  },
+  {
+    "Date": "2021-10-04",
+    "Name": "The Guilty",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/kOPW",
+    "Rating": 4
   }
 ]
