@@ -1,2 +1,0 @@
-(this.webpackJsonpmovieratings=this.webpackJsonpmovieratings||[]).push([[6],{51:function(t,e,n){"use strict";n.r(e);n(0);var s=n(24),i=n(1);e.default=function(){return Object(i.jsx)(s.a,{type:"pageNotFound"})}}}]);
-//# sourceMappingURL=6.6e193357.chunk.js.map

@@ -2381,7 +2381,7 @@
   },
   {
     "Date": "2017-09-28",
-    "Name": "Louis C.K.: 2017",
+    "Name": "Louis C.K. 2017",
     "Year": 2017,
     "LetterboxdURI": "https://boxd.it/kq1at",
     "Rating": 4,
@@ -5458,5 +5458,55 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2021-10-02"
+  },
+  {
+    "Date": "2021-10-11",
+    "Name": "Free Guy",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/2cmcKj",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2021-10-10"
+  },
+  {
+    "Date": "2021-10-25",
+    "Name": "The Green Knight",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/2evIZB",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2021-10-24"
+  },
+  {
+    "Date": "2021-10-27",
+    "Name": "Europa Report",
+    "Year": 2013,
+    "LetterboxdURI": "https://boxd.it/2eOOgZ",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2021-10-26"
+  },
+  {
+    "Date": "2021-11-02",
+    "Name": "Dune",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/2fQ91d",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2021-11-01"
+  },
+  {
+    "Date": "2021-11-04",
+    "Name": "Baggio: The Divine Ponytail",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/2g4aW3",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2021-11-02"
   }
 ]

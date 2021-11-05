@@ -6,9 +6,9 @@ import { NavLink } from "react-router-dom";
 const NavItem = ({ link }) => (
   <NavLink
     to={link.path}
-    exact
-    activeClassName="active"
-    className="btn btn-danger btn-sm"
+    className={({ isActive }) =>
+      `btn btn-danger btn-sm${isActive ? " active" : ""}`
+    }
   >
     <FontAwesomeIcon icon={link.icon} />
     <span className="d-none d-sm-inline-block ms-1">{link.name}</span>
