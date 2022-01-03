@@ -1042,7 +1042,7 @@
   {
     "Date": "2015-05-24",
     "Name": "Ex Machina",
-    "Year": 2014,
+    "Year": 2015,
     "LetterboxdURI": "https://boxd.it/5UQ1n",
     "Rating": 5,
     "Rewatch": "",
@@ -3941,7 +3941,7 @@
   },
   {
     "Date": "2019-07-10",
-    "Name": "Spider-Man: Far from Home",
+    "Name": "Spider-Man: Far From Home",
     "Year": 2019,
     "LetterboxdURI": "https://boxd.it/KY7AT",
     "Rating": 4,
@@ -5528,5 +5528,65 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2021-11-16"
+  },
+  {
+    "Date": "2021-12-09",
+    "Name": "Black Widow",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/2lrIsx",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2021-12-07"
+  },
+  {
+    "Date": "2021-12-14",
+    "Name": "Shang-Chi and the Legend of the Ten Rings",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/2mcPOJ",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2021-12-11"
+  },
+  {
+    "Date": "2021-12-17",
+    "Name": "Spider-Man: No Way Home",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/2mBYIZ",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2021-12-15"
+  },
+  {
+    "Date": "2021-12-22",
+    "Name": "Now You See Me 2",
+    "Year": 2016,
+    "LetterboxdURI": "https://boxd.it/2nyhXb",
+    "Rating": 2,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2021-12-18"
+  },
+  {
+    "Date": "2021-12-30",
+    "Name": "The Matrix Resurrections",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/2ptgmV",
+    "Rating": 2,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2021-12-26"
+  },
+  {
+    "Date": "2022-01-02",
+    "Name": "Last Night in Soho",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/2qpdtZ",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-01-01"
   }
 ]

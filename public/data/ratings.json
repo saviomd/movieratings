@@ -8052,7 +8052,7 @@
   {
     "Date": "2015-05-24",
     "Name": "Ex Machina",
-    "Year": 2014,
+    "Year": 2015,
     "LetterboxdURI": "https://boxd.it/7T2k",
     "Rating": 5
   },
@@ -10151,7 +10151,7 @@
   },
   {
     "Date": "2019-07-10",
-    "Name": "Spider-Man: Far from Home",
+    "Name": "Spider-Man: Far From Home",
     "Year": 2019,
     "LetterboxdURI": "https://boxd.it/fegG",
     "Rating": 4
@@ -11275,5 +11275,47 @@
     "Year": 2021,
     "LetterboxdURI": "https://boxd.it/xaQ2",
     "Rating": 3
+  },
+  {
+    "Date": "2021-12-09",
+    "Name": "Black Widow",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/hWV8",
+    "Rating": 3
+  },
+  {
+    "Date": "2021-12-14",
+    "Name": "Shang-Chi and the Legend of the Ten Rings",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/kLDI",
+    "Rating": 4
+  },
+  {
+    "Date": "2021-12-17",
+    "Name": "Spider-Man: No Way Home",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/nwRw",
+    "Rating": 5
+  },
+  {
+    "Date": "2021-12-22",
+    "Name": "Now You See Me 2",
+    "Year": 2016,
+    "LetterboxdURI": "https://boxd.it/99fw",
+    "Rating": 2
+  },
+  {
+    "Date": "2021-12-30",
+    "Name": "The Matrix Resurrections",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/n87k",
+    "Rating": 2
+  },
+  {
+    "Date": "2022-01-02",
+    "Name": "Last Night in Soho",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/lbJC",
+    "Rating": 5
   }
 ]
