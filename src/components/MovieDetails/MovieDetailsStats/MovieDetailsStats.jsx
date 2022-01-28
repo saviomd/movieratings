@@ -1,7 +1,7 @@
 import React from "react";
 
 import ScrollableHorizontalList from "../../ScrollableHorizontalList";
-import { useMovieDetails } from "../../../contexts/MovieDetailsContext";
+import { useMovieDetailsContext } from "../../../contexts/MovieDetailsContext";
 
 const MovieDetailsStats = () => {
   /* eslint-disable camelcase */
@@ -16,7 +16,7 @@ const MovieDetailsStats = () => {
       production_countries,
       spoken_languages,
     },
-  } = useMovieDetails();
+  } = useMovieDetailsContext();
   const stats = [
     { title: "Runtime", value: `${runtime} minutes` },
     { title: "Release date", value: release_date },

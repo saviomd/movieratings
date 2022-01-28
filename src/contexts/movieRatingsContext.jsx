@@ -1,50 +1,22 @@
 import PropTypes from "prop-types";
 import React, {
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
-  useReducer,
 } from "react";
 
 import filterMoviesByName from "../helpers/filterMoviesByName";
 import formatMovieList from "../helpers/formatMovieList";
 import { fetchMovieRatings } from "../helpers/letterboxdServices";
+import useMovieRatingsStore from "../hooks/useMovieRatingsStore";
 
 const MovieRatingsContext = createContext();
-const useMovieRatings = () => useContext(MovieRatingsContext);
-
-const initialState = {
-  movieRatings: [],
-  movieRatingsPage: 1,
-  movieRatingsSearchString: "",
-  movieRatingsStatus: "",
-};
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "setMovieRatings":
-      return {
-        ...state,
-        movieRatings: action.payload,
-        movieRatingsStatus: "loaded",
-      };
-    case "setMovieRatingsPage":
-      return { ...state, movieRatingsPage: state.movieRatingsPage + 1 };
-    case "setMovieRatingsSearchString":
-      return {
-        ...state,
-        movieRatingsSearchString: action.payload.toLowerCase(),
-      };
-    case "setMovieRatingsStatus":
-      return { ...state, movieRatingsStatus: action.payload };
-    default:
-      throw new Error();
-  }
-}
+const useMovieRatingsContext = () => useContext(MovieRatingsContext);
 
 const MovieRatingsProvider = ({ children }) => {
-  const [state, dispatchMovieRatings] = useReducer(reducer, initialState);
+  const { dispatcher, state } = useMovieRatingsStore();
 
   const movieRatingsFiltered = useMemo(
     () =>
@@ -83,39 +55,34 @@ const MovieRatingsProvider = ({ children }) => {
     return { groups, max };
   }, [state.movieRatings]);
 
-  function loadMovieRatings() {
-    dispatchMovieRatings({ type: "setMovieRatingsStatus", payload: "loading" });
+  const loadMovieRatings = useCallback(() => {
+    dispatcher.setMovieRatingsStatus("loading");
     return fetchMovieRatings()
       .then((json) => {
         const movieRatingsFormatted = formatMovieList(json);
-        dispatchMovieRatings({
-          type: "setMovieRatings",
-          payload: movieRatingsFormatted,
-        });
+        dispatcher.setMovieRatings(movieRatingsFormatted);
         return movieRatingsFormatted;
       })
       .catch(() => {
-        dispatchMovieRatings({
-          type: "setMovieRatingsStatus",
-          payload: "error",
-        });
+        dispatcher.setMovieRatingsStatus("error");
       });
-  }
+  }, [dispatcher]);
 
   useEffect(() => {
     loadMovieRatings();
-  }, []);
+  }, [loadMovieRatings]);
 
   const providerValue = useMemo(
     () => ({
       ...state,
-      dispatchMovieRatings,
+      dispatcher,
       movieRatingsFiltered,
       movieRatingsPaginated,
       moviesPerDecadeReleased,
       moviesPerRatingGiven,
     }),
     [
+      dispatcher,
       movieRatingsFiltered,
       movieRatingsPaginated,
       moviesPerDecadeReleased,
@@ -134,4 +101,4 @@ MovieRatingsProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { MovieRatingsProvider, useMovieRatings };
+export { MovieRatingsProvider, useMovieRatingsContext };

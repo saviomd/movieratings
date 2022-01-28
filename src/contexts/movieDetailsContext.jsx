@@ -1,49 +1,25 @@
 import PropTypes from "prop-types";
 import React, {
   createContext,
-  useContext,
   useCallback,
+  useContext,
   useEffect,
   useMemo,
-  useReducer,
 } from "react";
 
 import { getMovieDetails, getSearchMovies } from "../helpers/tmdbServices";
-import formatMovieDetails from "../helpers/formatMovieDetails";
+import useMovieDetailsStore from "../hooks/useMovieDetailsStore";
 
 const MovieDetailsContext = createContext();
-const useMovieDetails = () => useContext(MovieDetailsContext);
-
-const initialState = {
-  movieDetails: {},
-  movieDetailsStatus: "",
-};
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "setMovieDetails":
-      return {
-        ...state,
-        movieDetails: action.payload,
-        movieDetailsStatus: "loaded",
-      };
-    case "setMovieDetailsStatus":
-      return { ...state, movieDetailsStatus: action.payload };
-    default:
-      throw new Error();
-  }
-}
+const useMovieDetailsContext = () => useContext(MovieDetailsContext);
 
 const MovieDetailsProvider = ({ children, movie }) => {
-  const [state, dispatchMovieDetails] = useReducer(reducer, initialState);
+  const { dispatcher, state } = useMovieDetailsStore();
 
   const loadMovieDetails = useCallback(() => {
     if (movie !== undefined) {
       const { Name, Year } = movie;
-      dispatchMovieDetails({
-        type: "setMovieDetailsStatus",
-        payload: "loading",
-      });
+      dispatcher.setMovieDetailsStatus("loading");
       getSearchMovies({ Name, Year })
         .then((json) => {
           if (json.results.length) {
@@ -52,10 +28,7 @@ const MovieDetailsProvider = ({ children, movie }) => {
             );
             if (newMovie !== undefined) {
               getMovieDetails({ movieId: newMovie.id }).then((movieDetails) => {
-                dispatchMovieDetails({
-                  type: "setMovieDetails",
-                  payload: formatMovieDetails({ movie, movieDetails }),
-                });
+                dispatcher.setMovieDetails({ movie, movieDetails });
               });
             } else {
               throw Error("No movie found");
@@ -65,15 +38,12 @@ const MovieDetailsProvider = ({ children, movie }) => {
           }
         })
         .catch(() => {
-          dispatchMovieDetails({
-            type: "setMovieDetailsStatus",
-            payload: "error",
-          });
+          dispatcher.setMovieDetailsStatus("error");
         });
     } else {
-      dispatchMovieDetails({ type: "setMovieDetailsStatus", payload: "error" });
+      dispatcher.setMovieDetailsStatus("error");
     }
-  }, [movie]);
+  }, [dispatcher, movie]);
 
   useEffect(() => {
     loadMovieDetails();
@@ -99,4 +69,4 @@ MovieDetailsProvider.defaultProps = {
   movie: undefined,
 };
 
-export { MovieDetailsProvider, useMovieDetails };
+export { MovieDetailsProvider, useMovieDetailsContext };

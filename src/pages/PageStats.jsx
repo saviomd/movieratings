@@ -2,13 +2,13 @@ import React from "react";
 
 import MovieStats from "../components/MovieStats";
 import ScrollableHorizontalList from "../components/ScrollableHorizontalList";
-import { useMovieDiary } from "../contexts/MovieDiaryContext";
-import { useMovieRatings } from "../contexts/MovieRatingsContext";
+import { useMovieDiaryContext } from "../contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "../contexts/MovieRatingsContext";
 
 const PageStats = () => {
-  const { moviesPerYearWatched, movieDiaryStatus } = useMovieDiary();
+  const { moviesPerYearWatched, movieDiaryStatus } = useMovieDiaryContext();
   const { moviesPerDecadeReleased, moviesPerRatingGiven, movieRatingsStatus } =
-    useMovieRatings();
+    useMovieRatingsContext();
   return (
     <>
       <h1 className="h4">Stats</h1>

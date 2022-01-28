@@ -1,12 +1,12 @@
 import React from "react";
 
-import { useMovieDetails } from "../../contexts/MovieDetailsContext";
+import { useMovieDetailsContext } from "../../contexts/MovieDetailsContext";
 import LoadingHandler from "../LoadingHandler";
 import MovieDetailsBody from "./MovieDetailsBody";
 import MovieDetailsHeader from "./MovieDetailsHeader";
 
 const MovieDetails = () => {
-  const { movieDetails, movieDetailsStatus } = useMovieDetails();
+  const { movieDetails, movieDetailsStatus } = useMovieDetailsContext();
   return (
     <LoadingHandler
       dataStatus={movieDetailsStatus}

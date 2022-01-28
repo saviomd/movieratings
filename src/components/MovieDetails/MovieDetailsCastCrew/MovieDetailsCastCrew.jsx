@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-import { useMovieDetails } from "../../../contexts/MovieDetailsContext";
+import { useMovieDetailsContext } from "../../../contexts/MovieDetailsContext";
 import ScrollableHorizontalList from "../../ScrollableHorizontalList";
 
 const MovieDetailsCastCrew = () => {
-  const { movieDetails } = useMovieDetails();
+  const { movieDetails } = useMovieDetailsContext();
   if (!movieDetails.credits) {
     return null;
   }

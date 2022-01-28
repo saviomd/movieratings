@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 import React, { memo, useEffect, useReducer } from "react";
 
-import { useMovieDiary } from "../../contexts/MovieDiaryContext";
-import { useMovieRatings } from "../../contexts/MovieRatingsContext";
+import { useMovieDiaryContext } from "../../contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "../../contexts/MovieRatingsContext";
 import LoadingHandler from "../LoadingHandler";
 import MovieButton from "../MovieButton";
 
 const initialState = {
-  dispatchMovie: null,
-  dispatchMovieType: "",
+  dispatcher: null,
+  dispatcherName: "",
   moviesFiltered: [],
   moviesPaginated: [],
   moviesStatus: null,
@@ -24,47 +24,47 @@ function reducer(state, action) {
 }
 
 const MovieList = memo(({ type }) => {
-  const [state, dispatchMovieList] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
   const {
-    dispatchMovieDiary,
+    dispatcher: dispatcherMovieDiary,
     movieDiaryFiltered,
     movieDiaryPage,
     movieDiaryPaginated,
     movieDiarySearchString,
     movieDiaryStatus,
-  } = useMovieDiary();
+  } = useMovieDiaryContext();
   const {
-    dispatchMovieRatings,
+    dispatcher: dispatcherMovieRatings,
     movieRatingsFiltered,
     movieRatingsPage,
     movieRatingsPaginated,
     movieRatingsSearchString,
     movieRatingsStatus,
-  } = useMovieRatings();
+  } = useMovieRatingsContext();
 
   useEffect(() => {
     let payload;
     if (type === "Diary") {
       payload = {
-        dispatchMovie: dispatchMovieDiary,
-        dispatchMovieType: "setMovieDiaryPage",
+        dispatcher: dispatcherMovieDiary,
+        dispatcherName: "setMovieDiaryPage",
         moviesFiltered: movieDiaryFiltered,
         moviesPaginated: movieDiaryPaginated,
         moviesStatus: movieDiaryStatus,
       };
     } else if (type === "Ratings") {
       payload = {
-        dispatchMovie: dispatchMovieRatings,
-        dispatchMovieType: "setMovieRatingsPage",
+        dispatcher: dispatcherMovieRatings,
+        dispatcherName: "setMovieRatingsPage",
         moviesFiltered: movieRatingsFiltered,
         moviesPaginated: movieRatingsPaginated,
         moviesStatus: movieRatingsStatus,
       };
     }
-    dispatchMovieList({ type: "setAll", payload });
+    dispatch({ type: "setAll", payload });
   }, [
-    dispatchMovieDiary,
-    dispatchMovieRatings,
+    dispatcherMovieDiary,
+    dispatcherMovieRatings,
     movieDiaryFiltered,
     movieDiaryPage,
     movieDiaryPaginated,
@@ -97,9 +97,7 @@ const MovieList = memo(({ type }) => {
             <button
               className="btn btn-danger"
               type="button"
-              onClick={() =>
-                state.dispatchMovie({ type: state.dispatchMovieType })
-              }
+              onClick={() => state.dispatcher[state.dispatcherName]()}
             >
               Show more
             </button>

@@ -1,47 +1,22 @@
 import PropTypes from "prop-types";
 import React, {
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
-  useReducer,
 } from "react";
 
 import filterMoviesByName from "../helpers/filterMoviesByName";
 import formatMovieList from "../helpers/formatMovieList";
 import { fetchMovieDiary } from "../helpers/letterboxdServices";
+import useMovieDiaryStore from "../hooks/useMovieDiaryStore";
 
 const MovieDiaryContext = createContext();
-const useMovieDiary = () => useContext(MovieDiaryContext);
-
-const initialState = {
-  movieDiary: [],
-  movieDiaryPage: 1,
-  movieDiarySearchString: "",
-  movieDiaryStatus: "",
-};
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "setMovieDiary":
-      return {
-        ...state,
-        movieDiary: action.payload,
-        movieDiaryStatus: "loaded",
-      };
-    case "setMovieDiaryPage":
-      return { ...state, movieDiaryPage: state.movieDiaryPage + 1 };
-    case "setMovieDiarySearchString":
-      return { ...state, movieDiarySearchString: action.payload.toLowerCase() };
-    case "setMovieDiaryStatus":
-      return { ...state, movieDiaryStatus: action.payload };
-    default:
-      throw new Error();
-  }
-}
+const useMovieDiaryContext = () => useContext(MovieDiaryContext);
 
 const MovieDiaryProvider = ({ children }) => {
-  const [state, dispatchMovieDiary] = useReducer(reducer, initialState);
+  const { dispatcher, state } = useMovieDiaryStore();
 
   const movieDiaryFiltered = useMemo(
     () => filterMoviesByName(state.movieDiary, state.movieDiarySearchString),
@@ -66,35 +41,38 @@ const MovieDiaryProvider = ({ children }) => {
     return { groups, max };
   }, [state.movieDiary]);
 
-  function loadMovieDiary() {
-    dispatchMovieDiary({ type: "setMovieDiaryStatus", payload: "loading" });
+  const loadMovieDiary = useCallback(() => {
+    dispatcher.setMovieDiaryStatus("loading");
     return fetchMovieDiary()
       .then((json) => {
         const movieDiaryFormatted = formatMovieList(json);
-        dispatchMovieDiary({
-          type: "setMovieDiary",
-          payload: movieDiaryFormatted,
-        });
+        dispatcher.setMovieDiary(movieDiaryFormatted);
         return movieDiaryFormatted;
       })
       .catch(() => {
-        dispatchMovieDiary({ type: "setMovieDiaryStatus", payload: "error" });
+        dispatcher.setMovieDiaryStatus("error");
       });
-  }
+  }, [dispatcher]);
 
   useEffect(() => {
     loadMovieDiary();
-  }, []);
+  }, [loadMovieDiary]);
 
   const providerValue = useMemo(
     () => ({
       ...state,
-      dispatchMovieDiary,
+      dispatcher,
       movieDiaryFiltered,
       movieDiaryPaginated,
       moviesPerYearWatched,
     }),
-    [movieDiaryFiltered, movieDiaryPaginated, moviesPerYearWatched, state]
+    [
+      dispatcher,
+      movieDiaryFiltered,
+      movieDiaryPaginated,
+      moviesPerYearWatched,
+      state,
+    ]
   );
   return (
     <MovieDiaryContext.Provider value={providerValue}>
@@ -107,4 +85,4 @@ MovieDiaryProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { MovieDiaryProvider, useMovieDiary };
+export { MovieDiaryProvider, useMovieDiaryContext };

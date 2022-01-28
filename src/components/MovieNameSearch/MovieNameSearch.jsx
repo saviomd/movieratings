@@ -2,12 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import React, { useEffect, useReducer } from "react";
 
-import { useMovieDiary } from "../../contexts/MovieDiaryContext";
-import { useMovieRatings } from "../../contexts/MovieRatingsContext";
+import { useMovieDiaryContext } from "../../contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "../../contexts/MovieRatingsContext";
 
 const initialState = {
-  dispatchMovie: null,
-  dispatchMovieType: "",
+  dispatcher: null,
+  dispatcherName: "",
   movieSearchString: "",
   moviesFiltered: [],
 };
@@ -22,41 +22,41 @@ function reducer(state, action) {
 }
 
 const MovieNameSearch = ({ type }) => {
-  const [state, dispatchMovieNameSearch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
   const {
-    dispatchMovieDiary,
+    dispatcher: dispatcherMovieDiary,
     movieDiaryFiltered,
     movieDiarySearchString,
     movieDiaryStatus,
-  } = useMovieDiary();
+  } = useMovieDiaryContext();
   const {
-    dispatchMovieRatings,
+    dispatcher: dispatcherMovieRatings,
     movieRatingsFiltered,
     movieRatingsSearchString,
     movieRatingsStatus,
-  } = useMovieRatings();
+  } = useMovieRatingsContext();
 
   useEffect(() => {
     let payload;
     if (type === "Diary") {
       payload = {
-        dispatchMovie: dispatchMovieDiary,
-        dispatchMovieType: "setMovieDiarySearchString",
+        dispatcher: dispatcherMovieDiary,
+        dispatcherName: "setMovieDiarySearchString",
         movieSearchString: movieDiarySearchString,
         moviesFiltered: movieDiaryFiltered,
       };
     } else if (type === "Ratings") {
       payload = {
-        dispatchMovie: dispatchMovieRatings,
-        dispatchMovieType: "setMovieRatingsSearchString",
+        dispatcher: dispatcherMovieRatings,
+        dispatcherName: "setMovieRatingsSearchString",
         movieSearchString: movieRatingsSearchString,
         moviesFiltered: movieRatingsFiltered,
       };
     }
-    dispatchMovieNameSearch({ type: "setAll", payload });
+    dispatch({ type: "setAll", payload });
   }, [
-    dispatchMovieDiary,
-    dispatchMovieRatings,
+    dispatcherMovieDiary,
+    dispatcherMovieRatings,
     movieDiaryFiltered,
     movieDiarySearchString,
     movieDiaryStatus,
@@ -76,18 +76,13 @@ const MovieNameSearch = ({ type }) => {
           type="text"
           value={state.movieSearchString}
           onChange={(event) =>
-            state.dispatchMovie({
-              type: state.dispatchMovieType,
-              payload: event.target.value,
-            })
+            state.dispatcher[state.dispatcherName](event.target.value)
           }
         />
         <button
           className="btn btn-secondary"
           type="button"
-          onClick={() =>
-            state.dispatchMovie({ type: state.dispatchMovieType, payload: "" })
-          }
+          onClick={() => state.dispatcher[state.dispatcherName]("")}
         >
           <FontAwesomeIcon icon="times" />
         </button>

@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-import { useMovieDetails } from "../../../contexts/MovieDetailsContext";
+import { useMovieDetailsContext } from "../../../contexts/MovieDetailsContext";
 
 const MovieDetailsHeader = () => {
-  const { movieDetails } = useMovieDetails();
+  const { movieDetails } = useMovieDetailsContext();
   return (
     <div className="bg-secondary p-3">
       <h1 className="h3">
