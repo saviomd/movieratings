@@ -7,20 +7,20 @@ const initialState = {
   movieDiaryStatus: "",
 };
 
-function reducer(state, action) {
-  switch (action.type) {
-    case "setMovieDiary":
+function reducer(state, { payload, type }) {
+  switch (type) {
+    case "SET_MOVIE_DIARY":
       return {
         ...state,
-        movieDiary: action.payload,
+        movieDiary: payload,
         movieDiaryStatus: "loaded",
       };
-    case "setMovieDiaryPage":
+    case "SET_MOVIE_DIARY_PAGE":
       return { ...state, movieDiaryPage: state.movieDiaryPage + 1 };
-    case "setMovieDiarySearchString":
-      return { ...state, movieDiarySearchString: action.payload.toLowerCase() };
-    case "setMovieDiaryStatus":
-      return { ...state, movieDiaryStatus: action.payload };
+    case "SET_MOVIE_DIARY_SEARCH_STRING":
+      return { ...state, movieDiarySearchString: payload.toLowerCase() };
+    case "SET_MOVIE_DIARY_STATUS":
+      return { ...state, movieDiaryStatus: payload };
     default:
       throw new Error();
   }
@@ -31,12 +31,13 @@ const useMovieDetailsStore = () => {
 
   const dispatcher = useMemo(
     () => ({
-      setMovieDiary: (payload) => dispatch({ type: "setMovieDiary", payload }),
-      setMovieDiaryPage: () => dispatch({ type: "setMovieDiaryPage" }),
+      setMovieDiary: (payload) =>
+        dispatch({ type: "SET_MOVIE_DIARY", payload }),
+      setMovieDiaryPage: () => dispatch({ type: "SET_MOVIE_DIARY_PAGE" }),
       setMovieDiarySearchString: (payload) =>
-        dispatch({ type: "setMovieDiarySearchString", payload }),
+        dispatch({ type: "SET_MOVIE_DIARY_SEARCH_STRING", payload }),
       setMovieDiaryStatus: (payload) =>
-        dispatch({ type: "setMovieDiaryStatus", payload }),
+        dispatch({ type: "SET_MOVIE_DIARY_STATUS", payload }),
     }),
     []
   );

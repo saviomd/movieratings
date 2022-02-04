@@ -1,70 +1,47 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
-import React, { useEffect, useReducer } from "react";
+import React from "react";
 
 import { useMovieDiaryContext } from "../../contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "../../contexts/MovieRatingsContext";
 
-const initialState = {
-  dispatcher: null,
-  dispatcherName: "",
-  movieSearchString: "",
-  moviesFiltered: [],
-};
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "setAll":
-      return { ...state, ...action.payload };
-    default:
-      throw new Error();
-  }
-}
-
 const MovieNameSearch = ({ type }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
   const {
     dispatcher: dispatcherMovieDiary,
     movieDiaryFiltered,
     movieDiarySearchString,
-    movieDiaryStatus,
   } = useMovieDiaryContext();
   const {
     dispatcher: dispatcherMovieRatings,
     movieRatingsFiltered,
     movieRatingsSearchString,
-    movieRatingsStatus,
   } = useMovieRatingsContext();
 
-  useEffect(() => {
-    let payload;
-    if (type === "Diary") {
-      payload = {
-        dispatcher: dispatcherMovieDiary,
-        dispatcherName: "setMovieDiarySearchString",
-        movieSearchString: movieDiarySearchString,
-        moviesFiltered: movieDiaryFiltered,
-      };
-    } else if (type === "Ratings") {
-      payload = {
-        dispatcher: dispatcherMovieRatings,
-        dispatcherName: "setMovieRatingsSearchString",
-        movieSearchString: movieRatingsSearchString,
-        moviesFiltered: movieRatingsFiltered,
-      };
-    }
-    dispatch({ type: "setAll", payload });
-  }, [
-    dispatcherMovieDiary,
-    dispatcherMovieRatings,
-    movieDiaryFiltered,
-    movieDiarySearchString,
-    movieDiaryStatus,
-    movieRatingsFiltered,
-    movieRatingsSearchString,
-    movieRatingsStatus,
-    type,
-  ]);
+  const { dispatcher, dispatcherName, movieSearchString, moviesFiltered } =
+    (() => {
+      switch (type) {
+        case "Diary":
+          return {
+            dispatcher: dispatcherMovieDiary,
+            dispatcherName: "setMovieDiarySearchString",
+            movieSearchString: movieDiarySearchString,
+            moviesFiltered: movieDiaryFiltered,
+          };
+        case "Ratings":
+          return {
+            dispatcher: dispatcherMovieRatings,
+            dispatcherName: "setMovieRatingsSearchString",
+            movieSearchString: movieRatingsSearchString,
+            moviesFiltered: movieRatingsFiltered,
+          };
+        default:
+          throw new Error();
+      }
+    })();
+
+  const handleReset = () => dispatcher[dispatcherName]("");
+
+  const handleSearch = ({ target }) => dispatcher[dispatcherName](target.value);
 
   return (
     <div className="mb-3">
@@ -74,20 +51,18 @@ const MovieNameSearch = ({ type }) => {
           className="form-control"
           placeholder="Search..."
           type="text"
-          value={state.movieSearchString}
-          onChange={(event) =>
-            state.dispatcher[state.dispatcherName](event.target.value)
-          }
+          value={movieSearchString}
+          onChange={handleSearch}
         />
         <button
           className="btn btn-secondary"
           type="button"
-          onClick={() => state.dispatcher[state.dispatcherName]("")}
+          onClick={handleReset}
         >
           <FontAwesomeIcon icon="times" />
         </button>
       </div>
-      <p className="small text-end">{state.moviesFiltered.length} movies</p>
+      <p className="small text-end">{moviesFiltered.length} movies</p>
     </div>
   );
 };

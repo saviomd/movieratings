@@ -7,23 +7,23 @@ const initialState = {
   movieRatingsStatus: "",
 };
 
-function reducer(state, action) {
-  switch (action.type) {
-    case "setMovieRatings":
+function reducer(state, { payload, type }) {
+  switch (type) {
+    case "SET_MOVIE_RATINGS":
       return {
         ...state,
-        movieRatings: action.payload,
+        movieRatings: payload,
         movieRatingsStatus: "loaded",
       };
-    case "setMovieRatingsPage":
+    case "SET_MOVIE_RATINGS_PAGE":
       return { ...state, movieRatingsPage: state.movieRatingsPage + 1 };
-    case "setMovieRatingsSearchString":
+    case "SET_MOVIE_RATINGS_SEARCH_STRING":
       return {
         ...state,
-        movieRatingsSearchString: action.payload.toLowerCase(),
+        movieRatingsSearchString: payload.toLowerCase(),
       };
-    case "setMovieRatingsStatus":
-      return { ...state, movieRatingsStatus: action.payload };
+    case "SET_MOVIE_RATINGS_STATUS":
+      return { ...state, movieRatingsStatus: payload };
     default:
       throw new Error();
   }
@@ -35,12 +35,12 @@ const useMovieRatingsStore = () => {
   const dispatcher = useMemo(
     () => ({
       setMovieRatings: (payload) =>
-        dispatch({ type: "setMovieRatings", payload }),
-      setMovieRatingsPage: () => dispatch({ type: "setMovieRatingsPage" }),
+        dispatch({ type: "SET_MOVIE_RATINGS", payload }),
+      setMovieRatingsPage: () => dispatch({ type: "SET_MOVIE_RATINGS_PAGE" }),
       setMovieRatingsSearchString: (payload) =>
-        dispatch({ type: "setMovieRatingsSearchString", payload }),
+        dispatch({ type: "SET_MOVIE_RATINGS_SEARCH_STRING", payload }),
       setMovieRatingsStatus: (payload) =>
-        dispatch({ type: "setMovieRatingsStatus", payload }),
+        dispatch({ type: "SET_MOVIE_RATINGS_STATUS", payload }),
     }),
     []
   );

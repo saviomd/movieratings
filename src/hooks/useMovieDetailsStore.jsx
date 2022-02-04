@@ -9,13 +9,15 @@ const initialState = {
 
 function reducer(state, { payload, type }) {
   switch (type) {
-    case "setMovieDetails":
+    case "SET_MOVIE_DETAILS": {
+      const { movie, movieDetails } = payload;
       return {
         ...state,
-        movieDetails: payload,
+        movieDetails: formatMovieDetails({ movie, movieDetails }),
         movieDetailsStatus: "loaded",
       };
-    case "setMovieDetailsStatus":
+    }
+    case "SET_MOVIE_DETAILS_STATUS":
       return { ...state, movieDetailsStatus: payload };
     default:
       throw new Error();
@@ -27,13 +29,10 @@ const useMovieDetailsStore = () => {
 
   const dispatcher = useMemo(
     () => ({
-      setMovieDetails: ({ movie, movieDetails }) =>
-        dispatch({
-          type: "setMovieDetails",
-          payload: formatMovieDetails({ movie, movieDetails }),
-        }),
+      setMovieDetails: (payload) =>
+        dispatch({ type: "SET_MOVIE_DETAILS", payload }),
       setMovieDetailsStatus: (payload) =>
-        dispatch({ type: "setMovieDetailsStatus", payload }),
+        dispatch({ type: "SET_MOVIE_DETAILS_STATUS", payload }),
     }),
     []
   );

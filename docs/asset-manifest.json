@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/movieratings/static/js/main.4477821c.chunk.js",
-    "main.js.map": "/movieratings/static/js/main.4477821c.chunk.js.map",
-    "runtime-main.js": "/movieratings/static/js/runtime-main.897635f5.js",
-    "runtime-main.js.map": "/movieratings/static/js/runtime-main.897635f5.js.map",
+    "main.js": "/movieratings/static/js/main.9ef1ac5b.chunk.js",
+    "main.js.map": "/movieratings/static/js/main.9ef1ac5b.chunk.js.map",
+    "runtime-main.js": "/movieratings/static/js/runtime-main.e97032ed.js",
+    "runtime-main.js.map": "/movieratings/static/js/runtime-main.e97032ed.js.map",
     "static/css/2.964f5836.chunk.css": "/movieratings/static/css/2.964f5836.chunk.css",
     "static/js/2.2b7866f3.chunk.js": "/movieratings/static/js/2.2b7866f3.chunk.js",
     "static/js/2.2b7866f3.chunk.js.map": "/movieratings/static/js/2.2b7866f3.chunk.js.map",
-    "static/js/3.45123555.chunk.js": "/movieratings/static/js/3.45123555.chunk.js",
-    "static/js/3.45123555.chunk.js.map": "/movieratings/static/js/3.45123555.chunk.js.map",
+    "static/js/3.e6db6c7a.chunk.js": "/movieratings/static/js/3.e6db6c7a.chunk.js",
+    "static/js/3.e6db6c7a.chunk.js.map": "/movieratings/static/js/3.e6db6c7a.chunk.js.map",
     "static/js/4.3bf89323.chunk.js": "/movieratings/static/js/4.3bf89323.chunk.js",
     "static/js/4.3bf89323.chunk.js.map": "/movieratings/static/js/4.3bf89323.chunk.js.map",
-    "static/js/5.fa33e2d8.chunk.js": "/movieratings/static/js/5.fa33e2d8.chunk.js",
-    "static/js/5.fa33e2d8.chunk.js.map": "/movieratings/static/js/5.fa33e2d8.chunk.js.map",
+    "static/js/5.6ef62008.chunk.js": "/movieratings/static/js/5.6ef62008.chunk.js",
+    "static/js/5.6ef62008.chunk.js.map": "/movieratings/static/js/5.6ef62008.chunk.js.map",
     "static/js/6.7265b8f4.chunk.js": "/movieratings/static/js/6.7265b8f4.chunk.js",
     "static/js/6.7265b8f4.chunk.js.map": "/movieratings/static/js/6.7265b8f4.chunk.js.map",
     "static/js/7.765438e7.chunk.js": "/movieratings/static/js/7.765438e7.chunk.js",
@@ -22,9 +22,9 @@
     "static/js/2.2b7866f3.chunk.js.LICENSE.txt": "/movieratings/static/js/2.2b7866f3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.897635f5.js",
+    "static/js/runtime-main.e97032ed.js",
     "static/css/2.964f5836.chunk.css",
     "static/js/2.2b7866f3.chunk.js",
-    "static/js/main.4477821c.chunk.js"
+    "static/js/main.9ef1ac5b.chunk.js"
   ]
 }
