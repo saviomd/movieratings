@@ -1730,7 +1730,7 @@
   },
   {
     "Date": "2013-04-25",
-    "Name": "Cheri",
+    "Name": "Chéri",
     "Year": 2009,
     "LetterboxdURI": "https://boxd.it/1ASO",
     "Rating": 4
@@ -11317,5 +11317,33 @@
     "Year": 2021,
     "LetterboxdURI": "https://boxd.it/lbJC",
     "Rating": 5
+  },
+  {
+    "Date": "2022-01-10",
+    "Name": "Midsommar",
+    "Year": 2019,
+    "LetterboxdURI": "https://boxd.it/jhxe",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-01-11",
+    "Name": "Ghost Killers vs. Bloody Mary",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/kw3U",
+    "Rating": 3
+  },
+  {
+    "Date": "2022-01-23",
+    "Name": "tick, tick...BOOM!",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/jz2e",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-01-24",
+    "Name": "Dave Chappelle: The Closer",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/xbe4",
+    "Rating": 4
   }
 ]
