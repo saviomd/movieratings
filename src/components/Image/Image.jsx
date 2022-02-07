@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-const Image = ({ src, title, type }) => {
+function Image({ src, title, type }) {
   const types = {
     backdrop: {
       height: 300,
@@ -25,7 +25,7 @@ const Image = ({ src, title, type }) => {
       )}
     </div>
   );
-};
+}
 
 Image.propTypes = {
   src: PropTypes.string,

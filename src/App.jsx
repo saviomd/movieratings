@@ -8,23 +8,25 @@ import Header from "./components/Header";
 import SiteInfo from "./components/SiteInfo";
 import Pages from "./pages";
 
-const App = () => (
-  <AppWrapper>
-    <MovieDiaryProvider>
-      <MovieRatingsProvider>
-        <div className="container-fluid">
-          <div className="justify-content-center row">
-            <div className="col-12 col-md-10">
-              <Header />
-              <Pages />
-              <SiteInfo />
-              <Footer />
+function App() {
+  return (
+    <AppWrapper>
+      <MovieDiaryProvider>
+        <MovieRatingsProvider>
+          <div className="container-fluid">
+            <div className="justify-content-center row">
+              <div className="col-12 col-md-10">
+                <Header />
+                <Pages />
+                <SiteInfo />
+                <Footer />
+              </div>
             </div>
           </div>
-        </div>
-      </MovieRatingsProvider>
-    </MovieDiaryProvider>
-  </AppWrapper>
-);
+        </MovieRatingsProvider>
+      </MovieDiaryProvider>
+    </AppWrapper>
+  );
+}
 
 export default App;

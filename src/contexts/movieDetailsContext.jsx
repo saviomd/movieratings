@@ -13,13 +13,13 @@ import useMovieDetailsStore from "../hooks/useMovieDetailsStore";
 const MovieDetailsContext = createContext();
 const useMovieDetailsContext = () => useContext(MovieDetailsContext);
 
-const MovieDetailsProvider = ({ children, movie }) => {
-  const { dispatcher, state } = useMovieDetailsStore();
+function MovieDetailsProvider({ children, movie }) {
+  const { boundActions, state } = useMovieDetailsStore();
 
   const loadMovieDetails = useCallback(() => {
     if (movie !== undefined) {
       const { Name, Year } = movie;
-      dispatcher.setMovieDetailsStatus("loading");
+      boundActions.setMovieDetailsStatus("loading");
       getSearchMovies({ Name, Year })
         .then((json) => {
           if (json.results.length) {
@@ -28,7 +28,7 @@ const MovieDetailsProvider = ({ children, movie }) => {
             );
             if (newMovie !== undefined) {
               getMovieDetails({ movieId: newMovie.id }).then((movieDetails) => {
-                dispatcher.setMovieDetails({ movie, movieDetails });
+                boundActions.setMovieDetails({ movie, movieDetails });
               });
             } else {
               throw Error("No movie found");
@@ -38,12 +38,12 @@ const MovieDetailsProvider = ({ children, movie }) => {
           }
         })
         .catch(() => {
-          dispatcher.setMovieDetailsStatus("error");
+          boundActions.setMovieDetailsStatus("error");
         });
     } else {
-      dispatcher.setMovieDetailsStatus("error");
+      boundActions.setMovieDetailsStatus("error");
     }
-  }, [dispatcher, movie]);
+  }, [boundActions, movie]);
 
   useEffect(() => {
     loadMovieDetails();
@@ -55,7 +55,7 @@ const MovieDetailsProvider = ({ children, movie }) => {
       {children}
     </MovieDetailsContext.Provider>
   );
-};
+}
 
 MovieDetailsProvider.propTypes = {
   children: PropTypes.node.isRequired,

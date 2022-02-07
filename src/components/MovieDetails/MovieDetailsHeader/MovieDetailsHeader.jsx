@@ -3,7 +3,7 @@ import React from "react";
 
 import { useMovieDetailsContext } from "../../../contexts/MovieDetailsContext";
 
-const MovieDetailsHeader = () => {
+function MovieDetailsHeader() {
   const { movieDetails } = useMovieDetailsContext();
   return (
     <div className="bg-secondary p-3">
@@ -13,7 +13,7 @@ const MovieDetailsHeader = () => {
           {`(${movieDetails.release_year}`}
           {movieDetails.title !== movieDetails.original_title &&
             `, "${movieDetails.original_title}"`}
-          {")"}
+          )
         </span>
       </h1>
       <div className="small">
@@ -28,6 +28,6 @@ const MovieDetailsHeader = () => {
       </div>
     </div>
   );
-};
+}
 
 export default MovieDetailsHeader;

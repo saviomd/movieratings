@@ -5,7 +5,7 @@ import ScrollableHorizontalList from "../components/ScrollableHorizontalList";
 import { useMovieDiaryContext } from "../contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "../contexts/MovieRatingsContext";
 
-const PageStats = () => {
+function PageStats() {
   const { moviesPerYearWatched, movieDiaryStatus } = useMovieDiaryContext();
   const { moviesPerDecadeReleased, moviesPerRatingGiven, movieRatingsStatus } =
     useMovieRatingsContext();
@@ -37,6 +37,6 @@ const PageStats = () => {
       </ScrollableHorizontalList>
     </>
   );
-};
+}
 
 export default PageStats;

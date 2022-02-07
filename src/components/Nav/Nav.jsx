@@ -20,12 +20,14 @@ const navLinks = [
   },
 ];
 
-const Nav = () => (
-  <nav className="btn-group">
-    {navLinks.map((link) => (
-      <NavItem key={link.path} link={link} />
-    ))}
-  </nav>
-);
+function Nav() {
+  return (
+    <nav className="btn-group">
+      {navLinks.map((link) => (
+        <NavItem key={link.path} link={link} />
+      ))}
+    </nav>
+  );
+}
 
 export default Nav;

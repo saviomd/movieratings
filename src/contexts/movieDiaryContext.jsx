@@ -15,8 +15,8 @@ import useMovieDiaryStore from "../hooks/useMovieDiaryStore";
 const MovieDiaryContext = createContext();
 const useMovieDiaryContext = () => useContext(MovieDiaryContext);
 
-const MovieDiaryProvider = ({ children }) => {
-  const { dispatcher, state } = useMovieDiaryStore();
+function MovieDiaryProvider({ children }) {
+  const { boundActions, state } = useMovieDiaryStore();
 
   const movieDiaryFiltered = useMemo(
     () => filterMoviesByName(state.movieDiary, state.movieDiarySearchString),
@@ -42,17 +42,17 @@ const MovieDiaryProvider = ({ children }) => {
   }, [state.movieDiary]);
 
   const loadMovieDiary = useCallback(() => {
-    dispatcher.setMovieDiaryStatus("loading");
+    boundActions.setMovieDiaryStatus("loading");
     return fetchMovieDiary()
       .then((json) => {
         const movieDiaryFormatted = formatMovieList(json);
-        dispatcher.setMovieDiary(movieDiaryFormatted);
+        boundActions.setMovieDiary(movieDiaryFormatted);
         return movieDiaryFormatted;
       })
       .catch(() => {
-        dispatcher.setMovieDiaryStatus("error");
+        boundActions.setMovieDiaryStatus("error");
       });
-  }, [dispatcher]);
+  }, [boundActions]);
 
   useEffect(() => {
     loadMovieDiary();
@@ -61,13 +61,13 @@ const MovieDiaryProvider = ({ children }) => {
   const providerValue = useMemo(
     () => ({
       ...state,
-      dispatcher,
+      boundActions,
       movieDiaryFiltered,
       movieDiaryPaginated,
       moviesPerYearWatched,
     }),
     [
-      dispatcher,
+      boundActions,
       movieDiaryFiltered,
       movieDiaryPaginated,
       moviesPerYearWatched,
@@ -79,7 +79,7 @@ const MovieDiaryProvider = ({ children }) => {
       {children}
     </MovieDiaryContext.Provider>
   );
-};
+}
 
 MovieDiaryProvider.propTypes = {
   children: PropTypes.node.isRequired,

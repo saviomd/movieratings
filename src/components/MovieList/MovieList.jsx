@@ -8,21 +8,21 @@ import MovieButton from "../MovieButton";
 
 const MovieList = memo(({ type }) => {
   const {
-    dispatcher: dispatcherMovieDiary,
+    boundActions: boundActionsMovieDiary,
     movieDiaryFiltered,
     movieDiaryPaginated,
     movieDiaryStatus,
   } = useMovieDiaryContext();
   const {
-    dispatcher: dispatcherMovieRatings,
+    boundActions: boundActionsMovieRatings,
     movieRatingsFiltered,
     movieRatingsPaginated,
     movieRatingsStatus,
   } = useMovieRatingsContext();
 
   const {
-    dispatcher,
-    dispatcherName,
+    boundActions,
+    boundActionsName,
     moviesFiltered,
     moviesPaginated,
     moviesStatus,
@@ -30,16 +30,16 @@ const MovieList = memo(({ type }) => {
     switch (type) {
       case "Diary":
         return {
-          dispatcher: dispatcherMovieDiary,
-          dispatcherName: "setMovieDiaryPage",
+          boundActions: boundActionsMovieDiary,
+          boundActionsName: "setMovieDiaryPage",
           moviesFiltered: movieDiaryFiltered,
           moviesPaginated: movieDiaryPaginated,
           moviesStatus: movieDiaryStatus,
         };
       case "Ratings":
         return {
-          dispatcher: dispatcherMovieRatings,
-          dispatcherName: "setMovieRatingsPage",
+          boundActions: boundActionsMovieRatings,
+          boundActionsName: "setMovieRatingsPage",
           moviesFiltered: movieRatingsFiltered,
           moviesPaginated: movieRatingsPaginated,
           moviesStatus: movieRatingsStatus,
@@ -49,7 +49,7 @@ const MovieList = memo(({ type }) => {
     }
   })();
 
-  const handleShowMore = () => dispatcher[dispatcherName]();
+  const handleShowMore = () => boundActions[boundActionsName]();
 
   return (
     <LoadingHandler

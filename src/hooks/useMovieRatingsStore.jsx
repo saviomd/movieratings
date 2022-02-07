@@ -32,7 +32,7 @@ function reducer(state, { payload, type }) {
 const useMovieRatingsStore = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const dispatcher = useMemo(
+  const boundActions = useMemo(
     () => ({
       setMovieRatings: (payload) =>
         dispatch({ type: "SET_MOVIE_RATINGS", payload }),
@@ -45,7 +45,7 @@ const useMovieRatingsStore = () => {
     []
   );
 
-  return { dispatcher, state };
+  return { boundActions, state };
 };
 
 export default useMovieRatingsStore;

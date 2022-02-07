@@ -6,7 +6,7 @@ import Anchor from "../../Anchor";
 import Image from "../../Image";
 import ScrollableHorizontalList from "../../ScrollableHorizontalList";
 
-const MovieDetailsRecommendations = () => {
+function MovieDetailsRecommendations() {
   const { movieDetails } = useMovieDetailsContext();
   if (!movieDetails.recommendations.length) {
     return null;
@@ -29,6 +29,6 @@ const MovieDetailsRecommendations = () => {
       </ScrollableHorizontalList>
     </div>
   );
-};
+}
 
 export default MovieDetailsRecommendations;

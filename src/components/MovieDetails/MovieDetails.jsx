@@ -5,7 +5,7 @@ import LoadingHandler from "../LoadingHandler";
 import MovieDetailsBody from "./MovieDetailsBody";
 import MovieDetailsHeader from "./MovieDetailsHeader";
 
-const MovieDetails = () => {
+function MovieDetails() {
   const { movieDetails, movieDetailsStatus } = useMovieDetailsContext();
   return (
     <LoadingHandler
@@ -18,6 +18,6 @@ const MovieDetails = () => {
       </div>
     </LoadingHandler>
   );
-};
+}
 
 export default MovieDetails;

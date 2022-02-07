@@ -3,7 +3,7 @@ import React from "react";
 import ScrollableHorizontalList from "../../ScrollableHorizontalList";
 import { useMovieDetailsContext } from "../../../contexts/MovieDetailsContext";
 
-const MovieDetailsStats = () => {
+function MovieDetailsStats() {
   /* eslint-disable camelcase */
   const {
     movieDetails: {
@@ -57,6 +57,6 @@ const MovieDetailsStats = () => {
       ))}
     </ScrollableHorizontalList>
   );
-};
+}
 
 export default MovieDetailsStats;

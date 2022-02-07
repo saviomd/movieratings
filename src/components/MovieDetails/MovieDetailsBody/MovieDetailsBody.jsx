@@ -7,7 +7,7 @@ import MovieDetailsCastCrew from "../MovieDetailsCastCrew";
 import MovieDetailsRecommendations from "../MovieDetailsRecommendations";
 import MovieDetailsStats from "../MovieDetailsStats";
 
-const MovieDetailsBody = () => {
+function MovieDetailsBody() {
   const { movieDetails } = useMovieDetailsContext();
   const links = [
     { href: "LetterboxdURI", name: "Letterboxd" },
@@ -62,6 +62,6 @@ const MovieDetailsBody = () => {
       <MovieDetailsRecommendations />
     </>
   );
-};
+}
 
 export default MovieDetailsBody;

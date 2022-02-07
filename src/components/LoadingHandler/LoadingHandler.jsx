@@ -8,7 +8,7 @@ const dataStatuses = ["", "error", "loading", "loaded"];
 const LoadingHandler = memo(
   ({ children, dataStatus, hasData, messageNoData }) => (
     <>
-      {dataStatus === "loaded" && hasData && <>{children}</>}
+      {dataStatus === "loaded" && hasData && children}
       {dataStatus === "loaded" && !hasData && <Message type={messageNoData} />}
       {(dataStatus === "loading" || dataStatus === "error") && (
         <Message type={dataStatus} />

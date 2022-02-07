@@ -5,32 +5,32 @@ import React from "react";
 import { useMovieDiaryContext } from "../../contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "../../contexts/MovieRatingsContext";
 
-const MovieNameSearch = ({ type }) => {
+function MovieNameSearch({ type }) {
   const {
-    dispatcher: dispatcherMovieDiary,
+    boundActions: boundActionsMovieDiary,
     movieDiaryFiltered,
     movieDiarySearchString,
   } = useMovieDiaryContext();
   const {
-    dispatcher: dispatcherMovieRatings,
+    boundActions: boundActionsMovieRatings,
     movieRatingsFiltered,
     movieRatingsSearchString,
   } = useMovieRatingsContext();
 
-  const { dispatcher, dispatcherName, movieSearchString, moviesFiltered } =
+  const { boundActions, boundActionsName, movieSearchString, moviesFiltered } =
     (() => {
       switch (type) {
         case "Diary":
           return {
-            dispatcher: dispatcherMovieDiary,
-            dispatcherName: "setMovieDiarySearchString",
+            boundActions: boundActionsMovieDiary,
+            boundActionsName: "setMovieDiarySearchString",
             movieSearchString: movieDiarySearchString,
             moviesFiltered: movieDiaryFiltered,
           };
         case "Ratings":
           return {
-            dispatcher: dispatcherMovieRatings,
-            dispatcherName: "setMovieRatingsSearchString",
+            boundActions: boundActionsMovieRatings,
+            boundActionsName: "setMovieRatingsSearchString",
             movieSearchString: movieRatingsSearchString,
             moviesFiltered: movieRatingsFiltered,
           };
@@ -39,9 +39,10 @@ const MovieNameSearch = ({ type }) => {
       }
     })();
 
-  const handleReset = () => dispatcher[dispatcherName]("");
+  const handleReset = () => boundActions[boundActionsName]("");
 
-  const handleSearch = ({ target }) => dispatcher[dispatcherName](target.value);
+  const handleSearch = ({ target }) =>
+    boundActions[boundActionsName](target.value);
 
   return (
     <div className="mb-3">
@@ -65,7 +66,7 @@ const MovieNameSearch = ({ type }) => {
       <p className="small text-end">{moviesFiltered.length} movies</p>
     </div>
   );
-};
+}
 
 MovieNameSearch.propTypes = {
   type: PropTypes.string.isRequired,

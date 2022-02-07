@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-const ScrollableHorizontalList = ({ children }) => {
+function ScrollableHorizontalList({ children }) {
   const verticalListStyle = {
     overflowX: "scroll",
     WebkitOverflowScrolling: "touch",
@@ -11,7 +11,7 @@ const ScrollableHorizontalList = ({ children }) => {
       {children}
     </ul>
   );
-};
+}
 
 ScrollableHorizontalList.propTypes = {
   children: PropTypes.node.isRequired,

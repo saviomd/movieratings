@@ -27,7 +27,7 @@ function reducer(state, { payload, type }) {
 const useMovieDetailsStore = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const dispatcher = useMemo(
+  const boundActions = useMemo(
     () => ({
       setMovieDetails: (payload) =>
         dispatch({ type: "SET_MOVIE_DETAILS", payload }),
@@ -37,7 +37,7 @@ const useMovieDetailsStore = () => {
     []
   );
 
-  return { dispatcher, state };
+  return { boundActions, state };
 };
 
 export default useMovieDetailsStore;

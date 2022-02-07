@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-const Anchor = ({ children, href, margin, target }) => {
+function Anchor({ children, href, margin, target }) {
   const marginClasses = {
     both: "m-1",
     left: "ms-1",
@@ -19,7 +19,7 @@ const Anchor = ({ children, href, margin, target }) => {
       {children}
     </a>
   );
-};
+}
 
 Anchor.propTypes = {
   children: PropTypes.node.isRequired,

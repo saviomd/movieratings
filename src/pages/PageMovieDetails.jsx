@@ -6,7 +6,7 @@ import { useMovieDiaryContext } from "../contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "../contexts/MovieRatingsContext";
 import MovieDetails from "../components/MovieDetails";
 
-const PageMovieDetails = () => {
+function PageMovieDetails() {
   const { movieDiary } = useMovieDiaryContext();
   const { movieRatings } = useMovieRatingsContext();
   const { movieId } = useParams();
@@ -18,6 +18,6 @@ const PageMovieDetails = () => {
       <MovieDetails />
     </MovieDetailsProvider>
   );
-};
+}
 
 export default PageMovieDetails;

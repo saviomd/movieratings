@@ -4,7 +4,7 @@ import React from "react";
 import { useMovieDetailsContext } from "../../../contexts/MovieDetailsContext";
 import ScrollableHorizontalList from "../../ScrollableHorizontalList";
 
-const MovieDetailsCastCrew = () => {
+function MovieDetailsCastCrew() {
   const { movieDetails } = useMovieDetailsContext();
   if (!movieDetails.credits) {
     return null;
@@ -59,6 +59,6 @@ const MovieDetailsCastCrew = () => {
       )}
     </>
   );
-};
+}
 
 export default MovieDetailsCastCrew;

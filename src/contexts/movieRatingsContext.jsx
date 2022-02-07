@@ -15,8 +15,8 @@ import useMovieRatingsStore from "../hooks/useMovieRatingsStore";
 const MovieRatingsContext = createContext();
 const useMovieRatingsContext = () => useContext(MovieRatingsContext);
 
-const MovieRatingsProvider = ({ children }) => {
-  const { dispatcher, state } = useMovieRatingsStore();
+function MovieRatingsProvider({ children }) {
+  const { boundActions, state } = useMovieRatingsStore();
 
   const movieRatingsFiltered = useMemo(
     () =>
@@ -56,17 +56,17 @@ const MovieRatingsProvider = ({ children }) => {
   }, [state.movieRatings]);
 
   const loadMovieRatings = useCallback(() => {
-    dispatcher.setMovieRatingsStatus("loading");
+    boundActions.setMovieRatingsStatus("loading");
     return fetchMovieRatings()
       .then((json) => {
         const movieRatingsFormatted = formatMovieList(json);
-        dispatcher.setMovieRatings(movieRatingsFormatted);
+        boundActions.setMovieRatings(movieRatingsFormatted);
         return movieRatingsFormatted;
       })
       .catch(() => {
-        dispatcher.setMovieRatingsStatus("error");
+        boundActions.setMovieRatingsStatus("error");
       });
-  }, [dispatcher]);
+  }, [boundActions]);
 
   useEffect(() => {
     loadMovieRatings();
@@ -75,14 +75,14 @@ const MovieRatingsProvider = ({ children }) => {
   const providerValue = useMemo(
     () => ({
       ...state,
-      dispatcher,
+      boundActions,
       movieRatingsFiltered,
       movieRatingsPaginated,
       moviesPerDecadeReleased,
       moviesPerRatingGiven,
     }),
     [
-      dispatcher,
+      boundActions,
       movieRatingsFiltered,
       movieRatingsPaginated,
       moviesPerDecadeReleased,
@@ -95,7 +95,7 @@ const MovieRatingsProvider = ({ children }) => {
       {children}
     </MovieRatingsContext.Provider>
   );
-};
+}
 
 MovieRatingsProvider.propTypes = {
   children: PropTypes.node.isRequired,
