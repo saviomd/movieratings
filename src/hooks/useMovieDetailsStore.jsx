@@ -37,7 +37,7 @@ const useMovieDetailsStore = () => {
     []
   );
 
-  return { boundActions, state };
+  return { ...state, boundActions };
 };
 
 export default useMovieDetailsStore;

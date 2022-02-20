@@ -4,7 +4,6 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useMemo,
 } from "react";
 
 import { getMovieDetails, getSearchMovies } from "../helpers/tmdbServices";
@@ -14,12 +13,12 @@ const MovieDetailsContext = createContext();
 const useMovieDetailsContext = () => useContext(MovieDetailsContext);
 
 function MovieDetailsProvider({ children, movie }) {
-  const { boundActions, state } = useMovieDetailsStore();
+  const store = useMovieDetailsStore();
 
   const loadMovieDetails = useCallback(() => {
     if (movie !== undefined) {
       const { Name, Year } = movie;
-      boundActions.setMovieDetailsStatus("loading");
+      store.boundActions.setMovieDetailsStatus("loading");
       getSearchMovies({ Name, Year })
         .then((json) => {
           if (json.results.length) {
@@ -28,7 +27,7 @@ function MovieDetailsProvider({ children, movie }) {
             );
             if (newMovie !== undefined) {
               getMovieDetails({ movieId: newMovie.id }).then((movieDetails) => {
-                boundActions.setMovieDetails({ movie, movieDetails });
+                store.boundActions.setMovieDetails({ movie, movieDetails });
               });
             } else {
               throw Error("No movie found");
@@ -38,20 +37,19 @@ function MovieDetailsProvider({ children, movie }) {
           }
         })
         .catch(() => {
-          boundActions.setMovieDetailsStatus("error");
+          store.boundActions.setMovieDetailsStatus("error");
         });
     } else {
-      boundActions.setMovieDetailsStatus("error");
+      store.boundActions.setMovieDetailsStatus("error");
     }
-  }, [boundActions, movie]);
+  }, [movie, store.boundActions]);
 
   useEffect(() => {
     loadMovieDetails();
   }, [loadMovieDetails]);
 
-  const providerValue = useMemo(() => state, [state]);
   return (
-    <MovieDetailsContext.Provider value={providerValue}>
+    <MovieDetailsContext.Provider value={store}>
       {children}
     </MovieDetailsContext.Provider>
   );

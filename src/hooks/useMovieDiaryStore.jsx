@@ -1,5 +1,8 @@
 import { useMemo, useReducer } from "react";
 
+import filterMoviesByName from "../helpers/filterMoviesByName";
+import formatMovieList from "../helpers/formatMovieList";
+
 const initialState = {
   movieDiary: [],
   movieDiaryPage: 1,
@@ -12,7 +15,7 @@ function reducer(state, { payload, type }) {
     case "SET_MOVIE_DIARY":
       return {
         ...state,
-        movieDiary: payload,
+        movieDiary: formatMovieList(payload),
         movieDiaryStatus: "loaded",
       };
     case "SET_MOVIE_DIARY_PAGE":
@@ -42,7 +45,36 @@ const useMovieDetailsStore = () => {
     []
   );
 
-  return { boundActions, state };
+  const movieDiaryFiltered = useMemo(
+    () => filterMoviesByName(state.movieDiary, state.movieDiarySearchString),
+    [state.movieDiary, state.movieDiarySearchString]
+  );
+
+  const movieDiaryPaginated = useMemo(() => {
+    const size = state.movieDiaryPage * 100;
+    return movieDiaryFiltered.slice(0, size);
+  }, [movieDiaryFiltered, state.movieDiaryPage]);
+
+  const moviesPerYearWatched = useMemo(() => {
+    const groups = state.movieDiary.reduce((acc, curr) => {
+      const year = curr.WatchedDate.split("-")[0];
+      acc[year] = acc[year] ? (acc[year] += 1) : (acc[year] = 1);
+      return acc;
+    }, {});
+    let max = 0;
+    Object.values(groups).forEach((year) => {
+      max = year > max ? year : max;
+    });
+    return { groups, max };
+  }, [state.movieDiary]);
+
+  return {
+    ...state,
+    boundActions,
+    movieDiaryFiltered,
+    movieDiaryPaginated,
+    moviesPerYearWatched,
+  };
 };
 
 export default useMovieDetailsStore;
