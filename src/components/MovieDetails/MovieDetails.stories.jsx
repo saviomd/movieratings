@@ -26,10 +26,12 @@ export default {
   component: MovieDetails,
 };
 
-const Template = (args) => (
-  <MovieDetailsContext.Provider value={providerValue}>
-    <MovieDetails {...args} />
-  </MovieDetailsContext.Provider>
-);
+function Template(args) {
+  return (
+    <MovieDetailsContext.Provider value={providerValue}>
+      <MovieDetails {...args} />
+    </MovieDetailsContext.Provider>
+  );
+}
 
 export const Default = Template.bind({});

@@ -14,7 +14,9 @@ export default {
   },
 };
 
-const Template = (args) => <ProgressBar {...args} />;
+function Template(args) {
+  return <ProgressBar {...args} />;
+}
 
 export const Default = Template.bind({});
 Default.args = {

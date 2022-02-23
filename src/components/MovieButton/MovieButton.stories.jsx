@@ -19,7 +19,9 @@ export default {
   },
 };
 
-const Template = (args) => <MovieButton {...args} />;
+function Template(args) {
+  return <MovieButton {...args} />;
+}
 
 export const Default = Template.bind({});
 Default.args = {

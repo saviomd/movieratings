@@ -15,7 +15,9 @@ export default {
   },
 };
 
-const Template = (args) => <LoadingHandler {...args} />;
+function Template(args) {
+  return <LoadingHandler {...args} />;
+}
 
 export const Default = Template.bind({});
 Default.args = {
