@@ -10137,7 +10137,7 @@
   },
   {
     "Date": "2019-06-30",
-    "Name": "Turma da Mônica: Laços",
+    "Name": "Monica and Friends: Bonds",
     "Year": 2019,
     "LetterboxdURI": "https://boxd.it/gqea",
     "Rating": 5
@@ -11068,7 +11068,7 @@
   },
   {
     "Date": "2021-06-02",
-    "Name": "The Fresh Prince of Bel-Air Reunion Special",
+    "Name": "The Fresh Prince of Bel-Air Reunion",
     "Year": 2020,
     "LetterboxdURI": "https://boxd.it/rHZE",
     "Rating": 4
@@ -11345,5 +11345,26 @@
     "Year": 2021,
     "LetterboxdURI": "https://boxd.it/xbe4",
     "Rating": 4
+  },
+  {
+    "Date": "2022-02-18",
+    "Name": "Mortal Kombat Legends: Scorpion's Revenge",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/oJGS",
+    "Rating": 5
+  },
+  {
+    "Date": "2022-02-22",
+    "Name": "Encanto",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/kPRu",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-03-02",
+    "Name": "The Batman",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/eDGs",
+    "Rating": 5
   }
 ]

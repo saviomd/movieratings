@@ -3921,7 +3921,7 @@
   },
   {
     "Date": "2019-06-30",
-    "Name": "Turma da Mônica: Laços",
+    "Name": "Monica and Friends: Bonds",
     "Year": 2019,
     "LetterboxdURI": "https://boxd.it/KruBT",
     "Rating": 5,
@@ -5628,5 +5628,35 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2022-01-23"
+  },
+  {
+    "Date": "2022-02-18",
+    "Name": "Mortal Kombat Legends: Scorpion's Revenge",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/2AAsjH",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-02-17"
+  },
+  {
+    "Date": "2022-02-22",
+    "Name": "Encanto",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/2BmyRV",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-02-19"
+  },
+  {
+    "Date": "2022-03-02",
+    "Name": "The Batman",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/2CMcMZ",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-03-01"
   }
 ]
