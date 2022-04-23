@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 import { useMovieDetailsContext } from "../../../contexts/MovieDetailsContext";
+import Anchor from "../../Anchor";
+import Image from "../../Image";
 import ScrollableHorizontalList from "../../ScrollableHorizontalList";
 
 function MovieDetailsCastCrew() {
@@ -9,56 +11,35 @@ function MovieDetailsCastCrew() {
   if (!movieDetails.credits) {
     return null;
   }
-  return (
-    <>
+  return ["cast", "crew"].map((item) => (
+    <React.Fragment key={item}>
       <h2 className="h4">
-        Cast
+        {`${item[0].toUpperCase()}${item.slice(1)}`}
         <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
       </h2>
-      {movieDetails.credits.cast.length ? (
+      {movieDetails.credits[item].length ? (
         <ScrollableHorizontalList>
-          {movieDetails.credits.cast.map((person) => (
-            <li className="col-auto" key={person.credit_id}>
-              <a
-                className="btn btn-secondary btn-sm"
-                href={person.tmdbURI}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+          {movieDetails.credits[item].map((person) => (
+            <li className="col-5 col-sm-3 col-md-2" key={person.id}>
+              <Anchor href={person.tmdbURI} target="_blank">
+                <Image
+                  src={person.profile_url}
+                  title={person.name}
+                  type="profile"
+                />
                 {person.name}
-                <div className="small">{person.character}</div>
-              </a>
+                <div className="fst-italic small">
+                  {person.character || person.job?.join(" / ")}
+                </div>
+              </Anchor>
             </li>
           ))}
         </ScrollableHorizontalList>
       ) : (
         <p>No data available</p>
       )}
-      <h2 className="h4">
-        Crew
-        <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
-      </h2>
-      {movieDetails.credits.crew.length ? (
-        <ScrollableHorizontalList>
-          {movieDetails.credits.crew.map((person) => (
-            <li className="col-auto" key={person.credit_id}>
-              <a
-                className="btn btn-secondary btn-sm"
-                href={person.tmdbURI}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                {person.name}
-                <div className="small">{person.job}</div>
-              </a>
-            </li>
-          ))}
-        </ScrollableHorizontalList>
-      ) : (
-        <p>No data available</p>
-      )}
-    </>
-  );
+    </React.Fragment>
+  ));
 }
 
 export default MovieDetailsCastCrew;

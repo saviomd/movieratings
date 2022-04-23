@@ -11,6 +11,10 @@ function Image({ src, title, type }) {
       height: 450,
       width: 300,
     },
+    profile: {
+      height: 278,
+      width: 185,
+    },
   };
   const dimensions = types[type];
   const style = {
@@ -21,7 +25,7 @@ function Image({ src, title, type }) {
       {src ? (
         <img alt={`${type} for ${title}`} loading="lazy" src={src} />
       ) : (
-        <div className="p-3 text-center">{`No ${type} available for ${title}`}</div>
+        <div className="p-3 small text-center">{`No ${type} image available for ${title}`}</div>
       )}
     </div>
   );
@@ -30,7 +34,7 @@ function Image({ src, title, type }) {
 Image.propTypes = {
   src: PropTypes.string,
   title: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(["backdrop", "poster"]).isRequired,
+  type: PropTypes.oneOf(["backdrop", "poster", "profile"]).isRequired,
 };
 
 Image.defaultProps = {
