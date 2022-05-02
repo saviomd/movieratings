@@ -41,4 +41,8 @@ MovieDiaryProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { MovieDiaryProvider, useMovieDiaryContext };
+export {
+  MovieDiaryContext as MovieDiaryContextMock,
+  MovieDiaryProvider,
+  useMovieDiaryContext,
+};

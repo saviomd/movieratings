@@ -67,4 +67,8 @@ MovieDetailsProvider.defaultProps = {
   movie: undefined,
 };
 
-export { MovieDetailsProvider, useMovieDetailsContext };
+export {
+  MovieDetailsContext as MovieDetailsContextMock,
+  MovieDetailsProvider,
+  useMovieDetailsContext,
+};

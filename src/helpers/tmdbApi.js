@@ -1,10 +1,13 @@
 const imgUrl = ({ path, type }) => {
   const types = {
     backdrop: "w1280",
+    logo: "w500",
     poster: "w780",
     profile: "w185",
   };
-  return path ? `https://image.tmdb.org/t/p/${types[type] + path}` : null;
+  return path && type
+    ? `https://image.tmdb.org/t/p/${types[type] + path}`
+    : null;
 };
 
 const tmdbApi = {
@@ -12,6 +15,7 @@ const tmdbApi = {
     attribution: () =>
       "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg",
     backdrop: ({ path }) => imgUrl({ path, type: "backdrop" }),
+    logo: ({ path }) => imgUrl({ path, type: "logo" }),
     poster: ({ path }) => imgUrl({ path, type: "poster" }),
     profile: ({ path }) => imgUrl({ path, type: "profile" }),
   },

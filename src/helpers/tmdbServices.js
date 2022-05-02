@@ -6,7 +6,7 @@ const { movieDetails, searchMovies } = tmdbApi.methods;
 export const getMovieDetails = ({ movieId }) =>
   fetchTmdb({
     path: movieDetails({ movieId }),
-    queryString: "&append_to_response=credits,recommendations",
+    queryString: "&append_to_response=credits,recommendations,watch/providers",
   });
 
 export const getSearchMovies = ({ Name, Year }) =>

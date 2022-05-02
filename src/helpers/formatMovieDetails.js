@@ -4,13 +4,18 @@ import formatMovieCredits from "./formatMovieCredits";
 import formatMovieRecommendations from "./formatMovieRecommendations";
 import tmdbApi from "./tmdbApi";
 
-const { backdrop, poster } = tmdbApi.img;
+const { backdrop, logo, poster } = tmdbApi.img;
 
 const formatMovieDetails = ({ movie, movieDetails }) => ({
   ...movieDetails,
   backdrop_url: backdrop({ path: movieDetails.backdrop_path }),
   budget: formatCurrency({ value: movieDetails.budget }),
   credits: formatMovieCredits({ credits: movieDetails.credits }),
+  flatrate:
+    movieDetails["watch/providers"]?.results?.BR?.flatrate?.map((item) => ({
+      ...item,
+      ...(item.logo_path && { logo_url: logo({ path: item.logo_path }) }),
+    })) || [],
   LetterboxdURI: movie.LetterboxdURI,
   original_language: movieDetails.original_language.toUpperCase(),
   poster_url: poster({ path: movieDetails.poster_path }),

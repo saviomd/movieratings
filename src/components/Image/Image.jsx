@@ -21,7 +21,10 @@ function Image({ src, title, type }) {
     paddingTop: `${(dimensions.height / dimensions.width) * 100}%`,
   };
   return (
-    <div className="bg-secondary ratio text-white" style={style}>
+    <div
+      className="bg-secondary ratio overflow-hidden text-white"
+      style={style}
+    >
       {src ? (
         <img alt={`${type} for ${title}`} loading="lazy" src={src} />
       ) : (

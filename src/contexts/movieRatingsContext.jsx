@@ -41,4 +41,8 @@ MovieRatingsProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { MovieRatingsProvider, useMovieRatingsContext };
+export {
+  MovieRatingsContext as MovieRatingsContextMock,
+  MovieRatingsProvider,
+  useMovieRatingsContext,
+};

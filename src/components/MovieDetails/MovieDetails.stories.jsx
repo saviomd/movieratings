@@ -1,7 +1,7 @@
 import React from "react";
 
 import MovieDetails from "./MovieDetails";
-import MovieDetailsContext from "../../contexts/MovieDetailsContext";
+import { MovieDetailsContextMock } from "../../contexts/MovieDetailsContext";
 import formatMovieDetails from "../../helpers/formatMovieDetails";
 import movieDetailsMock from "../../__mocks__/movieDetailsMock";
 
@@ -28,9 +28,9 @@ export default {
 
 function Template(args) {
   return (
-    <MovieDetailsContext.Provider value={providerValue}>
+    <MovieDetailsContextMock.Provider value={providerValue}>
       <MovieDetails {...args} />
-    </MovieDetailsContext.Provider>
+    </MovieDetailsContextMock.Provider>
   );
 }
 
