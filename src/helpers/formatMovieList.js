@@ -1,8 +1,7 @@
 import formatDate from "./formatDate";
 
 const formatMovieList = (movieList) => {
-  movieList.reverse();
-  return movieList.map((movie, index) => ({
+  return [...movieList].reverse().map((movie, index) => ({
     ...movie,
     Id: movie.LetterboxdURI.length
       ? movie.LetterboxdURI.split("boxd.it/")[1]
