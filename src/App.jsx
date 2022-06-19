@@ -2,10 +2,7 @@ import React from "react";
 
 import { MovieDiaryProvider } from "./contexts/MovieDiaryContext";
 import { MovieRatingsProvider } from "./contexts/MovieRatingsContext";
-import AppWrapper from "./components/AppWrapper";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import SiteInfo from "./components/SiteInfo";
+import { AppWrapper, Footer, Header, SiteInfo } from "./components/app";
 import Pages from "./pages";
 
 function App() {

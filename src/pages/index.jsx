@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import LoadingHandler from "../components/LoadingHandler";
+import { LoadingHandler } from "../components/system";
 
 const PageMovieDetails = lazy(() => import("./PageMovieDetails"));
 const PageMovies = lazy(() => import("./PageMovies"));

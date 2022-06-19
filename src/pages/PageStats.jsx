@@ -1,7 +1,7 @@
 import React from "react";
 
-import MovieStats from "../components/MovieStats";
-import ScrollableHorizontalList from "../components/ScrollableHorizontalList";
+import { MovieStats } from "../components/app";
+import { ScrollableHorizontalList } from "../components/system";
 import { useMovieDiaryContext } from "../contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "../contexts/MovieRatingsContext";
 

@@ -1,6 +1,6 @@
 import { useMemo, useReducer } from "react";
 
-import formatMovieDetails from "../helpers/formatMovieDetails";
+import { formatMovieDetails } from "../helpers";
 
 const initialState = {
   movieDetails: {},

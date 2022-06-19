@@ -1,6 +1,6 @@
 import React from "react";
 
-import Message from "../components/Message";
+import { Message } from "../components/system";
 
 function PageNotFound() {
   return <Message type="pageNotFound" />;

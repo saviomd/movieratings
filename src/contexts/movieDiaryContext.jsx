@@ -6,7 +6,7 @@ import React, {
   useEffect,
 } from "react";
 
-import { fetchMovieDiary } from "../helpers/letterboxdServices";
+import { fetchMovieDiary } from "../helpers";
 import useMovieDiaryStore from "../hooks/useMovieDiaryStore";
 
 const MovieDiaryContext = createContext();

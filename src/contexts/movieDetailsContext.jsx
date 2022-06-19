@@ -6,7 +6,7 @@ import React, {
   useEffect,
 } from "react";
 
-import { getMovieDetails, getSearchMovies } from "../helpers/tmdbServices";
+import { getMovieDetails, getSearchMovies } from "../helpers";
 import useMovieDetailsStore from "../hooks/useMovieDetailsStore";
 
 const MovieDetailsContext = createContext();

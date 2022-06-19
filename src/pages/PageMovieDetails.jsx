@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { MovieDetailsProvider } from "../contexts/MovieDetailsContext";
 import { useMovieDiaryContext } from "../contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "../contexts/MovieRatingsContext";
-import MovieDetails from "../components/MovieDetails";
+import { MovieDetails } from "../components/app";
 
 function PageMovieDetails() {
   const { movieDiary } = useMovieDiaryContext();

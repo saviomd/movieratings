@@ -6,7 +6,7 @@ import React, {
   useEffect,
 } from "react";
 
-import { fetchMovieRatings } from "../helpers/letterboxdServices";
+import { fetchMovieRatings } from "../helpers";
 import useMovieRatingsStore from "../hooks/useMovieRatingsStore";
 
 const MovieRatingsContext = createContext();

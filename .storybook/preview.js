@@ -1,4 +1,4 @@
-import AppWrapper from '../src/components/AppWrapper';
+import { AppWrapper } from "../src/components/app";
 
 export const decorators = [
   (Story) => (
@@ -18,4 +18,4 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
