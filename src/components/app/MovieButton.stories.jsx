@@ -2,7 +2,7 @@ import React from "react";
 
 import MovieButton, { types } from "./MovieButton";
 import movieDiaryMock from "../../__mocks__/movieDiaryMock";
-import { formatMovieList } from "../../helpers";
+import { formatMovieList } from "../../utils";
 
 const movies = formatMovieList(movieDiaryMock.movieDiary);
 

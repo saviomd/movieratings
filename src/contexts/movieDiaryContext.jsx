@@ -6,7 +6,7 @@ import React, {
   useEffect,
 } from "react";
 
-import { fetchMovieDiary } from "../helpers";
+import { fetchMovieDiary } from "../utils";
 import useMovieDiaryStore from "../hooks/useMovieDiaryStore";
 
 const MovieDiaryContext = createContext();

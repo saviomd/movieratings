@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import React, { memo } from "react";
 
-import { LoadingHandler, ProgressBar } from "../system";
+import { LoadingHandler, ProgressBar } from "../library";
 
 const title = {
   moviesPerDecadeReleased: "Per decade released",

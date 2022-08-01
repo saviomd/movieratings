@@ -3,7 +3,7 @@ import React from "react";
 import LoadingHandler, { dataStatuses } from "./LoadingHandler";
 
 export default {
-  title: "system/LoadingHandler",
+  title: "library/LoadingHandler",
   component: LoadingHandler,
   argTypes: {
     dataStatus: {

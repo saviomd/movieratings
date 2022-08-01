@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { memo } from "react";
 
-import { Anchor } from "../system";
+import { Anchor } from "../library";
 
 const Footer = memo(() => {
   const year = new Date().getFullYear();

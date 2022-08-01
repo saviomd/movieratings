@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ScrollableHorizontalList } from "../system";
+import { ScrollableHorizontalList } from "../library";
 import { useMovieDetailsContext } from "../../contexts/MovieDetailsContext";
 
 function MovieDetailsStats() {

@@ -3,7 +3,7 @@ import React from "react";
 import ProgressBar from "./ProgressBar";
 
 export default {
-  title: "system/ProgressBar",
+  title: "library/ProgressBar",
   component: ProgressBar,
   argTypes: {
     width: {

@@ -3,7 +3,7 @@ import React, { memo } from "react";
 
 import { useMovieDiaryContext } from "../../contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "../../contexts/MovieRatingsContext";
-import { LoadingHandler } from "../system";
+import { LoadingHandler } from "../library";
 import MovieButton from "./MovieButton";
 
 const MovieList = memo(({ type }) => {

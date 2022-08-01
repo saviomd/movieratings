@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { memo } from "react";
 
-import { Anchor } from "../system";
-import { tmdbApi } from "../../helpers";
+import { Anchor } from "../library";
+import { tmdbApi } from "../../utils";
 
 const SiteInfo = memo(() => (
   <div className="border-secondary border-top pt-3 small text-center">

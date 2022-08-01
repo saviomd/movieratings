@@ -2,7 +2,7 @@ import React from "react";
 
 import MovieDetails from "./MovieDetails";
 import { MovieDetailsContextMock } from "../../contexts/MovieDetailsContext";
-import { formatMovieDetails } from "../../helpers";
+import { formatMovieDetails } from "../../utils";
 import movieDetailsMock from "../../__mocks__/movieDetailsMock";
 
 const movie = {

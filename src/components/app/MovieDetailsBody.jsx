@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 import { useMovieDetailsContext } from "../../contexts/MovieDetailsContext";
-import { Image } from "../system";
+import { Image } from "../library";
 import MovieDetailsCastCrew from "./MovieDetailsCastCrew";
 import MovieDetailsRecommendations from "./MovieDetailsRecommendations";
 import MovieDetailsStats from "./MovieDetailsStats";

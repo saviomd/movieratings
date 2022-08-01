@@ -1,6 +1,6 @@
 import { useMemo, useReducer } from "react";
 
-import { filterMoviesByName, formatMovieList } from "../helpers";
+import { filterMoviesByName, formatMovieList } from "../utils";
 
 const initialState = {
   movieDiary: [],

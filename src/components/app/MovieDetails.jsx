@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useMovieDetailsContext } from "../../contexts/MovieDetailsContext";
-import { LoadingHandler } from "../system";
+import { LoadingHandler } from "../library";
 import MovieDetailsBody from "./MovieDetailsBody";
 import MovieDetailsHeader from "./MovieDetailsHeader";
 
