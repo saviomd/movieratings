@@ -1,5 +1,3 @@
-import React from "react";
-
 import { MovieDiaryProvider } from "./contexts/MovieDiaryContext";
 import { MovieRatingsProvider } from "./contexts/MovieRatingsContext";
 import { AppWrapper, Footer, Header, SiteInfo } from "./components/app";

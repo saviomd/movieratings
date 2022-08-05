@@ -3,12 +3,19 @@
   "name": "Movie Ratings",
   "icons": [
     {
-      "src": "img/appicon.png",
+      "src": "img/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icon-512.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
-  "display": "standalone",
+  "display": "minimal-ui",
+  "background_color": "#212529",
   "theme_color": "#212529",
-  "background_color": "#212529"
+  "description": "My movie ratings from Letterboxd"
 }

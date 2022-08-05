@@ -12,7 +12,7 @@ const Footer = memo(() => {
         <img
           alt="saviomd.com"
           className="me-1"
-          src="https://saviomd.com/img/favicon.png"
+          src="https://saviomd.com/img/icon-192.png"
           height="15"
           width="15"
         />
