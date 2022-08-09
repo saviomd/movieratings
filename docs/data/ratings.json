@@ -9128,13 +9128,6 @@
     "Rating": 4
   },
   {
-    "Date": "2017-11-06",
-    "Name": "Thor: Ragnarok",
-    "Year": 2017,
-    "LetterboxdURI": "https://boxd.it/8MHi",
-    "Rating": 4
-  },
-  {
     "Date": "2017-11-10",
     "Name": "Cars 3",
     "Year": 2017,
@@ -11485,5 +11478,47 @@
     "Year": 2022,
     "LetterboxdURI": "https://boxd.it/ifpg",
     "Rating": 3
+  },
+  {
+    "Date": "2022-07-10",
+    "Name": "Everything Everywhere All at Once",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/jUk4",
+    "Rating": 5
+  },
+  {
+    "Date": "2022-07-12",
+    "Name": "Thor: Ragnarok",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/8MHi",
+    "Rating": 3
+  },
+  {
+    "Date": "2022-07-12",
+    "Name": "Thor: Love and Thunder",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/mMAY",
+    "Rating": 3
+  },
+  {
+    "Date": "2022-07-24",
+    "Name": "Dave Chappelle: What's in a Name?",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/BG2Q",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-07-25",
+    "Name": "Whiplash",
+    "Year": 2013,
+    "LetterboxdURI": "https://boxd.it/cJds",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-07-30",
+    "Name": "Bob Saget: That Ain't Right",
+    "Year": 2007,
+    "LetterboxdURI": "https://boxd.it/19E6",
+    "Rating": 2
   }
 ]
