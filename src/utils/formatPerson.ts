@@ -1,8 +1,13 @@
 import tmdbApi from "./tmdbApi";
+import { IPerson } from "../types";
+
+interface IParams {
+  person: IPerson;
+}
 
 const { profile } = tmdbApi.img;
 
-const formatPerson = ({ person }) => ({
+const formatPerson = ({ person }: IParams) => ({
   ...person,
   ...(person.job && { job: [person.job] }),
   profile_url: profile({ path: person.profile_path }),

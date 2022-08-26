@@ -1,6 +1,11 @@
 import formatDate from "./formatDate";
+import { IMovie } from "../types";
 
-const formatMovieList = (movieList) => {
+interface IParams {
+  movieList: IMovie[];
+}
+
+const formatMovieList = ({ movieList }: IParams) => {
   return [...movieList].reverse().map((movie, index) => ({
     ...movie,
     Id: movie.LetterboxdURI.length

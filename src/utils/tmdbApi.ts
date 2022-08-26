@@ -1,4 +1,15 @@
-const imgUrl = ({ path, type }) => {
+import { ImgType, PathType } from "../types";
+
+interface IImgMethod {
+  path: PathType;
+}
+
+interface IImgUrl {
+  path: PathType;
+  type: ImgType;
+}
+
+const imgUrl = ({ path, type }: IImgUrl) => {
   const types = {
     backdrop: "w1280",
     logo: "w500",
@@ -14,16 +25,12 @@ const tmdbApi = {
   img: {
     attribution: () =>
       "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg",
-    backdrop: ({ path }) => imgUrl({ path, type: "backdrop" }),
-    logo: ({ path }) => imgUrl({ path, type: "logo" }),
-    poster: ({ path }) => imgUrl({ path, type: "poster" }),
-    profile: ({ path }) => imgUrl({ path, type: "profile" }),
+    backdrop: ({ path }: IImgMethod) => imgUrl({ path, type: "backdrop" }),
+    logo: ({ path }: IImgMethod) => imgUrl({ path, type: "logo" }),
+    poster: ({ path }: IImgMethod) => imgUrl({ path, type: "poster" }),
+    profile: ({ path }: IImgMethod) => imgUrl({ path, type: "profile" }),
   },
   key: "6f875d4fba2e999f480afa6275a08f75",
-  methods: {
-    movieDetails: ({ movieId }) => `movie/${movieId}`,
-    searchMovies: () => "search/movie",
-  },
   url: "https://api.themoviedb.org/3/",
 };
 

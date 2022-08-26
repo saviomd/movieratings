@@ -14,7 +14,7 @@ function reducer(state, { payload, type }) {
     case "SET_MOVIE_DIARY":
       return {
         ...state,
-        movieDiary: formatMovieList(payload),
+        movieDiary: formatMovieList({ movieList: payload }),
         movieDiaryStatus: "loaded",
       };
     case "SET_MOVIE_DIARY_PAGE":
@@ -45,7 +45,11 @@ const useMovieDetailsStore = () => {
   );
 
   const movieDiaryFiltered = useMemo(
-    () => filterMoviesByName(state.movieDiary, state.movieDiarySearchString),
+    () =>
+      filterMoviesByName({
+        movieList: state.movieDiary,
+        value: state.movieDiarySearchString,
+      }),
     [state.movieDiary, state.movieDiarySearchString]
   );
 

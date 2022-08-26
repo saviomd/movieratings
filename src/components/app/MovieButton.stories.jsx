@@ -4,7 +4,7 @@ import MovieButton, { types } from "./MovieButton";
 import movieDiaryMock from "../../__mocks__/movieDiaryMock";
 import { formatMovieList } from "../../utils";
 
-const movies = formatMovieList(movieDiaryMock.movieDiary);
+const movies = formatMovieList({ movieList: movieDiaryMock.movieDiary });
 
 export default {
   title: "app/MovieButton",

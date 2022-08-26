@@ -14,7 +14,7 @@ function reducer(state, { payload, type }) {
     case "SET_MOVIE_RATINGS":
       return {
         ...state,
-        movieRatings: formatMovieList(payload),
+        movieRatings: formatMovieList({ movieList: payload }),
         movieRatingsStatus: "loaded",
       };
     case "SET_MOVIE_RATINGS_PAGE":
@@ -49,7 +49,10 @@ const useMovieRatingsStore = () => {
 
   const movieRatingsFiltered = useMemo(
     () =>
-      filterMoviesByName(state.movieRatings, state.movieRatingsSearchString),
+      filterMoviesByName({
+        movieList: state.movieRatings,
+        value: state.movieRatingsSearchString,
+      }),
     [state.movieRatings, state.movieRatingsSearchString]
   );
 
