@@ -10,3 +10,4 @@ export { default as formatPerson } from "./formatPerson";
 export { fetchMovieDiary, fetchMovieRatings } from "./letterboxdServices";
 export { default as tmdbApi } from "./tmdbApi";
 export { getMovieDetails, getSearchMovies } from "./tmdbServices";
+export { default as trackGaPageView } from "./trackGaPageView";
