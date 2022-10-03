@@ -11569,5 +11569,33 @@
     "Year": 2020,
     "LetterboxdURI": "https://boxd.it/fsJW",
     "Rating": 4
+  },
+  {
+    "Date": "2022-09-11",
+    "Name": "The Master",
+    "Year": 2012,
+    "LetterboxdURI": "https://boxd.it/2cBG",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-09-17",
+    "Name": "Rodrigo Marques: King of Uncouth",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/Cf72",
+    "Rating": 3
+  },
+  {
+    "Date": "2022-09-25",
+    "Name": "Benedetta",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/gdNQ",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-09-26",
+    "Name": "The Sea Beast",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/kv3a",
+    "Rating": 4
   }
 ]
