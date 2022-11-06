@@ -1042,7 +1042,7 @@
   {
     "Date": "2015-05-24",
     "Name": "Ex Machina",
-    "Year": 2015,
+    "Year": 2014,
     "LetterboxdURI": "https://boxd.it/5UQ1n",
     "Rating": 5,
     "Rewatch": "",
@@ -5172,7 +5172,7 @@
   {
     "Date": "2021-04-13",
     "Name": "Bad Trip",
-    "Year": 2021,
+    "Year": 2020,
     "LetterboxdURI": "https://boxd.it/1N17nn",
     "Rating": 3,
     "Rewatch": "",
@@ -5988,5 +5988,45 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2022-09-25"
+  },
+  {
+    "Date": "2022-10-08",
+    "Name": "Under the Silver Lake",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/3iI64n",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-10-07"
+  },
+  {
+    "Date": "2022-10-17",
+    "Name": "Dahmer – Monster: The Jeffrey Dahmer Story",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/3kzcCZ",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-10-12"
+  },
+  {
+    "Date": "2022-10-21",
+    "Name": "Black Adam",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/3ltVKB",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-10-20"
+  },
+  {
+    "Date": "2022-11-05",
+    "Name": "Make Us Dream",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/3oIHQx",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-11-04"
   }
 ]

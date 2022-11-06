@@ -2262,7 +2262,7 @@
   },
   {
     "Date": "2013-04-26",
-    "Name": "Dracula",
+    "Name": "Bram Stoker's Dracula",
     "Year": 1992,
     "LetterboxdURI": "https://boxd.it/223a",
     "Rating": 2
@@ -5573,7 +5573,7 @@
   },
   {
     "Date": "2013-05-15",
-    "Name": "First Strike",
+    "Name": "Police Story 4: First Strike",
     "Year": 1996,
     "LetterboxdURI": "https://boxd.it/1YLC",
     "Rating": 4
@@ -8052,7 +8052,7 @@
   {
     "Date": "2015-05-24",
     "Name": "Ex Machina",
-    "Year": 2015,
+    "Year": 2014,
     "LetterboxdURI": "https://boxd.it/7T2k",
     "Rating": 5
   },
@@ -11006,7 +11006,7 @@
   {
     "Date": "2021-04-13",
     "Name": "Bad Trip",
-    "Year": 2021,
+    "Year": 2020,
     "LetterboxdURI": "https://boxd.it/lgRG",
     "Rating": 3
   },
@@ -11596,6 +11596,34 @@
     "Name": "The Sea Beast",
     "Year": 2022,
     "LetterboxdURI": "https://boxd.it/kv3a",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-10-08",
+    "Name": "Under the Silver Lake",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/dSAs",
+    "Rating": 3
+  },
+  {
+    "Date": "2022-10-17",
+    "Name": "Dahmer – Monster: The Jeffrey Dahmer Story",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/CRG0",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-10-21",
+    "Name": "Black Adam",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/fup0",
+    "Rating": 3
+  },
+  {
+    "Date": "2022-11-05",
+    "Name": "Make Us Dream",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/kA0K",
     "Rating": 4
   }
 ]
