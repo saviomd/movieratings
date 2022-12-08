@@ -11006,7 +11006,7 @@
   {
     "Date": "2021-04-13",
     "Name": "Bad Trip",
-    "Year": 2020,
+    "Year": 2021,
     "LetterboxdURI": "https://boxd.it/lgRG",
     "Rating": 3
   },
@@ -11624,6 +11624,41 @@
     "Name": "Make Us Dream",
     "Year": 2018,
     "LetterboxdURI": "https://boxd.it/kA0K",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-11-16",
+    "Name": "Black Panther: Wakanda Forever",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/igPu",
+    "Rating": 3
+  },
+  {
+    "Date": "2022-11-26",
+    "Name": "The Good Nurse",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/jIXI",
+    "Rating": 3
+  },
+  {
+    "Date": "2022-11-30",
+    "Name": "Trevor Noah: I Wish You Would",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/Dn3Y",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-11-30",
+    "Name": "Rafinha Bastos: Ultimatum",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/k4ke",
+    "Rating": 2
+  },
+  {
+    "Date": "2022-12-05",
+    "Name": "Mortal Kombat Legends: Battle of the Realms",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/vKLo",
     "Rating": 4
   }
 ]

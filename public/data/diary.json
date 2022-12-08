@@ -5100,16 +5100,6 @@
     "WatchedDate": "2021-02-02"
   },
   {
-    "Date": "2021-02-06",
-    "Name": "Chris Rock: Tamborine",
-    "Year": 2018,
-    "LetterboxdURI": "https://boxd.it/1DP9Yl",
-    "Rating": 3,
-    "Rewatch": "",
-    "Tags": "",
-    "WatchedDate": "2021-02-05"
-  },
-  {
     "Date": "2021-02-14",
     "Name": "Malcolm & Marie",
     "Year": 2021,
@@ -5172,7 +5162,7 @@
   {
     "Date": "2021-04-13",
     "Name": "Bad Trip",
-    "Year": 2020,
+    "Year": 2021,
     "LetterboxdURI": "https://boxd.it/1N17nn",
     "Rating": 3,
     "Rewatch": "",
@@ -6028,5 +6018,55 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2022-11-04"
+  },
+  {
+    "Date": "2022-11-16",
+    "Name": "Black Panther: Wakanda Forever",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/3r5GSL",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-11-15"
+  },
+  {
+    "Date": "2022-11-26",
+    "Name": "The Good Nurse",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/3sZyY3",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-11-24"
+  },
+  {
+    "Date": "2022-11-30",
+    "Name": "Trevor Noah: I Wish You Would",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/3tTViB",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-11-28"
+  },
+  {
+    "Date": "2022-11-30",
+    "Name": "Rafinha Bastos: Ultimatum",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/3tTVuH",
+    "Rating": 2,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-11-28"
+  },
+  {
+    "Date": "2022-12-05",
+    "Name": "Mortal Kombat Legends: Battle of the Realms",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/3uTolL",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2022-12-04"
   }
 ]
