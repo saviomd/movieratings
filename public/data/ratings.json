@@ -9542,7 +9542,7 @@
   },
   {
     "Date": "2018-04-19",
-    "Name": "Blame!",
+    "Name": "BLAME!",
     "Year": 2017,
     "LetterboxdURI": "https://boxd.it/eq1Q",
     "Rating": 4
@@ -11659,6 +11659,97 @@
     "Name": "Mortal Kombat Legends: Battle of the Realms",
     "Year": 2021,
     "LetterboxdURI": "https://boxd.it/vKLo",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-12-10",
+    "Name": "Headshot",
+    "Year": 2016,
+    "LetterboxdURI": "https://boxd.it/ebLk",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-12-10",
+    "Name": "Troll",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/rDsQ",
+    "Rating": 3
+  },
+  {
+    "Date": "2022-12-14",
+    "Name": "Trevor Noah: Son of Patricia",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/kqWY",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-12-17",
+    "Name": "Stabbing at Leia's 22nd Birthday",
+    "Year": 2007,
+    "LetterboxdURI": "https://boxd.it/8jFC",
+    "Rating": 3
+  },
+  {
+    "Date": "2022-12-18",
+    "Name": "Let's Be Cops",
+    "Year": 2014,
+    "LetterboxdURI": "https://boxd.it/5Qvu",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-12-19",
+    "Name": "The Dry",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/kOXG",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-12-20",
+    "Name": "Red Sparrow",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/e7Pi",
+    "Rating": 3
+  },
+  {
+    "Date": "2022-12-24",
+    "Name": "Glass Onion: A Knives Out Mystery",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/oCkK",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-12-26",
+    "Name": "Trevor Noah: Afraid of the Dark",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/fFvo",
+    "Rating": 4
+  },
+  {
+    "Date": "2022-12-26",
+    "Name": "See How They Run",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/sNVq",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-01-05",
+    "Name": "Bullet Train",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/qW26",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-01-08",
+    "Name": "The Pale Blue Eye",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/u8tk",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-01-09",
+    "Name": "Avatar: The Way of Water",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/2E2E",
     "Rating": 4
   }
 ]
