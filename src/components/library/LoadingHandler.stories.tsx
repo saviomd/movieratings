@@ -1,4 +1,4 @@
-import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import LoadingHandler, { dataStatuses } from "./LoadingHandler";
 
@@ -13,11 +13,11 @@ export default {
       },
     },
   },
-};
+} as ComponentMeta<typeof LoadingHandler>;
 
-function Template(args) {
-  return <LoadingHandler {...args} />;
-}
+const Template: ComponentStory<typeof LoadingHandler> = (args) => (
+  <LoadingHandler {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

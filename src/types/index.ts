@@ -1,5 +1,3 @@
-export type ImgType = "backdrop" | "logo" | "poster" | "profile";
-
 export interface IMovie {
   Id: string;
   Date: string;
@@ -40,8 +38,6 @@ export interface IMovieDetails {
   };
 }
 
-export type PathType = string;
-
 export interface IPerson {
   character: string;
   id: number;
@@ -60,3 +56,19 @@ export interface IProvider {
   Iprovider_id: number;
   Iprovider_name: string;
 }
+
+export type AnchorTargetType = "_blank" | "_parent" | "_self" | "_top";
+
+export type DataStatusType = "" | "error" | "loading" | "loaded";
+
+export type ImgType = "backdrop" | "logo" | "poster" | "profile";
+
+export type MessageType =
+  | "error"
+  | "loading"
+  | "noData"
+  | "noMovies"
+  | "noStats"
+  | "pageNotFound";
+
+export type PathType = string;

@@ -1,8 +1,16 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import PropTypes from "prop-types";
-import React, { memo } from "react";
+import {
+  FontAwesomeIcon,
+  FontAwesomeIconProps,
+} from "@fortawesome/react-fontawesome";
+import { memo } from "react";
 
-const Message = memo(({ type }) => {
+import { MessageType } from "../../types";
+
+type PropsType = {
+  type: MessageType;
+};
+
+const Message = memo(({ type }: PropsType) => {
   const messages = {
     error: {
       icon: "sad-tear",
@@ -36,16 +44,14 @@ const Message = memo(({ type }) => {
     <div className="lead p-3 text-center">
       <div className={`animate__animated ${animation} h3 mb-3`}>
         <span className="bg-secondary p-2 rounded">
-          <FontAwesomeIcon icon={messages[type].icon} />
+          <FontAwesomeIcon
+            icon={messages[type].icon as FontAwesomeIconProps["icon"]}
+          />
         </span>
       </div>
       {messages[type].text}
     </div>
   );
 });
-
-Message.propTypes = {
-  type: PropTypes.string.isRequired,
-};
 
 export default Message;

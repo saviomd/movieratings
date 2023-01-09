@@ -1,7 +1,10 @@
-import PropTypes from "prop-types";
-import React, { memo } from "react";
+import { memo } from "react";
 
-const ProgressBar = memo(({ width }) => (
+type PropsType = {
+  width: number;
+};
+
+const ProgressBar = memo(({ width }: PropsType) => (
   <div className="bg-secondary overflow-hidden rounded">
     <div
       className="animate__animated animate__slideInLeft bg-danger pb-2 rounded"
@@ -9,9 +12,5 @@ const ProgressBar = memo(({ width }) => (
     />
   </div>
 ));
-
-ProgressBar.propTypes = {
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-};
 
 export default ProgressBar;

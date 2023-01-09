@@ -1,12 +1,24 @@
-import PropTypes from "prop-types";
-import React, { memo } from "react";
+import { memo, ReactNode } from "react";
 
 import Message from "./Message";
+import { DataStatusType, MessageType } from "../../types";
+
+type PropsType = {
+  children?: ReactNode;
+  dataStatus: DataStatusType;
+  hasData?: boolean;
+  messageNoData?: MessageType;
+};
 
 const dataStatuses = ["", "error", "loading", "loaded"];
 
 const LoadingHandler = memo(
-  ({ children, dataStatus, hasData, messageNoData }) => (
+  ({
+    children,
+    dataStatus = "",
+    hasData = true,
+    messageNoData = "noData",
+  }: PropsType) => (
     <>
       {dataStatus === "loaded" && hasData && children}
       {dataStatus === "loaded" && !hasData && <Message type={messageNoData} />}
@@ -16,20 +28,6 @@ const LoadingHandler = memo(
     </>
   )
 );
-
-LoadingHandler.propTypes = {
-  children: PropTypes.node,
-  dataStatus: PropTypes.oneOf(dataStatuses),
-  hasData: PropTypes.bool,
-  messageNoData: PropTypes.string,
-};
-
-LoadingHandler.defaultProps = {
-  children: null,
-  dataStatus: dataStatuses[0],
-  hasData: true,
-  messageNoData: "noData",
-};
 
 export default LoadingHandler;
 export { dataStatuses };

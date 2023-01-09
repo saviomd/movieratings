@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ScrollableHorizontalList } from "../library";
+import { Image, ScrollableHorizontalList } from "../library";
 import { useMovieDetailsContext } from "../../contexts/MovieDetailsContext";
 
 function MovieDetailsStats() {
@@ -45,7 +45,7 @@ function MovieDetailsStats() {
           <ul className="list-inline">
             {flatrate.map(({ logo_url, provider_name }) => (
               <li className="list-inline-item" key={provider_name}>
-                <img alt={provider_name} height={16 * 3} src={logo_url} />
+                <Image src={logo_url} title={provider_name} type="logo" />
               </li>
             ))}
           </ul>
