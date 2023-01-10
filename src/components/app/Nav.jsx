@@ -14,7 +14,7 @@ const navLinks = [
     path: "/diary",
   },
   {
-    icon: "chart-bar",
+    icon: "chart-simple",
     name: "Stats",
     path: "/stats",
   },

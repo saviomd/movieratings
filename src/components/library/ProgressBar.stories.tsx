@@ -6,7 +6,7 @@ export default {
   title: "library/ProgressBar",
   component: ProgressBar,
   argTypes: {
-    width: {
+    size: {
       control: {
         type: "range",
       },
@@ -20,5 +20,5 @@ const Template: ComponentStory<typeof ProgressBar> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  width: 50,
+  size: 50,
 };

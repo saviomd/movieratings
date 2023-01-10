@@ -1,7 +1,7 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faCalendarAlt,
-  faChartBar,
+  faChartSimple,
   faDizzy,
   faExternalLinkAlt,
   faFrown,
@@ -19,7 +19,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 library.add(
   faCalendarAlt,
-  faChartBar,
+  faChartSimple,
   faDizzy,
   faExternalLinkAlt,
   faFrown,

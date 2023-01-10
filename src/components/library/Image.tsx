@@ -23,8 +23,8 @@ function Image({ src, title, type }: PropsType) {
       width: 780,
     },
     profile: {
-      height: 278,
-      width: 185,
+      height: 632,
+      width: 421,
     },
   };
   const dimensions = types[type];

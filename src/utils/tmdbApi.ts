@@ -14,7 +14,7 @@ const imgUrl = ({ path, type }: IImgUrl) => {
     backdrop: "w1280",
     logo: "w500",
     poster: "w780",
-    profile: "w185",
+    profile: "h632",
   };
   return path && type
     ? `https://image.tmdb.org/t/p/${types[type] + path}`

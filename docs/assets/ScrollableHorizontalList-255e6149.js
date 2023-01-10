@@ -1,1 +1,0 @@
-import{j as o}from"./index-8e285689.js";function s({children:l}){return o("ul",{className:"flex-nowrap g-3 list-unstyled row",style:{overflowX:"scroll",WebkitOverflowScrolling:"touch"},children:l})}export{s as S};
