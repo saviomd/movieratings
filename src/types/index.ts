@@ -57,7 +57,12 @@ export interface IProvider {
   Iprovider_name: string;
 }
 
-export type AnchorTargetType = "_blank" | "_parent" | "_self" | "_top";
+export interface IRandomMovie {
+  Id: string;
+  LetterboxdURI: string;
+  Name: string;
+  poster_path: PathType;
+}
 
 export type DataStatusType = "" | "error" | "loading" | "loaded";
 

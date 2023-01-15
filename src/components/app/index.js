@@ -5,6 +5,7 @@ export { default as MovieButton } from "./MovieButton";
 export { default as MovieDetails } from "./MovieDetails";
 export { default as MovieList } from "./MovieList";
 export { default as MovieNameSearch } from "./MovieNameSearch";
+export { default as MoviePosterButton } from "./MoviePosterButton";
 export { default as MovieStats } from "./MovieStats";
 export { default as Nav } from "./Nav";
 export { default as NavItem } from "./NavItem";

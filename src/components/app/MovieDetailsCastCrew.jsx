@@ -19,7 +19,7 @@ function MovieDetailsCastCrew() {
         <ScrollableHorizontalList>
           {movieDetails.credits[item].map((person) => (
             <li className="col-5 col-sm-3 col-md-2" key={person.id}>
-              <Anchor href={person.tmdbURI} target="_blank">
+              <Anchor href={person.tmdbURI}>
                 <Image
                   src={person.profile_url}
                   title={person.name}

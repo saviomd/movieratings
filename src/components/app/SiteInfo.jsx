@@ -10,7 +10,7 @@ const SiteInfo = memo(() => (
       My Ratings and Diary data are exported from Letterboxd from time to time.
       <br />
       My{" "}
-      <Anchor href="https://letterboxd.com/saviomd" target="_blank">
+      <Anchor href="https://letterboxd.com/saviomd">
         profile
         <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
       </Anchor>{" "}
@@ -20,7 +20,7 @@ const SiteInfo = memo(() => (
       <img alt="TMDb" src={tmdbApi.img.attribution()} height="32" />
       <br />
       This product uses the TMDb API but is not endorsed or certified by{" "}
-      <Anchor href="https://www.themoviedb.org" target="_blank">
+      <Anchor href="https://www.themoviedb.org">
         TMDb
         <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
       </Anchor>
@@ -28,7 +28,7 @@ const SiteInfo = memo(() => (
     </div>
     <div className="mb-3">
       Streaming information powered by{" "}
-      <Anchor href="https://www.justwatch.com/br" target="_blank">
+      <Anchor href="https://www.justwatch.com/br">
         JustWatch
         <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
       </Anchor>

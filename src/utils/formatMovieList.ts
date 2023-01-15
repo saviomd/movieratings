@@ -6,11 +6,9 @@ interface IParams {
 }
 
 const formatMovieList = ({ movieList }: IParams) => {
-  return [...movieList].reverse().map((movie, index) => ({
+  return [...movieList].reverse().map((movie) => ({
     ...movie,
-    Id: movie.LetterboxdURI.length
-      ? movie.LetterboxdURI.split("boxd.it/")[1]
-      : index.toString(),
+    Id: movie.LetterboxdURI.split("boxd.it/")[1],
     Name: movie.Name.toString(),
     DateFormatted: formatDate({ date: movie.Date }),
     ...(movie.WatchedDate && {

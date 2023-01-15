@@ -1,5 +1,6 @@
 import { MovieDiaryProvider } from "./contexts/MovieDiaryContext";
 import { MovieRatingsProvider } from "./contexts/MovieRatingsContext";
+import { StatsProvider } from "./contexts/StatsContext";
 import { AppWrapper, Footer, Header, SiteInfo } from "./components/app";
 import Pages from "./pages";
 
@@ -8,16 +9,18 @@ function App() {
     <AppWrapper>
       <MovieDiaryProvider>
         <MovieRatingsProvider>
-          <div className="container-fluid">
-            <div className="justify-content-center row">
-              <div className="col-12 col-md-10">
-                <Header />
-                <Pages />
-                <SiteInfo />
-                <Footer />
+          <StatsProvider>
+            <div className="container-fluid">
+              <div className="justify-content-center row">
+                <div className="col-12 col-md-10">
+                  <Header />
+                  <Pages />
+                  <SiteInfo />
+                  <Footer />
+                </div>
               </div>
             </div>
-          </div>
+          </StatsProvider>
         </MovieRatingsProvider>
       </MovieDiaryProvider>
     </AppWrapper>

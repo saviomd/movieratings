@@ -2,7 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 import { useMovieDetailsContext } from "../../contexts/MovieDetailsContext";
-import { Anchor, Image, ScrollableHorizontalList } from "../library";
+import { MoviePosterButton } from "../app";
+import { ScrollableHorizontalList } from "../library";
 
 function MovieDetailsRecommendations() {
   const { movieDetails } = useMovieDetailsContext();
@@ -18,10 +19,11 @@ function MovieDetailsRecommendations() {
       <ScrollableHorizontalList>
         {movieDetails.recommendations.map((movie) => (
           <li className="col-5 col-md-3 col-lg-2" key={movie.id}>
-            <Anchor href={movie.tmdbURI} target="_blank">
-              <Image src={movie.poster_url} title={movie.title} type="poster" />
-              {movie.title}
-            </Anchor>
+            <MoviePosterButton
+              href={movie.tmdbURI}
+              posterUrl={movie.poster_url}
+              title={movie.title}
+            />
           </li>
         ))}
       </ScrollableHorizontalList>

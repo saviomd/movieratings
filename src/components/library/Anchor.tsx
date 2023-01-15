@@ -1,23 +1,29 @@
 import { ReactNode } from "react";
-
-import { AnchorTargetType } from "../../types";
+import { Link } from "react-router-dom";
 
 type PropsType = {
   children: ReactNode;
   href: string;
-  target?: AnchorTargetType;
 };
 
-function Anchor({ children, href, target }: PropsType) {
+function Anchor({ children, href }: PropsType) {
+  const className = "text-danger text-decoration-none";
+  if (href.startsWith("http")) {
+    return (
+      <a
+        className={className}
+        href={href}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        {children}
+      </a>
+    );
+  }
   return (
-    <a
-      className="text-danger text-decoration-none"
-      href={href}
-      target={target}
-      rel={target === "_blank" ? "noopener noreferrer" : undefined}
-    >
+    <Link className={className} to={href}>
       {children}
-    </a>
+    </Link>
   );
 }
 

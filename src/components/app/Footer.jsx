@@ -8,7 +8,7 @@ const Footer = memo(() => {
   return (
     <footer className="border-secondary border-top mb-3 pt-3 small text-center">
       &copy; 2017-{year}{" "}
-      <Anchor href="http://saviomd.com/" target="_blank">
+      <Anchor href="https://saviomd.com/">
         <img
           alt="saviomd.com"
           className="me-1"
