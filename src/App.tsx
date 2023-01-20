@@ -1,28 +1,16 @@
-import { MovieDiaryProvider } from "./contexts/MovieDiaryContext";
-import { MovieRatingsProvider } from "./contexts/MovieRatingsContext";
-import { StatsProvider } from "./contexts/StatsContext";
-import { AppWrapper, Footer, Header, SiteInfo } from "./components/app";
-import Pages from "./pages";
+import { Suspense } from "react";
+import { createHashRouter, RouterProvider } from "react-router-dom";
+
+import { AppWrapper } from "./components/app";
+import { LoadingHandler } from "./components/library";
+import routes from "./routes";
 
 function App() {
   return (
     <AppWrapper>
-      <MovieDiaryProvider>
-        <MovieRatingsProvider>
-          <StatsProvider>
-            <div className="container-fluid">
-              <div className="justify-content-center row">
-                <div className="col-12 col-md-10">
-                  <Header />
-                  <Pages />
-                  <SiteInfo />
-                  <Footer />
-                </div>
-              </div>
-            </div>
-          </StatsProvider>
-        </MovieRatingsProvider>
-      </MovieDiaryProvider>
+      <Suspense fallback={<LoadingHandler dataStatus="loading" />}>
+        <RouterProvider router={createHashRouter(routes)} />
+      </Suspense>
     </AppWrapper>
   );
 }

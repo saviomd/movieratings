@@ -12,7 +12,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import React from "react";
-import { HashRouter as Router } from "react-router-dom";
 
 import "animate.css/animate.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -30,11 +29,7 @@ library.add(
 );
 
 function AppWrapper({ children }) {
-  return (
-    <Router>
-      <div className="bg-dark text-white">{children}</div>
-    </Router>
-  );
+  return <div className="bg-dark text-white">{children}</div>;
 }
 
 AppWrapper.propTypes = {
