@@ -1,0 +1,1 @@
+import{j as a,F as i,a as s,i as r,k as c,p as o}from"./index-e94f58fd.js";function l({type:e}){return a(i,{children:[s("h1",{className:"h4",children:e}),a("div",{className:"row",children:[s("div",{className:"col-12 col-sm-4",children:s(r,{type:e})}),s("div",{className:"col-12 col-sm-8",children:s(c,{type:e})})]})]})}l.propTypes={type:o.string.isRequired};export{l as default};
