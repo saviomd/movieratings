@@ -6141,7 +6141,7 @@
   },
   {
     "Date": "2022-12-24",
-    "Name": "Glass Onion: A Knives Out Mystery",
+    "Name": "Glass Onion",
     "Year": 2022,
     "LetterboxdURI": "https://boxd.it/3zuHWB",
     "Rating": 4,
@@ -6308,5 +6308,55 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2023-03-04"
+  },
+  {
+    "Date": "2023-03-10",
+    "Name": "HIDARI",
+    "Year": "",
+    "LetterboxdURI": "https://boxd.it/3XwLu7",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-03-08"
+  },
+  {
+    "Date": "2023-03-11",
+    "Name": "Chris Rock: Selective Outrage",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/3XVzDL",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-03-10"
+  },
+  {
+    "Date": "2023-03-12",
+    "Name": "Ali Wong: Don Wong",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/3YgHBP",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-03-11"
+  },
+  {
+    "Date": "2023-03-19",
+    "Name": "Shazam! Fury of the Gods",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/40b92J",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-03-18"
+  },
+  {
+    "Date": "2023-03-25",
+    "Name": "John Wick: Chapter 4",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/41MX5h",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-03-24"
   }
 ]

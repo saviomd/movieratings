@@ -11712,7 +11712,7 @@
   },
   {
     "Date": "2022-12-24",
-    "Name": "Glass Onion: A Knives Out Mystery",
+    "Name": "Glass Onion",
     "Year": 2022,
     "LetterboxdURI": "https://boxd.it/oCkK",
     "Rating": 4
@@ -11827,6 +11827,41 @@
     "Name": "Triangle of Sadness",
     "Year": 2022,
     "LetterboxdURI": "https://boxd.it/hXlq",
+    "Rating": 5
+  },
+  {
+    "Date": "2023-03-10",
+    "Name": "HIDARI",
+    "Year": "",
+    "LetterboxdURI": "https://boxd.it/Fw0e",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-03-11",
+    "Name": "Chris Rock: Selective Outrage",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/EkOY",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-03-12",
+    "Name": "Ali Wong: Don Wong",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/zbWY",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-03-19",
+    "Name": "Shazam! Fury of the Gods",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/lV0S",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-03-25",
+    "Name": "John Wick: Chapter 4",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/mh48",
     "Rating": 5
   }
 ]
