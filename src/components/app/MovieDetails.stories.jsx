@@ -1,5 +1,3 @@
-import React from "react";
-
 import MovieDetails from "./MovieDetails";
 import { MovieDetailsContextMock } from "../../contexts/MovieDetailsContext";
 import { formatMovieDetails } from "../../utils";
@@ -21,17 +19,24 @@ const providerValue = {
   movieDetailsStatus: "loaded",
 };
 
-export default {
+const meta = {
   title: "app/MovieDetails",
   component: MovieDetails,
+  tags: ["autodocs"],
+  parameters: {
+    layout: "fullscreen",
+  },
+  decorators: [
+    (Story) => (
+      <MovieDetailsContextMock.Provider value={providerValue}>
+        <Story />
+      </MovieDetailsContextMock.Provider>
+    ),
+  ],
 };
 
-function Template(args) {
-  return (
-    <MovieDetailsContextMock.Provider value={providerValue}>
-      <MovieDetails {...args} />
-    </MovieDetailsContextMock.Provider>
-  );
-}
+export default meta;
 
-export const Default = Template.bind({});
+export const Default = {
+  args: {},
+};

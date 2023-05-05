@@ -1,14 +1,16 @@
-import React from "react";
-
 import MovieButton, { types } from "./MovieButton";
 import movieDiaryMock from "../../__mocks__/movieDiaryMock";
 import { formatMovieList } from "../../utils";
 
 const movies = formatMovieList({ movieList: movieDiaryMock.movieDiary });
 
-export default {
+const meta = {
   title: "app/MovieButton",
   component: MovieButton,
+  tags: ["autodocs"],
+  parameters: {
+    layout: "fullscreen",
+  },
   argTypes: {
     type: {
       options: types,
@@ -19,12 +21,11 @@ export default {
   },
 };
 
-function Template(args) {
-  return <MovieButton {...args} />;
-}
+export default meta;
 
-export const Default = Template.bind({});
-Default.args = {
-  movie: movies[0],
-  type: types[0],
+export const Default = {
+  args: {
+    movie: movies[0],
+    type: types[0],
+  },
 };
