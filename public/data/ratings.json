@@ -11006,7 +11006,7 @@
   {
     "Date": "2021-04-13",
     "Name": "Bad Trip",
-    "Year": 2021,
+    "Year": 2020,
     "LetterboxdURI": "https://boxd.it/lgRG",
     "Rating": 3
   },
@@ -11832,7 +11832,7 @@
   {
     "Date": "2023-03-10",
     "Name": "HIDARI",
-    "Year": "",
+    "Year": 2028,
     "LetterboxdURI": "https://boxd.it/Fw0e",
     "Rating": 4
   },
@@ -11862,6 +11862,76 @@
     "Name": "John Wick: Chapter 4",
     "Year": 2023,
     "LetterboxdURI": "https://boxd.it/mh48",
+    "Rating": 5
+  },
+  {
+    "Date": "2023-04-09",
+    "Name": "Triangle",
+    "Year": 2009,
+    "LetterboxdURI": "https://boxd.it/1tQG",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-04-16",
+    "Name": "Fall",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/Bf6G",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-04-22",
+    "Name": "Chip 'n Dale: Rescue Rangers",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/eSk2",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-04-24",
+    "Name": "The Super Mario Bros. Movie",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/i8C8",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-04-30",
+    "Name": "Mighty Morphin Power Rangers: Once & Always",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/Ep6i",
+    "Rating": 2
+  },
+  {
+    "Date": "2023-05-01",
+    "Name": "Entergalactic",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/CPN4",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-05-06",
+    "Name": "Justice League: Throne of Atlantis",
+    "Year": 2015,
+    "LetterboxdURI": "https://boxd.it/9qWs",
+    "Rating": 2
+  },
+  {
+    "Date": "2023-05-07",
+    "Name": "The People Upstairs",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/qSsa",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-05-08",
+    "Name": "Dungeons & Dragons: Honor Among Thieves",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/hN1A",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-05-08",
+    "Name": "Guardians of the Galaxy Vol. 3",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/fVNI",
     "Rating": 5
   }
 ]

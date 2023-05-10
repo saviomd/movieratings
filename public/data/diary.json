@@ -5162,7 +5162,7 @@
   {
     "Date": "2021-04-13",
     "Name": "Bad Trip",
-    "Year": 2021,
+    "Year": 2020,
     "LetterboxdURI": "https://boxd.it/1N17nn",
     "Rating": 3,
     "Rewatch": "",
@@ -6312,7 +6312,7 @@
   {
     "Date": "2023-03-10",
     "Name": "HIDARI",
-    "Year": "",
+    "Year": 2028,
     "LetterboxdURI": "https://boxd.it/3XwLu7",
     "Rating": 4,
     "Rewatch": "",
@@ -6358,5 +6358,105 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2023-03-24"
+  },
+  {
+    "Date": "2023-04-09",
+    "Name": "Triangle",
+    "Year": 2009,
+    "LetterboxdURI": "https://boxd.it/45Tao5",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-04-08"
+  },
+  {
+    "Date": "2023-04-16",
+    "Name": "Fall",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/47Tgot",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-04-15"
+  },
+  {
+    "Date": "2023-04-22",
+    "Name": "Chip 'n Dale: Rescue Rangers",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/49prhB",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-04-21"
+  },
+  {
+    "Date": "2023-04-24",
+    "Name": "The Super Mario Bros. Movie",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/49ZCWd",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-04-23"
+  },
+  {
+    "Date": "2023-04-30",
+    "Name": "Mighty Morphin Power Rangers: Once & Always",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/4bwnGp",
+    "Rating": 2,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-04-29"
+  },
+  {
+    "Date": "2023-05-01",
+    "Name": "Entergalactic",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/4bUj4J",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-04-30"
+  },
+  {
+    "Date": "2023-05-06",
+    "Name": "Justice League: Throne of Atlantis",
+    "Year": 2015,
+    "LetterboxdURI": "https://boxd.it/4dd2V9",
+    "Rating": 2,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-05-05"
+  },
+  {
+    "Date": "2023-05-07",
+    "Name": "The People Upstairs",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/4doHfv",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-05-06"
+  },
+  {
+    "Date": "2023-05-08",
+    "Name": "Dungeons & Dragons: Honor Among Thieves",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/4dIWb9",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-05-07"
+  },
+  {
+    "Date": "2023-05-08",
+    "Name": "Guardians of the Galaxy Vol. 3",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/4dSkTn",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-05-07"
   }
 ]
