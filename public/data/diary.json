@@ -1031,7 +1031,7 @@
   },
   {
     "Date": "2015-05-12",
-    "Name": "Springsteen & I",
+    "Name": "Bruce Springsteen - Springsteen & I",
     "Year": 2013,
     "LetterboxdURI": "https://boxd.it/5P0UF",
     "Rating": 4,
@@ -5162,7 +5162,7 @@
   {
     "Date": "2021-04-13",
     "Name": "Bad Trip",
-    "Year": 2020,
+    "Year": 2021,
     "LetterboxdURI": "https://boxd.it/1N17nn",
     "Rating": 3,
     "Rewatch": "",
@@ -5661,7 +5661,7 @@
   },
   {
     "Date": "2022-03-28",
-    "Name": "Blue Dream: The Road to Wembley",
+    "Name": "Azzurri: Road to Wembley",
     "Year": 2021,
     "LetterboxdURI": "https://boxd.it/2HB1OX",
     "Rating": 3,
@@ -6100,16 +6100,6 @@
     "WatchedDate": "2022-12-13"
   },
   {
-    "Date": "2022-12-17",
-    "Name": "Stabbing at Leia's 22nd Birthday",
-    "Year": 2007,
-    "LetterboxdURI": "https://boxd.it/3xwniR",
-    "Rating": 3,
-    "Rewatch": "",
-    "Tags": "",
-    "WatchedDate": "2022-12-15"
-  },
-  {
     "Date": "2022-12-18",
     "Name": "Let's Be Cops",
     "Year": 2014,
@@ -6310,16 +6300,6 @@
     "WatchedDate": "2023-03-04"
   },
   {
-    "Date": "2023-03-10",
-    "Name": "HIDARI",
-    "Year": 2028,
-    "LetterboxdURI": "https://boxd.it/3XwLu7",
-    "Rating": 4,
-    "Rewatch": "",
-    "Tags": "",
-    "WatchedDate": "2023-03-08"
-  },
-  {
     "Date": "2023-03-11",
     "Name": "Chris Rock: Selective Outrage",
     "Year": 2023,
@@ -6458,5 +6438,55 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2023-05-07"
+  },
+  {
+    "Date": "2023-05-21",
+    "Name": "Fast X",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/4gSnAF",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-05-20"
+  },
+  {
+    "Date": "2023-05-22",
+    "Name": "Murder on the Orient Express",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/4hcLBH",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-05-21"
+  },
+  {
+    "Date": "2023-05-26",
+    "Name": "Mato Sem Cachorro",
+    "Year": 2013,
+    "LetterboxdURI": "https://boxd.it/4i8CBp",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-05-25"
+  },
+  {
+    "Date": "2023-05-28",
+    "Name": "Dave Chappelle: Killin' Them Softly",
+    "Year": 2000,
+    "LetterboxdURI": "https://boxd.it/4iD8OP",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-05-27"
+  },
+  {
+    "Date": "2023-06-03",
+    "Name": "Spider-Man: Across the Spider-Verse",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/4kbyWd",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-06-02"
   }
 ]

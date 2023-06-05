@@ -8044,7 +8044,7 @@
   },
   {
     "Date": "2015-05-12",
-    "Name": "Springsteen & I",
+    "Name": "Bruce Springsteen - Springsteen & I",
     "Year": 2013,
     "LetterboxdURI": "https://boxd.it/60R6",
     "Rating": 4
@@ -11006,7 +11006,7 @@
   {
     "Date": "2021-04-13",
     "Name": "Bad Trip",
-    "Year": 2020,
+    "Year": 2021,
     "LetterboxdURI": "https://boxd.it/lgRG",
     "Rating": 3
   },
@@ -11369,7 +11369,7 @@
   },
   {
     "Date": "2022-03-28",
-    "Name": "Blue Dream: The Road to Wembley",
+    "Name": "Azzurri: Road to Wembley",
     "Year": 2021,
     "LetterboxdURI": "https://boxd.it/w76y",
     "Rating": 3
@@ -11683,13 +11683,6 @@
     "Rating": 4
   },
   {
-    "Date": "2022-12-17",
-    "Name": "Stabbing at Leia's 22nd Birthday",
-    "Year": 2007,
-    "LetterboxdURI": "https://boxd.it/8jFC",
-    "Rating": 3
-  },
-  {
     "Date": "2022-12-18",
     "Name": "Let's Be Cops",
     "Year": 2014,
@@ -11830,13 +11823,6 @@
     "Rating": 5
   },
   {
-    "Date": "2023-03-10",
-    "Name": "HIDARI",
-    "Year": 2028,
-    "LetterboxdURI": "https://boxd.it/Fw0e",
-    "Rating": 4
-  },
-  {
     "Date": "2023-03-11",
     "Name": "Chris Rock: Selective Outrage",
     "Year": 2023,
@@ -11932,6 +11918,41 @@
     "Name": "Guardians of the Galaxy Vol. 3",
     "Year": 2023,
     "LetterboxdURI": "https://boxd.it/fVNI",
+    "Rating": 5
+  },
+  {
+    "Date": "2023-05-21",
+    "Name": "Fast X",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/drIu",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-05-22",
+    "Name": "Murder on the Orient Express",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/dHjA",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-05-26",
+    "Name": "Mato Sem Cachorro",
+    "Year": 2013,
+    "LetterboxdURI": "https://boxd.it/6DC0",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-05-28",
+    "Name": "Dave Chappelle: Killin' Them Softly",
+    "Year": 2000,
+    "LetterboxdURI": "https://boxd.it/1KrS",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-06-03",
+    "Name": "Spider-Man: Across the Spider-Verse",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/kSz4",
     "Rating": 5
   }
 ]
