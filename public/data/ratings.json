@@ -6728,7 +6728,7 @@
   },
   {
     "Date": "2013-06-29",
-    "Name": "Basic Sanitation: The Movie",
+    "Name": "Basic Sanitation, the Movie",
     "Year": 2007,
     "LetterboxdURI": "https://boxd.it/1oC",
     "Rating": 4
@@ -11954,5 +11954,26 @@
     "Year": 2023,
     "LetterboxdURI": "https://boxd.it/kSz4",
     "Rating": 5
+  },
+  {
+    "Date": "2023-06-11",
+    "Name": "Lost Bullet",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/qqKg",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-06-11",
+    "Name": "Lost Bullet 2",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/zMH2",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-06-19",
+    "Name": "The Flash",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/9twC",
+    "Rating": 3
   }
 ]
