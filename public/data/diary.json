@@ -921,7 +921,7 @@
   },
   {
     "Date": "2015-03-09",
-    "Name": "The Hunger Games: Mockingjay - Part 1",
+    "Name": "The Hunger Games: Mockingjay – Part 1",
     "Year": 2014,
     "LetterboxdURI": "https://boxd.it/5jfZB",
     "Rating": 4,
@@ -1251,7 +1251,7 @@
   },
   {
     "Date": "2015-09-15",
-    "Name": "Mission: Impossible - Rogue Nation",
+    "Name": "Mission: Impossible – Rogue Nation",
     "Year": 2015,
     "LetterboxdURI": "https://boxd.it/6UPQ9",
     "Rating": 4,
@@ -1741,7 +1741,7 @@
   },
   {
     "Date": "2016-08-19",
-    "Name": "The Hunger Games: Mockingjay - Part 2",
+    "Name": "The Hunger Games: Mockingjay – Part 2",
     "Year": 2015,
     "LetterboxdURI": "https://boxd.it/aTS8N",
     "Rating": 4,
@@ -3291,7 +3291,7 @@
   },
   {
     "Date": "2018-07-30",
-    "Name": "Mission: Impossible - Fallout",
+    "Name": "Mission: Impossible – Fallout",
     "Year": 2018,
     "LetterboxdURI": "https://boxd.it/uHd2v",
     "Rating": 5,
@@ -3831,7 +3831,7 @@
   },
   {
     "Date": "2019-05-19",
-    "Name": "John Wick: Chapter 3 - Parabellum",
+    "Name": "John Wick: Chapter 3 – Parabellum",
     "Year": 2019,
     "LetterboxdURI": "https://boxd.it/IoxyT",
     "Rating": 4,
@@ -6518,5 +6518,95 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2023-06-18"
+  },
+  {
+    "Date": "2023-07-24",
+    "Name": "I Wanna Dance with Somebody",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/4zgoFr",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-07-22"
+  },
+  {
+    "Date": "2023-07-24",
+    "Name": "Kate",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/4zyX0z",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-07-23"
+  },
+  {
+    "Date": "2023-07-25",
+    "Name": "Ingrid Goes West",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/4zZoFr",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-07-24"
+  },
+  {
+    "Date": "2023-07-26",
+    "Name": "Somebody I Used to Know",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/4AsE2D",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-07-25"
+  },
+  {
+    "Date": "2023-07-27",
+    "Name": "Thank You for Smoking",
+    "Year": 2005,
+    "LetterboxdURI": "https://boxd.it/4ADBQH",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-07-26"
+  },
+  {
+    "Date": "2023-07-29",
+    "Name": "Drop Dead Gorgeous",
+    "Year": 1999,
+    "LetterboxdURI": "https://boxd.it/4BoHn1",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-07-28"
+  },
+  {
+    "Date": "2023-07-31",
+    "Name": "Mission: Impossible – Dead Reckoning Part One",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/4CiZ7H",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-07-30"
+  },
+  {
+    "Date": "2023-08-01",
+    "Name": "Promising Young Woman",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/4CMxZL",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-07-31"
+  },
+  {
+    "Date": "2023-08-07",
+    "Name": "Barbie",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/4EIFvT",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-08-06"
   }
 ]
