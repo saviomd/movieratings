@@ -12,7 +12,8 @@ interface IGetSearchMovies {
 export const getMovieDetails = ({ movieId }: IGetMovieDetails) =>
   fetchTmdb({
     path: `movie/${movieId}`,
-    queryString: "&append_to_response=credits,recommendations,watch/providers",
+    queryString:
+      "&append_to_response=credits,images,recommendations,watch/providers",
   });
 
 export const getSearchMovies = ({ Name, Year }: IGetSearchMovies) =>

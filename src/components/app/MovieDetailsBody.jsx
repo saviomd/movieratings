@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 import { useMovieDetailsContext } from "../../contexts/MovieDetailsContext";
-import { Image } from "../library";
+import { Image, ScrollableHorizontalList } from "../library";
 import MovieDetailsCastCrew from "./MovieDetailsCastCrew";
 import MovieDetailsRecommendations from "./MovieDetailsRecommendations";
 import MovieDetailsStats from "./MovieDetailsStats";
@@ -17,12 +17,16 @@ function MovieDetailsBody() {
     <>
       <div className="p-3">
         <div className="animate__animated animate__fadeInUp mb-3 row">
-          <div className="col-6 col-lg-4">
-            <Image
-              src={movieDetails.poster_url}
-              title={movieDetails.title}
-              type="poster"
-            />
+          <div className="col-8 col-lg-4">
+            {movieDetails.images.posters.length && (
+              <ScrollableHorizontalList>
+                {movieDetails.images.posters.map(({ url }) => (
+                  <li className="col-11" key={url}>
+                    <Image src={url} title={movieDetails.title} type="poster" />
+                  </li>
+                ))}
+              </ScrollableHorizontalList>
+            )}
           </div>
           <div className="col-12 col-sm-6 col-lg-8 lead">
             {movieDetails.overview}
@@ -34,11 +38,15 @@ function MovieDetailsBody() {
           <blockquote className="blockquote px-5 text-center">{`"${movieDetails.tagline}"`}</blockquote>
         )}
       </div>
-      <Image
-        src={movieDetails.backdrop_url}
-        title={movieDetails.title}
-        type="backdrop"
-      />
+      {movieDetails.images.backdrops.length && (
+        <ScrollableHorizontalList>
+          {movieDetails.images.backdrops.map(({ url }) => (
+            <li className="col-11" key={url}>
+              <Image src={url} title={movieDetails.title} type="backdrop" />
+            </li>
+          ))}
+        </ScrollableHorizontalList>
+      )}
       <div className="p-3 text-end">
         <div>
           View movie at

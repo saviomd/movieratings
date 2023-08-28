@@ -1,3 +1,7 @@
+export interface IImage {
+  file_path: PathType;
+}
+
 export interface IMovie {
   Id: string;
   Date: string;
@@ -16,13 +20,15 @@ export interface IMovieCredits {
 }
 
 export interface IMovieDetails {
-  backdrop_path: PathType;
   budget?: number;
   credits: IMovieCredits;
   flatrate: IProvider[];
   id: number;
+  images: {
+    backdrops: IImage[];
+    posters: IImage[];
+  };
   original_language: string;
-  poster_path: PathType;
   recommendations: {
     results: IMovieDetails[];
   };
