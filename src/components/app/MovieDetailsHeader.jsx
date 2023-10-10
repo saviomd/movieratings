@@ -9,12 +9,15 @@ function MovieDetailsHeader() {
     <div className="bg-secondary p-3">
       <h1 className="h3">
         {movieDetails.title}
-        <span className="font-italic ms-2 small">
-          {`(${movieDetails.release_year}`}
-          {movieDetails.title !== movieDetails.original_title &&
-            `, "${movieDetails.original_title}"`}
-          )
-        </span>
+        <span className="fst-italic ms-2 small">{`(${movieDetails.release_year})`}</span>
+        <div className="fst-italic small">
+          {movieDetails.br_title}
+          {movieDetails.title !== movieDetails.original_title && (
+            <div className="fst-italic small">
+              ({movieDetails.original_title})
+            </div>
+          )}
+        </div>
       </h1>
       <div className="small">
         {movieDetails.Rating} of 5

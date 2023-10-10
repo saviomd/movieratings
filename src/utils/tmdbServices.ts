@@ -13,7 +13,7 @@ export const getMovieDetails = ({ movieId }: IGetMovieDetails) =>
   fetchTmdb({
     path: `movie/${movieId}`,
     queryString:
-      "&append_to_response=credits,images,recommendations,watch/providers",
+      "&append_to_response=alternative_titles,credits,images,recommendations,watch/providers&country=BR",
   });
 
 export const getSearchMovies = ({ Name, Year }: IGetSearchMovies) =>

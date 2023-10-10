@@ -1,3 +1,12 @@
+export interface IAlternativeTitle {
+  iso_3166_1: string;
+  title: string;
+}
+
+export interface IAlternativeTitles {
+  titles: IAlternativeTitle[];
+}
+
 export interface IImage {
   file_path: PathType;
 }
@@ -20,6 +29,7 @@ export interface IMovieCredits {
 }
 
 export interface IMovieDetails {
+  alternative_titles: IAlternativeTitles;
   budget?: number;
   credits: IMovieCredits;
   flatrate: IProvider[];

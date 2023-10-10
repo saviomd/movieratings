@@ -28,9 +28,7 @@ function MovieDetailsBody() {
               </ScrollableHorizontalList>
             )}
           </div>
-          <div className="col-12 col-sm-6 col-lg-8 lead">
-            {movieDetails.overview}
-          </div>
+          <div className="col-12 col-lg-8 lead">{movieDetails.overview}</div>
         </div>
         <MovieDetailsStats />
         <MovieDetailsCastCrew />
