@@ -7050,7 +7050,7 @@
   },
   {
     "Date": "2013-08-25",
-    "Name": "Nine 1/2 Weeks",
+    "Name": "9½ Weeks",
     "Year": 1986,
     "LetterboxdURI": "https://boxd.it/1XaA",
     "Rating": 4
@@ -12178,5 +12178,47 @@
     "Year": 2018,
     "LetterboxdURI": "https://boxd.it/d6bk",
     "Rating": 4
+  },
+  {
+    "Date": "2023-10-03",
+    "Name": "Gran Turismo",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/B2lS",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-10-07",
+    "Name": "Celeste & Jesse Forever",
+    "Year": 2012,
+    "LetterboxdURI": "https://boxd.it/2XOi",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-10-12",
+    "Name": "The Lonely Island Presents: The Unauthorized Bash Brothers Experience",
+    "Year": 2019,
+    "LetterboxdURI": "https://boxd.it/mihs",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-10-29",
+    "Name": "No Hard Feelings",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/xouu",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-11-03",
+    "Name": "A Haunting in Venice",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/zGdg",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-11-04",
+    "Name": "In Secret",
+    "Year": 2013,
+    "LetterboxdURI": "https://boxd.it/5iWw",
+    "Rating": 3
   }
 ]
