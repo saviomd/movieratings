@@ -8052,7 +8052,7 @@
   {
     "Date": "2015-05-24",
     "Name": "Ex Machina",
-    "Year": 2014,
+    "Year": 2015,
     "LetterboxdURI": "https://boxd.it/7T2k",
     "Rating": 5
   },
@@ -9031,7 +9031,7 @@
   },
   {
     "Date": "2017-09-27",
-    "Name": "The Batman Superman Movie: World's Finest",
+    "Name": "The Batman Superman Movie",
     "Year": 1997,
     "LetterboxdURI": "https://boxd.it/1Jga",
     "Rating": 4
@@ -12220,5 +12220,68 @@
     "Year": 2013,
     "LetterboxdURI": "https://boxd.it/5iWw",
     "Rating": 3
+  },
+  {
+    "Date": "2023-11-11",
+    "Name": "Power Rangers",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/9KKc",
+    "Rating": 2
+  },
+  {
+    "Date": "2023-11-13",
+    "Name": "The Marvels",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/mwU4",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-11-16",
+    "Name": "Teen's Confessions",
+    "Year": 2013,
+    "LetterboxdURI": "https://boxd.it/6JCU",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-11-20",
+    "Name": "Tetris",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/rePK",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-11-25",
+    "Name": "Brawn: The Impossible Formula 1 Story",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/JKe8",
+    "Rating": 4
+  },
+  {
+    "Date": "2023-11-25",
+    "Name": "Nights in Rodanthe",
+    "Year": 2008,
+    "LetterboxdURI": "https://boxd.it/1Ojo",
+    "Rating": 2
+  },
+  {
+    "Date": "2023-11-26",
+    "Name": "Justice League vs. Teen Titans",
+    "Year": 2016,
+    "LetterboxdURI": "https://boxd.it/dc8w",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-12-04",
+    "Name": "The Killer",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/u6WE",
+    "Rating": 3
+  },
+  {
+    "Date": "2023-12-04",
+    "Name": "A Wolf at the Door",
+    "Year": 2013,
+    "LetterboxdURI": "https://boxd.it/6nHy",
+    "Rating": 4
   }
 ]

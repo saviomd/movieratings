@@ -1042,7 +1042,7 @@
   {
     "Date": "2015-05-24",
     "Name": "Ex Machina",
-    "Year": 2014,
+    "Year": 2015,
     "LetterboxdURI": "https://boxd.it/5UQ1n",
     "Rating": 5,
     "Rewatch": "",
@@ -2371,7 +2371,7 @@
   },
   {
     "Date": "2017-09-27",
-    "Name": "The Batman Superman Movie: World's Finest",
+    "Name": "The Batman Superman Movie",
     "Year": 1997,
     "LetterboxdURI": "https://boxd.it/koMM1",
     "Rating": 4,
@@ -6868,5 +6868,95 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2023-11-03"
+  },
+  {
+    "Date": "2023-11-11",
+    "Name": "Power Rangers",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/58V5nP",
+    "Rating": 2,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-11-10"
+  },
+  {
+    "Date": "2023-11-13",
+    "Name": "The Marvels",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/59zaEB",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-11-12"
+  },
+  {
+    "Date": "2023-11-16",
+    "Name": "Teen's Confessions",
+    "Year": 2013,
+    "LetterboxdURI": "https://boxd.it/5awZLB",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-11-15"
+  },
+  {
+    "Date": "2023-11-20",
+    "Name": "Tetris",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/5bPiN7",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-11-19"
+  },
+  {
+    "Date": "2023-11-25",
+    "Name": "Brawn: The Impossible Formula 1 Story",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/5dfxTl",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-11-24"
+  },
+  {
+    "Date": "2023-11-25",
+    "Name": "Nights in Rodanthe",
+    "Year": 2008,
+    "LetterboxdURI": "https://boxd.it/5drhFB",
+    "Rating": 2,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-11-24"
+  },
+  {
+    "Date": "2023-11-26",
+    "Name": "Justice League vs. Teen Titans",
+    "Year": 2016,
+    "LetterboxdURI": "https://boxd.it/5dzfg1",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-11-25"
+  },
+  {
+    "Date": "2023-12-04",
+    "Name": "The Killer",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/5gmxLH",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-12-02"
+  },
+  {
+    "Date": "2023-12-04",
+    "Name": "A Wolf at the Door",
+    "Year": 2013,
+    "LetterboxdURI": "https://boxd.it/5gDurt",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2023-12-03"
   }
 ]
