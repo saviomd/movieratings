@@ -25,7 +25,7 @@ library.add(
   faHourglassHalf,
   faSadTear,
   faStar,
-  faTimes
+  faTimes,
 );
 
 function AppWrapper({ children }) {

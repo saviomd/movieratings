@@ -44,7 +44,7 @@ const useMovieRatingsStore = () => {
       setMovieRatingsStatus: (payload) =>
         dispatch({ type: "SET_MOVIE_RATINGS_STATUS", payload }),
     }),
-    []
+    [],
   );
 
   const movieRatingsFiltered = useMemo(
@@ -53,7 +53,7 @@ const useMovieRatingsStore = () => {
         movieList: state.movieRatings,
         value: state.movieRatingsSearchString,
       }),
-    [state.movieRatings, state.movieRatingsSearchString]
+    [state.movieRatings, state.movieRatingsSearchString],
   );
 
   const movieRatingsPaginated = useMemo(() => {

@@ -15,7 +15,7 @@ const { backdrop, logo, poster } = tmdbApi.img;
 const formatMovieDetails = ({ movie, movieDetails }: IParams) => ({
   ...movieDetails,
   br_title: movieDetails.alternative_titles.titles.find(
-    ({ iso_3166_1 }) => iso_3166_1 === "BR"
+    ({ iso_3166_1 }) => iso_3166_1 === "BR",
   )?.title,
   budget: formatCurrency({ value: movieDetails.budget }),
   credits: formatMovieCredits({ credits: movieDetails.credits }),

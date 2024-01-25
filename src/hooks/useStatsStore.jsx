@@ -32,7 +32,7 @@ const useStatsStore = () => {
       setRandomMoviesStatus: (payload) =>
         dispatch({ type: "SET_RANDOM_MOVIES_STATUS", payload }),
     }),
-    []
+    [],
   );
 
   return { ...state, boundActions };

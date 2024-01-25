@@ -26,7 +26,7 @@ const LoadingHandler = memo(
         <Message type={dataStatus} />
       )}
     </>
-  )
+  ),
 );
 
 export default LoadingHandler;

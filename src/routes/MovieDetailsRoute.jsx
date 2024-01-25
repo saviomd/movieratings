@@ -11,7 +11,7 @@ function PageMovieDetails() {
   const { movieRatings } = useMovieRatingsContext();
   const { movieId } = useParams();
   const movie = [...movieDiary, ...movieRatings].find(
-    (obj) => obj.Id === movieId
+    (obj) => obj.Id === movieId,
   );
   return (
     <MovieDetailsProvider movie={movie}>

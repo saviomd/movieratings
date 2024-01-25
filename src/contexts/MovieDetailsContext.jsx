@@ -23,7 +23,8 @@ function MovieDetailsProvider({ children, movie }) {
         .then((json) => {
           if (json.results.length) {
             const newMovie = json.results.find(
-              (obj) => obj.title === Name && obj.release_date.indexOf(Year) > -1
+              (obj) =>
+                obj.title === Name && obj.release_date.indexOf(Year) > -1,
             );
             if (newMovie !== undefined) {
               getMovieDetails({ movieId: newMovie.id }).then((movieDetails) => {

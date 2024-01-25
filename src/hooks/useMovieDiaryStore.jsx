@@ -41,7 +41,7 @@ const useMovieDetailsStore = () => {
       setMovieDiaryStatus: (payload) =>
         dispatch({ type: "SET_MOVIE_DIARY_STATUS", payload }),
     }),
-    []
+    [],
   );
 
   const movieDiaryFiltered = useMemo(
@@ -50,7 +50,7 @@ const useMovieDetailsStore = () => {
         movieList: state.movieDiary,
         value: state.movieDiarySearchString,
       }),
-    [state.movieDiary, state.movieDiarySearchString]
+    [state.movieDiary, state.movieDiarySearchString],
   );
 
   const movieDiaryPaginated = useMemo(() => {

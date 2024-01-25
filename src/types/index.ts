@@ -39,6 +39,7 @@ export interface IMovieDetails {
     posters: IImage[];
   };
   original_language: string;
+  poster_path: PathType;
   recommendations: {
     results: IMovieDetails[];
   };

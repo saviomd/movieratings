@@ -13,7 +13,7 @@ const fetchTmdb = ({ path, queryString = "" }: IParams) => {
         throw Error(response.status.toString());
       }
       return response.json();
-    }
+    },
   );
 };
 

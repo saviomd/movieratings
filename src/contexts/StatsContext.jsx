@@ -15,7 +15,7 @@ function StatsProvider({ children }) {
       if (movies.length) {
         store.boundActions.setRandomMoviesStatus("loading");
         const allGetSearchMovies = movies.map(({ Name, Year }) =>
-          getSearchMovies({ Name, Year })
+          getSearchMovies({ Name, Year }),
         );
         Promise.all(allGetSearchMovies)
           .then((jsons) => {
@@ -41,7 +41,7 @@ function StatsProvider({ children }) {
         store.boundActions.setRandomMoviesStatus("error");
       }
     },
-    [store.boundActions]
+    [store.boundActions],
   );
 
   const providerValue = { ...store, loadRandomMovies };

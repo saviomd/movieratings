@@ -34,7 +34,7 @@ const useMovieDetailsStore = () => {
       setMovieDetailsStatus: (payload) =>
         dispatch({ type: "SET_MOVIE_DETAILS_STATUS", payload }),
     }),
-    []
+    [],
   );
 
   return { ...state, boundActions };
