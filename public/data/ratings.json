@@ -1933,7 +1933,7 @@
   },
   {
     "Date": "2013-04-25",
-    "Name": "Derailed",
+    "Name": "Descarrilados (off the Rails)",
     "Year": 2005,
     "LetterboxdURI": "https://boxd.it/1Zps",
     "Rating": 4
@@ -9032,7 +9032,7 @@
   {
     "Date": "2017-09-27",
     "Name": "The Batman/Superman Movie: World's Finest",
-    "Year": 1997,
+    "Year": 1998,
     "LetterboxdURI": "https://boxd.it/1Jga",
     "Rating": 4
   },
@@ -12381,5 +12381,82 @@
     "Year": 2023,
     "LetterboxdURI": "https://boxd.it/gg9a",
     "Rating": 1
+  },
+  {
+    "Date": "2024-01-14",
+    "Name": "Shithouse",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/nCFc",
+    "Rating": 5
+  },
+  {
+    "Date": "2024-01-15",
+    "Name": "Trevor Noah: Where Was I",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/K7b2",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-01-15",
+    "Name": "The Creator",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/oXWq",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-01-20",
+    "Name": "Marc Maron: From Bleak to Dark",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/ENNK",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-01-22",
+    "Name": "Killers of the Flower Moon",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/gHp0",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-01-27",
+    "Name": "Afonso Padilha: Gerações",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/Kq66",
+    "Rating": 3
+  },
+  {
+    "Date": "2024-01-29",
+    "Name": "Set It Up",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/dpik",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-01-29",
+    "Name": "Nimona",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/Aiyc",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-01-29",
+    "Name": "Mindcage",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/DuoY",
+    "Rating": 1
+  },
+  {
+    "Date": "2024-02-03",
+    "Name": "Honor Society",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/z1Bw",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-02-04",
+    "Name": "Everybody Wants Some!!",
+    "Year": 2016,
+    "LetterboxdURI": "https://boxd.it/9mgM",
+    "Rating": 4
   }
 ]
