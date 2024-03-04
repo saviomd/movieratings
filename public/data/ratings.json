@@ -1933,7 +1933,7 @@
   },
   {
     "Date": "2013-04-25",
-    "Name": "Descarrilados (off the Rails)",
+    "Name": "Derailed",
     "Year": 2005,
     "LetterboxdURI": "https://boxd.it/1Zps",
     "Rating": 4
@@ -12457,6 +12457,55 @@
     "Name": "Everybody Wants Some!!",
     "Year": 2016,
     "LetterboxdURI": "https://boxd.it/9mgM",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-02-10",
+    "Name": "Reptile",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/wKjc",
+    "Rating": 3
+  },
+  {
+    "Date": "2024-02-14",
+    "Name": "Battle Royale",
+    "Year": 2000,
+    "LetterboxdURI": "https://boxd.it/25zS",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-02-17",
+    "Name": "Hidden Strike",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/gkFE",
+    "Rating": 3
+  },
+  {
+    "Date": "2024-02-17",
+    "Name": "Taylor Tomlinson: Quarter-Life Crisis",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/p17c",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-02-19",
+    "Name": "The Snowman",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/cVcc",
+    "Rating": 1
+  },
+  {
+    "Date": "2024-03-03",
+    "Name": "Taylor Tomlinson: Look at You",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/zloW",
+    "Rating": 3
+  },
+  {
+    "Date": "2024-03-04",
+    "Name": "Fallen Leaves",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/Bgew",
     "Rating": 4
   }
 ]
