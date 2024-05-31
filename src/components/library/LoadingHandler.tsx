@@ -1,7 +1,7 @@
 import { memo, ReactNode } from "react";
 
 import Message from "./Message";
-import { DataStatusType, MessageType } from "../../types";
+import { DataStatusType, MessageType } from "src/types";
 
 type PropsType = {
   children?: ReactNode;

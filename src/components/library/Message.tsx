@@ -4,7 +4,7 @@ import {
 } from "@fortawesome/react-fontawesome";
 import { memo } from "react";
 
-import { MessageType } from "../../types";
+import { MessageType } from "src/types";
 
 type PropsType = {
   type: MessageType;

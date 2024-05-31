@@ -5,7 +5,7 @@ import {
   LoadingHandler,
   ProgressBar,
   ScrollableHorizontalList,
-} from "../library";
+} from "src/components/library";
 
 const title = {
   moviesPerDecadeReleased: "Per decade released",

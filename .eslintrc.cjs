@@ -7,9 +7,10 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
-    "react-app",
-    "react-app/jest",
+    "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
   ],

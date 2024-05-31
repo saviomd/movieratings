@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-import { useMovieDetailsContext } from "../../contexts/MovieDetailsContext";
+import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
 
 function MovieDetailsHeader() {
   const { movieDetails } = useMovieDetailsContext();

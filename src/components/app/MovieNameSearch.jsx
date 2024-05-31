@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { useMovieDiaryContext } from "../../contexts/MovieDiaryContext";
-import { useMovieRatingsContext } from "../../contexts/MovieRatingsContext";
+import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
 
 function MovieNameSearch({ type }) {
   const {

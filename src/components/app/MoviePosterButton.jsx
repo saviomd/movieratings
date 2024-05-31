@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import { Anchor, Image } from "../library";
+import { Anchor, Image } from "src/components/library";
 
 const MoviePosterButton = ({ href, posterUrl, title }) => {
   return (

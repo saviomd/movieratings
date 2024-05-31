@@ -1,6 +1,6 @@
 import MovieButton, { types } from "./MovieButton";
-import movieDiaryMock from "../../__mocks__/movieDiaryMock";
-import { formatMovieList } from "../../utils";
+import movieDiaryMock from "src/__mocks__/movieDiaryMock";
+import { formatMovieList } from "src/utils";
 
 const movies = formatMovieList({ movieList: movieDiaryMock.movieDiary });
 

@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Image, ScrollableHorizontalList } from "../library";
-import { useMovieDetailsContext } from "../../contexts/MovieDetailsContext";
+import { Image, ScrollableHorizontalList } from "src/components/library";
+import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
 
 function MovieDetailsStats() {
   /* eslint-disable camelcase */

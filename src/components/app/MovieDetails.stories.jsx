@@ -1,7 +1,7 @@
 import MovieDetails from "./MovieDetails";
-import { MovieDetailsContextMock } from "../../contexts/MovieDetailsContext";
-import { formatMovieDetails } from "../../utils";
-import movieDetailsMock from "../../__mocks__/movieDetailsMock";
+import { MovieDetailsContextMock } from "src/contexts/MovieDetailsContext";
+import { formatMovieDetails } from "src/utils";
+import movieDetailsMock from "src/__mocks__/movieDetailsMock";
 
 const movie = {
   Date: "2013-04-25",

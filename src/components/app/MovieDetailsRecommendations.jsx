@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-import { useMovieDetailsContext } from "../../contexts/MovieDetailsContext";
+import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
 import { MoviePosterButton } from "../app";
-import { ScrollableHorizontalList } from "../library";
+import { ScrollableHorizontalList } from "src/components/library";
 
 function MovieDetailsRecommendations() {
   const { movieDetails } = useMovieDetailsContext();

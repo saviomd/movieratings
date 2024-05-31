@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import React, { memo } from "react";
 
-import { useMovieDiaryContext } from "../../contexts/MovieDiaryContext";
-import { useMovieRatingsContext } from "../../contexts/MovieRatingsContext";
-import { LoadingHandler } from "../library";
+import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
+import { LoadingHandler } from "src/components/library";
 import MovieButton from "./MovieButton";
 
 const MovieList = memo(({ type }) => {
