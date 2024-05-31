@@ -1,6 +1,6 @@
 import { useMemo, useReducer } from "react";
 
-import { formatRandomMovieList } from "../utils";
+import { formatRandomMovieList } from "src/utils";
 
 const initialState = {
   randomMovies: [],

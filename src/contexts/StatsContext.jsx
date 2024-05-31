@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import React, { createContext, useCallback, useContext } from "react";
 
-import { getSearchMovies } from "../utils";
-import useStatsStore from "../hooks/useStatsStore";
+import { getSearchMovies } from "src/utils";
+import useStatsStore from "src/hooks/useStatsStore";
 
 const StatsContext = createContext();
 const useStatsContext = () => useContext(StatsContext);

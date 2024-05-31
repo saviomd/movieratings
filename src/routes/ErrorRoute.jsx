@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouteError } from "react-router-dom";
 
-import { Message } from "../components/library";
+import { Message } from "src/components/library";
 
 function ErrorRoute() {
   const error = useRouteError();

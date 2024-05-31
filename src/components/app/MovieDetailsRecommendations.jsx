@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
-import { MoviePosterButton } from "../app";
+import { MoviePosterButton } from "src/components/app";
 import { ScrollableHorizontalList } from "src/components/library";
 
 function MovieDetailsRecommendations() {

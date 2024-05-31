@@ -1,5 +1,5 @@
 import tmdbApi from "./tmdbApi";
-import { IMovieDetails } from "../types";
+import { IMovieDetails } from "src/types";
 
 interface IParams {
   movies: IMovieDetails[];

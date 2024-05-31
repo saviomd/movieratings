@@ -1,4 +1,4 @@
-import { IMovie } from "../types";
+import { IMovie } from "src/types";
 
 interface IParams {
   movieList: IMovie[];

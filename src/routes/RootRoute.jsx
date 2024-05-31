@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
-import { Footer, Header, SiteInfo } from "../components/app";
-import { MovieDiaryProvider } from "../contexts/MovieDiaryContext";
-import { MovieRatingsProvider } from "../contexts/MovieRatingsContext";
-import { StatsProvider } from "../contexts/StatsContext";
-import { trackGaPageView } from "../utils";
+import { Footer, Header, SiteInfo } from "src/components/app";
+import { MovieDiaryProvider } from "src/contexts/MovieDiaryContext";
+import { MovieRatingsProvider } from "src/contexts/MovieRatingsContext";
+import { StatsProvider } from "src/contexts/StatsContext";
+import { trackGaPageView } from "src/utils";
 
 function RootRoute() {
   let location = useLocation();

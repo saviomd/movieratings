@@ -1,5 +1,5 @@
-import { IRandomMovie } from "../types";
-import { tmdbApi } from "../utils";
+import { IRandomMovie } from "src/types";
+import { tmdbApi } from "src/utils";
 
 const { poster } = tmdbApi.img;
 

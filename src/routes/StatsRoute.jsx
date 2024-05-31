@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 
-import { MoviePosterButton, MovieStats } from "../components/app";
-import { LoadingHandler } from "../components/library";
-import { useMovieDiaryContext } from "../contexts/MovieDiaryContext";
-import { useMovieRatingsContext } from "../contexts/MovieRatingsContext";
-import { useStatsContext } from "../contexts/StatsContext";
+import { MoviePosterButton, MovieStats } from "src/components/app";
+import { LoadingHandler } from "src/components/library";
+import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
+import { useStatsContext } from "src/contexts/StatsContext";
 
 function PageStats() {
   const { moviesPerYearWatched, movieDiaryStatus } = useMovieDiaryContext();

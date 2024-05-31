@@ -6,8 +6,8 @@ import React, {
   useEffect,
 } from "react";
 
-import { fetchMovieRatings } from "../utils";
-import useMovieRatingsStore from "../hooks/useMovieRatingsStore";
+import { fetchMovieRatings } from "src/utils";
+import useMovieRatingsStore from "src/hooks/useMovieRatingsStore";
 
 const MovieRatingsContext = createContext();
 const useMovieRatingsContext = () => useContext(MovieRatingsContext);

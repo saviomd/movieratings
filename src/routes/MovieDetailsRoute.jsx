@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import { MovieDetailsProvider } from "../contexts/MovieDetailsContext";
-import { useMovieDiaryContext } from "../contexts/MovieDiaryContext";
-import { useMovieRatingsContext } from "../contexts/MovieRatingsContext";
-import { MovieDetails } from "../components/app";
+import { MovieDetailsProvider } from "src/contexts/MovieDetailsContext";
+import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
+import { MovieDetails } from "src/components/app";
 
 function PageMovieDetails() {
   const { movieDiary } = useMovieDiaryContext();

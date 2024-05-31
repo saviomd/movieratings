@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import { MovieList, MovieNameSearch } from "../components/app";
+import { MovieList, MovieNameSearch } from "src/components/app";
 
 function PageMovies({ type }) {
   return (

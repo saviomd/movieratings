@@ -1,5 +1,5 @@
 import formatPerson from "./formatPerson";
-import { IMovieCredits, IPerson } from "../types";
+import { IMovieCredits, IPerson } from "src/types";
 
 interface IParams {
   credits: IMovieCredits;
