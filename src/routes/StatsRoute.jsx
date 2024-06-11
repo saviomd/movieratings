@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { MoviePosterButton, MovieStats } from "src/components/app";
 import { LoadingHandler } from "src/components/library";
@@ -8,14 +8,9 @@ import { useStatsContext } from "src/contexts/StatsContext";
 
 function PageStats() {
   const { moviesPerYearWatched, movieDiaryStatus } = useMovieDiaryContext();
-  const {
-    moviesPerDecadeReleased,
-    moviesPerRatingGiven,
-    movieRatings,
-    movieRatingsStatus,
-  } = useMovieRatingsContext();
-  const { loadRandomMovies, randomMovies, randomMoviesStatus } =
-    useStatsContext();
+  const { moviesPerDecadeReleased, moviesPerRatingGiven, movieRatingsStatus } =
+    useMovieRatingsContext();
+  const { randomMovies, randomMoviesStatus } = useStatsContext();
 
   const stats = [
     {
@@ -34,21 +29,6 @@ function PageStats() {
       type: "moviesPerDecadeReleased",
     },
   ];
-
-  useEffect(() => {
-    if (movieRatingsStatus === "loaded" && randomMoviesStatus === "") {
-      const movies = movieRatings
-        .sort(() => 0.5 - Math.random())
-        .slice(0, 6)
-        .map(({ LetterboxdURI, Name, Rating, Year }) => ({
-          LetterboxdURI,
-          Name,
-          Rating,
-          Year,
-        }));
-      loadRandomMovies({ movies });
-    }
-  }, [loadRandomMovies, movieRatings, movieRatingsStatus, randomMoviesStatus]);
 
   return (
     <>

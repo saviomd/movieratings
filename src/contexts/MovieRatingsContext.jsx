@@ -1,12 +1,6 @@
 import PropTypes from "prop-types";
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-} from "react";
+import React, { createContext, useContext } from "react";
 
-import { fetchMovieRatings } from "src/utils";
 import useMovieRatingsStore from "src/hooks/useMovieRatingsStore";
 
 const MovieRatingsContext = createContext();
@@ -14,21 +8,6 @@ const useMovieRatingsContext = () => useContext(MovieRatingsContext);
 
 function MovieRatingsProvider({ children }) {
   const store = useMovieRatingsStore();
-
-  const loadMovieRatings = useCallback(() => {
-    store.boundActions.setMovieRatingsStatus("loading");
-    return fetchMovieRatings()
-      .then((json) => {
-        store.boundActions.setMovieRatings(json);
-      })
-      .catch(() => {
-        store.boundActions.setMovieRatingsStatus("error");
-      });
-  }, [store.boundActions]);
-
-  useEffect(() => {
-    loadMovieRatings();
-  }, [loadMovieRatings]);
 
   return (
     <MovieRatingsContext.Provider value={store}>

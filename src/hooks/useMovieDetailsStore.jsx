@@ -1,6 +1,12 @@
-import { useMemo, useReducer } from "react";
+import { useCallback, useEffect, useMemo, useReducer } from "react";
 
-import { formatMovieDetails } from "src/utils";
+import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
+import {
+  formatMovieDetails,
+  getMovieDetails,
+  getSearchMovies,
+} from "src/utils";
 
 const initialState = {
   movieDetails: {},
@@ -24,8 +30,10 @@ function reducer(state, { payload, type }) {
   }
 }
 
-const useMovieDetailsStore = () => {
+const useMovieDetailsStore = ({ movieId }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const { movieDiary } = useMovieDiaryContext();
+  const { movieRatings } = useMovieRatingsContext();
 
   const boundActions = useMemo(
     () => ({
@@ -36,6 +44,43 @@ const useMovieDetailsStore = () => {
     }),
     [],
   );
+
+  const loadMovieDetails = useCallback(() => {
+    if (movieDiary.length && movieRatings.length) {
+      const movie = [...movieDiary, ...movieRatings].find(
+        (obj) => obj.Id === movieId,
+      );
+      const { Name, Year } = movie;
+      boundActions.setMovieDetailsStatus("loading");
+      getSearchMovies({ Name, Year })
+        .then((json) => {
+          if (json.results.length) {
+            const newMovie = json.results.find(
+              (obj) =>
+                obj.title === Name && obj.release_date.indexOf(Year) > -1,
+            );
+            if (newMovie !== undefined) {
+              getMovieDetails({ movieId: newMovie.id }).then((movieDetails) => {
+                boundActions.setMovieDetails({ movie, movieDetails });
+              });
+            } else {
+              throw Error("No movie found");
+            }
+          } else {
+            throw Error("No movie found");
+          }
+        })
+        .catch(() => {
+          boundActions.setMovieDetailsStatus("error");
+        });
+    } else {
+      boundActions.setMovieDetailsStatus("error");
+    }
+  }, [boundActions, movieDiary, movieId, movieRatings]);
+
+  useEffect(() => {
+    loadMovieDetails();
+  }, [loadMovieDetails]);
 
   return { ...state, boundActions };
 };

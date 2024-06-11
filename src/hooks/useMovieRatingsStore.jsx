@@ -1,6 +1,10 @@
-import { useMemo, useReducer } from "react";
+import { useCallback, useEffect, useMemo, useReducer } from "react";
 
-import { filterMoviesByName, formatMovieList } from "src/utils";
+import {
+  fetchMovieRatings,
+  filterMoviesByName,
+  formatMovieList,
+} from "src/utils";
 
 const initialState = {
   movieRatings: [],
@@ -46,6 +50,21 @@ const useMovieRatingsStore = () => {
     }),
     [],
   );
+
+  const loadMovieRatings = useCallback(() => {
+    boundActions.setMovieRatingsStatus("loading");
+    return fetchMovieRatings()
+      .then((json) => {
+        boundActions.setMovieRatings(json);
+      })
+      .catch(() => {
+        boundActions.setMovieRatingsStatus("error");
+      });
+  }, [boundActions]);
+
+  useEffect(() => {
+    loadMovieRatings();
+  }, [loadMovieRatings]);
 
   const movieRatingsFiltered = useMemo(
     () =>

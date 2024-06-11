@@ -1,6 +1,10 @@
-import { useMemo, useReducer } from "react";
+import { useCallback, useEffect, useMemo, useReducer } from "react";
 
-import { filterMoviesByName, formatMovieList } from "src/utils";
+import {
+  fetchMovieDiary,
+  filterMoviesByName,
+  formatMovieList,
+} from "src/utils";
 
 const initialState = {
   movieDiary: [],
@@ -43,6 +47,21 @@ const useMovieDetailsStore = () => {
     }),
     [],
   );
+
+  const loadMovieDiary = useCallback(() => {
+    boundActions.setMovieDiaryStatus("loading");
+    return fetchMovieDiary()
+      .then((json) => {
+        boundActions.setMovieDiary(json);
+      })
+      .catch(() => {
+        boundActions.setMovieDiaryStatus("error");
+      });
+  }, [boundActions]);
+
+  useEffect(() => {
+    loadMovieDiary();
+  }, [loadMovieDiary]);
 
   const movieDiaryFiltered = useMemo(
     () =>
