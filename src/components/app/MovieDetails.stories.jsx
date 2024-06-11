@@ -16,7 +16,7 @@ const providerValue = {
     movie,
     movieDetails: movieDetailsMock,
   }),
-  movieDetailsStatus: "loaded",
+  movieDetailsStatus: "success",
 };
 
 const meta = {

@@ -16,10 +16,6 @@ const Message = memo(({ type }: PropsType) => {
       icon: "sad-tear",
       text: "An error has ocurred",
     },
-    loading: {
-      icon: "hourglass-half",
-      text: "Loading...",
-    },
     noData: {
       icon: "frown",
       text: "No data to show",
@@ -36,9 +32,13 @@ const Message = memo(({ type }: PropsType) => {
       icon: "dizzy",
       text: "Page not found",
     },
+    pending: {
+      icon: "hourglass-half",
+      text: "Loading...",
+    },
   };
   const animation = `animate__${
-    type === "loading" ? "heartBeat" : "headShake"
+    type === "pending" ? "heartBeat" : "headShake"
   }`;
   return (
     <div className="lead p-3 text-center">

@@ -94,7 +94,7 @@ const movieRatings = {
       DateFormatted: "21 Apr 2013",
     },
   ],
-  movieRatingsStatus: "loaded",
+  movieRatingsStatus: "success",
 };
 
 export default movieRatings;

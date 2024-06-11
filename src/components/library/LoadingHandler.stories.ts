@@ -26,7 +26,7 @@ export const Default: Story = {
   args: {
     children:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor blanditiis, deleniti exercitationem omnis natus debitis ducimus similique non sint incidunt soluta aspernatur corporis animi rem pariatur itaque quod facere repellat.",
-    dataStatus: "loaded",
+    dataStatus: "success",
     hasData: true,
     messageNoData: "noData",
   },

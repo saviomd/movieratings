@@ -7,11 +7,9 @@ import MovieDetailsHeader from "./MovieDetailsHeader";
 
 function MovieDetails() {
   const { movieDetails, movieDetailsStatus } = useMovieDetailsContext();
+
   return (
-    <LoadingHandler
-      dataStatus={movieDetailsStatus}
-      hasData={movieDetails.id !== ""}
-    >
+    <LoadingHandler dataStatus={movieDetailsStatus} hasData={movieDetails}>
       <div className="border border-secondary mb-3 rounded">
         <MovieDetailsHeader />
         <MovieDetailsBody />

@@ -1,3 +1,5 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Suspense } from "react";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
@@ -5,13 +7,18 @@ import { AppWrapper } from "./components/app";
 import { LoadingHandler } from "./components/library";
 import routes from "./routes";
 
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <AppWrapper>
-      <Suspense fallback={<LoadingHandler dataStatus="loading" />}>
-        <RouterProvider router={createHashRouter(routes)} />
-      </Suspense>
-    </AppWrapper>
+    <QueryClientProvider client={queryClient}>
+      <AppWrapper>
+        <Suspense fallback={<LoadingHandler dataStatus="pending" />}>
+          <RouterProvider router={createHashRouter(routes)} />
+        </Suspense>
+      </AppWrapper>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 }
 

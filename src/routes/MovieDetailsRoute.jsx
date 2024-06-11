@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import { MovieDetailsProvider } from "src/contexts/MovieDetailsContext";
 import { MovieDetails } from "src/components/app";
+import { MovieDetailsProvider } from "src/contexts/MovieDetailsContext";
 
 function PageMovieDetails() {
   const { movieId } = useParams();

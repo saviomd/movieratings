@@ -1,7 +1,7 @@
 {
   "name": "movieratings",
   "private": true,
-  "version": "1.20240531.0",
+  "version": "1.20240611.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -16,6 +16,8 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@tanstack/react-query": "^5.40.0",
+    "@tanstack/react-query-devtools": "^5.40.1",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
@@ -31,6 +33,7 @@
     "@storybook/react": "^8.1.5",
     "@storybook/react-vite": "^8.1.5",
     "@storybook/test": "^8.1.5",
+    "@tanstack/eslint-plugin-query": "^5.43.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.11.0",

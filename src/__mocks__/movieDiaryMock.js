@@ -122,7 +122,7 @@ const movieDiary = {
       WatchedDateFormatted: "11 May 2013",
     },
   ],
-  movieDiaryStatus: "loaded",
+  movieDiaryStatus: "success",
 };
 
 export default movieDiary;

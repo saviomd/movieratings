@@ -10,23 +10,23 @@ type PropsType = {
   messageNoData?: MessageType;
 };
 
-const dataStatuses = ["", "error", "loading", "loaded"];
+const dataStatuses = ["error", "pending", "success"];
 
 const LoadingHandler = memo(
   ({
     children,
-    dataStatus = "",
+    dataStatus = "success",
     hasData = true,
     messageNoData = "noData",
-  }: PropsType) => (
-    <>
-      {dataStatus === "loaded" && hasData && children}
-      {dataStatus === "loaded" && !hasData && <Message type={messageNoData} />}
-      {(dataStatus === "loading" || dataStatus === "error") && (
-        <Message type={dataStatus} />
-      )}
-    </>
-  ),
+  }: PropsType) => {
+    if (dataStatus === "pending" || dataStatus === "error") {
+      return <Message type={dataStatus} />;
+    }
+    if (dataStatus === "success" && !hasData) {
+      return <Message type={messageNoData} />;
+    }
+    return children;
+  },
 );
 
 export default LoadingHandler;

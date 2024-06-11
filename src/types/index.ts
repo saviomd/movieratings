@@ -81,16 +81,16 @@ export interface IRandomMovie {
   poster_path: PathType;
 }
 
-export type DataStatusType = "" | "error" | "loading" | "loaded";
+export type DataStatusType = "error" | "pending" | "success";
 
 export type ImgType = "backdrop" | "logo" | "poster" | "profile";
 
 export type MessageType =
   | "error"
-  | "loading"
   | "noData"
   | "noMovies"
   | "noStats"
-  | "pageNotFound";
+  | "pageNotFound"
+  | "pending";
 
 export type PathType = string;
