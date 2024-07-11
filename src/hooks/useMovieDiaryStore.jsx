@@ -37,8 +37,10 @@ const useMovieDetailsStore = () => {
 
   const { data: movieDiary = [], status: movieDiaryStatus } = useQuery({
     queryKey: ["movieDiary"],
-    queryFn: () =>
-      fetchMovieDiary().then((movieList) => formatMovieList({ movieList })),
+    queryFn: async () => {
+      const movieList = await fetchMovieDiary();
+      return formatMovieList({ movieList });
+    },
   });
 
   const movieDiaryFiltered = useMemo(

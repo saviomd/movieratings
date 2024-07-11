@@ -1,15 +1,15 @@
-export const fetchMovieDiary = () =>
-  fetch("/movieratings/data/diary.json").then((response) => {
-    if (!response.ok) {
+export const fetchMovieDiary = async () => {
+  const response = await fetch("/movieratings/data/diary.json");
+  if (!response.ok) {
       throw Error(response.status.toString());
     }
-    return response.json();
-  });
+  return response.json();
+};
 
-export const fetchMovieRatings = () =>
-  fetch("/movieratings/data/ratings.json").then((response) => {
-    if (!response.ok) {
-      throw Error(response.status.toString());
-    }
-    return response.json();
-  });
+export const fetchMovieRatings = async () => {
+  const response = await fetch("/movieratings/data/ratings.json");
+  if (!response.ok) {
+    throw Error(response.status.toString());
+  }
+  return response.json();
+};

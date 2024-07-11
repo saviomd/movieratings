@@ -19,22 +19,21 @@ const useMovieDetailsStore = ({ movieId }) => {
   );
 
   const { data: movieDetails = {}, status: movieDetailsStatus } = useQuery({
-    queryKey: ["movieDetails", movie?.Name, movie?.Year],
-    queryFn: () =>
-      getSearchMovies({ Name: movie?.Name, Year: movie?.Year }).then(
-        (searchMoviesData) => {
-          const newMovie = searchMoviesData.results.find(
-            ({ release_date, title }) =>
-              title === movie.Name && release_date.indexOf(movie.Year) > -1,
-          );
-          return getMovieDetails({ movieId: newMovie.id }).then(
-            (movieDetails) =>
-              movieDetails.id
-                ? formatMovieDetails({ movie, movieDetails })
-                : undefined,
-          );
-        },
-      ),
+    queryKey: ["movieDetails", movie, movie?.Name, movie?.Year],
+    queryFn: async () => {
+      const searchMoviesData = await getSearchMovies({
+        Name: movie?.Name,
+        Year: movie?.Year,
+      });
+      const newMovie = searchMoviesData.results.find(
+        ({ release_date, title }) =>
+          title === movie.Name && release_date.indexOf(movie.Year) > -1,
+      );
+      const movieDetails = await getMovieDetails({ movieId: newMovie.id });
+      return movieDetails.id
+        ? formatMovieDetails({ movie, movieDetails })
+        : undefined;
+    },
     enabled: !!movie?.Name && !!movie?.Year,
   });
 

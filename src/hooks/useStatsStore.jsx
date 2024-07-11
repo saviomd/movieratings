@@ -24,12 +24,14 @@ const useStatsStore = () => {
   const { data: randomMovies = [], status: randomMoviesStatus } = useQueries({
     queries: movies.map(({ LetterboxdURI, Name, Year }) => ({
       queryKey: ["randomMovies", Name, Year],
-      queryFn: () =>
-        getSearchMovies({ Name, Year }).then(({ results }) => ({
+      queryFn: async () => {
+        const { results } = await getSearchMovies({ Name, Year });
+        return {
           LetterboxdURI,
           Name,
           poster_path: results[0].poster_path,
-        })),
+        };
+      },
     })),
     combine: (results) => ({
       data: results.every(({ status }) => status === "success")
