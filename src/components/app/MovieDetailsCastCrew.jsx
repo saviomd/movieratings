@@ -29,7 +29,6 @@ function MovieDetailsCastCrew() {
                   title={person.name}
                   type="profile"
                 />
-                <br />
                 {person.name}
                 <div className="fst-italic small">
                   {person.character || person.job?.join(" / ")}

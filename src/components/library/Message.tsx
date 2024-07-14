@@ -2,7 +2,6 @@ import {
   FontAwesomeIcon,
   FontAwesomeIconProps,
 } from "@fortawesome/react-fontawesome";
-import { memo } from "react";
 
 import { MessageType } from "src/types";
 
@@ -10,7 +9,7 @@ type PropsType = {
   type: MessageType;
 };
 
-const Message = memo(({ type }: PropsType) => {
+const Message = ({ type }: PropsType) => {
   const messages = {
     error: {
       icon: "sad-tear",
@@ -52,6 +51,6 @@ const Message = memo(({ type }: PropsType) => {
       {messages[type].text}
     </div>
   );
-});
+};
 
 export default Message;

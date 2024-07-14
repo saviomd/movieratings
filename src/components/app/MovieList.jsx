@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
-import React, { memo } from "react";
+import React from "react";
 
 import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
 import { LoadingHandler } from "src/components/library";
 import MovieButton from "./MovieButton";
 
-const MovieList = memo(({ type }) => {
+const MovieList = ({ type }) => {
   const {
     boundActions: boundActionsMovieDiary,
     movieDiaryFiltered,
@@ -79,7 +79,7 @@ const MovieList = memo(({ type }) => {
       </>
     </LoadingHandler>
   );
-});
+};
 
 MovieList.propTypes = {
   type: PropTypes.oneOf(["Diary", "Ratings"]).isRequired,

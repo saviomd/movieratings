@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { memo } from "react";
+import React from "react";
 
 import {
   LoadingHandler,
@@ -13,7 +13,7 @@ const title = {
   moviesPerYearWatched: "Per year watched",
 };
 
-const MovieStats = memo(({ movies, moviesStatus, type }) => (
+const MovieStats = ({ movies, moviesStatus, type }) => (
   <div className="border border-secondary p-3 rounded">
     <h1 className="h5">{title[type]}</h1>
     <LoadingHandler
@@ -35,7 +35,7 @@ const MovieStats = memo(({ movies, moviesStatus, type }) => (
       </ScrollableHorizontalList>
     </LoadingHandler>
   </div>
-));
+);
 
 MovieStats.propTypes = {
   movies: PropTypes.shape({

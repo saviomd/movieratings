@@ -1,10 +1,8 @@
-import { memo } from "react";
-
 type PropsType = {
   size: number;
 };
 
-const ProgressBar = memo(({ size }: PropsType) => (
+const ProgressBar = ({ size }: PropsType) => (
   <div
     className="bg-secondary d-inline-block overflow-hidden position-relative px-3 rounded"
     style={{ height: "160px" }}
@@ -14,6 +12,6 @@ const ProgressBar = memo(({ size }: PropsType) => (
       style={{ height: `${size}%` }}
     />
   </div>
-));
+);
 
 export default ProgressBar;

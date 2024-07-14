@@ -1,4 +1,4 @@
-import { memo, ReactNode } from "react";
+import { ReactNode } from "react";
 
 import Message from "./Message";
 import { DataStatusType, MessageType } from "src/types";
@@ -12,22 +12,20 @@ type PropsType = {
 
 const dataStatuses = ["error", "pending", "success"];
 
-const LoadingHandler = memo(
-  ({
-    children,
-    dataStatus = "success",
-    hasData = true,
-    messageNoData = "noData",
-  }: PropsType) => {
-    if (dataStatus === "pending" || dataStatus === "error") {
-      return <Message type={dataStatus} />;
-    }
-    if (dataStatus === "success" && !hasData) {
-      return <Message type={messageNoData} />;
-    }
-    return children;
-  },
-);
+const LoadingHandler = ({
+  children,
+  dataStatus = "success",
+  hasData = true,
+  messageNoData = "noData",
+}: PropsType) => {
+  if (dataStatus === "pending" || dataStatus === "error") {
+    return <Message type={dataStatus} />;
+  }
+  if (dataStatus === "success" && !hasData) {
+    return <Message type={messageNoData} />;
+  }
+  return children;
+};
 
 export default LoadingHandler;
 export { dataStatuses };

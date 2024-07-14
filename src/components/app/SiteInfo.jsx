@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { memo } from "react";
+import React from "react";
 
 import { Anchor } from "src/components/library";
 import { tmdbApi } from "src/utils";
 
-const SiteInfo = memo(() => (
+const SiteInfo = () => (
   <div className="border-secondary border-top pt-3 small text-center">
     <div className="mb-3">
       My Ratings and Diary data are exported from Letterboxd from time to time.
@@ -35,6 +35,6 @@ const SiteInfo = memo(() => (
       .
     </div>
   </div>
-));
+);
 
 export default SiteInfo;
