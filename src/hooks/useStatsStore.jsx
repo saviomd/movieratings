@@ -2,7 +2,9 @@ import { useQueries } from "@tanstack/react-query";
 import { useMemo } from "react";
 
 import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
-import { formatRandomMovieList, getSearchMovies } from "src/utils";
+import { formatRandomMovieList, tmdbServices } from "src/utils";
+
+const { getSearchMovies } = tmdbServices;
 
 const useStatsStore = () => {
   const { movieRatings } = useMovieRatingsContext();

@@ -9,7 +9,7 @@ interface IImgUrl {
   type: ImgType;
 }
 
-const imgUrl = ({ path, type }: IImgUrl) => {
+const imgUrl = ({ path, type }: IImgUrl): string | null => {
   const types = {
     backdrop: "w1280",
     logo: "w500",
@@ -17,7 +17,7 @@ const imgUrl = ({ path, type }: IImgUrl) => {
     profile: "h632",
   };
   return path && type
-    ? `https://image.tmdb.org/t/p/${types[type] + path}`
+    ? `https://image.tmdb.org/t/p/${types[type]}${path}`
     : null;
 };
 

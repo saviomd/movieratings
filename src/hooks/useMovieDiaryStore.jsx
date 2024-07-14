@@ -2,10 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import { useMemo, useReducer } from "react";
 
 import {
-  fetchMovieDiary,
   filterMoviesByName,
   formatMovieList,
+  letterboxdServices,
 } from "src/utils";
+
+const { fetchMovieDiary } = letterboxdServices;
 
 const initialState = {
   movieDiaryPage: 1,

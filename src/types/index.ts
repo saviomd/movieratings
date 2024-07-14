@@ -1,26 +1,14 @@
-export interface IAlternativeTitle {
+interface IAlternativeTitle {
   iso_3166_1: string;
   title: string;
 }
 
-export interface IAlternativeTitles {
+interface IAlternativeTitles {
   titles: IAlternativeTitle[];
 }
 
 export interface IImage {
   file_path: PathType;
-}
-
-export interface IMovie {
-  Id: string;
-  Date: string;
-  DateFormatted: string;
-  LetterboxdURI: string;
-  Name: string;
-  Rating: number;
-  WatchedDate?: string;
-  WatchedDateFormatted?: string;
-  Year: number;
 }
 
 export interface IMovieCredits {
@@ -55,10 +43,26 @@ export interface IMovieDetails {
   };
 }
 
+export interface IMovieLogged {
+  Date: string;
+  LetterboxdURI: string;
+  Name: string;
+  Rating: number;
+  Year: number;
+  WatchedDate?: string;
+}
+
+export interface IMovieLoggedFormatted extends IMovieLogged {
+  DateFormatted: string;
+  Id: string;
+  WatchedDate?: string;
+  WatchedDateFormatted?: string;
+}
+
 export interface IPerson {
   character: string;
   id: number;
-  job?: string | string[];
+  job: string | null;
   name: string;
   order: number;
   popularity: number;

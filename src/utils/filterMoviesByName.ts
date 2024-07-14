@@ -1,11 +1,14 @@
-import { IMovie } from "src/types";
+import { IMovieLoggedFormatted } from "src/types";
 
 interface IParams {
-  movieList: IMovie[];
+  movieList: IMovieLoggedFormatted[];
   value?: string;
 }
 
-const filterMoviesByName = ({ movieList, value = "" }: IParams) =>
+const filterMoviesByName = ({
+  movieList,
+  value = "",
+}: IParams): IMovieLoggedFormatted[] =>
   movieList.filter((movie) => {
     const movieName = movie.Name.toLowerCase();
     return movieName.includes(value.toLowerCase());

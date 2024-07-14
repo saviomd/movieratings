@@ -1,4 +1,4 @@
-export { default as fetchTmdb } from "./fetchTmdb";
+export { default as fetchClient } from "./fetchClient";
 export { default as filterMoviesByName } from "./filterMoviesByName";
 export { default as formatCurrency } from "./formatCurrency";
 export { default as formatDate } from "./formatDate";
@@ -8,7 +8,7 @@ export { default as formatMovieList } from "./formatMovieList";
 export { default as formatMovieRecommendations } from "./formatMovieRecommendations";
 export { default as formatPerson } from "./formatPerson";
 export { default as formatRandomMovieList } from "./formatRandomMovieList";
-export { fetchMovieDiary, fetchMovieRatings } from "./letterboxdServices";
+export { default as letterboxdServices } from "./letterboxdServices";
 export { default as tmdbApi } from "./tmdbApi";
-export { getMovieDetails, getSearchMovies } from "./tmdbServices";
+export { default as tmdbServices } from "./tmdbServices";
 export { default as trackGaPageView } from "./trackGaPageView";

@@ -7,7 +7,7 @@ const formatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
 });
 
-const formatCurrency = ({ value }: IParams) =>
+const formatCurrency = ({ value }: IParams): string =>
   value ? `US${formatter.format(value)}` : "--";
 
 export default formatCurrency;

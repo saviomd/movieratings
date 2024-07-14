@@ -3,16 +3,39 @@ import formatDate from "./formatDate";
 import formatMovieCredits from "./formatMovieCredits";
 import formatMovieRecommendations from "./formatMovieRecommendations";
 import tmdbApi from "./tmdbApi";
-import { IMovie, IMovieDetails } from "src/types";
+import { IMovieDetails, IMovieLoggedFormatted } from "src/types";
 
 interface IParams {
-  movie: IMovie;
+  movie: IMovieLoggedFormatted;
   movieDetails: IMovieDetails;
+}
+
+interface IMovieDetailsFormatted
+  extends Omit<
+    IMovieDetails,
+    "budget" | "credits" | "images" | "recommendations" | "revenue"
+  > {
+  br_title: string | undefined;
+  budget: ReturnType<typeof formatCurrency>;
+  credits: ReturnType<typeof formatMovieCredits>;
+  images: {
+    backdrops: { url: ReturnType<typeof backdrop> }[];
+    posters: { url: ReturnType<typeof poster> }[];
+  };
+  LetterboxdURI: IMovieLoggedFormatted["LetterboxdURI"];
+  Rating: IMovieLoggedFormatted["Rating"];
+  recommendations: IMovieDetails[];
+  release_year: string;
+  revenue: ReturnType<typeof formatCurrency>;
+  tmdbURI: string;
 }
 
 const { backdrop, logo, poster } = tmdbApi.img;
 
-const formatMovieDetails = ({ movie, movieDetails }: IParams) => ({
+const formatMovieDetails = ({
+  movie,
+  movieDetails,
+}: IParams): IMovieDetailsFormatted => ({
   ...movieDetails,
   br_title: movieDetails.alternative_titles.titles.find(
     ({ iso_3166_1 }) => iso_3166_1 === "BR",

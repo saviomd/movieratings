@@ -3,11 +3,9 @@ import { useMemo } from "react";
 
 import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
-import {
-  formatMovieDetails,
-  getMovieDetails,
-  getSearchMovies,
-} from "src/utils";
+import { formatMovieDetails, tmdbServices } from "src/utils";
+
+const { getMovieDetails, getSearchMovies } = tmdbServices;
 
 const useMovieDetailsStore = ({ movieId }) => {
   const { movieDiary } = useMovieDiaryContext();

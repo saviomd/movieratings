@@ -1,16 +1,16 @@
 import formatDate from "./formatDate";
-import { IMovie } from "src/types";
+import { IMovieLogged, IMovieLoggedFormatted } from "src/types";
 
 interface IParams {
-  movieList: IMovie[];
+  movieList: IMovieLogged[];
 }
 
-const formatMovieList = ({ movieList }: IParams) => {
+const formatMovieList = ({ movieList }: IParams): IMovieLoggedFormatted[] => {
   return [...movieList].reverse().map((movie) => ({
     ...movie,
+    DateFormatted: formatDate({ date: movie.Date }),
     Id: movie.LetterboxdURI.split("boxd.it/")[1],
     Name: movie.Name.toString(),
-    DateFormatted: formatDate({ date: movie.Date }),
     ...(movie.WatchedDate && {
       WatchedDateFormatted: formatDate({ date: movie.WatchedDate }),
     }),
