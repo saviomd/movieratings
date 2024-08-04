@@ -3130,7 +3130,7 @@
   },
   {
     "Date": "2013-04-28",
-    "Name": "Die Hard: With a Vengeance",
+    "Name": "Die Hard With a Vengeance",
     "Year": 1995,
     "LetterboxdURI": "https://boxd.it/28zG",
     "Rating": 2
@@ -7974,7 +7974,7 @@
   },
   {
     "Date": "2015-03-21",
-    "Name": "Interstellar",
+    "Name": " Interstellar",
     "Year": 2014,
     "LetterboxdURI": "https://boxd.it/4VZ8",
     "Rating": 5
@@ -9032,7 +9032,7 @@
   {
     "Date": "2017-09-27",
     "Name": "The Batman/Superman Movie: World's Finest",
-    "Year": 1998,
+    "Year": 1997,
     "LetterboxdURI": "https://boxd.it/1Jga",
     "Rating": 4
   },
@@ -12313,13 +12313,6 @@
     "Rating": 3
   },
   {
-    "Date": "2023-12-18",
-    "Name": "Don't Go Breaking My Heart",
-    "Year": 2011,
-    "LetterboxdURI": "https://boxd.it/2eUA",
-    "Rating": 4
-  },
-  {
     "Date": "2023-12-21",
     "Name": "Leave the World Behind",
     "Year": 2023,
@@ -12738,5 +12731,82 @@
     "Year": 2023,
     "LetterboxdURI": "https://boxd.it/K7tq",
     "Rating": 5
+  },
+  {
+    "Date": "2024-07-10",
+    "Name": "Street Fighter: Assassin's Fist",
+    "Year": 2014,
+    "LetterboxdURI": "https://boxd.it/aSMi",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-07-14",
+    "Name": "The Gentlemen",
+    "Year": 2019,
+    "LetterboxdURI": "https://boxd.it/iYBQ",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-07-15",
+    "Name": "Everybody Loves Jeanne",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/yQnS",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-07-15",
+    "Name": "In the Mood for Love",
+    "Year": 2000,
+    "LetterboxdURI": "https://boxd.it/29tE",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-07-27",
+    "Name": "Deadpool & Wolverine",
+    "Year": 2024,
+    "LetterboxdURI": "https://boxd.it/jq8s",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-07-31",
+    "Name": "Teen Titans: The Judas Contract",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/eo2s",
+    "Rating": 3
+  },
+  {
+    "Date": "2024-08-01",
+    "Name": "The Raid 2",
+    "Year": 2014,
+    "LetterboxdURI": "https://boxd.it/5uz0",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-08-02",
+    "Name": "Flipped",
+    "Year": 2010,
+    "LetterboxdURI": "https://boxd.it/Tb8",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-08-05",
+    "Name": "Don't Go Breaking My Heart 2",
+    "Year": 2014,
+    "LetterboxdURI": "https://boxd.it/8VeO",
+    "Rating": 2
+  },
+  {
+    "Date": "2024-08-05",
+    "Name": "Don't Go Breaking My Heart",
+    "Year": 2011,
+    "LetterboxdURI": "https://boxd.it/2eUA",
+    "Rating": 5
+  },
+  {
+    "Date": "2024-08-05",
+    "Name": "Climb Dance",
+    "Year": 1988,
+    "LetterboxdURI": "https://boxd.it/1hOS",
+    "Rating": 4
   }
 ]

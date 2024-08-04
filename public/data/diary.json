@@ -941,7 +941,7 @@
   },
   {
     "Date": "2015-03-21",
-    "Name": "Interstellar",
+    "Name": " Interstellar",
     "Year": 2014,
     "LetterboxdURI": "https://boxd.it/5pd2T",
     "Rating": 5,
@@ -2372,7 +2372,7 @@
   {
     "Date": "2017-09-27",
     "Name": "The Batman/Superman Movie: World's Finest",
-    "Year": 1998,
+    "Year": 1997,
     "LetterboxdURI": "https://boxd.it/koMM1",
     "Rating": 4,
     "Rewatch": "",
@@ -7004,7 +7004,7 @@
     "Name": "Don't Go Breaking My Heart",
     "Year": 2011,
     "LetterboxdURI": "https://boxd.it/5lxaLV",
-    "Rating": 4,
+    "Rating": 5,
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2023-12-17"
@@ -7608,5 +7608,95 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2024-07-06"
+  },
+  {
+    "Date": "2024-07-10",
+    "Name": "Street Fighter: Assassin's Fist",
+    "Year": 2014,
+    "LetterboxdURI": "https://boxd.it/6Qc3pX",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-07-09"
+  },
+  {
+    "Date": "2024-07-14",
+    "Name": "The Gentlemen",
+    "Year": 2019,
+    "LetterboxdURI": "https://boxd.it/6RT6St",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-07-13"
+  },
+  {
+    "Date": "2024-07-15",
+    "Name": "Everybody Loves Jeanne",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/6SlVZV",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-07-14"
+  },
+  {
+    "Date": "2024-07-15",
+    "Name": "In the Mood for Love",
+    "Year": 2000,
+    "LetterboxdURI": "https://boxd.it/6SoCtd",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-07-14"
+  },
+  {
+    "Date": "2024-07-27",
+    "Name": "Deadpool & Wolverine",
+    "Year": 2024,
+    "LetterboxdURI": "https://boxd.it/6Y2JTH",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-07-26"
+  },
+  {
+    "Date": "2024-08-01",
+    "Name": "The Raid 2",
+    "Year": 2014,
+    "LetterboxdURI": "https://boxd.it/70dprX",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-07-31"
+  },
+  {
+    "Date": "2024-08-02",
+    "Name": "Flipped",
+    "Year": 2010,
+    "LetterboxdURI": "https://boxd.it/70JWQZ",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-08-01"
+  },
+  {
+    "Date": "2024-08-05",
+    "Name": "Don't Go Breaking My Heart 2",
+    "Year": 2014,
+    "LetterboxdURI": "https://boxd.it/71Qinh",
+    "Rating": 2,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-08-04"
+  },
+  {
+    "Date": "2024-08-05",
+    "Name": "Climb Dance",
+    "Year": 1988,
+    "LetterboxdURI": "https://boxd.it/71VuMt",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-08-04"
   }
 ]
