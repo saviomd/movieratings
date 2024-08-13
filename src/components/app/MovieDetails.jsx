@@ -4,16 +4,16 @@ import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
 import { LoadingHandler } from "src/components/library";
 import MovieDetailsBody from "./MovieDetailsBody";
 import MovieDetailsHeader from "./MovieDetailsHeader";
+import MovieDetailsRecommendations from "./MovieDetailsRecommendations";
 
 function MovieDetails() {
   const { movieDetails, movieDetailsStatus } = useMovieDetailsContext();
 
   return (
     <LoadingHandler dataStatus={movieDetailsStatus} hasData={movieDetails}>
-      <div className="border border-secondary mb-3 rounded">
-        <MovieDetailsHeader />
-        <MovieDetailsBody />
-      </div>
+      <MovieDetailsHeader />
+      <MovieDetailsBody />
+      <MovieDetailsRecommendations />
     </LoadingHandler>
   );
 }

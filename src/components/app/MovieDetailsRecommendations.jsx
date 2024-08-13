@@ -11,7 +11,7 @@ function MovieDetailsRecommendations() {
     return null;
   }
   return (
-    <div className="p-3">
+    <>
       <h2 className="h4">
         Recommendations
         <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
@@ -27,7 +27,7 @@ function MovieDetailsRecommendations() {
           </li>
         ))}
       </ScrollableHorizontalList>
-    </div>
+    </>
   );
 }
 

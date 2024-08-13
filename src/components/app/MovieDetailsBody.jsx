@@ -4,7 +4,6 @@ import React from "react";
 import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
 import { Image, ScrollableHorizontalList } from "src/components/library";
 import MovieDetailsCastCrew from "./MovieDetailsCastCrew";
-import MovieDetailsRecommendations from "./MovieDetailsRecommendations";
 import MovieDetailsStats from "./MovieDetailsStats";
 
 function MovieDetailsBody() {
@@ -15,27 +14,27 @@ function MovieDetailsBody() {
   ];
   return (
     <>
-      <div className="p-3">
-        <div className="animate__animated animate__fadeInUp mb-3 row">
-          <div className="col-8 col-lg-4">
-            {movieDetails.images.posters.length && (
-              <ScrollableHorizontalList>
-                {movieDetails.images.posters.map(({ url }) => (
-                  <li className="col-11" key={url}>
-                    <Image src={url} title={movieDetails.title} type="poster" />
-                  </li>
-                ))}
-              </ScrollableHorizontalList>
-            )}
-          </div>
-          <div className="col-12 col-lg-8 lead">{movieDetails.overview}</div>
+      <div className="animate__animated animate__fadeInUp mb-3 row">
+        <div className="col-10 col-md-6 col-lg-5 mb-3">
+          {movieDetails.images.posters.length && (
+            <ScrollableHorizontalList>
+              {movieDetails.images.posters.map(({ url }) => (
+                <li className="col-11" key={url}>
+                  <Image src={url} title={movieDetails.title} type="poster" />
+                </li>
+              ))}
+            </ScrollableHorizontalList>
+          )}
         </div>
-        <MovieDetailsStats />
-        <MovieDetailsCastCrew />
-        {movieDetails.tagline && (
-          <blockquote className="blockquote px-5 text-center">{`"${movieDetails.tagline}"`}</blockquote>
-        )}
+        <div className="col-12 col-md-6 col-lg-7">
+          <div className="lead mb-3">{movieDetails.overview}</div>
+          <MovieDetailsStats />
+        </div>
       </div>
+      <MovieDetailsCastCrew />
+      {movieDetails.tagline && (
+        <blockquote className="blockquote px-5 text-center">{`"${movieDetails.tagline}"`}</blockquote>
+      )}
       {movieDetails.images.backdrops.length && (
         <ScrollableHorizontalList>
           {movieDetails.images.backdrops.map(({ url }) => (
@@ -45,7 +44,7 @@ function MovieDetailsBody() {
           ))}
         </ScrollableHorizontalList>
       )}
-      <div className="p-3 text-end">
+      <div className="text-end">
         <div>
           View movie at
           <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
@@ -65,7 +64,6 @@ function MovieDetailsBody() {
           ))}
         </ul>
       </div>
-      <MovieDetailsRecommendations />
     </>
   );
 }

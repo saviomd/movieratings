@@ -10,9 +10,11 @@ function ScrollableHorizontalList({ children }: PropsType) {
     WebkitOverflowScrolling: "touch",
   } as CSSProperties;
   return (
-    <ul className="flex-nowrap g-3 list-unstyled row" style={listStyle}>
-      {children}
-    </ul>
+    <div className="overflow-hidden">
+      <ul className="flex-nowrap g-3 list-unstyled row" style={listStyle}>
+        {children}
+      </ul>
+    </div>
   );
 }
 
