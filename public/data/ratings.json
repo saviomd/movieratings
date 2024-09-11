@@ -1359,7 +1359,7 @@
   },
   {
     "Date": "2013-04-25",
-    "Name": "The Godfather: Part II",
+    "Name": "The Godfather Part II",
     "Year": 1974,
     "LetterboxdURI": "https://boxd.it/2aNq",
     "Rating": 5
@@ -1373,7 +1373,7 @@
   },
   {
     "Date": "2013-04-25",
-    "Name": "The Godfather: Part III",
+    "Name": "The Godfather Part III",
     "Year": 1990,
     "LetterboxdURI": "https://boxd.it/2aN6",
     "Rating": 3
@@ -2115,7 +2115,7 @@
   },
   {
     "Date": "2013-04-26",
-    "Name": "Edtv",
+    "Name": "EDtv",
     "Year": 1999,
     "LetterboxdURI": "https://boxd.it/1U08",
     "Rating": 4
@@ -4012,7 +4012,7 @@
   },
   {
     "Date": "2013-05-13",
-    "Name": "RockNRolla",
+    "Name": "RocknRolla",
     "Year": 2008,
     "LetterboxdURI": "https://boxd.it/1PmI",
     "Rating": 4
@@ -6392,7 +6392,7 @@
   },
   {
     "Date": "2013-05-19",
-    "Name": "Ong Bak: Muay Thai Warrior",
+    "Name": "Ong-Bak",
     "Year": 2003,
     "LetterboxdURI": "https://boxd.it/1YZk",
     "Rating": 4
@@ -7736,7 +7736,7 @@
   },
   {
     "Date": "2014-09-30",
-    "Name": "Elvira, Mistress of the Dark",
+    "Name": "Elvira: Mistress of the Dark",
     "Year": 1988,
     "LetterboxdURI": "https://boxd.it/22LG",
     "Rating": 3
@@ -7974,7 +7974,7 @@
   },
   {
     "Date": "2015-03-21",
-    "Name": " Interstellar",
+    "Name": "Interstellar",
     "Year": 2014,
     "LetterboxdURI": "https://boxd.it/4VZ8",
     "Rating": 5
@@ -10144,7 +10144,7 @@
   },
   {
     "Date": "2019-07-10",
-    "Name": "Spider-Man: Far from Home",
+    "Name": "Spider-Man: Far From Home",
     "Year": 2019,
     "LetterboxdURI": "https://boxd.it/fegG",
     "Rating": 4
@@ -10473,7 +10473,7 @@
   },
   {
     "Date": "2020-03-02",
-    "Name": "Once Upon a Time… in Hollywood",
+    "Name": "Once Upon a Time... in Hollywood",
     "Year": 2019,
     "LetterboxdURI": "https://boxd.it/gH0O",
     "Rating": 3
@@ -11040,7 +11040,7 @@
   },
   {
     "Date": "2021-05-10",
-    "Name": "The Mitchells vs. The Machines",
+    "Name": "The Mitchells vs. the Machines",
     "Year": 2021,
     "LetterboxdURI": "https://boxd.it/i7xm",
     "Rating": 4
@@ -11327,7 +11327,7 @@
   },
   {
     "Date": "2022-01-23",
-    "Name": "tick, tick...BOOM!",
+    "Name": "tick, tick... BOOM!",
     "Year": 2021,
     "LetterboxdURI": "https://boxd.it/jz2e",
     "Rating": 4
@@ -11607,7 +11607,7 @@
   },
   {
     "Date": "2022-10-17",
-    "Name": "Dahmer – Monster: The Jeffrey Dahmer Story",
+    "Name": "DAHMER - Monster: The Jeffrey Dahmer Story",
     "Year": 2022,
     "LetterboxdURI": "https://boxd.it/CRG0",
     "Rating": 4
@@ -12808,5 +12808,124 @@
     "Year": 1988,
     "LetterboxdURI": "https://boxd.it/1hOS",
     "Rating": 4
+  },
+  {
+    "Date": "2024-08-05",
+    "Name": "Coherence",
+    "Year": 2013,
+    "LetterboxdURI": "https://boxd.it/6xza",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-08-10",
+    "Name": "Road House",
+    "Year": 2024,
+    "LetterboxdURI": "https://boxd.it/cdzQ",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-08-13",
+    "Name": "Girlfriends and Girlfriends",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/zMju",
+    "Rating": 2
+  },
+  {
+    "Date": "2024-08-15",
+    "Name": "The Piano Teacher",
+    "Year": 2001,
+    "LetterboxdURI": "https://boxd.it/2886",
+    "Rating": 2
+  },
+  {
+    "Date": "2024-08-18",
+    "Name": "The Empty Man",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/iIWS",
+    "Rating": 3
+  },
+  {
+    "Date": "2024-08-19",
+    "Name": "Werewolf by Night",
+    "Year": 2022,
+    "LetterboxdURI": "https://boxd.it/xMrO",
+    "Rating": 3
+  },
+  {
+    "Date": "2024-08-20",
+    "Name": "Like Someone in Love",
+    "Year": 2012,
+    "LetterboxdURI": "https://boxd.it/3tOu",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-08-20",
+    "Name": "Trust",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/tUwu",
+    "Rating": 2
+  },
+  {
+    "Date": "2024-08-21",
+    "Name": "We're Together",
+    "Year": 2011,
+    "LetterboxdURI": "https://boxd.it/2U0E",
+    "Rating": 3
+  },
+  {
+    "Date": "2024-08-21",
+    "Name": "The Ministry of Ungentlemanly Warfare",
+    "Year": 2024,
+    "LetterboxdURI": "https://boxd.it/u5zu",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-08-22",
+    "Name": "Love in Dangerous Times",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/sopY",
+    "Rating": 3
+  },
+  {
+    "Date": "2024-08-24",
+    "Name": "Exam",
+    "Year": 2009,
+    "LetterboxdURI": "https://boxd.it/1mn8",
+    "Rating": 3
+  },
+  {
+    "Date": "2024-08-25",
+    "Name": "Batman: Return of the Caped Crusaders",
+    "Year": 2016,
+    "LetterboxdURI": "https://boxd.it/evNq",
+    "Rating": 3
+  },
+  {
+    "Date": "2024-08-27",
+    "Name": "Batman vs. Two-Face",
+    "Year": 2017,
+    "LetterboxdURI": "https://boxd.it/gDKe",
+    "Rating": 3
+  },
+  {
+    "Date": "2024-08-27",
+    "Name": "Juliet, Naked",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/gnaE",
+    "Rating": 4
+  },
+  {
+    "Date": "2024-08-28",
+    "Name": "Resident Evil: Welcome to Raccoon City",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/gsvM",
+    "Rating": 2
+  },
+  {
+    "Date": "2024-09-09",
+    "Name": "Single in Seoul",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/qQHs",
+    "Rating": 3
   }
 ]
