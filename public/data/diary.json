@@ -6581,7 +6581,7 @@
   },
   {
     "Date": "2023-07-31",
-    "Name": "Mission: Impossible – Dead Reckoning Part One",
+    "Name": "Mission: Impossible – Dead Reckoning",
     "Year": 2023,
     "LetterboxdURI": "https://boxd.it/4CiZ7H",
     "Rating": 5,
@@ -8018,5 +8018,45 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2024-11-01"
+  },
+  {
+    "Date": "2024-11-17",
+    "Name": "Monkey Man",
+    "Year": 2024,
+    "LetterboxdURI": "https://boxd.it/7PmD17",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-11-16"
+  },
+  {
+    "Date": "2024-11-18",
+    "Name": "Caddo Lake",
+    "Year": 2024,
+    "LetterboxdURI": "https://boxd.it/7PUvb7",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-11-17"
+  },
+  {
+    "Date": "2024-11-25",
+    "Name": "A Charlie Brown Thanksgiving",
+    "Year": 1973,
+    "LetterboxdURI": "https://boxd.it/7T8D5V",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-11-24"
+  },
+  {
+    "Date": "2024-11-25",
+    "Name": "Civil War",
+    "Year": 2024,
+    "LetterboxdURI": "https://boxd.it/7TvidP",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2024-11-24"
   }
 ]
