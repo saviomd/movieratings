@@ -7,12 +7,10 @@ interface IFetchTmdb {
   queryString?: string;
 }
 
-type IFetchTmdbReturn = IGetMovieDetailsReturn | IGetSearchMoviesReturn;
-
-const fetchTmdb = ({
+const fetchTmdb = <T = unknown>({
   path,
   queryString = "",
-}: IFetchTmdb): Promise<IFetchTmdbReturn> => {
+}: IFetchTmdb): Promise<T> => {
   const { url, key } = tmdbApi;
   return fetchClient({
     url: `${url}${path}`,
@@ -24,17 +22,13 @@ interface IGetMovieDetails {
   movieId: number;
 }
 
-interface IGetMovieDetailsReturn {
-  results: IMovieDetails[];
-}
-
 const getMovieDetails = ({
   movieId,
-}: IGetMovieDetails): Promise<IGetMovieDetailsReturn> =>
+}: IGetMovieDetails): Promise<IMovieDetails> =>
   fetchTmdb({
     path: `movie/${movieId}`,
     queryString:
-      "&append_to_response=alternative_titles,credits,images,recommendations,watch/providers&country=BR",
+      "&append_to_response=alternative_titles,credits,images,recommendations,watch/providers&regions=BR",
   });
 
 interface IGetSearchMovies {

@@ -7,19 +7,32 @@ import {
   letterboxdServices,
 } from "src/utils";
 
+interface IState {
+  movieDiaryPage: number;
+  movieDiarySearchString: string;
+}
+
+type ActionType =
+  | { type: "INCREASE_MOVIE_DIARY_PAGE" }
+  | { type: "SET_MOVIE_DIARY_SEARCH_STRING"; payload: string };
+
+interface IYearGroup {
+  [key: string]: number;
+}
+
 const { fetchMovieDiary } = letterboxdServices;
 
-const initialState = {
+const initialState: IState = {
   movieDiaryPage: 1,
   movieDiarySearchString: "",
 };
 
-function reducer(state, { payload, type }) {
-  switch (type) {
-    case "SET_MOVIE_DIARY_PAGE":
+function reducer(state: IState, action: ActionType) {
+  switch (action.type) {
+    case "INCREASE_MOVIE_DIARY_PAGE":
       return { ...state, movieDiaryPage: state.movieDiaryPage + 1 };
     case "SET_MOVIE_DIARY_SEARCH_STRING":
-      return { ...state, movieDiarySearchString: payload.toLowerCase() };
+      return { ...state, movieDiarySearchString: action.payload.toLowerCase() };
     default:
       throw new Error();
   }
@@ -30,8 +43,9 @@ const useMovieDetailsStore = () => {
 
   const boundActions = useMemo(
     () => ({
-      setMovieDiaryPage: () => dispatch({ type: "SET_MOVIE_DIARY_PAGE" }),
-      setMovieDiarySearchString: (payload) =>
+      increaseMovieDiaryPage: () =>
+        dispatch({ type: "INCREASE_MOVIE_DIARY_PAGE" }),
+      setMovieDiarySearchString: (payload: IState["movieDiarySearchString"]) =>
         dispatch({ type: "SET_MOVIE_DIARY_SEARCH_STRING", payload }),
     }),
     [],
@@ -61,10 +75,10 @@ const useMovieDetailsStore = () => {
 
   const moviesPerYearWatched = useMemo(() => {
     const groups = movieDiary.reduce((acc, curr) => {
-      const year = curr.WatchedDate.split("-")[0];
-      acc[year] = acc[year] ? (acc[year] += 1) : (acc[year] = 1);
+      const year = curr.WatchedDate?.split("-")[0] || "";
+      acc[year] = acc[year] ? acc[year] + 1 : 1;
       return acc;
-    }, {});
+    }, {} as IYearGroup);
     let max = 0;
     Object.values(groups).forEach((year) => {
       max = year > max ? year : max;

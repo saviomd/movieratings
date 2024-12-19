@@ -20,34 +20,30 @@ const MovieList = ({ type }) => {
     movieRatingsStatus,
   } = useMovieRatingsContext();
 
+  const data = {
+    Diary: {
+      boundActions: boundActionsMovieDiary,
+      boundActionsName: "setMovieDiaryPage",
+      moviesFiltered: movieDiaryFiltered,
+      moviesPaginated: movieDiaryPaginated,
+      moviesStatus: movieDiaryStatus,
+    },
+    Ratings: {
+      boundActions: boundActionsMovieRatings,
+      boundActionsName: "setMovieRatingsPage",
+      moviesFiltered: movieRatingsFiltered,
+      moviesPaginated: movieRatingsPaginated,
+      moviesStatus: movieRatingsStatus,
+    },
+  };
+
   const {
     boundActions,
     boundActionsName,
     moviesFiltered,
     moviesPaginated,
     moviesStatus,
-  } = (() => {
-    switch (type) {
-      case "Diary":
-        return {
-          boundActions: boundActionsMovieDiary,
-          boundActionsName: "setMovieDiaryPage",
-          moviesFiltered: movieDiaryFiltered,
-          moviesPaginated: movieDiaryPaginated,
-          moviesStatus: movieDiaryStatus,
-        };
-      case "Ratings":
-        return {
-          boundActions: boundActionsMovieRatings,
-          boundActionsName: "setMovieRatingsPage",
-          moviesFiltered: movieRatingsFiltered,
-          moviesPaginated: movieRatingsPaginated,
-          moviesStatus: movieRatingsStatus,
-        };
-      default:
-        throw new Error();
-    }
-  })();
+  } = data[type];
 
   const handleShowMore = () => boundActions[boundActionsName]();
 

@@ -1,12 +1,3 @@
-interface IAlternativeTitle {
-  iso_3166_1: string;
-  title: string;
-}
-
-interface IAlternativeTitles {
-  titles: IAlternativeTitle[];
-}
-
 export interface IImage {
   file_path: PathType;
 }
@@ -17,7 +8,12 @@ export interface IMovieCredits {
 }
 
 export interface IMovieDetails {
-  alternative_titles: IAlternativeTitles;
+  alternative_titles: {
+    titles: {
+      iso_3166_1: string;
+      title: string;
+    }[];
+  };
   budget?: number;
   credits: IMovieCredits;
   flatrate: IProvider[];
@@ -76,13 +72,6 @@ export interface IProvider {
   logo_path: PathType;
   Iprovider_id: number;
   Iprovider_name: string;
-}
-
-export interface IRandomMovie {
-  Id: string;
-  LetterboxdURI: string;
-  Name: string;
-  poster_path: PathType;
 }
 
 export type DataStatusType = "error" | "pending" | "success";

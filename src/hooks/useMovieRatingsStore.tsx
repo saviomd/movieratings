@@ -7,19 +7,39 @@ import {
   letterboxdServices,
 } from "src/utils";
 
+interface IState {
+  movieRatingsPage: number;
+  movieRatingsSearchString: string;
+}
+
+type ActionType =
+  | { type: "INCREASE_MOVIE_RATINGS_PAGE" }
+  | { type: "SET_MOVIE_RATINGS_SEARCH_STRING"; payload: string };
+
+interface IDecadeGroup {
+  [key: string]: number;
+}
+
+interface IRatingGroup {
+  [key: number]: number;
+}
+
 const { fetchMovieRatings } = letterboxdServices;
 
-const initialState = {
+const initialState: IState = {
   movieRatingsPage: 1,
   movieRatingsSearchString: "",
 };
 
-function reducer(state, { payload, type }) {
-  switch (type) {
-    case "SET_MOVIE_RATINGS_PAGE":
+function reducer(state: IState, action: ActionType) {
+  switch (action.type) {
+    case "INCREASE_MOVIE_RATINGS_PAGE":
       return { ...state, movieRatingsPage: state.movieRatingsPage + 1 };
     case "SET_MOVIE_RATINGS_SEARCH_STRING":
-      return { ...state, movieRatingsSearchString: payload.toLowerCase() };
+      return {
+        ...state,
+        movieRatingsSearchString: action.payload.toLowerCase(),
+      };
     default:
       throw new Error();
   }
@@ -30,9 +50,11 @@ const useMovieRatingsStore = () => {
 
   const boundActions = useMemo(
     () => ({
-      setMovieRatingsPage: () => dispatch({ type: "SET_MOVIE_RATINGS_PAGE" }),
-      setMovieRatingsSearchString: (payload) =>
-        dispatch({ type: "SET_MOVIE_RATINGS_SEARCH_STRING", payload }),
+      increaseMovieRatingsPage: () =>
+        dispatch({ type: "INCREASE_MOVIE_RATINGS_PAGE" }),
+      setMovieRatingsSearchString: (
+        payload: IState["movieRatingsSearchString"],
+      ) => dispatch({ type: "SET_MOVIE_RATINGS_SEARCH_STRING", payload }),
     }),
     [],
   );
@@ -61,10 +83,10 @@ const useMovieRatingsStore = () => {
 
   const moviesPerDecadeReleased = useMemo(() => {
     const groups = movieRatings.reduce((acc, curr) => {
-      const decade = `${curr.Year.toString().substr(0, 3)}0`;
-      acc[decade] = acc[decade] ? (acc[decade] += 1) : (acc[decade] = 1);
+      const decade = `${curr.Year.toString().substring(0, 3)}0`;
+      acc[decade] = acc[decade] ? acc[decade] + 1 : 1;
       return acc;
-    }, {});
+    }, {} as IDecadeGroup);
     let max = 0;
     Object.values(groups).forEach((decade) => {
       max = decade > max ? decade : max;
@@ -75,9 +97,9 @@ const useMovieRatingsStore = () => {
   const moviesPerRatingGiven = useMemo(() => {
     const groups = movieRatings.reduce((acc, curr) => {
       const rating = curr.Rating;
-      acc[rating] = acc[rating] ? (acc[rating] += 1) : (acc[rating] = 1);
+      acc[rating] = acc[rating] ? acc[rating] + 1 : 1;
       return acc;
-    }, {});
+    }, {} as IRatingGroup);
     let max = 0;
     Object.values(groups).forEach((rating) => {
       max = rating > max ? rating : max;

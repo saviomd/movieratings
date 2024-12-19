@@ -1,20 +1,26 @@
-import { IRandomMovie } from "src/types";
+import { PathType } from "src/types";
 import { tmdbApi } from "src/utils";
 
 const { poster } = tmdbApi.img;
+
+export interface IRandomMovie {
+  LetterboxdURI: string;
+  Name: string;
+  poster_path: PathType;
+}
 
 interface IParams {
   randomMovieList: IRandomMovie[];
 }
 
-interface IRandomMovieListFormatted extends IRandomMovie {
+interface IRandomMovieFormatted extends IRandomMovie {
   movie_path: string;
   poster_url: ReturnType<typeof poster>;
 }
 
 const formatRandomMovieList = ({
   randomMovieList,
-}: IParams): IRandomMovieListFormatted[] =>
+}: IParams): IRandomMovieFormatted[] =>
   randomMovieList.map((movie) => ({
     ...movie,
     movie_path: `/movie/${movie.LetterboxdURI.split("boxd.it/")[1]}`,

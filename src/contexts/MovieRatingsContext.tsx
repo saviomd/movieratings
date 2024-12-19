@@ -1,12 +1,17 @@
-import PropTypes from "prop-types";
-import React, { createContext, useContext } from "react";
+import { createContext, ReactNode, useContext } from "react";
 
 import useMovieRatingsStore from "src/hooks/useMovieRatingsStore";
 
-const MovieRatingsContext = createContext();
+type ContextType = ReturnType<typeof useMovieRatingsStore> | null;
+
+type PropsType = {
+  children: ReactNode;
+};
+
+const MovieRatingsContext = createContext<ContextType>(null);
 const useMovieRatingsContext = () => useContext(MovieRatingsContext);
 
-function MovieRatingsProvider({ children }) {
+function MovieRatingsProvider({ children }: PropsType) {
   const store = useMovieRatingsStore();
 
   return (
@@ -15,10 +20,6 @@ function MovieRatingsProvider({ children }) {
     </MovieRatingsContext.Provider>
   );
 }
-
-MovieRatingsProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export {
   MovieRatingsContext as MovieRatingsContextMock,

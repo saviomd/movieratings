@@ -1,21 +1,22 @@
-import PropTypes from "prop-types";
-import React, { createContext, useContext } from "react";
+import { createContext, ReactNode, useContext } from "react";
 
 import useStatsStore from "src/hooks/useStatsStore";
 
-const StatsContext = createContext();
+type ContextType = ReturnType<typeof useStatsStore> | null;
+
+type PropsType = {
+  children: ReactNode;
+};
+
+const StatsContext = createContext<ContextType>(null);
 const useStatsContext = () => useContext(StatsContext);
 
-function StatsProvider({ children }) {
+function StatsProvider({ children }: PropsType) {
   const store = useStatsStore();
 
   return (
     <StatsContext.Provider value={store}>{children}</StatsContext.Provider>
   );
 }
-
-StatsProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export { StatsContext as StatsContextMock, StatsProvider, useStatsContext };

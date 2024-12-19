@@ -1,12 +1,17 @@
-import PropTypes from "prop-types";
-import React, { createContext, useContext } from "react";
+import { createContext, ReactNode, useContext } from "react";
 
 import useMovieDiaryStore from "src/hooks/useMovieDiaryStore";
 
-const MovieDiaryContext = createContext();
+type ContextType = ReturnType<typeof useMovieDiaryStore> | null;
+
+type PropsType = {
+  children: ReactNode;
+};
+
+const MovieDiaryContext = createContext<ContextType>(null);
 const useMovieDiaryContext = () => useContext(MovieDiaryContext);
 
-function MovieDiaryProvider({ children }) {
+function MovieDiaryProvider({ children }: PropsType) {
   const store = useMovieDiaryStore();
 
   return (
@@ -15,10 +20,6 @@ function MovieDiaryProvider({ children }) {
     </MovieDiaryContext.Provider>
   );
 }
-
-MovieDiaryProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export {
   MovieDiaryContext as MovieDiaryContextMock,
