@@ -1,6 +1,6 @@
 import fetchClient from "./fetchClient";
 import tmdbApi from "./tmdbApi";
-import { IMovieDetails } from "src/types";
+import type { IMovieDetails } from "src/types";
 
 interface IFetchTmdb {
   path: string;

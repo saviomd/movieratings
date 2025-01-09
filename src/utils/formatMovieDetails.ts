@@ -3,7 +3,7 @@ import formatDate from "./formatDate";
 import formatMovieCredits from "./formatMovieCredits";
 import formatMovieRecommendations from "./formatMovieRecommendations";
 import tmdbApi from "./tmdbApi";
-import { IMovieDetails, IMovieLoggedFormatted } from "src/types";
+import type { IMovieDetails, IMovieLoggedFormatted } from "src/types";
 
 interface IParams {
   movie: IMovieLoggedFormatted;

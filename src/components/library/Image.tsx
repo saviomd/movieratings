@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-import { ImgType } from "src/types";
+import type { ImgType } from "src/types";
 
 type PropsType = {
   src?: string;

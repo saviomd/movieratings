@@ -1,5 +1,5 @@
 import tmdbApi from "./tmdbApi";
-import { IPerson } from "src/types";
+import type { IPerson } from "src/types";
 
 interface IParams {
   person: IPerson;

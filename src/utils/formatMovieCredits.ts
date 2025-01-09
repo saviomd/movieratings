@@ -1,5 +1,5 @@
 import formatPerson from "./formatPerson";
-import { IMovieCredits } from "src/types";
+import type { IMovieCredits } from "src/types";
 
 type PersonFormattedListType = ReturnType<typeof formatPerson>[];
 

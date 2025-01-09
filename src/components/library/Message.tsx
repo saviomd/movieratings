@@ -3,7 +3,7 @@ import {
   FontAwesomeIconProps,
 } from "@fortawesome/react-fontawesome";
 
-import { MessageType } from "src/types";
+import type { MessageType } from "src/types";
 
 type PropsType = {
   type: MessageType;

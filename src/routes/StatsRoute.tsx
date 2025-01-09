@@ -1,14 +1,11 @@
 import { MoviePosterButton, MovieStats } from "src/components/app";
 import { LoadingHandler } from "src/components/library";
-import {
-  MovieDiaryStoreType,
-  useMovieDiaryContext,
-} from "src/contexts/MovieDiaryContext";
-import {
-  MovieRatingsStoreType,
-  useMovieRatingsContext,
-} from "src/contexts/MovieRatingsContext";
-import { StatsStoreType, useStatsContext } from "src/contexts/StatsContext";
+import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
+import type { MovieDiaryStoreType } from "src/contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
+import type { MovieRatingsStoreType } from "src/contexts/MovieRatingsContext";
+import { useStatsContext } from "src/contexts/StatsContext";
+import type { StatsStoreType } from "src/contexts/StatsContext";
 
 function StatsRoute() {
   const { moviesPerYearWatched, movieDiaryStatus } =

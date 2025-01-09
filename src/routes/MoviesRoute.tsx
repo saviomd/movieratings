@@ -1,5 +1,5 @@
 import { MovieList, MovieNameSearch } from "src/components/app";
-import { MoviesRouteType } from "src/types";
+import type { MoviesRouteType } from "src/types";
 
 type PropsType = {
   type: MoviesRouteType;

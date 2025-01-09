@@ -1,5 +1,5 @@
 import formatDate from "./formatDate";
-import { IMovieLogged, IMovieLoggedFormatted } from "src/types";
+import type { IMovieLogged, IMovieLoggedFormatted } from "src/types";
 
 interface IParams {
   movieList: IMovieLogged[];

@@ -1,5 +1,5 @@
 import fetchClient from "./fetchClient";
-import { IMovieLogged } from "src/types";
+import type { IMovieLogged } from "src/types";
 
 interface IFetchLetterboxd {
   path: string;

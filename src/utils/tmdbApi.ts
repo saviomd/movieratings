@@ -1,4 +1,4 @@
-import { ImgType, PathType } from "src/types";
+import type { ImgType, PathType } from "src/types";
 
 interface IImgMethod {
   path: PathType;
