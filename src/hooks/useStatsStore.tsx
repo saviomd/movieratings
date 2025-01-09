@@ -1,18 +1,16 @@
-import { useQueries } from "@tanstack/react-query";
+import { useQueries, QueryStatus } from "@tanstack/react-query";
 import { useMemo } from "react";
 
-import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
-import { IMovieLoggedFormatted } from "src/types";
+import {
+  MovieRatingsStoreType,
+  useMovieRatingsContext,
+} from "src/contexts/MovieRatingsContext";
 import { formatRandomMovieList, tmdbServices } from "src/utils";
 
 const { getSearchMovies } = tmdbServices;
 
-interface IMovieRatingContext {
-  movieRatings: IMovieLoggedFormatted[];
-}
-
 const useStatsStore = () => {
-  const { movieRatings } = useMovieRatingsContext() as IMovieRatingContext;
+  const { movieRatings } = useMovieRatingsContext() as MovieRatingsStoreType;
 
   const movies = useMemo(
     () =>
@@ -53,7 +51,7 @@ const useStatsStore = () => {
           acc === "error" || (acc === "pending" && curr.status === "success")
             ? acc
             : curr.status,
-        "",
+        "" as QueryStatus,
       ),
     }),
   });

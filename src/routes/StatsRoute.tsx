@@ -1,16 +1,22 @@
-import React from "react";
-
 import { MoviePosterButton, MovieStats } from "src/components/app";
 import { LoadingHandler } from "src/components/library";
-import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
-import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
-import { useStatsContext } from "src/contexts/StatsContext";
+import {
+  MovieDiaryStoreType,
+  useMovieDiaryContext,
+} from "src/contexts/MovieDiaryContext";
+import {
+  MovieRatingsStoreType,
+  useMovieRatingsContext,
+} from "src/contexts/MovieRatingsContext";
+import { StatsStoreType, useStatsContext } from "src/contexts/StatsContext";
 
-function PageStats() {
-  const { moviesPerYearWatched, movieDiaryStatus } = useMovieDiaryContext();
+function StatsRoute() {
+  const { moviesPerYearWatched, movieDiaryStatus } =
+    useMovieDiaryContext() as MovieDiaryStoreType;
   const { moviesPerDecadeReleased, moviesPerRatingGiven, movieRatingsStatus } =
-    useMovieRatingsContext();
-  const { randomMovies, randomMoviesStatus } = useStatsContext();
+    useMovieRatingsContext() as MovieRatingsStoreType;
+  const { randomMovies, randomMoviesStatus } =
+    useStatsContext() as StatsStoreType;
 
   const stats = [
     {
@@ -58,4 +64,4 @@ function PageStats() {
   );
 }
 
-export default PageStats;
+export default StatsRoute;

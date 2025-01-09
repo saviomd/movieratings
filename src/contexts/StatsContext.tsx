@@ -2,7 +2,9 @@ import { createContext, ReactNode, useContext } from "react";
 
 import useStatsStore from "src/hooks/useStatsStore";
 
-type ContextType = ReturnType<typeof useStatsStore> | null;
+type StatsStoreType = ReturnType<typeof useStatsStore>;
+
+type ContextType = StatsStoreType | null;
 
 type PropsType = {
   children: ReactNode;
@@ -20,3 +22,5 @@ function StatsProvider({ children }: PropsType) {
 }
 
 export { StatsContext as StatsContextMock, StatsProvider, useStatsContext };
+
+export type { StatsStoreType };

@@ -1,9 +1,11 @@
-import PropTypes from "prop-types";
-import React from "react";
-
 import { MovieList, MovieNameSearch } from "src/components/app";
+import { MoviesRouteType } from "src/types";
 
-function PageMovies({ type }) {
+type PropsType = {
+  type: MoviesRouteType;
+};
+
+function MoviesRoute({ type }: PropsType) {
   return (
     <>
       <h1 className="h4">{type}</h1>
@@ -19,8 +21,4 @@ function PageMovies({ type }) {
   );
 }
 
-PageMovies.propTypes = {
-  type: PropTypes.string.isRequired,
-};
-
-export default PageMovies;
+export default MoviesRoute;

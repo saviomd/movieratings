@@ -1,9 +1,7 @@
-import React from "react";
-
 import { MovieDetails } from "src/components/app";
 import { MovieDetailsProvider } from "src/contexts/MovieDetailsContext";
 
-function PageMovieDetails() {
+function MovieDetailsRoute() {
   return (
     <MovieDetailsProvider>
       <MovieDetails />
@@ -11,4 +9,4 @@ function PageMovieDetails() {
   );
 }
 
-export default PageMovieDetails;
+export default MovieDetailsRoute;

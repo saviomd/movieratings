@@ -2,24 +2,21 @@ import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 
-import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
-import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
-import { IMovieLoggedFormatted } from "src/types";
+import {
+  MovieDiaryStoreType,
+  useMovieDiaryContext,
+} from "src/contexts/MovieDiaryContext";
+import {
+  MovieRatingsStoreType,
+  useMovieRatingsContext,
+} from "src/contexts/MovieRatingsContext";
 import { formatMovieDetails, tmdbServices } from "src/utils";
-
-interface IMovieDiaryContext {
-  movieDiary: IMovieLoggedFormatted[];
-}
-
-interface IMovieRatingsContext {
-  movieRatings: IMovieLoggedFormatted[];
-}
 
 const { getMovieDetails, getSearchMovies } = tmdbServices;
 
 const useMovieDetailsStore = () => {
-  const { movieDiary } = useMovieDiaryContext() as IMovieDiaryContext;
-  const { movieRatings } = useMovieRatingsContext() as IMovieRatingsContext;
+  const { movieDiary } = useMovieDiaryContext() as MovieDiaryStoreType;
+  const { movieRatings } = useMovieRatingsContext() as MovieRatingsStoreType;
   const { movieId } = useParams();
 
   const movie = useMemo(

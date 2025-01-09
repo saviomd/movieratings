@@ -2,7 +2,9 @@ import { createContext, ReactNode, useContext } from "react";
 
 import useMovieRatingsStore from "src/hooks/useMovieRatingsStore";
 
-type ContextType = ReturnType<typeof useMovieRatingsStore> | null;
+type MovieRatingsStoreType = ReturnType<typeof useMovieRatingsStore>;
+
+type ContextType = MovieRatingsStoreType | null;
 
 type PropsType = {
   children: ReactNode;
@@ -26,3 +28,5 @@ export {
   MovieRatingsProvider,
   useMovieRatingsContext,
 };
+
+export type { MovieRatingsStoreType };

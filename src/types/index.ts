@@ -86,4 +86,6 @@ export type MessageType =
   | "pageNotFound"
   | "pending";
 
+export type MoviesRouteType = "Diary" | "Ratings";
+
 export type PathType = string;

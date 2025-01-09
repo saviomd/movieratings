@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
 import { Footer, Header, SiteInfo } from "src/components/app";
@@ -8,7 +8,7 @@ import { StatsProvider } from "src/contexts/StatsContext";
 import { trackGaPageView } from "src/utils";
 
 function RootRoute() {
-  let location = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     trackGaPageView();

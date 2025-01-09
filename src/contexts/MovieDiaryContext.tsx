@@ -2,7 +2,9 @@ import { createContext, ReactNode, useContext } from "react";
 
 import useMovieDiaryStore from "src/hooks/useMovieDiaryStore";
 
-type ContextType = ReturnType<typeof useMovieDiaryStore> | null;
+type MovieDiaryStoreType = ReturnType<typeof useMovieDiaryStore>;
+
+type ContextType = MovieDiaryStoreType | null;
 
 type PropsType = {
   children: ReactNode;
@@ -26,3 +28,5 @@ export {
   MovieDiaryProvider,
   useMovieDiaryContext,
 };
+
+export type { MovieDiaryStoreType };
