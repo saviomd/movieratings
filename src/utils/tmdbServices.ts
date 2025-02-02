@@ -28,7 +28,7 @@ const getMovieDetails = ({
   fetchTmdb({
     path: `movie/${movieId}`,
     queryString:
-      "&append_to_response=alternative_titles,credits,images,recommendations,watch/providers&regions=BR",
+      "&append_to_response=alternative_titles,credits,images,recommendations,watch/providers&language=en-US&include_image_language=null,en,pt&region=BR",
   });
 
 interface IGetSearchMovies {

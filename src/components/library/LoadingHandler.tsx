@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import Message from "./Message";
 import type { DataStatusType, MessageType } from "src/types";

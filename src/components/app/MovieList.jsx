@@ -22,30 +22,21 @@ const MovieList = ({ type }) => {
 
   const data = {
     Diary: {
-      boundActions: boundActionsMovieDiary,
-      boundActionsName: "setMovieDiaryPage",
+      increaseMoviesPage: boundActionsMovieDiary.increaseMovieDiaryPage,
       moviesFiltered: movieDiaryFiltered,
       moviesPaginated: movieDiaryPaginated,
       moviesStatus: movieDiaryStatus,
     },
     Ratings: {
-      boundActions: boundActionsMovieRatings,
-      boundActionsName: "setMovieRatingsPage",
+      increaseMoviesPage: boundActionsMovieRatings.increaseMovieRatingsPage,
       moviesFiltered: movieRatingsFiltered,
       moviesPaginated: movieRatingsPaginated,
       moviesStatus: movieRatingsStatus,
     },
   };
 
-  const {
-    boundActions,
-    boundActionsName,
-    moviesFiltered,
-    moviesPaginated,
-    moviesStatus,
-  } = data[type];
-
-  const handleShowMore = () => boundActions[boundActionsName]();
+  const { increaseMoviesPage, moviesFiltered, moviesPaginated, moviesStatus } =
+    data[type];
 
   return (
     <LoadingHandler
@@ -66,7 +57,7 @@ const MovieList = ({ type }) => {
             <button
               className="btn btn-danger"
               type="button"
-              onClick={handleShowMore}
+              onClick={increaseMoviesPage}
             >
               Show more
             </button>

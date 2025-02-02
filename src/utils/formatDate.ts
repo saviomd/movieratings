@@ -3,7 +3,7 @@ interface IParams {
 }
 
 const formatDate = ({ date }: IParams): string =>
-  new Date(date).toLocaleDateString("en-GB", {
+  new Date(date.replace(/-/g, "/")).toLocaleDateString("en-GB", {
     day: "2-digit",
     month: "short",
     year: "numeric",
