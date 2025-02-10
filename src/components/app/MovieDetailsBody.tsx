@@ -1,22 +1,30 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 
 import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
 import { Image, ScrollableHorizontalList } from "src/components/library";
 import MovieDetailsCastCrew from "./MovieDetailsCastCrew";
 import MovieDetailsStats from "./MovieDetailsStats";
 
+interface ILink {
+  href: "LetterboxdURI" | "tmdbURI";
+  name: "Letterboxd" | "TMDb";
+}
+
+const links: ILink[] = [
+  { href: "LetterboxdURI", name: "Letterboxd" },
+  { href: "tmdbURI", name: "TMDb" },
+];
+
 function MovieDetailsBody() {
   const { movieDetails } = useMovieDetailsContext();
-  const links = [
-    { href: "LetterboxdURI", name: "Letterboxd" },
-    { href: "tmdbURI", name: "TMDb" },
-  ];
+  if (!movieDetails) {
+    return null;
+  }
   return (
     <>
       <div className="animate__animated animate__fadeInUp mb-3 row">
         <div className="col-10 col-md-6 col-lg-5 mb-3">
-          {movieDetails.images.posters.length && (
+          {!!movieDetails.images.posters.length && (
             <ScrollableHorizontalList>
               {movieDetails.images.posters.map(({ url }) => (
                 <li className="col-11" key={url}>
@@ -35,7 +43,7 @@ function MovieDetailsBody() {
       {movieDetails.tagline && (
         <blockquote className="blockquote px-5 text-center">{`"${movieDetails.tagline}"`}</blockquote>
       )}
-      {movieDetails.images.backdrops.length && (
+      {!!movieDetails.images.backdrops.length && (
         <ScrollableHorizontalList>
           {movieDetails.images.backdrops.map(({ url }) => (
             <li className="col-11" key={url}>

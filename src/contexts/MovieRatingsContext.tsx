@@ -1,16 +1,15 @@
-import { createContext, ReactNode, useContext } from "react";
+import { createContext, useContext } from "react";
+import type { ReactNode } from "react";
 
 import useMovieRatingsStore from "src/hooks/useMovieRatingsStore";
 
-type MovieRatingsStoreType = ReturnType<typeof useMovieRatingsStore>;
-
-type ContextType = MovieRatingsStoreType | null;
+type ContextType = ReturnType<typeof useMovieRatingsStore>;
 
 type PropsType = {
   children: ReactNode;
 };
 
-const MovieRatingsContext = createContext<ContextType>(null);
+const MovieRatingsContext = createContext({} as ContextType);
 const useMovieRatingsContext = () => useContext(MovieRatingsContext);
 
 function MovieRatingsProvider({ children }: PropsType) {
@@ -28,5 +27,3 @@ export {
   MovieRatingsProvider,
   useMovieRatingsContext,
 };
-
-export type { MovieRatingsStoreType };

@@ -2,21 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 
-import {
-  MovieDiaryStoreType,
-  useMovieDiaryContext,
-} from "src/contexts/MovieDiaryContext";
-import {
-  MovieRatingsStoreType,
-  useMovieRatingsContext,
-} from "src/contexts/MovieRatingsContext";
+import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
 import { formatMovieDetails, tmdbServices } from "src/utils";
 
 const { getMovieDetails, getSearchMovies } = tmdbServices;
 
 const useMovieDetailsStore = () => {
-  const { movieDiary } = useMovieDiaryContext() as MovieDiaryStoreType;
-  const { movieRatings } = useMovieRatingsContext() as MovieRatingsStoreType;
+  const { movieDiary } = useMovieDiaryContext();
+  const { movieRatings } = useMovieRatingsContext();
   const { movieId } = useParams();
 
   const movie = useMemo(
@@ -24,7 +18,7 @@ const useMovieDetailsStore = () => {
     [movieDiary, movieId, movieRatings],
   );
 
-  const { data: movieDetails = {}, status: movieDetailsStatus } = useQuery({
+  const { data: movieDetails, status: movieDetailsStatus } = useQuery({
     queryKey: ["movieDetails", movie, movie?.Name, movie?.Year],
     queryFn: async () => {
       if (movie) {
@@ -42,7 +36,7 @@ const useMovieDetailsStore = () => {
           return formatMovieDetails({ movie, movieDetails });
         }
       }
-      return undefined;
+      return null;
     },
     enabled: !!movie?.Name && !!movie?.Year,
   });

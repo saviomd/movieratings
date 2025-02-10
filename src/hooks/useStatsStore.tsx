@@ -1,16 +1,14 @@
-import { useQueries, QueryStatus } from "@tanstack/react-query";
+import { useQueries } from "@tanstack/react-query";
+import type { QueryStatus } from "@tanstack/react-query";
 import { useMemo } from "react";
 
-import {
-  MovieRatingsStoreType,
-  useMovieRatingsContext,
-} from "src/contexts/MovieRatingsContext";
+import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
 import { formatRandomMovieList, tmdbServices } from "src/utils";
 
 const { getSearchMovies } = tmdbServices;
 
 const useStatsStore = () => {
-  const { movieRatings } = useMovieRatingsContext() as MovieRatingsStoreType;
+  const { movieRatings } = useMovieRatingsContext();
 
   const movies = useMemo(
     () =>

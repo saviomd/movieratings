@@ -10,8 +10,6 @@ type PropsType = {
   messageNoData?: MessageType;
 };
 
-const dataStatuses = ["error", "pending", "success"];
-
 const LoadingHandler = ({
   children,
   dataStatus = "success",
@@ -28,4 +26,3 @@ const LoadingHandler = ({
 };
 
 export default LoadingHandler;
-export { dataStatuses };

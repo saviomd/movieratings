@@ -1,8 +1,8 @@
 import { MovieList, MovieNameSearch } from "src/components/app";
-import type { MoviesRouteType } from "src/types";
+import type { MovieType } from "src/types";
 
 type PropsType = {
-  type: MoviesRouteType;
+  type: MovieType;
 };
 
 function MoviesRoute({ type }: PropsType) {

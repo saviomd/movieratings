@@ -1,23 +1,22 @@
-import React from "react";
-
 import { Image, ScrollableHorizontalList } from "src/components/library";
 import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
 
 function MovieDetailsStats() {
-  /* eslint-disable camelcase */
+  const { movieDetails } = useMovieDetailsContext();
+  if (!movieDetails) {
+    return null;
+  }
   const {
-    movieDetails: {
-      budget,
-      flatrate,
-      genres,
-      production_companies,
-      production_countries,
-      release_date,
-      revenue,
-      runtime,
-      spoken_languages,
-    },
-  } = useMovieDetailsContext();
+    budget,
+    flatrate = [],
+    genres = [],
+    production_companies = [],
+    production_countries = [],
+    release_date,
+    revenue,
+    runtime,
+    spoken_languages = [],
+  } = movieDetails;
   const stats = [
     { title: "Runtime", value: `${runtime} minutes` },
     { title: "Release date", value: release_date },
@@ -71,7 +70,6 @@ function MovieDetailsStats() {
       ))}
     </ScrollableHorizontalList>
   );
-  /* eslint-enable camelcase */
 }
 
 export default MovieDetailsStats;

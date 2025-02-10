@@ -6,7 +6,7 @@ interface IParams {
 }
 
 interface IMovieRecommendationFormatted extends IMovieDetails {
-  poster_url: string | null;
+  poster_url?: string;
   tmdbURI: string;
 }
 

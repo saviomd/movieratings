@@ -1,9 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import PropTypes from "prop-types";
-import React from "react";
+import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 
-function NavItem({ link }) {
+type PropsType = {
+  link: {
+    icon: FontAwesomeIconProps["icon"];
+    name: string;
+    path: string;
+  };
+};
+
+function NavItem({ link }: PropsType) {
   return (
     <NavLink
       to={link.path}
@@ -16,13 +23,5 @@ function NavItem({ link }) {
     </NavLink>
   );
 }
-
-NavItem.propTypes = {
-  link: PropTypes.shape({
-    icon: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
-  }).isRequired,
-};
 
 export default NavItem;

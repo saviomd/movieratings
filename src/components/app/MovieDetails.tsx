@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
 import { LoadingHandler } from "src/components/library";
 import MovieDetailsBody from "./MovieDetailsBody";
@@ -10,7 +8,7 @@ function MovieDetails() {
   const { movieDetails, movieDetailsStatus } = useMovieDetailsContext();
 
   return (
-    <LoadingHandler dataStatus={movieDetailsStatus} hasData={movieDetails}>
+    <LoadingHandler dataStatus={movieDetailsStatus} hasData={!!movieDetails}>
       <MovieDetailsHeader />
       <MovieDetailsBody />
       <MovieDetailsRecommendations />

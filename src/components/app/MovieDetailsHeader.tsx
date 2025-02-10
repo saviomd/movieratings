@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 
 import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
 
 function MovieDetailsHeader() {
   const { movieDetails } = useMovieDetailsContext();
+  if (!movieDetails) {
+    return null;
+  }
   return (
     <div className="bg-secondary border border-secondary mb-3 p-3 rounded">
       <h1 className="h3">

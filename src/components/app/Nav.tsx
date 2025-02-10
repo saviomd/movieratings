@@ -1,8 +1,8 @@
-import React from "react";
+import type { ComponentProps } from "react";
 
 import NavItem from "./NavItem";
 
-const navLinks = [
+const navLinks: ComponentProps<typeof NavItem>["link"][] = [
   {
     icon: "star",
     name: "Ratings",

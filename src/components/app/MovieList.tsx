@@ -1,20 +1,22 @@
-import PropTypes from "prop-types";
-import React from "react";
-
 import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
 import { LoadingHandler } from "src/components/library";
+import type { MovieType } from "src/types";
 import MovieButton from "./MovieButton";
 
-const MovieList = ({ type }) => {
+type PropsType = {
+  type: MovieType;
+};
+
+function MovieList({ type }: PropsType) {
   const {
-    boundActions: boundActionsMovieDiary,
+    boundActions: { increaseMovieDiaryPage },
     movieDiaryFiltered,
     movieDiaryPaginated,
     movieDiaryStatus,
   } = useMovieDiaryContext();
   const {
-    boundActions: boundActionsMovieRatings,
+    boundActions: { increaseMovieRatingsPage },
     movieRatingsFiltered,
     movieRatingsPaginated,
     movieRatingsStatus,
@@ -22,13 +24,13 @@ const MovieList = ({ type }) => {
 
   const data = {
     Diary: {
-      increaseMoviesPage: boundActionsMovieDiary.increaseMovieDiaryPage,
+      increaseMoviesPage: increaseMovieDiaryPage,
       moviesFiltered: movieDiaryFiltered,
       moviesPaginated: movieDiaryPaginated,
       moviesStatus: movieDiaryStatus,
     },
     Ratings: {
-      increaseMoviesPage: boundActionsMovieRatings.increaseMovieRatingsPage,
+      increaseMoviesPage: increaseMovieRatingsPage,
       moviesFiltered: movieRatingsFiltered,
       moviesPaginated: movieRatingsPaginated,
       moviesStatus: movieRatingsStatus,
@@ -66,10 +68,6 @@ const MovieList = ({ type }) => {
       </>
     </LoadingHandler>
   );
-};
-
-MovieList.propTypes = {
-  type: PropTypes.oneOf(["Diary", "Ratings"]).isRequired,
-};
+}
 
 export default MovieList;

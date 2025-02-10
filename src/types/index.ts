@@ -16,20 +16,37 @@ export interface IMovieDetails {
   };
   budget?: number;
   credits: IMovieCredits;
-  flatrate: IProvider[];
+  genres: {
+    name: string;
+  }[];
   id: number;
   images: {
     backdrops: IImage[];
     posters: IImage[];
   };
   original_language: string;
+  original_title?: string;
+  overview?: string;
   poster_path: PathType;
+  production_companies: {
+    name: string;
+  }[];
+  production_countries: {
+    name: string;
+  }[];
   recommendations: {
     results: IMovieDetails[];
   };
   release_date: string;
   revenue?: number;
+  runtime: number;
+  spoken_languages: {
+    english_name: string;
+  }[];
+  tagline?: string;
   title: string;
+  vote_average: number;
+  vote_count: number;
   "watch/providers": {
     results: {
       BR: {
@@ -56,22 +73,20 @@ export interface IMovieLoggedFormatted extends IMovieLogged {
 }
 
 export interface IPerson {
-  character: string;
+  character?: string;
   id: number;
-  job: string | null;
+  job?: string;
   name: string;
-  order: number;
+  order?: number;
   popularity: number;
   profile_path: PathType;
-  profile_url: string;
-  tmdbURI: string;
 }
 
 export interface IProvider {
   display_priority: number;
   logo_path: PathType;
-  Iprovider_id: number;
-  Iprovider_name: string;
+  provider_id: number;
+  provider_name: string;
 }
 
 export type DataStatusType = "error" | "pending" | "success";
@@ -86,6 +101,6 @@ export type MessageType =
   | "pageNotFound"
   | "pending";
 
-export type MoviesRouteType = "Diary" | "Ratings";
+export type MovieType = "Diary" | "Ratings";
 
 export type PathType = string;

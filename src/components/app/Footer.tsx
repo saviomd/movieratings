@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 
 import { Anchor } from "src/components/library";
 
-const Footer = () => {
+function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-secondary border-top mb-3 pt-3 small text-center">
@@ -21,6 +20,6 @@ const Footer = () => {
       </Anchor>
     </footer>
   );
-};
+}
 
 export default Footer;

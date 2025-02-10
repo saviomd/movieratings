@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import { Fragment } from "react";
 
 import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
 import {
@@ -8,13 +8,17 @@ import {
   ScrollableHorizontalList,
 } from "src/components/library";
 
+type CreditType = "cast" | "crew";
+
+const creditTypes: CreditType[] = ["cast", "crew"];
+
 function MovieDetailsCastCrew() {
   const { movieDetails } = useMovieDetailsContext();
-  if (!movieDetails.credits) {
+  if (!movieDetails?.credits) {
     return null;
   }
-  return ["cast", "crew"].map((item) => (
-    <React.Fragment key={item}>
+  return creditTypes.map((item) => (
+    <Fragment key={item}>
       <h2 className="h4">
         {`${item[0].toUpperCase()}${item.slice(1)}`}
         <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
@@ -40,7 +44,7 @@ function MovieDetailsCastCrew() {
       ) : (
         <p>No data available</p>
       )}
-    </React.Fragment>
+    </Fragment>
   ));
 }
 

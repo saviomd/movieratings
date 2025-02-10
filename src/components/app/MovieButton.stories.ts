@@ -1,4 +1,6 @@
-import MovieButton, { types } from "./MovieButton";
+import type { Meta, StoryObj } from "@storybook/react";
+
+import MovieButton from "./MovieButton";
 import movieDiaryMock from "src/__mocks__/movieDiaryMock";
 import { formatMovieList } from "src/utils";
 
@@ -11,21 +13,14 @@ const meta = {
   parameters: {
     layout: "fullscreen",
   },
-  argTypes: {
-    type: {
-      options: types,
-      control: {
-        type: "select",
-      },
-    },
-  },
-};
+} satisfies Meta<typeof MovieButton>;
 
 export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Default = {
+export const Default: Story = {
   args: {
     movie: movies[0],
-    type: types[0],
+    type: "Diary",
   },
 };

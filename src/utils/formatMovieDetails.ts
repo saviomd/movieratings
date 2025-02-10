@@ -3,11 +3,19 @@ import formatDate from "./formatDate";
 import formatMovieCredits from "./formatMovieCredits";
 import formatMovieRecommendations from "./formatMovieRecommendations";
 import tmdbApi from "./tmdbApi";
-import type { IMovieDetails, IMovieLoggedFormatted } from "src/types";
+import type {
+  IMovieDetails,
+  IMovieLoggedFormatted,
+  IProvider,
+} from "src/types";
 
 interface IParams {
   movie: IMovieLoggedFormatted;
   movieDetails: IMovieDetails;
+}
+
+interface IProviderFormatted extends IProvider {
+  logo_url?: string;
 }
 
 interface IMovieDetailsFormatted
@@ -18,13 +26,14 @@ interface IMovieDetailsFormatted
   br_title: string | undefined;
   budget: ReturnType<typeof formatCurrency>;
   credits: ReturnType<typeof formatMovieCredits>;
+  flatrate: IProviderFormatted[];
   images: {
     backdrops: { url: ReturnType<typeof backdrop> }[];
     posters: { url: ReturnType<typeof poster> }[];
   };
   LetterboxdURI: IMovieLoggedFormatted["LetterboxdURI"];
   Rating: IMovieLoggedFormatted["Rating"];
-  recommendations: IMovieDetails[];
+  recommendations: ReturnType<typeof formatMovieRecommendations>;
   release_year: string;
   revenue: ReturnType<typeof formatCurrency>;
   tmdbURI: string;

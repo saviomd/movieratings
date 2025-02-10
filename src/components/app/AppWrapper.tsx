@@ -10,8 +10,7 @@ import {
   faStar,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
-import PropTypes from "prop-types";
-import React from "react";
+import type { ReactNode } from "react";
 
 import "animate.css/animate.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -28,12 +27,12 @@ library.add(
   faTimes,
 );
 
-function AppWrapper({ children }) {
+type PropsType = {
+  children: ReactNode;
+};
+
+function AppWrapper({ children }: PropsType) {
   return <div className="bg-dark text-white">{children}</div>;
 }
-
-AppWrapper.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default AppWrapper;

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import LoadingHandler, { dataStatuses } from "./LoadingHandler";
+import LoadingHandler from "./LoadingHandler";
 
 const meta = {
   title: "library/LoadingHandler",
@@ -8,14 +8,6 @@ const meta = {
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
-  },
-  argTypes: {
-    dataStatus: {
-      options: dataStatuses,
-      control: {
-        type: "select",
-      },
-    },
   },
 } satisfies Meta<typeof LoadingHandler>;
 
