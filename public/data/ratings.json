@@ -6392,7 +6392,7 @@
   },
   {
     "Date": "2013-05-19",
-    "Name": "Ong-Bak",
+    "Name": "Ong Bak",
     "Year": 2003,
     "LetterboxdURI": "https://boxd.it/1YZk",
     "Rating": 4
@@ -13249,5 +13249,68 @@
     "Year": 2023,
     "LetterboxdURI": "https://boxd.it/ugw2",
     "Rating": 3
+  },
+  {
+    "Date": "2025-03-11",
+    "Name": "Muse",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/SPVu",
+    "Rating": 3
+  },
+  {
+    "Date": "2025-03-15",
+    "Name": "Tau",
+    "Year": 2018,
+    "LetterboxdURI": "https://boxd.it/eujO",
+    "Rating": 3
+  },
+  {
+    "Date": "2025-03-22",
+    "Name": "Swimming Pool",
+    "Year": 2003,
+    "LetterboxdURI": "https://boxd.it/2aDU",
+    "Rating": 4
+  },
+  {
+    "Date": "2025-03-23",
+    "Name": "The Village",
+    "Year": 2004,
+    "LetterboxdURI": "https://boxd.it/21iS",
+    "Rating": 3
+  },
+  {
+    "Date": "2025-03-24",
+    "Name": "A Quiet Place: Day One",
+    "Year": 2024,
+    "LetterboxdURI": "https://boxd.it/sDAi",
+    "Rating": 4
+  },
+  {
+    "Date": "2025-03-30",
+    "Name": "Popeye the Sailor Meets Sindbad the Sailor",
+    "Year": 1936,
+    "LetterboxdURI": "https://boxd.it/2f70",
+    "Rating": 3
+  },
+  {
+    "Date": "2025-03-31",
+    "Name": "When Evil Lurks",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/rXBe",
+    "Rating": 3
+  },
+  {
+    "Date": "2025-04-06",
+    "Name": "Shin Kamen Rider",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/uDlw",
+    "Rating": 3
+  },
+  {
+    "Date": "2025-04-07",
+    "Name": "The Wild Robot",
+    "Year": 2024,
+    "LetterboxdURI": "https://boxd.it/IWFy",
+    "Rating": 4
   }
 ]
