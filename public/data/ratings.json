@@ -12161,7 +12161,7 @@
   {
     "Date": "2023-09-26",
     "Name": "Street Fighter Alpha: The Movie",
-    "Year": 1999,
+    "Year": 2000,
     "LetterboxdURI": "https://boxd.it/1IGw",
     "Rating": 2
   },
@@ -13458,6 +13458,41 @@
     "Name": "Mountainhead",
     "Year": 2025,
     "LetterboxdURI": "https://boxd.it/Sskq",
+    "Rating": 3
+  },
+  {
+    "Date": "2025-07-09",
+    "Name": "Superman",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/E9IU",
+    "Rating": 4
+  },
+  {
+    "Date": "2025-07-10",
+    "Name": "Better Man",
+    "Year": 2024,
+    "LetterboxdURI": "https://boxd.it/u6t8",
+    "Rating": 4
+  },
+  {
+    "Date": "2025-07-19",
+    "Name": "The Accountant²",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/wOm0",
+    "Rating": 3
+  },
+  {
+    "Date": "2025-07-30",
+    "Name": "Thunderbolts*",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/BfbQ",
+    "Rating": 3
+  },
+  {
+    "Date": "2025-07-30",
+    "Name": "The Fantastic Four: First Steps",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/mP6C",
     "Rating": 3
   }
 ]

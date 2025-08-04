@@ -6782,7 +6782,7 @@
   {
     "Date": "2023-09-26",
     "Name": "Street Fighter Alpha: The Movie",
-    "Year": 1999,
+    "Year": 2000,
     "LetterboxdURI": "https://boxd.it/4TFqGh",
     "Rating": 2,
     "Rewatch": "",
@@ -8628,5 +8628,55 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2025-07-05"
+  },
+  {
+    "Date": "2025-07-09",
+    "Name": "Superman",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/agDGxt",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2025-07-08"
+  },
+  {
+    "Date": "2025-07-10",
+    "Name": "Better Man",
+    "Year": 2024,
+    "LetterboxdURI": "https://boxd.it/agZ4JF",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2025-07-09"
+  },
+  {
+    "Date": "2025-07-19",
+    "Name": "The Accountant²",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/ao5qbl",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2025-07-18"
+  },
+  {
+    "Date": "2025-07-27",
+    "Name": "Thunderbolts*",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/auEePd",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2025-07-26"
+  },
+  {
+    "Date": "2025-07-27",
+    "Name": "The Fantastic Four: First Steps",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/auEiAB",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2025-07-26"
   }
 ]
