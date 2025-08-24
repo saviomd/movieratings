@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import MovieButton from "./MovieButton";
 import movieDiaryMock from "src/__mocks__/movieDiaryMock";

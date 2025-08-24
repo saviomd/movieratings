@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { QueryStatus } from "@tanstack/react-query";
 
 import MovieDetails from "./MovieDetails";
