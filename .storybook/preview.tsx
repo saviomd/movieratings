@@ -1,5 +1,4 @@
 import type { Preview } from "@storybook/react-vite";
-import React from "react";
 import { MemoryRouter } from "react-router";
 
 import { AppWrapper } from "../src/components/app";
