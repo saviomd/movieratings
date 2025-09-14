@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 
 type PropsType = {
   link: {

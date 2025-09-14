@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router";
 
 import { Footer, Header, SiteInfo } from "src/components/app";
 import { MovieDiaryProvider } from "src/contexts/MovieDiaryContext";

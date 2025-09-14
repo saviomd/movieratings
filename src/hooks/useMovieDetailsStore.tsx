@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 
 import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 import type { IMovieLoggedFormatted, MovieType } from "src/types";
 
