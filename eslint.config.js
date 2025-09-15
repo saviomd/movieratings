@@ -2,7 +2,7 @@ import js from "@eslint/js";
 import tanstackQuery from "@tanstack/eslint-plugin-query";
 import { defineConfig, globalIgnores } from "eslint/config";
 import jsxA11y from "eslint-plugin-jsx-a11y";
-import prettierRecommended from "eslint-plugin-prettier/recommended";
+import prettier from "eslint-config-prettier/flat";
 import reactPlugin from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
@@ -43,7 +43,7 @@ export default defineConfig(
   tanstackQuery.configs["flat/recommended"],
   storybook.configs["flat/recommended"],
   // Any other config imports go at the top
-  prettierRecommended,
+  prettier,
   {
     name: "overrides",
     rules: {
