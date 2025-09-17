@@ -50,7 +50,7 @@ export interface IMovieDetails {
   "watch/providers": {
     results: {
       BR: {
-        flatrate: IProvider[];
+        flatrate?: IProvider[];
       };
     };
   };
@@ -59,7 +59,7 @@ export interface IMovieDetails {
 export interface IMovieLogged {
   Date: string;
   LetterboxdURI: string;
-  Name: string;
+  Name: string | number;
   Rating: number;
   Year: number;
   WatchedDate?: string;
@@ -68,7 +68,7 @@ export interface IMovieLogged {
 export interface IMovieLoggedFormatted extends IMovieLogged {
   DateFormatted: string;
   Id: string;
-  WatchedDate?: string;
+  Name: string;
   WatchedDateFormatted?: string;
 }
 

@@ -16,9 +16,7 @@ const imgUrl = ({ path, type }: IImgUrl): string | undefined => {
     poster: "w780",
     profile: "h632",
   };
-  return path && type
-    ? `https://image.tmdb.org/t/p/${types[type]}${path}`
-    : undefined;
+  return path ? `https://image.tmdb.org/t/p/${types[type]}${path}` : undefined;
 };
 
 const tmdbApi = {

@@ -38,7 +38,7 @@ const useMovieDetailsStore = () => {
       }
       return null;
     },
-    enabled: !!movie?.Name && !!movie?.Year,
+    enabled: !!movie?.Name && !!movie.Year,
   });
 
   return {

@@ -5,14 +5,14 @@ import useMovieDiaryStore from "src/hooks/useMovieDiaryStore";
 
 type ContextType = ReturnType<typeof useMovieDiaryStore>;
 
-type PropsType = {
+interface IProps {
   children: ReactNode;
-};
+}
 
 const MovieDiaryContext = createContext({} as ContextType);
 const useMovieDiaryContext = () => useContext(MovieDiaryContext);
 
-function MovieDiaryProvider({ children }: PropsType) {
+function MovieDiaryProvider({ children }: IProps) {
   const store = useMovieDiaryStore();
 
   return (

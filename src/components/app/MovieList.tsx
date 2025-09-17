@@ -4,11 +4,11 @@ import { LoadingHandler } from "src/components/library";
 import type { MovieType } from "src/types";
 import MovieButton from "./MovieButton";
 
-type PropsType = {
+interface IProps {
   type: MovieType;
-};
+}
 
-function MovieList({ type }: PropsType) {
+function MovieList({ type }: IProps) {
   const {
     boundActions: { increaseMovieDiaryPage },
     movieDiaryFiltered,

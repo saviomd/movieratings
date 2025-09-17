@@ -26,7 +26,7 @@ interface IMovieDetailsFormatted
   br_title: string | undefined;
   budget: ReturnType<typeof formatCurrency>;
   credits: ReturnType<typeof formatMovieCredits>;
-  flatrate: IProviderFormatted[];
+  flatrate?: IProviderFormatted[];
   images: {
     backdrops: { url: ReturnType<typeof backdrop> }[];
     posters: { url: ReturnType<typeof poster> }[];
@@ -51,11 +51,12 @@ const formatMovieDetails = ({
   )?.title,
   budget: formatCurrency({ value: movieDetails.budget }),
   credits: formatMovieCredits({ credits: movieDetails.credits }),
-  flatrate:
-    movieDetails["watch/providers"]?.results?.BR?.flatrate?.map((item) => ({
+  flatrate: movieDetails["watch/providers"].results.BR.flatrate?.map(
+    (item) => ({
       ...item,
       ...(item.logo_path && { logo_url: logo({ path: item.logo_path }) }),
-    })) || [],
+    }),
+  ),
   images: {
     backdrops: movieDetails.images.backdrops.map(({ file_path }) => ({
       url: backdrop({ path: file_path }),
@@ -73,7 +74,7 @@ const formatMovieDetails = ({
   release_date: formatDate({ date: movieDetails.release_date }),
   release_year: movieDetails.release_date.split("-")[0],
   revenue: formatCurrency({ value: movieDetails.revenue }),
-  tmdbURI: `https://www.themoviedb.org/movie/${movieDetails.id}`,
+  tmdbURI: `https://www.themoviedb.org/movie/${String(movieDetails.id)}`,
 });
 
 export default formatMovieDetails;

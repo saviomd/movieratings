@@ -27,11 +27,11 @@ library.add(
   faTimes,
 );
 
-type PropsType = {
+interface IProps {
   children: ReactNode;
-};
+}
 
-function AppWrapper({ children }: PropsType) {
+function AppWrapper({ children }: IProps) {
   return <div className="bg-dark text-white">{children}</div>;
 }
 

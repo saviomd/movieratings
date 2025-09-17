@@ -29,7 +29,7 @@ function MovieDetailsHeader() {
       <div className="small">
         {movieDetails.vote_average} of 10
         <FontAwesomeIcon className="mx-1 text-warning" icon="star" />
-        <span className="small">{`by ${movieDetails.vote_count} TMDb users`}</span>
+        <span className="small">{`by ${String(movieDetails.vote_count)} TMDb users`}</span>
       </div>
     </div>
   );

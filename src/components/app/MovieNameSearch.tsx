@@ -5,11 +5,11 @@ import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
 import type { MovieType } from "src/types";
 
-type PropsType = {
+interface IProps {
   type: MovieType;
-};
+}
 
-function MovieNameSearch({ type }: PropsType) {
+function MovieNameSearch({ type }: IProps) {
   const {
     boundActions: { setMovieDiarySearchString },
     movieDiaryFiltered,
@@ -40,10 +40,13 @@ function MovieNameSearch({ type }: PropsType) {
     }
   })();
 
-  const handleReset = () => setMovieSearchString("");
+  const handleReset = () => {
+    setMovieSearchString("");
+  };
 
-  const handleSearch = ({ target }: ChangeEvent<HTMLInputElement>) =>
+  const handleSearch = ({ target }: ChangeEvent<HTMLInputElement>) => {
     setMovieSearchString(target.value);
+  };
 
   return (
     <div className="mb-3">

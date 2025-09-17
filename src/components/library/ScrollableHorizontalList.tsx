@@ -1,10 +1,10 @@
 import type { CSSProperties, ReactNode } from "react";
 
-type PropsType = {
+interface IProps {
   children: ReactNode;
-};
+}
 
-function ScrollableHorizontalList({ children }: PropsType) {
+function ScrollableHorizontalList({ children }: IProps) {
   const listStyle = {
     overflowX: "scroll",
     WebkitOverflowScrolling: "touch",

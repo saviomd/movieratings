@@ -26,7 +26,7 @@ const getMovieDetails = ({
   movieId,
 }: IGetMovieDetails): Promise<IMovieDetails> =>
   fetchTmdb({
-    path: `movie/${movieId}`,
+    path: `movie/${String(movieId)}`,
     queryString:
       "&append_to_response=alternative_titles,credits,images,recommendations,watch/providers&language=en-US&include_image_language=null,en,pt&region=BR",
   });
@@ -46,7 +46,7 @@ const getSearchMovies = ({
 }: IGetSearchMovies): Promise<IGetSearchMoviesReturn> =>
   fetchTmdb({
     path: "search/movie",
-    queryString: `&query=${Name}&year=${Year}`,
+    queryString: `&query=${Name}&year=${String(Year)}`,
   });
 
 export default {

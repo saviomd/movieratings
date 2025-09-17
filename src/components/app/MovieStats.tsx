@@ -5,7 +5,7 @@ import {
 } from "src/components/library";
 import type { DataStatusType } from "src/types";
 
-type PropsType = {
+interface IProps {
   movies: {
     groups: Record<number, number>;
     max: number;
@@ -15,7 +15,7 @@ type PropsType = {
     | "moviesPerDecadeReleased"
     | "moviesPerRatingGiven"
     | "moviesPerYearWatched";
-};
+}
 
 const title = {
   moviesPerDecadeReleased: "Per decade released",
@@ -23,7 +23,7 @@ const title = {
   moviesPerYearWatched: "Per year watched",
 };
 
-function MovieStats({ movies, moviesStatus, type }: PropsType) {
+function MovieStats({ movies, moviesStatus, type }: IProps) {
   return (
     <div className="border border-secondary p-3 rounded">
       <h1 className="h5">{title[type]}</h1>

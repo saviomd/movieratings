@@ -3,12 +3,12 @@ import { Link } from "react-router";
 
 import type { IMovieLoggedFormatted, MovieType } from "src/types";
 
-type PropsType = {
+interface IProps {
   movie: IMovieLoggedFormatted;
   type: MovieType;
-};
+}
 
-function MovieButton({ movie, type }: PropsType) {
+function MovieButton({ movie, type }: IProps) {
   let dateText;
   if (type === "Diary" && movie.WatchedDateFormatted) {
     dateText = `watched in ${movie.WatchedDateFormatted}`;

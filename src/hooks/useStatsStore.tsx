@@ -41,7 +41,9 @@ const useStatsStore = () => {
     combine: (results) => ({
       data: results.every(({ status }) => status === "success")
         ? formatRandomMovieList({
-            randomMovieList: results.map(({ data }) => data!),
+            randomMovieList: results.flatMap(({ data }) =>
+              data ? [data] : [],
+            ),
           })
         : [],
       status: results.reduce(

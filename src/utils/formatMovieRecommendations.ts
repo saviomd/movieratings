@@ -18,7 +18,7 @@ const formatMovieRecommendations = ({
   movies.map((movie) => ({
     ...movie,
     poster_url: poster({ path: movie.poster_path }),
-    tmdbURI: `https://www.themoviedb.org/movie/${movie.id}`,
+    tmdbURI: `https://www.themoviedb.org/movie/${String(movie.id)}`,
   }));
 
 export default formatMovieRecommendations;

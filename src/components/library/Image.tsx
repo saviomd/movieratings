@@ -2,13 +2,13 @@ import type { CSSProperties } from "react";
 
 import type { ImgType } from "src/types";
 
-type PropsType = {
+interface IProps {
   src?: string;
   title: string;
   type: ImgType;
-};
+}
 
-function Image({ src, title, type }: PropsType) {
+function Image({ src, title, type }: IProps) {
   const types = {
     backdrop: {
       height: 720,
@@ -41,7 +41,7 @@ function Image({ src, title, type }: PropsType) {
     );
   }
   const wrapperStyle = {
-    "--bs-aspect-ratio": `${(dimensions.height / dimensions.width) * 100}%`,
+    "--bs-aspect-ratio": `${String((dimensions.height / dimensions.width) * 100)}%`,
   } as CSSProperties;
   return (
     <div

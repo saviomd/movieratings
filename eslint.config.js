@@ -11,20 +11,25 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default defineConfig(
-  globalIgnores(["!.storybook", "dist"]),
+  globalIgnores([".storybook", "dist", "eslint.config.js"]),
   {
     name: "project",
     files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
   },
   {
     name: "javascript",
     extends: [js.configs.recommended],
   },
-  tseslint.configs.recommended,
+  tseslint.configs.strictTypeChecked,
+  tseslint.configs.stylisticTypeChecked,
   {
     name: "react",
     extends: [

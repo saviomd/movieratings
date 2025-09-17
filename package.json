@@ -8,6 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint .",
     "lint:config-inspector": "npx @eslint/config-inspector@latest",
+    "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "format": "npx prettier . --write",
     "prepare": "husky",

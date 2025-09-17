@@ -35,7 +35,7 @@ function MovieDetailsCastCrew() {
                 />
                 {person.name}
                 <div className="fst-italic small">
-                  {person.character || person.job?.join(" / ")}
+                  {person.character ?? person.job.join(" / ")}
                 </div>
               </Anchor>
             </li>

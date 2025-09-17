@@ -5,14 +5,14 @@ import useMovieDetailsStore from "src/hooks/useMovieDetailsStore";
 
 type ContextType = ReturnType<typeof useMovieDetailsStore>;
 
-type PropsType = {
+interface IProps {
   children: ReactNode;
-};
+}
 
 const MovieDetailsContext = createContext({} as ContextType);
 const useMovieDetailsContext = () => useContext(MovieDetailsContext);
 
-function MovieDetailsProvider({ children }: PropsType) {
+function MovieDetailsProvider({ children }: IProps) {
   const store = useMovieDetailsStore();
 
   return (

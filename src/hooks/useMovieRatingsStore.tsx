@@ -16,13 +16,9 @@ type ActionType =
   | { type: "INCREASE_MOVIE_RATINGS_PAGE" }
   | { type: "SET_MOVIE_RATINGS_SEARCH_STRING"; payload: string };
 
-interface IDecadeGroup {
-  [key: string]: number;
-}
+type DecadeGroupType = Record<string, number>;
 
-interface IRatingGroup {
-  [key: number]: number;
-}
+type RatingGroupType = Record<number, number>;
 
 const { fetchMovieRatings } = letterboxdServices;
 
@@ -50,11 +46,14 @@ const useMovieRatingsStore = () => {
 
   const boundActions = useMemo(
     () => ({
-      increaseMovieRatingsPage: () =>
-        dispatch({ type: "INCREASE_MOVIE_RATINGS_PAGE" }),
+      increaseMovieRatingsPage: () => {
+        dispatch({ type: "INCREASE_MOVIE_RATINGS_PAGE" });
+      },
       setMovieRatingsSearchString: (
         payload: IState["movieRatingsSearchString"],
-      ) => dispatch({ type: "SET_MOVIE_RATINGS_SEARCH_STRING", payload }),
+      ) => {
+        dispatch({ type: "SET_MOVIE_RATINGS_SEARCH_STRING", payload });
+      },
     }),
     [],
   );
@@ -82,11 +81,11 @@ const useMovieRatingsStore = () => {
   }, [movieRatingsFiltered, state.movieRatingsPage]);
 
   const moviesPerDecadeReleased = useMemo(() => {
-    const groups = movieRatings.reduce((acc, curr) => {
+    const groups = movieRatings.reduce<DecadeGroupType>((acc, curr) => {
       const decade = `${curr.Year.toString().substring(0, 3)}0`;
       acc[decade] = acc[decade] ? acc[decade] + 1 : 1;
       return acc;
-    }, {} as IDecadeGroup);
+    }, {});
     let max = 0;
     Object.values(groups).forEach((decade) => {
       max = decade > max ? decade : max;
@@ -95,11 +94,11 @@ const useMovieRatingsStore = () => {
   }, [movieRatings]);
 
   const moviesPerRatingGiven = useMemo(() => {
-    const groups = movieRatings.reduce((acc, curr) => {
+    const groups = movieRatings.reduce<RatingGroupType>((acc, curr) => {
       const rating = curr.Rating;
       acc[rating] = acc[rating] ? acc[rating] + 1 : 1;
       return acc;
-    }, {} as IRatingGroup);
+    }, {});
     let max = 0;
     Object.values(groups).forEach((rating) => {
       max = rating > max ? rating : max;

@@ -3,11 +3,11 @@ import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 
 import type { MessageType } from "src/types";
 
-type PropsType = {
+interface IProps {
   type: MessageType;
-};
+}
 
-const Message = ({ type }: PropsType) => {
+const Message = ({ type }: IProps) => {
   const messages = {
     error: {
       icon: "sad-tear",

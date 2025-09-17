@@ -5,14 +5,14 @@ import useMovieRatingsStore from "src/hooks/useMovieRatingsStore";
 
 type ContextType = ReturnType<typeof useMovieRatingsStore>;
 
-type PropsType = {
+interface IProps {
   children: ReactNode;
-};
+}
 
 const MovieRatingsContext = createContext({} as ContextType);
 const useMovieRatingsContext = () => useContext(MovieRatingsContext);
 
-function MovieRatingsProvider({ children }: PropsType) {
+function MovieRatingsProvider({ children }: IProps) {
   const store = useMovieRatingsStore();
 
   return (

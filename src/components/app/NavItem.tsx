@@ -2,15 +2,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router";
 
-type PropsType = {
+interface IProps {
   link: {
     icon: FontAwesomeIconProps["icon"];
     name: string;
     path: string;
   };
-};
+}
 
-function NavItem({ link }: PropsType) {
+function NavItem({ link }: IProps) {
   return (
     <NavLink
       to={link.path}

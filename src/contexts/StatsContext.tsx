@@ -5,14 +5,14 @@ import useStatsStore from "src/hooks/useStatsStore";
 
 type ContextType = ReturnType<typeof useStatsStore>;
 
-type PropsType = {
+interface IProps {
   children: ReactNode;
-};
+}
 
 const StatsContext = createContext({} as ContextType);
 const useStatsContext = () => useContext(StatsContext);
 
-function StatsProvider({ children }: PropsType) {
+function StatsProvider({ children }: IProps) {
   const store = useStatsStore();
 
   return (

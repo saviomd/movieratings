@@ -18,7 +18,7 @@ function MovieDetailsStats() {
     spoken_languages = [],
   } = movieDetails;
   const stats = [
-    { title: "Runtime", value: `${runtime} minutes` },
+    { title: "Runtime", value: `${String(runtime)} minutes` },
     { title: "Release date", value: release_date },
     { title: "Genres", value: genres.map(({ name }) => name) },
     { title: "Budget", value: budget },

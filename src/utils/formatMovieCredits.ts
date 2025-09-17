@@ -14,18 +14,21 @@ interface IMovieCreditsFormatted extends Omit<IMovieCredits, "cast" | "crew"> {
 
 const formatMovieCredits = ({ credits }: IParams): IMovieCreditsFormatted => ({
   ...credits,
-  cast: credits?.cast
+  cast: credits.cast
     .map((person) => formatPerson({ person }))
     .sort((a, b) => a.order - b.order),
-  crew: credits?.crew
-    .reduce((previous, current): PersonFormattedListType => {
-      const found = previous.find(({ id }) => id === current.id);
-      if (found) {
-        found.job = [...found.job, current.job];
-        return previous;
-      }
-      return [...previous, formatPerson({ person: current })];
-    }, [] as PersonFormattedListType)
+  crew: credits.crew
+    .reduce<PersonFormattedListType>(
+      (previous, current): PersonFormattedListType => {
+        const found = previous.find(({ id }) => id === current.id);
+        if (found) {
+          found.job = [...found.job, current.job];
+          return previous;
+        }
+        return [...previous, formatPerson({ person: current })];
+      },
+      [],
+    )
     .sort((a, b) => b.popularity - a.popularity),
 });
 

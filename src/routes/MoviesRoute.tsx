@@ -1,11 +1,11 @@
 import { MovieList, MovieNameSearch } from "src/components/app";
 import type { MovieType } from "src/types";
 
-type PropsType = {
+interface IProps {
   type: MovieType;
-};
+}
 
-function MoviesRoute({ type }: PropsType) {
+function MoviesRoute({ type }: IProps) {
   return (
     <>
       <h1 className="h4">{type}</h1>

@@ -16,9 +16,7 @@ type ActionType =
   | { type: "INCREASE_MOVIE_DIARY_PAGE" }
   | { type: "SET_MOVIE_DIARY_SEARCH_STRING"; payload: string };
 
-interface IYearGroup {
-  [key: string]: number;
-}
+type YearGroupType = Record<string, number>;
 
 const { fetchMovieDiary } = letterboxdServices;
 
@@ -43,10 +41,14 @@ const useMovieDetailsStore = () => {
 
   const boundActions = useMemo(
     () => ({
-      increaseMovieDiaryPage: () =>
-        dispatch({ type: "INCREASE_MOVIE_DIARY_PAGE" }),
-      setMovieDiarySearchString: (payload: IState["movieDiarySearchString"]) =>
-        dispatch({ type: "SET_MOVIE_DIARY_SEARCH_STRING", payload }),
+      increaseMovieDiaryPage: () => {
+        dispatch({ type: "INCREASE_MOVIE_DIARY_PAGE" });
+      },
+      setMovieDiarySearchString: (
+        payload: IState["movieDiarySearchString"],
+      ) => {
+        dispatch({ type: "SET_MOVIE_DIARY_SEARCH_STRING", payload });
+      },
     }),
     [],
   );
@@ -74,11 +76,11 @@ const useMovieDetailsStore = () => {
   }, [movieDiaryFiltered, state.movieDiaryPage]);
 
   const moviesPerYearWatched = useMemo(() => {
-    const groups = movieDiary.reduce((acc, curr) => {
-      const year = curr.WatchedDate?.split("-")[0] || "";
+    const groups = movieDiary.reduce<YearGroupType>((acc, curr) => {
+      const year = curr.WatchedDate?.split("-")[0] ?? "";
       acc[year] = acc[year] ? acc[year] + 1 : 1;
       return acc;
-    }, {} as IYearGroup);
+    }, {});
     let max = 0;
     Object.values(groups).forEach((year) => {
       max = year > max ? year : max;
