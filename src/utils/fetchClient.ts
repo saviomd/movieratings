@@ -10,7 +10,7 @@ const fetchClient = async ({
 }: IParams): Promise<any> => {
   const response = await fetch(`${url}${queryString ? `?${queryString}` : ""}`);
   if (!response.ok) {
-    throw Error(response.status.toString());
+    throw new Error(response.status.toString());
   }
   return response.json();
 };

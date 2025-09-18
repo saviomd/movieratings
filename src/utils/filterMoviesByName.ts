@@ -11,6 +11,8 @@ const filterMoviesByName = ({
 }: IParams): IMovieLoggedFormatted[] =>
   movieList
     .filter(({ Name }) => Name.toLowerCase().includes(value.toLowerCase()))
-    .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime());
+    .toSorted(
+      (a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime(),
+    );
 
 export default filterMoviesByName;

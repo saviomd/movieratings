@@ -37,7 +37,7 @@ function reducer(state: IState, action: ActionType) {
         movieRatingsSearchString: action.payload.toLowerCase(),
       };
     default:
-      throw new Error();
+      throw new Error("Unknown action.type");
   }
 }
 
@@ -82,14 +82,14 @@ const useMovieRatingsStore = () => {
 
   const moviesPerDecadeReleased = useMemo(() => {
     const groups = movieRatings.reduce<DecadeGroupType>((acc, curr) => {
-      const decade = `${curr.Year.toString().substring(0, 3)}0`;
+      const decade = `${curr.Year.toString().slice(0, 3)}0`;
       acc[decade] = acc[decade] ? acc[decade] + 1 : 1;
       return acc;
     }, {});
     let max = 0;
-    Object.values(groups).forEach((decade) => {
-      max = decade > max ? decade : max;
-    });
+    for (const decade of Object.values(groups)) {
+      max = Math.max(decade, max);
+    }
     return { groups, max };
   }, [movieRatings]);
 
@@ -100,9 +100,9 @@ const useMovieRatingsStore = () => {
       return acc;
     }, {});
     let max = 0;
-    Object.values(groups).forEach((rating) => {
-      max = rating > max ? rating : max;
-    });
+    for (const rating of Object.values(groups)) {
+      max = Math.max(rating, max);
+    }
     return { groups, max };
   }, [movieRatings]);
 

@@ -6,7 +6,7 @@ interface IParams {
 }
 
 const formatMovieList = ({ movieList }: IParams): IMovieLoggedFormatted[] => {
-  return [...movieList].reverse().map((movie) => ({
+  return [...movieList].toReversed().map((movie) => ({
     ...movie,
     DateFormatted: formatDate({ date: movie.Date }),
     Id: movie.LetterboxdURI.split("boxd.it/")[1],

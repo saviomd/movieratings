@@ -36,7 +36,7 @@ function MovieNameSearch({ type }: IProps) {
           setMovieSearchString: setMovieRatingsSearchString,
         };
       default:
-        throw new Error();
+        throw new Error("Unknown type");
     }
   })();
 

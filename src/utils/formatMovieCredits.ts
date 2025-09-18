@@ -16,7 +16,7 @@ const formatMovieCredits = ({ credits }: IParams): IMovieCreditsFormatted => ({
   ...credits,
   cast: credits.cast
     .map((person) => formatPerson({ person }))
-    .sort((a, b) => a.order - b.order),
+    .toSorted((a, b) => a.order - b.order),
   crew: credits.crew
     .reduce<PersonFormattedListType>(
       (previous, current): PersonFormattedListType => {
@@ -29,7 +29,7 @@ const formatMovieCredits = ({ credits }: IParams): IMovieCreditsFormatted => ({
       },
       [],
     )
-    .sort((a, b) => b.popularity - a.popularity),
+    .toSorted((a, b) => b.popularity - a.popularity),
 });
 
 export default formatMovieCredits;

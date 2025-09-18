@@ -32,7 +32,7 @@ function reducer(state: IState, action: ActionType) {
     case "SET_MOVIE_DIARY_SEARCH_STRING":
       return { ...state, movieDiarySearchString: action.payload.toLowerCase() };
     default:
-      throw new Error();
+      throw new Error("Unknown action.type");
   }
 }
 
@@ -82,9 +82,9 @@ const useMovieDetailsStore = () => {
       return acc;
     }, {});
     let max = 0;
-    Object.values(groups).forEach((year) => {
-      max = year > max ? year : max;
-    });
+    for (const year of Object.values(groups)) {
+      max = Math.max(year, max);
+    }
     return { groups, max };
   }, [movieDiary]);
 

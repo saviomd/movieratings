@@ -13,7 +13,7 @@ const useStatsStore = () => {
   const movies = useMemo(
     () =>
       movieRatings
-        .sort(() => 0.5 - Math.random())
+        .toSorted(() => 0.5 - Math.random())
         .slice(0, 6)
         .map(({ LetterboxdURI, Name, Rating, Year }) => ({
           LetterboxdURI,

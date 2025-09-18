@@ -15,6 +15,7 @@ function MovieButton({ movie, type }: IProps) {
   } else if (type === "Ratings" && movie.DateFormatted) {
     dateText = `rated in ${movie.DateFormatted}`;
   }
+  const stars = [...Array.from({ length: movie.Rating }).keys()];
   return (
     <Link className="btn btn-secondary d-block" to={`/movie/${movie.Id}`}>
       <div className="text-start text-truncate">
@@ -23,7 +24,7 @@ function MovieButton({ movie, type }: IProps) {
       </div>
       <div className="align-items-end row small">
         <div className="col text-start text-warning">
-          {Array.from(Array(movie.Rating).keys()).map((item) => (
+          {stars.map((item) => (
             <FontAwesomeIcon key={item} className="me-1" icon="star" />
           ))}
         </div>
