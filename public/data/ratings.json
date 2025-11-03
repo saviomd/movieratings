@@ -6392,7 +6392,7 @@
   },
   {
     "Date": "2013-05-19",
-    "Name": "Ong Bak",
+    "Name": "Ong-Bak",
     "Year": 2003,
     "LetterboxdURI": "https://boxd.it/1YZk",
     "Rating": 4
@@ -13490,7 +13490,7 @@
   },
   {
     "Date": "2025-07-30",
-    "Name": "The Fantastic Four: First Steps",
+    "Name": "The Fantastic 4: First Steps",
     "Year": 2025,
     "LetterboxdURI": "https://boxd.it/mP6C",
     "Rating": 3
@@ -13640,6 +13640,27 @@
     "Name": "Black Swan",
     "Year": 2010,
     "LetterboxdURI": "https://boxd.it/Sw0",
+    "Rating": 4
+  },
+  {
+    "Date": "2025-10-11",
+    "Name": "The Gorge",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/zRqK",
+    "Rating": 3
+  },
+  {
+    "Date": "2025-10-19",
+    "Name": "Predator: Killer of Killers",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/QYvQ",
+    "Rating": 4
+  },
+  {
+    "Date": "2025-10-27",
+    "Name": "Weapons",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/EMTM",
     "Rating": 4
   }
 ]

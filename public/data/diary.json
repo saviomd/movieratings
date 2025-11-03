@@ -8671,7 +8671,7 @@
   },
   {
     "Date": "2025-07-27",
-    "Name": "The Fantastic Four: First Steps",
+    "Name": "The Fantastic 4: First Steps",
     "Year": 2025,
     "LetterboxdURI": "https://boxd.it/auEiAB",
     "Rating": 3,
@@ -8888,5 +8888,35 @@
     "Rewatch": "",
     "Tags": "",
     "WatchedDate": "2025-10-04"
+  },
+  {
+    "Date": "2025-10-11",
+    "Name": "The Gorge",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/bkrJY3",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2025-10-10"
+  },
+  {
+    "Date": "2025-10-19",
+    "Name": "Predator: Killer of Killers",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/bpMxoJ",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2025-10-18"
+  },
+  {
+    "Date": "2025-10-27",
+    "Name": "Weapons",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/bvfYlF",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "WatchedDate": "2025-10-26"
   }
 ]
