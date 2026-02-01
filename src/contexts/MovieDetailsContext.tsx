@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 import type { ReactNode } from "react";
 
-import useMovieDetailsStore from "src/hooks/useMovieDetailsStore";
+import useMovieDetailsStore from "~/hooks/useMovieDetailsStore";
 
 type ContextType = ReturnType<typeof useMovieDetailsStore>;
 

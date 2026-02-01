@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 
-import type { MessageType } from "src/types";
+import type { MessageType } from "~/types";
 
 interface IProps {
   type: MessageType;

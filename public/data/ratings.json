@@ -8282,7 +8282,7 @@
   },
   {
     "Date": "2015-10-13",
-    "Name": "Uma Escola Atrapalhada",
+    "Name": "A Messed-Up School",
     "Year": 1990,
     "LetterboxdURI": "https://boxd.it/4AJo",
     "Rating": 4
@@ -13217,7 +13217,7 @@
   },
   {
     "Date": "2025-02-17",
-    "Name": "18×2 Beyond Youthful Days",
+    "Name": "18x2 Beyond Youthful Days",
     "Year": 2024,
     "LetterboxdURI": "https://boxd.it/J4Lk",
     "Rating": 5
@@ -14061,5 +14061,82 @@
     "Year": 2020,
     "LetterboxdURI": "https://boxd.it/qs3I",
     "Rating": 4
+  },
+  {
+    "Date": "2026-01-06",
+    "Name": "Burrow",
+    "Year": 2020,
+    "LetterboxdURI": "https://boxd.it/s2KU",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-01-06",
+    "Name": "22 vs. Earth",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/uyDA",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-01-06",
+    "Name": "Twenty Something",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/wbzu",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-01-07",
+    "Name": "Nona",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/wbzE",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-01-07",
+    "Name": "Ciao Alberto",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/x4F8",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-01-07",
+    "Name": "Carl's Date",
+    "Year": 2023,
+    "LetterboxdURI": "https://boxd.it/EInC",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-01-10",
+    "Name": "Self",
+    "Year": 2024,
+    "LetterboxdURI": "https://boxd.it/KmPw",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-01-11",
+    "Name": "The King of Fighters",
+    "Year": 2009,
+    "LetterboxdURI": "https://boxd.it/RD0",
+    "Rating": 1
+  },
+  {
+    "Date": "2026-01-17",
+    "Name": "The Rip",
+    "Year": 2026,
+    "LetterboxdURI": "https://boxd.it/NP5y",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-01-24",
+    "Name": "Splitsville",
+    "Year": 2025,
+    "LetterboxdURI": "https://boxd.it/PGtA",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-02-01",
+    "Name": "Snake Eyes: G.I. Joe Origins",
+    "Year": 2021,
+    "LetterboxdURI": "https://boxd.it/kRf8",
+    "Rating": 2
   }
 ]

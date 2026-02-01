@@ -1,5 +1,5 @@
-import { MovieList, MovieNameSearch } from "src/components/app";
-import type { MovieType } from "src/types";
+import { MovieList, MovieNameSearch } from "~/components/app";
+import type { MovieType } from "~/types";
 
 interface IProps {
   type: MovieType;

@@ -2,8 +2,8 @@ import {
   LoadingHandler,
   ProgressBar,
   ScrollableHorizontalList,
-} from "src/components/library";
-import type { DataStatusType } from "src/types";
+} from "~/components/library";
+import type { DataStatusType } from "~/types";
 
 interface IProps {
   movies: {

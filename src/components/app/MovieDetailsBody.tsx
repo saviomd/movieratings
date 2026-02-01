@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
-import { Image, ScrollableHorizontalList } from "src/components/library";
+import { useMovieDetailsContext } from "~/contexts/MovieDetailsContext";
+import { Image, ScrollableHorizontalList } from "~/components/library";
 import MovieDetailsCastCrew from "./MovieDetailsCastCrew";
 import MovieDetailsStats from "./MovieDetailsStats";
 

@@ -43,7 +43,7 @@ export default defineConfig(
       },
     },
   },
-  reactHooks.configs["recommended-latest"],
+  reactHooks.configs.flat.recommended,
   reactRefresh.configs.vite,
   jsxA11y.flatConfigs.recommended,
   tanstackQuery.configs["flat/recommended"],

@@ -2,9 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { useParams } from "react-router";
 
-import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
-import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
-import { formatMovieDetails, tmdbServices } from "src/utils";
+import { useMovieDiaryContext } from "~/contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "~/contexts/MovieRatingsContext";
+import { formatMovieDetails, tmdbServices } from "~/utils";
 
 const { getMovieDetails, getSearchMovies } = tmdbServices;
 

@@ -1,5 +1,5 @@
-import { Image, ScrollableHorizontalList } from "src/components/library";
-import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
+import { Image, ScrollableHorizontalList } from "~/components/library";
+import { useMovieDetailsContext } from "~/contexts/MovieDetailsContext";
 
 function MovieDetailsStats() {
   const { movieDetails } = useMovieDetailsContext();
@@ -9,13 +9,13 @@ function MovieDetailsStats() {
   const {
     budget,
     flatrate = [],
-    genres = [],
-    production_companies = [],
-    production_countries = [],
+    genres,
+    production_companies,
+    production_countries,
     release_date,
     revenue,
     runtime,
-    spoken_languages = [],
+    spoken_languages,
   } = movieDetails;
   const stats = [
     { title: "Runtime", value: `${String(runtime)} minutes` },

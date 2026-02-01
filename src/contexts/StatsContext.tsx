@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 import type { ReactNode } from "react";
 
-import useStatsStore from "src/hooks/useStatsStore";
+import useStatsStore from "~/hooks/useStatsStore";
 
 type ContextType = ReturnType<typeof useStatsStore>;
 

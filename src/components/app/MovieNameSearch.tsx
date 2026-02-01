@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { ChangeEvent } from "react";
 
-import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
-import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
-import type { MovieType } from "src/types";
+import { useMovieDiaryContext } from "~/contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "~/contexts/MovieRatingsContext";
+import type { MovieType } from "~/types";
 
 interface IProps {
   type: MovieType;

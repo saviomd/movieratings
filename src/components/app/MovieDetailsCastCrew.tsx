@@ -1,12 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react";
 
-import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
-import {
-  Anchor,
-  Image,
-  ScrollableHorizontalList,
-} from "src/components/library";
+import { useMovieDetailsContext } from "~/contexts/MovieDetailsContext";
+import { Anchor, Image, ScrollableHorizontalList } from "~/components/library";
 
 type CreditType = "cast" | "crew";
 

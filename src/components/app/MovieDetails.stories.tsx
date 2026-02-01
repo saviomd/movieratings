@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { QueryStatus } from "@tanstack/react-query";
 
 import MovieDetails from "./MovieDetails";
-import { MovieDetailsContextMock } from "src/contexts/MovieDetailsContext";
-import type { IMovieDetails } from "src/types";
-import { formatMovieDetails, formatMovieList } from "src/utils";
-import movieDetailsMock from "src/__mocks__/movieDetailsMock";
+import { MovieDetailsContextMock } from "~/contexts/MovieDetailsContext";
+import type { IMovieDetails } from "~/types";
+import { formatMovieDetails, formatMovieList } from "~/utils";
+import movieDetailsMock from "~/__mocks__/movieDetailsMock";
 
 const movie = formatMovieList({
   movieList: [

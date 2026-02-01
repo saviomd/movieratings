@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 
-import type { ImgType } from "src/types";
+import type { ImgType } from "~/types";
 
 interface IProps {
   src?: string;

@@ -1,5 +1,5 @@
-import { useMovieDetailsContext } from "src/contexts/MovieDetailsContext";
-import { LoadingHandler } from "src/components/library";
+import { useMovieDetailsContext } from "~/contexts/MovieDetailsContext";
+import { LoadingHandler } from "~/components/library";
 import MovieDetailsBody from "./MovieDetailsBody";
 import MovieDetailsHeader from "./MovieDetailsHeader";
 import MovieDetailsRecommendations from "./MovieDetailsRecommendations";

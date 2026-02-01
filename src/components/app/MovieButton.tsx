@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
 
-import type { IMovieLoggedFormatted, MovieType } from "src/types";
+import type { IMovieLoggedFormatted, MovieType } from "~/types";
 
 interface IProps {
   movie: IMovieLoggedFormatted;

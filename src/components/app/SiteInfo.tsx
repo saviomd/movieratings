@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Anchor } from "src/components/library";
-import { tmdbApi } from "src/utils";
+import { Anchor } from "~/components/library";
+import { tmdbApi } from "~/utils";
 
 function SiteInfo() {
   return (

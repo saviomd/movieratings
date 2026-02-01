@@ -5,7 +5,7 @@ import {
   filterMoviesByName,
   formatMovieList,
   letterboxdServices,
-} from "src/utils";
+} from "~/utils";
 
 interface IState {
   movieRatingsPage: number;

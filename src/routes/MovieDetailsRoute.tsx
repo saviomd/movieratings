@@ -1,5 +1,5 @@
-import { MovieDetails } from "src/components/app";
-import { MovieDetailsProvider } from "src/contexts/MovieDetailsContext";
+import { MovieDetails } from "~/components/app";
+import { MovieDetailsProvider } from "~/contexts/MovieDetailsContext";
 
 function MovieDetailsRoute() {
   return (

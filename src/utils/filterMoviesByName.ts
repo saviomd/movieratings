@@ -1,4 +1,4 @@
-import type { IMovieLoggedFormatted } from "src/types";
+import type { IMovieLoggedFormatted } from "~/types";
 
 interface IParams {
   movieList: IMovieLoggedFormatted[];

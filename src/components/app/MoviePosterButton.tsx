@@ -1,4 +1,4 @@
-import { Anchor, Image } from "src/components/library";
+import { Anchor, Image } from "~/components/library";
 
 interface IProps {
   href: string;

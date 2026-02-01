@@ -3,11 +3,7 @@ import formatDate from "./formatDate";
 import formatMovieCredits from "./formatMovieCredits";
 import formatMovieRecommendations from "./formatMovieRecommendations";
 import tmdbApi from "./tmdbApi";
-import type {
-  IMovieDetails,
-  IMovieLoggedFormatted,
-  IProvider,
-} from "src/types";
+import type { IMovieDetails, IMovieLoggedFormatted, IProvider } from "~/types";
 
 interface IParams {
   movie: IMovieLoggedFormatted;
@@ -18,11 +14,10 @@ interface IProviderFormatted extends IProvider {
   logo_url?: string;
 }
 
-interface IMovieDetailsFormatted
-  extends Omit<
-    IMovieDetails,
-    "budget" | "credits" | "images" | "recommendations" | "revenue"
-  > {
+interface IMovieDetailsFormatted extends Omit<
+  IMovieDetails,
+  "budget" | "credits" | "images" | "recommendations" | "revenue"
+> {
   br_title: string | undefined;
   budget: ReturnType<typeof formatCurrency>;
   credits: ReturnType<typeof formatMovieCredits>;

@@ -1,7 +1,7 @@
-import { useMovieDiaryContext } from "src/contexts/MovieDiaryContext";
-import { useMovieRatingsContext } from "src/contexts/MovieRatingsContext";
-import { LoadingHandler } from "src/components/library";
-import type { MovieType } from "src/types";
+import { useMovieDiaryContext } from "~/contexts/MovieDiaryContext";
+import { useMovieRatingsContext } from "~/contexts/MovieRatingsContext";
+import { LoadingHandler } from "~/components/library";
+import type { MovieType } from "~/types";
 import MovieButton from "./MovieButton";
 
 interface IProps {

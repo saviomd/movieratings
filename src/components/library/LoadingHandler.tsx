@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import Message from "./Message";
-import type { DataStatusType, MessageType } from "src/types";
+import type { DataStatusType, MessageType } from "~/types";
 
 interface IProps {
   children?: ReactNode;
@@ -12,7 +12,7 @@ interface IProps {
 
 const LoadingHandler = ({
   children,
-  dataStatus = "success",
+  dataStatus,
   hasData = true,
   messageNoData = "noData",
 }: IProps) => {

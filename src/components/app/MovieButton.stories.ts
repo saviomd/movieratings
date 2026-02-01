@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import MovieButton from "./MovieButton";
-import movieDiaryMock from "src/__mocks__/movieDiaryMock";
-import { formatMovieList } from "src/utils";
+import movieDiaryMock from "~/__mocks__/movieDiaryMock";
+import { formatMovieList } from "~/utils";
 
 const movies = formatMovieList({ movieList: movieDiaryMock.movieDiary });
 
