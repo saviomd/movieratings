@@ -1,5 +1,5 @@
+import tmdbApi from "./tmdbApi";
 import type { PathType } from "~/types";
-import { tmdbApi } from "~/utils";
 
 const { poster } = tmdbApi.img;
 

@@ -1,12 +1,12 @@
 import type { ComponentProps } from "react";
 
 import { MoviePosterButton, MovieStats } from "~/components/app";
-import { LoadingHandler } from "~/components/library";
+import { LoadingHandler, PageMetadata } from "~/components/library";
 import { useMovieDiaryContext } from "~/contexts/MovieDiaryContext";
 import { useMovieRatingsContext } from "~/contexts/MovieRatingsContext";
 import { useStatsContext } from "~/contexts/StatsContext";
 
-function StatsRoute() {
+export default function Stats() {
   const { moviesPerYearWatched, movieDiaryStatus } = useMovieDiaryContext();
   const { moviesPerDecadeReleased, moviesPerRatingGiven, movieRatingsStatus } =
     useMovieRatingsContext();
@@ -32,6 +32,7 @@ function StatsRoute() {
 
   return (
     <>
+      <PageMetadata />
       <h1 className="h4">Stats</h1>
       {stats.map(({ movies, moviesStatus, type }) => (
         <div className="mb-3" key={type}>
@@ -57,5 +58,3 @@ function StatsRoute() {
     </>
   );
 }
-
-export default StatsRoute;

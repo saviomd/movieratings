@@ -12,7 +12,13 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default defineConfig(
-  globalIgnores([".storybook", "dist", "eslint.config.js", "src/__mocks__"]),
+  globalIgnores([
+    ".react-router",
+    ".storybook",
+    "app/__mocks__",
+    "build",
+    "eslint.config.js",
+  ]),
   {
     name: "project",
     files: ["**/*.{js,jsx,ts,tsx}"],

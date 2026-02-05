@@ -5,7 +5,7 @@ interface IProps {
   type: MovieType;
 }
 
-function MoviesRoute({ type }: IProps) {
+export default function MovieLayout({ type }: IProps) {
   return (
     <>
       <h1 className="h4">{type}</h1>
@@ -20,5 +20,3 @@ function MoviesRoute({ type }: IProps) {
     </>
   );
 }
-
-export default MoviesRoute;
