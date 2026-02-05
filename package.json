@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "lint:config-inspector": "npx @eslint/config-inspector@latest",
     "lint:fix": "eslint . --fix",
-    "postbuild": "mv build/client/$npm_package_name/* build/client/ && rm -rf build/client/$npm_package_name",
+    "postbuild": "mv build/client/$npm_package_name/* build/client/ && rm -rf build/client/$npm_package_name && cp build/client/index.html build/client/404.html",
     "prepare": "husky",
     "storybook": "STORYBOOK=true storybook dev -p 6006",
     "build-storybook": "STORYBOOK=true storybook build -o build/client/storybook"
