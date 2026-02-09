@@ -1,5 +1,7 @@
-import { useMovieDiaryContext } from "~/contexts/MovieDiaryContext";
-import { useMovieRatingsContext } from "~/contexts/MovieRatingsContext";
+import { use } from "react";
+
+import { DiaryContext } from "~/contexts/DiaryContext";
+import { RatingsContext } from "~/contexts/RatingsContext";
 import { LoadingHandler } from "~/components/library";
 import type { MovieType } from "~/types";
 import MovieButton from "./MovieButton";
@@ -9,36 +11,37 @@ interface IProps {
 }
 
 function MovieList({ type }: IProps) {
-  const {
-    boundActions: { increaseMovieDiaryPage },
-    movieDiaryFiltered,
-    movieDiaryPaginated,
-    movieDiaryStatus,
-  } = useMovieDiaryContext();
-  const {
-    boundActions: { increaseMovieRatingsPage },
-    movieRatingsFiltered,
-    movieRatingsPaginated,
-    movieRatingsStatus,
-  } = useMovieRatingsContext();
-
-  const data = {
-    Diary: {
+  let data;
+  if (type === "Diary") {
+    const {
+      boundActions: { increaseMovieDiaryPage },
+      movieDiaryFiltered,
+      movieDiaryPaginated,
+      movieDiaryStatus,
+    } = use(DiaryContext);
+    data = {
       increaseMoviesPage: increaseMovieDiaryPage,
       moviesFiltered: movieDiaryFiltered,
       moviesPaginated: movieDiaryPaginated,
       moviesStatus: movieDiaryStatus,
-    },
-    Ratings: {
+    };
+  } else {
+    const {
+      boundActions: { increaseMovieRatingsPage },
+      movieRatingsFiltered,
+      movieRatingsPaginated,
+      movieRatingsStatus,
+    } = use(RatingsContext);
+    data = {
       increaseMoviesPage: increaseMovieRatingsPage,
       moviesFiltered: movieRatingsFiltered,
       moviesPaginated: movieRatingsPaginated,
       moviesStatus: movieRatingsStatus,
-    },
-  };
+    };
+  }
 
   const { increaseMoviesPage, moviesFiltered, moviesPaginated, moviesStatus } =
-    data[type];
+    data;
 
   return (
     <LoadingHandler

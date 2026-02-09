@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react";
 
-import { useMovieDetailsContext } from "~/contexts/MovieDetailsContext";
+import { useMovieContext } from "~/contexts/MovieContext";
 import { Anchor, Image, ScrollableHorizontalList } from "~/components/library";
 
 type CreditType = "cast" | "crew";
@@ -9,7 +9,7 @@ type CreditType = "cast" | "crew";
 const creditTypes: CreditType[] = ["cast", "crew"];
 
 function MovieDetailsCastCrew() {
-  const { movieDetails } = useMovieDetailsContext();
+  const { movieDetails } = useMovieContext();
   if (!movieDetails?.credits) {
     return null;
   }

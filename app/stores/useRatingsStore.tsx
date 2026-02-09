@@ -1,11 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
 import { useMemo, useReducer } from "react";
 
-import {
-  filterMoviesByName,
-  formatMovieList,
-  letterboxdServices,
-} from "~/utils";
+import { filterMoviesByName, letterboxdServices } from "~/utils";
 
 interface IState {
   movieRatingsPage: number;
@@ -15,12 +10,6 @@ interface IState {
 type ActionType =
   | { type: "INCREASE_MOVIE_RATINGS_PAGE" }
   | { type: "SET_MOVIE_RATINGS_SEARCH_STRING"; payload: string };
-
-type DecadeGroupType = Record<string, number>;
-
-type RatingGroupType = Record<number, number>;
-
-const { fetchMovieRatings } = letterboxdServices;
 
 const initialState: IState = {
   movieRatingsPage: 1,
@@ -41,7 +30,7 @@ function reducer(state: IState, action: ActionType) {
   }
 }
 
-const useMovieRatingsStore = () => {
+const useRatingsStore = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const boundActions = useMemo(
@@ -58,13 +47,8 @@ const useMovieRatingsStore = () => {
     [],
   );
 
-  const { data: movieRatings = [], status: movieRatingsStatus } = useQuery({
-    queryKey: ["movieRatings"],
-    queryFn: async () => {
-      const movieList = await fetchMovieRatings();
-      return formatMovieList({ movieList });
-    },
-  });
+  const { movieRatings, movieRatingsStatus } =
+    letterboxdServices.useMovieRatingsQuery();
 
   const movieRatingsFiltered = useMemo(
     () =>
@@ -80,32 +64,6 @@ const useMovieRatingsStore = () => {
     return movieRatingsFiltered.slice(0, size);
   }, [movieRatingsFiltered, state.movieRatingsPage]);
 
-  const moviesPerDecadeReleased = useMemo(() => {
-    const groups = movieRatings.reduce<DecadeGroupType>((acc, curr) => {
-      const decade = `${curr.Year.toString().slice(0, 3)}0`;
-      acc[decade] = acc[decade] ? acc[decade] + 1 : 1;
-      return acc;
-    }, {});
-    let max = 0;
-    for (const decade of Object.values(groups)) {
-      max = Math.max(decade, max);
-    }
-    return { groups, max };
-  }, [movieRatings]);
-
-  const moviesPerRatingGiven = useMemo(() => {
-    const groups = movieRatings.reduce<RatingGroupType>((acc, curr) => {
-      const rating = curr.Rating;
-      acc[rating] = acc[rating] ? acc[rating] + 1 : 1;
-      return acc;
-    }, {});
-    let max = 0;
-    for (const rating of Object.values(groups)) {
-      max = Math.max(rating, max);
-    }
-    return { groups, max };
-  }, [movieRatings]);
-
   return {
     ...state,
     boundActions,
@@ -113,9 +71,7 @@ const useMovieRatingsStore = () => {
     movieRatingsFiltered,
     movieRatingsPaginated,
     movieRatingsStatus,
-    moviesPerDecadeReleased,
-    moviesPerRatingGiven,
   };
 };
 
-export default useMovieRatingsStore;
+export default useRatingsStore;

@@ -1,11 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
 import { useMemo, useReducer } from "react";
 
-import {
-  filterMoviesByName,
-  formatMovieList,
-  letterboxdServices,
-} from "~/utils";
+import { filterMoviesByName, letterboxdServices } from "~/utils";
 
 interface IState {
   movieDiaryPage: number;
@@ -15,10 +10,6 @@ interface IState {
 type ActionType =
   | { type: "INCREASE_MOVIE_DIARY_PAGE" }
   | { type: "SET_MOVIE_DIARY_SEARCH_STRING"; payload: string };
-
-type YearGroupType = Record<string, number>;
-
-const { fetchMovieDiary } = letterboxdServices;
 
 const initialState: IState = {
   movieDiaryPage: 1,
@@ -36,7 +27,7 @@ function reducer(state: IState, action: ActionType) {
   }
 }
 
-const useMovieDetailsStore = () => {
+const useDiaryStore = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const boundActions = useMemo(
@@ -53,13 +44,8 @@ const useMovieDetailsStore = () => {
     [],
   );
 
-  const { data: movieDiary = [], status: movieDiaryStatus } = useQuery({
-    queryKey: ["movieDiary"],
-    queryFn: async () => {
-      const movieList = await fetchMovieDiary();
-      return formatMovieList({ movieList });
-    },
-  });
+  const { movieDiary, movieDiaryStatus } =
+    letterboxdServices.useMovieDiaryQuery();
 
   const movieDiaryFiltered = useMemo(
     () =>
@@ -75,19 +61,6 @@ const useMovieDetailsStore = () => {
     return movieDiaryFiltered.slice(0, size);
   }, [movieDiaryFiltered, state.movieDiaryPage]);
 
-  const moviesPerYearWatched = useMemo(() => {
-    const groups = movieDiary.reduce<YearGroupType>((acc, curr) => {
-      const year = curr.WatchedDate?.split("-")[0] ?? "";
-      acc[year] = acc[year] ? acc[year] + 1 : 1;
-      return acc;
-    }, {});
-    let max = 0;
-    for (const year of Object.values(groups)) {
-      max = Math.max(year, max);
-    }
-    return { groups, max };
-  }, [movieDiary]);
-
   return {
     ...state,
     boundActions,
@@ -95,8 +68,7 @@ const useMovieDetailsStore = () => {
     movieDiaryFiltered,
     movieDiaryPaginated,
     movieDiaryStatus,
-    moviesPerYearWatched,
   };
 };
 
-export default useMovieDetailsStore;
+export default useDiaryStore;

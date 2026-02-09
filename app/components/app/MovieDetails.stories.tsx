@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { QueryStatus } from "@tanstack/react-query";
 
 import MovieDetails from "./MovieDetails";
-import { MovieDetailsContextMock } from "~/contexts/MovieDetailsContext";
+import { MovieContext } from "~/contexts/MovieContext";
 import type { IMovieDetails } from "~/types";
 import { formatMovieDetails, formatMovieList } from "~/utils";
 import movieDetailsMock from "~/__mocks__/movieDetailsMock";
@@ -19,7 +19,7 @@ const movie = formatMovieList({
   ],
 })[0];
 
-const providerValue = {
+const movieContextValue = {
   movieDetails: formatMovieDetails({
     movie,
     movieDetails: movieDetailsMock as unknown as IMovieDetails,
@@ -36,9 +36,9 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <MovieDetailsContextMock.Provider value={providerValue}>
+      <MovieContext value={movieContextValue}>
         <Story />
-      </MovieDetailsContextMock.Provider>
+      </MovieContext>
     ),
   ],
 } satisfies Meta<typeof MovieDetails>;

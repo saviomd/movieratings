@@ -7,7 +7,7 @@ import {
 
 export default [
   layout("routes/appLayout.tsx", [
-    index("routes/home.tsx"),
+    index("routes/ratings.tsx"),
     route("diary", "routes/diary.tsx"),
     route("movie/:movieId", "routes/movie.tsx"),
     route("stats", "routes/stats.tsx"),

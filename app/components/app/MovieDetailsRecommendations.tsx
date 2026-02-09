@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { useMovieDetailsContext } from "~/contexts/MovieDetailsContext";
+import { useMovieContext } from "~/contexts/MovieContext";
 import { MoviePosterButton } from "~/components/app";
 import { ScrollableHorizontalList } from "~/components/library";
 
 function MovieDetailsRecommendations() {
-  const { movieDetails } = useMovieDetailsContext();
+  const { movieDetails } = useMovieContext();
   if (!movieDetails?.recommendations.length) {
     return null;
   }

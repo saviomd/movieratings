@@ -2,15 +2,18 @@ import type { ComponentProps } from "react";
 
 import { MoviePosterButton, MovieStats } from "~/components/app";
 import { LoadingHandler, PageMetadata } from "~/components/library";
-import { useMovieDiaryContext } from "~/contexts/MovieDiaryContext";
-import { useMovieRatingsContext } from "~/contexts/MovieRatingsContext";
-import { useStatsContext } from "~/contexts/StatsContext";
+import useStatsStore from "~/stores/useStatsStore";
 
 export default function Stats() {
-  const { moviesPerYearWatched, movieDiaryStatus } = useMovieDiaryContext();
-  const { moviesPerDecadeReleased, moviesPerRatingGiven, movieRatingsStatus } =
-    useMovieRatingsContext();
-  const { randomMovies, randomMoviesStatus } = useStatsContext();
+  const {
+    movieDiaryStatus,
+    movieRatingsStatus,
+    moviesPerDecadeReleased,
+    moviesPerRatingGiven,
+    moviesPerYearWatched,
+    randomMovies,
+    randomMoviesStatus,
+  } = useStatsStore();
 
   const stats: ComponentProps<typeof MovieStats>[] = [
     {

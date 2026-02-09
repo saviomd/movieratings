@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { use } from "react";
 import type { ChangeEvent } from "react";
 
-import { useMovieDiaryContext } from "~/contexts/MovieDiaryContext";
-import { useMovieRatingsContext } from "~/contexts/MovieRatingsContext";
+import { DiaryContext } from "~/contexts/DiaryContext";
+import { RatingsContext } from "~/contexts/RatingsContext";
 import type { MovieType } from "~/types";
 
 interface IProps {
@@ -10,35 +11,32 @@ interface IProps {
 }
 
 function MovieNameSearch({ type }: IProps) {
-  const {
-    boundActions: { setMovieDiarySearchString },
-    movieDiaryFiltered,
-    movieDiarySearchString,
-  } = useMovieDiaryContext();
-  const {
-    boundActions: { setMovieRatingsSearchString },
-    movieRatingsFiltered,
-    movieRatingsSearchString,
-  } = useMovieRatingsContext();
+  let data;
+  if (type === "Diary") {
+    const {
+      boundActions: { setMovieDiarySearchString },
+      movieDiaryFiltered,
+      movieDiarySearchString,
+    } = use(DiaryContext);
+    data = {
+      movieSearchString: movieDiarySearchString,
+      moviesFiltered: movieDiaryFiltered,
+      setMovieSearchString: setMovieDiarySearchString,
+    };
+  } else {
+    const {
+      boundActions: { setMovieRatingsSearchString },
+      movieRatingsFiltered,
+      movieRatingsSearchString,
+    } = use(RatingsContext);
+    data = {
+      movieSearchString: movieRatingsSearchString,
+      moviesFiltered: movieRatingsFiltered,
+      setMovieSearchString: setMovieRatingsSearchString,
+    };
+  }
 
-  const { setMovieSearchString, movieSearchString, moviesFiltered } = (() => {
-    switch (type) {
-      case "Diary":
-        return {
-          movieSearchString: movieDiarySearchString,
-          moviesFiltered: movieDiaryFiltered,
-          setMovieSearchString: setMovieDiarySearchString,
-        };
-      case "Ratings":
-        return {
-          movieSearchString: movieRatingsSearchString,
-          moviesFiltered: movieRatingsFiltered,
-          setMovieSearchString: setMovieRatingsSearchString,
-        };
-      default:
-        throw new Error("Unknown type");
-    }
-  })();
+  const { setMovieSearchString, movieSearchString, moviesFiltered } = data;
 
   const handleReset = () => {
     setMovieSearchString("");

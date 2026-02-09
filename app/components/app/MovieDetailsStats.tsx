@@ -1,8 +1,8 @@
 import { Image, ScrollableHorizontalList } from "~/components/library";
-import { useMovieDetailsContext } from "~/contexts/MovieDetailsContext";
+import { useMovieContext } from "~/contexts/MovieContext";
 
 function MovieDetailsStats() {
-  const { movieDetails } = useMovieDetailsContext();
+  const { movieDetails } = useMovieContext();
   if (!movieDetails) {
     return null;
   }

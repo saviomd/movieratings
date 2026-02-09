@@ -1,28 +1,51 @@
+import { useQuery } from "@tanstack/react-query";
+
 import fetchClient from "./fetchClient";
+import formatMovieList from "./formatMovieList";
 import type { IMovieLogged } from "~/types";
 
 interface IFetchLetterboxd {
   path: string;
 }
 
-interface ILetterboxdId {
-  url: string;
-}
-
 const fetchLetterboxd = ({ path }: IFetchLetterboxd): Promise<IMovieLogged[]> =>
   fetchClient({ url: path });
 
-const fetchMovieDiary = (): Promise<IMovieLogged[]> =>
-  fetchLetterboxd({ path: "/movieratings/data/diary.json" });
+const useMovieDiaryQuery = () => {
+  const { data: movieDiary = [], status: movieDiaryStatus } = useQuery({
+    queryKey: ["movieDiary"],
+    queryFn: async () => {
+      const movieList = await fetchLetterboxd({
+        path: "/movieratings/data/diary.json",
+      });
+      return formatMovieList({ movieList });
+    },
+  });
 
-const fetchMovieRatings = (): Promise<IMovieLogged[]> =>
-  fetchLetterboxd({ path: "/movieratings/data/ratings.json" });
+  return {
+    movieDiary,
+    movieDiaryStatus,
+  };
+};
 
-const letterboxdId = ({ url }: ILetterboxdId): string =>
-  url.split("boxd.it/")[1];
+const useMovieRatingsQuery = () => {
+  const { data: movieRatings = [], status: movieRatingsStatus } = useQuery({
+    queryKey: ["movieRatings"],
+    queryFn: async () => {
+      const movieList = await fetchLetterboxd({
+        path: "/movieratings/data/ratings.json",
+      });
+      return formatMovieList({ movieList });
+    },
+  });
+
+  return {
+    movieRatings,
+    movieRatingsStatus,
+  };
+};
 
 export default {
-  fetchMovieDiary,
-  fetchMovieRatings,
-  letterboxdId,
+  useMovieDiaryQuery,
+  useMovieRatingsQuery,
 };
