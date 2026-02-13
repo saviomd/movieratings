@@ -1,10 +1,14 @@
+import type { Route } from "./+types/movie";
+import movieClientLoader from "./loaders/movieClientLoader";
 import { MovieDetails } from "~/components/app";
 import { PageMetadata } from "~/components/library";
 import { MovieProvider } from "~/contexts/MovieContext";
 
-export default function Movie() {
+export { movieClientLoader as clientLoader };
+
+export default function Movie({ loaderData }: Route.ComponentProps) {
   return (
-    <MovieProvider>
+    <MovieProvider movie={loaderData.movie}>
       <PageMetadata />
       <MovieDetails />
     </MovieProvider>

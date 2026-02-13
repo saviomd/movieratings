@@ -1,15 +1,12 @@
 import { useQueries, useQuery } from "@tanstack/react-query";
 import type { QueryStatus } from "@tanstack/react-query";
-import { useMemo } from "react";
-import type { Params } from "react-router";
 
 import fetchClient from "./fetchClient";
 import formatMovieDetails from "./formatMovieDetails";
 import formatRandomMovieList from "./formatRandomMovieList";
 import getRandomMovies from "./getRandomMovies";
-import letterboxdServices from "./letterboxdServices";
 import tmdbApi from "./tmdbApi";
-import type { IMovieDetails } from "~/types";
+import type { IMovieDetails, IMovieLoggedFormatted } from "~/types";
 
 interface IFetchTmdb {
   path: string;
@@ -59,25 +56,10 @@ const getSearchMovies = ({
   });
 
 interface IUseMovieDetailsQuery {
-  movieDiary: ReturnType<
-    typeof letterboxdServices.useMovieDiaryQuery
-  >["movieDiary"];
-  movieId: Params["movieId"];
-  movieRatings: ReturnType<
-    typeof letterboxdServices.useMovieRatingsQuery
-  >["movieRatings"];
+  movie: IMovieLoggedFormatted | undefined;
 }
 
-const useMovieDetailsQuery = ({
-  movieDiary,
-  movieId,
-  movieRatings,
-}: IUseMovieDetailsQuery) => {
-  const movie = useMemo(
-    () => [...movieDiary, ...movieRatings].find(({ Id }) => Id === movieId),
-    [movieDiary, movieId, movieRatings],
-  );
-
+const useMovieDetailsQuery = ({ movie }: IUseMovieDetailsQuery) => {
   const { data: movieDetails, status: movieDetailsStatus } = useQuery({
     queryKey: ["movieDetails", movie],
     queryFn: async () => {
@@ -108,20 +90,15 @@ const useMovieDetailsQuery = ({
 };
 
 interface IUseRandomMoviesQuery {
-  movieRatings: ReturnType<
-    typeof letterboxdServices.useMovieRatingsQuery
-  >["movieRatings"];
+  randomMoviesLogged: ReturnType<typeof getRandomMovies>;
 }
 
-const useRandomMoviesQuery = ({ movieRatings }: IUseRandomMoviesQuery) => {
-  const movies = useMemo(
-    () => getRandomMovies({ movieRatings, count: 6 }),
-    [movieRatings],
-  );
-
+const useRandomMoviesQuery = ({
+  randomMoviesLogged,
+}: IUseRandomMoviesQuery) => {
   const { data: randomMovies, status: randomMoviesStatus } = useQueries({
-    queries: movies.length
-      ? movies.map(({ LetterboxdURI, Name, Year }) => ({
+    queries: randomMoviesLogged.length
+      ? randomMoviesLogged.map(({ LetterboxdURI, Name, Year }) => ({
           queryKey: ["randomMovies", Name, Year],
           queryFn: async () => {
             const { results } = await getSearchMovies({

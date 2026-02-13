@@ -1,18 +1,12 @@
-import { useParams } from "react-router";
+import { tmdbServices } from "~/utils";
 
-import { letterboxdServices, tmdbServices } from "~/utils";
+interface IUseMovieDetailsStore {
+  movie: Parameters<typeof tmdbServices.useMovieDetailsQuery>[0]["movie"];
+}
 
-const useMovieDetailsStore = () => {
-  const { movieId } = useParams();
-
-  const { movieDiary } = letterboxdServices.useMovieDiaryQuery();
-  const { movieRatings } = letterboxdServices.useMovieRatingsQuery();
+const useMovieDetailsStore = ({ movie }: IUseMovieDetailsStore) => {
   const { movieDetails, movieDetailsStatus } =
-    tmdbServices.useMovieDetailsQuery({
-      movieDiary,
-      movieId,
-      movieRatings,
-    });
+    tmdbServices.useMovieDetailsQuery({ movie });
 
   return {
     movieDetails,

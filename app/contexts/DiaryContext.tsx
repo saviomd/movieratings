@@ -7,13 +7,14 @@ type ContextType = ReturnType<typeof useDiaryStore>;
 
 interface IProps {
   children: ReactNode;
+  movieDiary: Parameters<typeof useDiaryStore>[0]["movieDiary"];
 }
 
 const DiaryContext = createContext({} as ContextType);
 const useDiaryContext = () => use(DiaryContext);
 
-function DiaryProvider({ children }: IProps) {
-  const store = useDiaryStore();
+function DiaryProvider({ children, movieDiary }: IProps) {
+  const store = useDiaryStore({ movieDiary });
 
   return <DiaryContext value={store}>{children}</DiaryContext>;
 }

@@ -1,10 +1,14 @@
 import { useMemo, useReducer } from "react";
 
-import { filterMoviesByName, letterboxdServices } from "~/utils";
+import { filterMoviesByName, formatMovieList } from "~/utils";
 
 interface IState {
   movieRatingsPage: number;
   movieRatingsSearchString: string;
+}
+
+interface IUseRatingsStore {
+  movieRatings: ReturnType<typeof formatMovieList>;
 }
 
 type ActionType =
@@ -30,7 +34,7 @@ function reducer(state: IState, action: ActionType) {
   }
 }
 
-const useRatingsStore = () => {
+const useRatingsStore = ({ movieRatings }: IUseRatingsStore) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const boundActions = useMemo(
@@ -46,9 +50,6 @@ const useRatingsStore = () => {
     }),
     [],
   );
-
-  const { movieRatings, movieRatingsStatus } =
-    letterboxdServices.useMovieRatingsQuery();
 
   const movieRatingsFiltered = useMemo(
     () =>
@@ -70,7 +71,6 @@ const useRatingsStore = () => {
     movieRatings,
     movieRatingsFiltered,
     movieRatingsPaginated,
-    movieRatingsStatus,
   };
 };
 

@@ -1,34 +1,36 @@
 import type { ComponentProps } from "react";
 
+import type { Route } from "./+types/stats";
+import statsLoader from "./loaders/statsLoader";
 import { MoviePosterButton, MovieStats } from "~/components/app";
 import { LoadingHandler, PageMetadata } from "~/components/library";
 import useStatsStore from "~/stores/useStatsStore";
 
-export default function Stats() {
+export { statsLoader as loader };
+
+export default function Stats({ loaderData }: Route.ComponentProps) {
   const {
-    movieDiaryStatus,
-    movieRatingsStatus,
     moviesPerDecadeReleased,
     moviesPerRatingGiven,
     moviesPerYearWatched,
-    randomMovies,
-    randomMoviesStatus,
-  } = useStatsStore();
+    randomMoviesLogged,
+  } = loaderData;
+
+  const { randomMovies, randomMoviesStatus } = useStatsStore({
+    randomMoviesLogged,
+  });
 
   const stats: ComponentProps<typeof MovieStats>[] = [
     {
       movies: moviesPerYearWatched,
-      moviesStatus: movieDiaryStatus,
       type: "moviesPerYearWatched",
     },
     {
       movies: moviesPerRatingGiven,
-      moviesStatus: movieRatingsStatus,
       type: "moviesPerRatingGiven",
     },
     {
       movies: moviesPerDecadeReleased,
-      moviesStatus: movieRatingsStatus,
       type: "moviesPerDecadeReleased",
     },
   ];
@@ -37,9 +39,9 @@ export default function Stats() {
     <>
       <PageMetadata />
       <h1 className="h4">Stats</h1>
-      {stats.map(({ movies, moviesStatus, type }) => (
+      {stats.map(({ movies, type }) => (
         <div className="mb-3" key={type}>
-          <MovieStats movies={movies} moviesStatus={moviesStatus} type={type} />
+          <MovieStats movies={movies} type={type} />
         </div>
       ))}
       <LoadingHandler

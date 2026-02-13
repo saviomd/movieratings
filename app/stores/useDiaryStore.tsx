@@ -1,10 +1,14 @@
 import { useMemo, useReducer } from "react";
 
-import { filterMoviesByName, letterboxdServices } from "~/utils";
+import { filterMoviesByName, formatMovieList } from "~/utils";
 
 interface IState {
   movieDiaryPage: number;
   movieDiarySearchString: string;
+}
+
+interface IUseDiaryStore {
+  movieDiary: ReturnType<typeof formatMovieList>;
 }
 
 type ActionType =
@@ -27,7 +31,7 @@ function reducer(state: IState, action: ActionType) {
   }
 }
 
-const useDiaryStore = () => {
+const useDiaryStore = ({ movieDiary }: IUseDiaryStore) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const boundActions = useMemo(
@@ -43,9 +47,6 @@ const useDiaryStore = () => {
     }),
     [],
   );
-
-  const { movieDiary, movieDiaryStatus } =
-    letterboxdServices.useMovieDiaryQuery();
 
   const movieDiaryFiltered = useMemo(
     () =>
@@ -67,7 +68,6 @@ const useDiaryStore = () => {
     movieDiary,
     movieDiaryFiltered,
     movieDiaryPaginated,
-    movieDiaryStatus,
   };
 };
 

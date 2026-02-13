@@ -9,7 +9,6 @@ export { default as formatMovieRecommendations } from "./formatMovieRecommendati
 export { default as formatPerson } from "./formatPerson";
 export { default as formatRandomMovieList } from "./formatRandomMovieList";
 export { default as getRandomMovies } from "./getRandomMovies";
-export { default as letterboxdServices } from "./letterboxdServices";
 export { default as tmdbApi } from "./tmdbApi";
 export { default as tmdbServices } from "./tmdbServices";
 export { default as trackGaPageView } from "./trackGaPageView";

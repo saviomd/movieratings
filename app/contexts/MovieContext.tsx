@@ -7,13 +7,14 @@ type ContextType = ReturnType<typeof useMovieStore>;
 
 interface IProps {
   children: ReactNode;
+  movie: Parameters<typeof useMovieStore>[0]["movie"];
 }
 
 const MovieContext = createContext({} as ContextType);
 const useMovieContext = () => use(MovieContext);
 
-function MovieProvider({ children }: IProps) {
-  const store = useMovieStore();
+function MovieProvider({ children, movie }: IProps) {
+  const store = useMovieStore({ movie });
 
   return <MovieContext value={store}>{children}</MovieContext>;
 }
