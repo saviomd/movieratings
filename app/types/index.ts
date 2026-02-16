@@ -49,7 +49,7 @@ export interface IMovieDetails {
   vote_count: number;
   "watch/providers": {
     results: {
-      BR: {
+      BR?: {
         flatrate?: IProvider[];
       };
     };

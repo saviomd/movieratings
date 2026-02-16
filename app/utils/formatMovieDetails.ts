@@ -46,7 +46,7 @@ const formatMovieDetails = ({
   )?.title,
   budget: formatCurrency({ value: movieDetails.budget }),
   credits: formatMovieCredits({ credits: movieDetails.credits }),
-  flatrate: movieDetails["watch/providers"].results.BR.flatrate?.map(
+  flatrate: movieDetails["watch/providers"].results.BR?.flatrate?.map(
     (item) => ({
       ...item,
       ...(item.logo_path && { logo_url: logo({ path: item.logo_path }) }),

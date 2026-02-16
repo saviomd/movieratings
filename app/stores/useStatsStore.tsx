@@ -1,12 +1,17 @@
-import { tmdbServices } from "~/utils";
+import { useMemo } from "react";
+
+import { formatMovieList, getRandomMovies, tmdbServices } from "~/utils";
 
 interface IUseStatsStore {
-  randomMoviesLogged: Parameters<
-    typeof tmdbServices.useRandomMoviesQuery
-  >[0]["randomMoviesLogged"];
+  movieRatings: ReturnType<typeof formatMovieList>;
 }
 
-const useStatsStore = ({ randomMoviesLogged }: IUseStatsStore) => {
+const useStatsStore = ({ movieRatings }: IUseStatsStore) => {
+  const randomMoviesLogged = useMemo(
+    () => getRandomMovies({ movieRatings, count: 6 }),
+    [movieRatings],
+  );
+
   const { randomMovies, randomMoviesStatus } =
     tmdbServices.useRandomMoviesQuery({ randomMoviesLogged });
 

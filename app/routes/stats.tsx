@@ -1,39 +1,17 @@
-import type { ComponentProps } from "react";
-
 import type { Route } from "./+types/stats";
-import statsLoader from "./loaders/statsLoader";
+import { loader } from "./loaders/statsLoader";
 import { MoviePosterButton, MovieStats } from "~/components/app";
 import { LoadingHandler, PageMetadata } from "~/components/library";
 import useStatsStore from "~/stores/useStatsStore";
 
-export { statsLoader as loader };
+export { loader };
 
 export default function Stats({ loaderData }: Route.ComponentProps) {
-  const {
-    moviesPerDecadeReleased,
-    moviesPerRatingGiven,
-    moviesPerYearWatched,
-    randomMoviesLogged,
-  } = loaderData;
+  const { movieRatings, stats } = loaderData;
 
   const { randomMovies, randomMoviesStatus } = useStatsStore({
-    randomMoviesLogged,
+    movieRatings,
   });
-
-  const stats: ComponentProps<typeof MovieStats>[] = [
-    {
-      movies: moviesPerYearWatched,
-      type: "moviesPerYearWatched",
-    },
-    {
-      movies: moviesPerRatingGiven,
-      type: "moviesPerRatingGiven",
-    },
-    {
-      movies: moviesPerDecadeReleased,
-      type: "moviesPerDecadeReleased",
-    },
-  ];
 
   return (
     <>

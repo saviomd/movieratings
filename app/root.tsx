@@ -1,3 +1,4 @@
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import {
   isRouteErrorResponse,
   Links,
@@ -21,7 +22,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="bg-dark">
+      <body className="bg-dark text-white">
         {children}
         <ScrollRestoration />
         <Scripts />

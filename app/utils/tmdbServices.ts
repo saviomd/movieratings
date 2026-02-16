@@ -108,7 +108,7 @@ const useRandomMoviesQuery = ({
             return {
               LetterboxdURI,
               Name,
-              poster_path: results[0].poster_path,
+              poster_path: results[0]?.poster_path,
             };
           },
         }))

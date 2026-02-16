@@ -1,6 +1,9 @@
+import type { ComponentProps } from "react";
+
+import { MovieStats } from "~/components/app";
 import diary from "~/data/diary.json";
 import ratings from "~/data/ratings.json";
-import { formatMovieList, getRandomMovies } from "~/utils";
+import { formatMovieList } from "~/utils";
 
 type DecadeGroupType = Record<string, number>;
 
@@ -8,7 +11,7 @@ type RatingGroupType = Record<number, number>;
 
 type YearGroupType = Record<string, number>;
 
-export default function statsLoader() {
+export function loader() {
   const movieDiary = formatMovieList({ movieList: diary });
   const movieRatings = formatMovieList({ movieList: ratings });
 
@@ -51,12 +54,23 @@ export default function statsLoader() {
     return { groups, max };
   })();
 
-  const randomMoviesLogged = getRandomMovies({ movieRatings, count: 6 });
+  const stats: ComponentProps<typeof MovieStats>[] = [
+    {
+      movies: moviesPerYearWatched,
+      type: "moviesPerYearWatched",
+    },
+    {
+      movies: moviesPerRatingGiven,
+      type: "moviesPerRatingGiven",
+    },
+    {
+      movies: moviesPerDecadeReleased,
+      type: "moviesPerDecadeReleased",
+    },
+  ];
 
   return {
-    moviesPerDecadeReleased,
-    moviesPerRatingGiven,
-    moviesPerYearWatched,
-    randomMoviesLogged,
+    movieRatings,
+    stats,
   };
 }
