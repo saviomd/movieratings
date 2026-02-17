@@ -2,15 +2,17 @@ import type { Route } from "./+types/ratings";
 import MoviesLayout from "./layouts/moviesLayout";
 import { loader } from "./loaders/ratingsLoader";
 import { PageMetadata } from "~/components/library";
-import { RatingsProvider } from "~/contexts/RatingsContext";
+import useMovieListStore from "~/stores/useMovieListStore";
 
 export { loader };
 
 export default function Home({ loaderData }: Route.ComponentProps) {
+  const store = useMovieListStore({ movieList: loaderData.movieRatings });
+
   return (
-    <RatingsProvider movieRatings={loaderData.movieRatings}>
+    <>
       <PageMetadata />
-      <MoviesLayout type="Ratings" />
-    </RatingsProvider>
+      <MoviesLayout store={store} type="Ratings" />
+    </>
   );
 }

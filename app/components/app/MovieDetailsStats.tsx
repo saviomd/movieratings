@@ -1,8 +1,11 @@
 import { Image, ScrollableHorizontalList } from "~/components/library";
-import { useMovieContext } from "~/contexts/MovieContext";
+import useMovieStore from "~/stores/useMovieStore";
 
-function MovieDetailsStats() {
-  const { movieDetails } = useMovieContext();
+interface IProps {
+  movieDetails: ReturnType<typeof useMovieStore>["movieDetails"];
+}
+
+function MovieDetailsStats({ movieDetails }: IProps) {
   if (!movieDetails) {
     return null;
   }

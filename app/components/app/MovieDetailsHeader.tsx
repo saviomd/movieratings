@@ -1,9 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { useMovieContext } from "~/contexts/MovieContext";
+import useMovieStore from "~/stores/useMovieStore";
 
-function MovieDetailsHeader() {
-  const { movieDetails } = useMovieContext();
+interface IProps {
+  movieDetails: ReturnType<typeof useMovieStore>["movieDetails"];
+}
+
+function MovieDetailsHeader({ movieDetails }: IProps) {
   if (!movieDetails) {
     return null;
   }

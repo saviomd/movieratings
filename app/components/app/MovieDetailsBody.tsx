@@ -1,9 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { useMovieContext } from "~/contexts/MovieContext";
 import { Image, ScrollableHorizontalList } from "~/components/library";
+import useMovieStore from "~/stores/useMovieStore";
+
 import MovieDetailsCastCrew from "./MovieDetailsCastCrew";
 import MovieDetailsStats from "./MovieDetailsStats";
+
+interface IProps {
+  movieDetails: ReturnType<typeof useMovieStore>["movieDetails"];
+}
 
 interface ILink {
   href: "LetterboxdURI" | "tmdbURI";
@@ -15,8 +20,7 @@ const links: ILink[] = [
   { href: "tmdbURI", name: "TMDb" },
 ];
 
-function MovieDetailsBody() {
-  const { movieDetails } = useMovieContext();
+function MovieDetailsBody({ movieDetails }: IProps) {
   if (!movieDetails) {
     return null;
   }
@@ -36,10 +40,10 @@ function MovieDetailsBody() {
         </div>
         <div className="col-12 col-md-6 col-lg-7">
           <div className="lead mb-3">{movieDetails.overview}</div>
-          <MovieDetailsStats />
+          <MovieDetailsStats movieDetails={movieDetails} />
         </div>
       </div>
-      <MovieDetailsCastCrew />
+      <MovieDetailsCastCrew movieDetails={movieDetails} />
       {movieDetails.tagline && (
         <blockquote className="blockquote px-5 text-center">{`"${movieDetails.tagline}"`}</blockquote>
       )}

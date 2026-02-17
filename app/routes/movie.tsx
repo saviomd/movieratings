@@ -1,16 +1,26 @@
 import type { Route } from "./+types/movie";
 import { clientLoader } from "./loaders/movieClientLoader";
-import { MovieDetails } from "~/components/app";
-import { PageMetadata } from "~/components/library";
-import { MovieProvider } from "~/contexts/MovieContext";
+import {
+  MovieDetailsBody,
+  MovieDetailsHeader,
+  MovieDetailsRecommendations,
+} from "~/components/app";
+import { LoadingHandler, PageMetadata } from "~/components/library";
+import useMovieStore from "~/stores/useMovieStore";
 
 export { clientLoader };
 
 export default function Movie({ loaderData }: Route.ComponentProps) {
+  const { movieDetails, movieDetailsStatus } = useMovieStore({
+    movie: loaderData.movie,
+  });
+
   return (
-    <MovieProvider movie={loaderData.movie}>
+    <LoadingHandler dataStatus={movieDetailsStatus} hasData={!!movieDetails}>
       <PageMetadata />
-      <MovieDetails />
-    </MovieProvider>
+      <MovieDetailsHeader movieDetails={movieDetails} />
+      <MovieDetailsBody movieDetails={movieDetails} />
+      <MovieDetailsRecommendations movieDetails={movieDetails} />
+    </LoadingHandler>
   );
 }

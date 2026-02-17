@@ -1,49 +1,29 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { use } from "react";
 import type { ChangeEvent } from "react";
 
-import { DiaryContext } from "~/contexts/DiaryContext";
-import { RatingsContext } from "~/contexts/RatingsContext";
-import type { MovieType } from "~/types";
+import useMovieListStore from "~/stores/useMovieListStore";
 
 interface IProps {
-  type: MovieType;
+  movieListFiltered: ReturnType<typeof useMovieListStore>["movieListFiltered"];
+  movieListSearchString: ReturnType<
+    typeof useMovieListStore
+  >["movieListSearchString"];
+  setMovieListSearchString: ReturnType<
+    typeof useMovieListStore
+  >["boundActions"]["setMovieListSearchString"];
 }
 
-function MovieNameSearch({ type }: IProps) {
-  let data;
-  if (type === "Diary") {
-    const {
-      boundActions: { setMovieDiarySearchString },
-      movieDiaryFiltered,
-      movieDiarySearchString,
-    } = use(DiaryContext);
-    data = {
-      movieSearchString: movieDiarySearchString,
-      moviesFiltered: movieDiaryFiltered,
-      setMovieSearchString: setMovieDiarySearchString,
-    };
-  } else {
-    const {
-      boundActions: { setMovieRatingsSearchString },
-      movieRatingsFiltered,
-      movieRatingsSearchString,
-    } = use(RatingsContext);
-    data = {
-      movieSearchString: movieRatingsSearchString,
-      moviesFiltered: movieRatingsFiltered,
-      setMovieSearchString: setMovieRatingsSearchString,
-    };
-  }
-
-  const { setMovieSearchString, movieSearchString, moviesFiltered } = data;
-
+function MovieNameSearch({
+  movieListFiltered,
+  movieListSearchString,
+  setMovieListSearchString,
+}: IProps) {
   const handleReset = () => {
-    setMovieSearchString("");
+    setMovieListSearchString("");
   };
 
   const handleSearch = ({ target }: ChangeEvent<HTMLInputElement>) => {
-    setMovieSearchString(target.value);
+    setMovieListSearchString(target.value);
   };
 
   return (
@@ -54,7 +34,7 @@ function MovieNameSearch({ type }: IProps) {
           className="form-control"
           placeholder="Search..."
           type="text"
-          value={movieSearchString}
+          value={movieListSearchString}
           onChange={handleSearch}
         />
         <button
@@ -65,7 +45,7 @@ function MovieNameSearch({ type }: IProps) {
           <FontAwesomeIcon icon="times" />
         </button>
       </div>
-      <p className="small text-end">{moviesFiltered.length} movies</p>
+      <p className="small text-end">{movieListFiltered.length} movies</p>
     </div>
   );
 }

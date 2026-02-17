@@ -1,15 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react";
 
-import { useMovieContext } from "~/contexts/MovieContext";
 import { Anchor, Image, ScrollableHorizontalList } from "~/components/library";
+import useMovieStore from "~/stores/useMovieStore";
+
+interface IProps {
+  movieDetails: ReturnType<typeof useMovieStore>["movieDetails"];
+}
 
 type CreditType = "cast" | "crew";
 
 const creditTypes: CreditType[] = ["cast", "crew"];
 
-function MovieDetailsCastCrew() {
-  const { movieDetails } = useMovieContext();
+function MovieDetailsCastCrew({ movieDetails }: IProps) {
   if (!movieDetails?.credits) {
     return null;
   }
