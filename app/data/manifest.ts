@@ -8,7 +8,7 @@ const manifest = {
   display: "standalone",
   icons: iconSizes.map((size) => ({
     sizes: `${size}x${size}`,
-    src: `${url}/img/icon-${size}.png`,
+    src: `${url}img/icon-${size}.png`,
     type: "image/png",
   })),
   name: "Movie Ratings",

@@ -24,7 +24,7 @@ function PageMetadata({ description, path, title }: IParams) {
       <link rel="icon" type="image/png" href={metaData.icon.small} />
       <link
         rel="manifest"
-        href={`${manifest.start_url}${routePaths.manifest()}`}
+        href={`${manifest.start_url}${routePaths.manifest().slice(1)}`}
       />
       <title>{metaData.title}</title>
       <meta name="description" content={metaData.description} />

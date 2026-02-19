@@ -6,7 +6,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { name } from "./package.json";
 
 export default defineConfig({
-  base: `/${name}`,
+  base: `/${name}/`,
   plugins: [
     ...(process.env.STORYBOOK ? [] : [reactRouter()]),
     tailwindcss(),
