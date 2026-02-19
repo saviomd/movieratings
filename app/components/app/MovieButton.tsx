@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
 
 import type { IMovieLoggedFormatted, MovieType } from "~/types";
+import { routePaths } from "~/utils";
 
 interface IProps {
   movie: IMovieLoggedFormatted;
@@ -17,7 +18,10 @@ function MovieButton({ movie, type }: IProps) {
   }
   const stars = [...Array.from({ length: movie.Rating }).keys()];
   return (
-    <Link className="btn btn-secondary d-block" to={`/movie/${movie.Id}`}>
+    <Link
+      className="btn btn-secondary d-block"
+      to={routePaths.movie({ id: movie.Id })}
+    >
       <div className="text-start text-truncate">
         {movie.Name}
         <span className="ms-1 small">({movie.Year})</span>

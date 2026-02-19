@@ -1,4 +1,4 @@
-import diary from "~/data/diary.json";
+import { diary } from "~/data";
 import { formatMovieList } from "~/utils";
 
 export function loader() {

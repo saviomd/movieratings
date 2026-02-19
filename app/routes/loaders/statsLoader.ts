@@ -1,8 +1,7 @@
 import type { ComponentProps } from "react";
 
 import { MovieStats } from "~/components/app";
-import diary from "~/data/diary.json";
-import ratings from "~/data/ratings.json";
+import { diary, ratings } from "~/data";
 import { formatMovieList } from "~/utils";
 
 type DecadeGroupType = Record<string, number>;

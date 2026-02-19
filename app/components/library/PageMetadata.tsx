@@ -1,25 +1,38 @@
-import { manifest } from "~/routes/webAppManifest";
+import { manifest } from "~/data";
+import { routePaths } from "~/utils";
 
-function PageMetadata() {
-  const description = manifest.description;
-  const icon = {
-    large: manifest.icons.at(-1)?.src,
-    small: manifest.icons.at(0)?.src,
+interface IParams {
+  description?: string;
+  path?: string;
+  title?: string;
+}
+
+function PageMetadata({ description, path, title }: IParams) {
+  const metaData = {
+    description: description ?? manifest.description,
+    icon: {
+      large: manifest.icons.at(-1)?.src,
+      small: manifest.icons.at(0)?.src,
+    },
+    title: `${manifest.name}${title ? ` - ${title}` : ""}`,
+    url: `${manifest.start_url}${path ?? ""}`,
   };
-  const title = manifest.name;
-  const url = manifest.start_url;
+
   return (
     <>
-      <link rel="apple-touch-icon" href={icon.small} />
-      <link rel="icon" type="image/png" href={icon.small} />
-      <link rel="manifest" href={`${url}manifest.json`} />
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <link rel="apple-touch-icon" href={metaData.icon.small} />
+      <link rel="icon" type="image/png" href={metaData.icon.small} />
+      <link
+        rel="manifest"
+        href={`${manifest.start_url}${routePaths.manifest()}`}
+      />
+      <title>{metaData.title}</title>
+      <meta name="description" content={metaData.description} />
       <meta name="theme-color" content={manifest.theme_color} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={icon.large} />
-      <meta property="og:title" content={title} />
-      <meta property="og:url" content={url} />
+      <meta property="og:description" content={metaData.description} />
+      <meta property="og:image" content={metaData.icon.large} />
+      <meta property="og:title" content={metaData.title} />
+      <meta property="og:url" content={metaData.url} />
     </>
   );
 }

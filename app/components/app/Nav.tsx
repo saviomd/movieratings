@@ -1,22 +1,24 @@
 import type { ComponentProps } from "react";
 
+import { routePaths } from "~/utils";
+
 import NavItem from "./NavItem";
 
 const navLinks: ComponentProps<typeof NavItem>["link"][] = [
   {
     icon: "star",
     name: "Ratings",
-    path: "/",
+    path: routePaths.ratings(),
   },
   {
     icon: "calendar-alt",
     name: "Diary",
-    path: "/diary",
+    path: routePaths.diary(),
   },
   {
     icon: "chart-simple",
     name: "Stats",
-    path: "/stats",
+    path: routePaths.stats(),
   },
 ];
 

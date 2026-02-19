@@ -1,4 +1,4 @@
-import ratings from "~/data/ratings.json";
+import { ratings } from "~/data";
 import { formatMovieList } from "~/utils";
 
 export function loader() {

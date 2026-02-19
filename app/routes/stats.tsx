@@ -3,6 +3,7 @@ import { loader } from "./loaders/statsLoader";
 import { MoviePosterButton, MovieStats } from "~/components/app";
 import { LoadingHandler, PageMetadata } from "~/components/library";
 import useStatsStore from "~/stores/useStatsStore";
+import { routePaths } from "~/utils";
 
 export { loader };
 
@@ -15,7 +16,11 @@ export default function Stats({ loaderData }: Route.ComponentProps) {
 
   return (
     <>
-      <PageMetadata />
+      <PageMetadata
+        description="Breakdown of movies watched per year, rating, and release decade"
+        path={routePaths.stats()}
+        title="Stats"
+      />
       <h1 className="h4">Stats</h1>
       {stats.map(({ movies, type }) => (
         <div className="mb-3" key={type}>

@@ -1,5 +1,7 @@
-import tmdbApi from "./tmdbApi";
 import type { PathType } from "~/types";
+
+import routePaths from "./routePaths";
+import tmdbApi from "./tmdbApi";
 
 const { poster } = tmdbApi.img;
 
@@ -23,7 +25,9 @@ const formatRandomMovieList = ({
 }: IParams): IRandomMovieFormatted[] =>
   randomMovieList.map((movie) => ({
     ...movie,
-    movie_path: `/movie/${movie.LetterboxdURI.split("boxd.it/")[1]}`,
+    movie_path: routePaths.movie({
+      id: movie.LetterboxdURI.split("boxd.it/")[1],
+    }),
     poster_url: poster({ path: movie.poster_path }),
   }));
 
