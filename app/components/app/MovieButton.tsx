@@ -20,6 +20,7 @@ function MovieButton({ movie, type }: IProps) {
   return (
     <Link
       className="btn btn-secondary d-block"
+      prefetch="intent"
       to={routePaths.movie({ id: movie.Id })}
     >
       <div className="text-start text-truncate">

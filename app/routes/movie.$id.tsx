@@ -27,7 +27,7 @@ export default function Movie({ loaderData }: Route.ComponentProps) {
     <LoadingHandler dataStatus={movieDetailsStatus} hasData={!!movieDetails}>
       <PageMetadata
         description={description}
-        path={routePaths.movie({ id: loaderData.movie?.Id ?? "" })}
+        path={routePaths.movie({ id: loaderData.movie.Id })}
         title={title}
       />
       <MovieDetailsHeader movieDetails={movieDetails} />

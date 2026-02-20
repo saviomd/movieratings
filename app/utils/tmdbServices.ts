@@ -56,31 +56,28 @@ const getSearchMovies = ({
   });
 
 interface IUseMovieDetailsQuery {
-  movie: IMovieLoggedFormatted | undefined;
+  movie: IMovieLoggedFormatted;
 }
 
 const useMovieDetailsQuery = ({ movie }: IUseMovieDetailsQuery) => {
   const { data: movieDetails, status: movieDetailsStatus } = useQuery({
     queryKey: ["movieDetails", movie],
     queryFn: async () => {
-      if (movie) {
-        const searchMoviesData = await getSearchMovies({
-          Name: movie.Name,
-          Year: movie.Year,
-        });
-        const newMovie = searchMoviesData.results.find(
-          ({ release_date, title }) =>
-            title === movie.Name &&
-            release_date.includes(movie.Year.toString()),
-        );
-        if (newMovie) {
-          const movieDetails = await getMovieDetails({ movieId: newMovie.id });
-          return formatMovieDetails({ movie, movieDetails });
-        }
+      const searchMoviesData = await getSearchMovies({
+        Name: movie.Name,
+        Year: movie.Year,
+      });
+      const newMovie = searchMoviesData.results.find(
+        ({ release_date, title }) =>
+          title === movie.Name && release_date.includes(movie.Year.toString()),
+      );
+      if (newMovie) {
+        const movieDetails = await getMovieDetails({ movieId: newMovie.id });
+        return formatMovieDetails({ movie, movieDetails });
       }
       return null;
     },
-    enabled: !!movie?.Name && !!movie.Year,
+    enabled: !!movie.Name && !!movie.Year,
   });
 
   return {

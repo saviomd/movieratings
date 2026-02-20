@@ -13,10 +13,11 @@ interface IProps {
 function NavItem({ link }: IProps) {
   return (
     <NavLink
-      to={link.path}
       className={({ isActive }) =>
         `btn btn-danger btn-sm${isActive ? " active" : ""}`
       }
+      prefetch="intent"
+      to={link.path}
     >
       <FontAwesomeIcon icon={link.icon} />
       <span className="d-none d-sm-inline-block ms-1">{link.name}</span>

@@ -21,7 +21,7 @@ function Anchor({ children, href }: IProps) {
     );
   }
   return (
-    <Link className={className} to={href}>
+    <Link className={className} prefetch="intent" to={href}>
       {children}
     </Link>
   );

@@ -7,7 +7,11 @@ function Header() {
     <header className="border-bottom border-secondary mb-3">
       <div className="align-items-center my-2 row">
         <h1 className="col h5 mb-0">
-          <NavLink to="/" className="text-decoration-none text-white">
+          <NavLink
+            className="text-decoration-none text-white"
+            prefetch="intent"
+            to="/"
+          >
             Movie Ratings
           </NavLink>
         </h1>

@@ -5,6 +5,7 @@ export { default as formatDate } from "./formatDate";
 export { default as formatMovieCredits } from "./formatMovieCredits";
 export { default as formatMovieDetails } from "./formatMovieDetails";
 export { default as formatMovieList } from "./formatMovieList";
+export { default as formatMovieLogged } from "./formatMovieLogged";
 export { default as formatMovieRecommendations } from "./formatMovieRecommendations";
 export { default as formatPerson } from "./formatPerson";
 export { default as formatRandomMovieList } from "./formatRandomMovieList";
