@@ -2,29 +2,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react";
 
 import { Anchor, Image, ScrollableHorizontalList } from "~/components/library";
-import useMovieStore from "~/stores/useMovieStore";
+import { formatMovieDetails } from "~/utils";
 
 interface IProps {
-  movieDetails: ReturnType<typeof useMovieStore>["movieDetails"];
+  credits: ReturnType<typeof formatMovieDetails>["credits"];
 }
 
 type CreditType = "cast" | "crew";
 
 const creditTypes: CreditType[] = ["cast", "crew"];
 
-function MovieDetailsCastCrew({ movieDetails }: IProps) {
-  if (!movieDetails?.credits) {
-    return null;
-  }
+function MovieDetailsCredits({ credits }: IProps) {
   return creditTypes.map((item) => (
     <Fragment key={item}>
       <h2 className="h4">
         {`${item[0].toUpperCase()}${item.slice(1)}`}
         <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
       </h2>
-      {movieDetails.credits[item].length ? (
+      {credits[item].length ? (
         <ScrollableHorizontalList>
-          {movieDetails.credits[item].map((person) => (
+          {credits[item].map((person) => (
             <li className="col-5 col-sm-3 col-md-2" key={person.id}>
               <Anchor href={person.tmdbURI}>
                 <Image
@@ -47,4 +44,4 @@ function MovieDetailsCastCrew({ movieDetails }: IProps) {
   ));
 }
 
-export default MovieDetailsCastCrew;
+export default MovieDetailsCredits;

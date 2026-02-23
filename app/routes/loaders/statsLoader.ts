@@ -1,6 +1,3 @@
-import type { ComponentProps } from "react";
-
-import { MovieStats } from "~/components/app";
 import { diary, ratings } from "~/data";
 import { formatMovieList } from "~/utils";
 
@@ -53,23 +50,10 @@ export function loader() {
     return { groups, max };
   })();
 
-  const stats: ComponentProps<typeof MovieStats>[] = [
-    {
-      movies: moviesPerYearWatched,
-      type: "moviesPerYearWatched",
-    },
-    {
-      movies: moviesPerRatingGiven,
-      type: "moviesPerRatingGiven",
-    },
-    {
-      movies: moviesPerDecadeReleased,
-      type: "moviesPerDecadeReleased",
-    },
-  ];
-
   return {
     movieRatings,
-    stats,
+    moviesPerDecadeReleased,
+    moviesPerRatingGiven,
+    moviesPerYearWatched,
   };
 }

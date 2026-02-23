@@ -1,38 +1,49 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import useMovieStore from "~/stores/useMovieStore";
+import { formatMovieDetails } from "~/utils";
+
+type formatMovieDetailsReturn = ReturnType<typeof formatMovieDetails>;
 
 interface IProps {
-  movieDetails: ReturnType<typeof useMovieStore>["movieDetails"];
+  br_title: formatMovieDetailsReturn["br_title"];
+  original_title: formatMovieDetailsReturn["original_title"];
+  Rating: formatMovieDetailsReturn["Rating"];
+  release_year: formatMovieDetailsReturn["release_year"];
+  title: formatMovieDetailsReturn["title"];
+  vote_average: formatMovieDetailsReturn["vote_average"];
+  vote_count: formatMovieDetailsReturn["vote_count"];
 }
 
-function MovieDetailsHeader({ movieDetails }: IProps) {
-  if (!movieDetails) {
-    return null;
-  }
+function MovieDetailsHeader({
+  br_title,
+  original_title,
+  Rating,
+  release_year,
+  title,
+  vote_average,
+  vote_count,
+}: IProps) {
   return (
     <div className="bg-secondary border border-secondary mb-3 p-3 rounded">
       <h1 className="h3">
-        {movieDetails.title}
-        <span className="fst-italic ms-2 small">{`(${movieDetails.release_year})`}</span>
+        {title}
+        <span className="fst-italic ms-2 small">{`(${release_year})`}</span>
         <div className="fst-italic small">
-          {movieDetails.br_title}
-          {movieDetails.title !== movieDetails.original_title && (
-            <div className="fst-italic small">
-              ({movieDetails.original_title})
-            </div>
+          {br_title}
+          {title !== original_title && (
+            <div className="fst-italic small">({original_title})</div>
           )}
         </div>
       </h1>
       <div className="small">
-        {movieDetails.Rating} of 5
+        {Rating} of 5
         <FontAwesomeIcon className="mx-1 text-warning" icon="star" />
         <span className="small">by me</span>
       </div>
       <div className="small">
-        {movieDetails.vote_average} of 10
+        {vote_average} of 10
         <FontAwesomeIcon className="mx-1 text-warning" icon="star" />
-        <span className="small">{`by ${String(movieDetails.vote_count)} TMDb users`}</span>
+        <span className="small">{`by ${String(vote_count)} TMDb users`}</span>
       </div>
     </div>
   );
