@@ -15,7 +15,7 @@ export default defineConfig(
   globalIgnores([
     ".react-router",
     ".storybook",
-    "app/__mocks__",
+    "app/__fixtures__",
     "build",
     "eslint.config.js",
   ]),

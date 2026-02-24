@@ -1,10 +1,10 @@
 import type { Route } from "./+types/movie.$id";
 import { clientLoader } from "./loaders/movieClientLoader";
 import {
+  MovieDetailsBackdrops,
   MovieDetailsCredits,
   MovieDetailsHeader,
   MovieDetailsInfo,
-  MovieDetailsPosters,
   MovieDetailsRecommendations,
 } from "~/components/app";
 import { LoadingHandler, PageMetadata } from "~/components/library";
@@ -58,7 +58,7 @@ export default function Movie({ loaderData }: Route.ComponentProps) {
             title={movieDetails.title}
           />
           <MovieDetailsCredits credits={movieDetails.credits} />
-          <MovieDetailsPosters
+          <MovieDetailsBackdrops
             backdrops={movieDetails.images.backdrops}
             tagline={movieDetails.tagline}
             title={movieDetails.title}

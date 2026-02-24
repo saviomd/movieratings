@@ -32,7 +32,7 @@ interface IProps {
 }
 
 function AppWrapper({ children }: IProps) {
-  return <div className="bg-dark text-white">{children}</div>;
+  return children;
 }
 
 export default AppWrapper;

@@ -1,15 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import MovieButton from "./MovieButton";
-import movieDiaryMock from "~/__mocks__/movieDiaryMock";
-import { formatMovieLogged } from "~/utils";
-
-const movie = formatMovieLogged({ movieLogged: movieDiaryMock.movieDiary[0] });
+import { movieDiaryMock } from "~/__mocks__";
 
 const meta = {
   title: "app/MovieButton",
   component: MovieButton,
-  tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
   },
@@ -20,7 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    movie,
+    movie: movieDiaryMock[0],
     type: "Diary",
   },
 };

@@ -9,7 +9,7 @@ interface IProps {
   title: formatMovieDetailsReturn["title"];
 }
 
-function MovieDetailsPosters({ backdrops, tagline, title }: IProps) {
+function MovieDetailsBackdrops({ backdrops, tagline, title }: IProps) {
   return (
     <>
       {tagline && (
@@ -28,4 +28,4 @@ function MovieDetailsPosters({ backdrops, tagline, title }: IProps) {
   );
 }
 
-export default MovieDetailsPosters;
+export default MovieDetailsBackdrops;

@@ -5,10 +5,6 @@ import ProgressBar from "./ProgressBar";
 const meta = {
   title: "library/ProgressBar",
   component: ProgressBar,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     size: {
       control: {

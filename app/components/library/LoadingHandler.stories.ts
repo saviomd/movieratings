@@ -5,10 +5,6 @@ import LoadingHandler from "./LoadingHandler";
 const meta = {
   title: "library/LoadingHandler",
   component: LoadingHandler,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof LoadingHandler>;
 
 export default meta;
