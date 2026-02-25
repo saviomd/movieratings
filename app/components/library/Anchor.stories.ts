@@ -13,6 +13,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: "Lorem ipsum dolor sit amet",
-    href: "/",
+    href: "#",
   },
 };
