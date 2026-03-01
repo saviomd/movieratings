@@ -1,7 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { MoviePosterButton } from "~/components/app";
-import { ScrollableHorizontalList } from "~/components/library";
+import {
+  Button,
+  Heading,
+  ScrollableHorizontalList,
+} from "~/components/library";
 import { formatMovieDetails } from "~/utils";
 
 type formatMovieDetailsReturn = ReturnType<typeof formatMovieDetails>;
@@ -32,24 +36,19 @@ function MovieDetailsRecommendations({
         <ul className="list-inline">
           {links.map(({ href, name }) => (
             <li className="list-inline-item" key={name}>
-              <a
-                className="btn btn-danger btn-sm"
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Button href={href} size="sm">
                 {name}
-              </a>
+              </Button>
             </li>
           ))}
         </ul>
       </div>
       {recommendations.length && (
         <>
-          <h2 className="h4">
+          <Heading level={2}>
             Recommendations
             <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
-          </h2>
+          </Heading>
           <ScrollableHorizontalList>
             {recommendations.map((movie) => (
               <li className="col-5 col-md-3 col-lg-2" key={movie.id}>

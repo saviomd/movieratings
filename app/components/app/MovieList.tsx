@@ -1,3 +1,4 @@
+import { Button } from "~/components/library";
 import useMovieListStore from "~/stores/useMovieListStore";
 import type { MovieType } from "~/types";
 
@@ -31,13 +32,7 @@ function MovieList({
       </ul>
       {hasMorePages && (
         <div className="mb-3 text-center">
-          <button
-            className="btn btn-danger"
-            type="button"
-            onClick={increaseMovieListPage}
-          >
-            Show more
-          </button>
+          <Button onClick={increaseMovieListPage}>Show more</Button>
         </div>
       )}
     </>

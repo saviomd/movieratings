@@ -1,4 +1,8 @@
-import { ProgressBar, ScrollableHorizontalList } from "~/components/library";
+import {
+  Heading,
+  ProgressBar,
+  ScrollableHorizontalList,
+} from "~/components/library";
 import { loader } from "~/routes/loaders/statsLoader";
 
 interface IProps {
@@ -32,10 +36,10 @@ function MovieStats({
 
   return (
     <>
-      <h1 className="h4">Stats</h1>
+      <Heading level={1}>Stats</Heading>
       {stats.map(({ movies, title, type }) => (
         <div className="border border-secondary mb-3 p-3 rounded" key={type}>
-          <h1 className="h5">{title}</h1>
+          <Heading level={2}>{title}</Heading>
           <ScrollableHorizontalList>
             {Object.entries(movies.groups).map(([key, value]) => {
               const size = (value * 100) / movies.max;

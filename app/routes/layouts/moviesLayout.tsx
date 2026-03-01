@@ -1,5 +1,5 @@
 import { MovieList, MovieNameSearch } from "~/components/app";
-import { PageMetadata } from "~/components/library";
+import { Heading, PageMetadata } from "~/components/library";
 import useMovieListStore from "~/stores/useMovieListStore";
 import type { MovieType } from "~/types";
 import { routePaths } from "~/utils";
@@ -36,7 +36,7 @@ export default function MovieLayout({ store, type }: IProps) {
         path={routePath[type]()}
         title={type}
       />
-      <h1 className="h4">{type}</h1>
+      <Heading level={1}>{type}</Heading>
       <div className="row">
         <div className="col-12 col-sm-4 col-lg-6">
           <MovieNameSearch

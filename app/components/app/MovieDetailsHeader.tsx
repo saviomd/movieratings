@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { Heading, Rating } from "~/components/library";
 import { formatMovieDetails } from "~/utils";
 
 type formatMovieDetailsReturn = ReturnType<typeof formatMovieDetails>;
@@ -17,7 +16,7 @@ interface IProps {
 function MovieDetailsHeader({
   br_title,
   original_title,
-  Rating,
+  Rating: rating,
   release_year,
   title,
   vote_average,
@@ -25,7 +24,7 @@ function MovieDetailsHeader({
 }: IProps) {
   return (
     <div className="bg-secondary border border-secondary mb-3 p-3 rounded">
-      <h1 className="h3">
+      <Heading level={1}>
         {title}
         <span className="fst-italic ms-2 small">{`(${release_year})`}</span>
         <div className="fst-italic small">
@@ -34,15 +33,13 @@ function MovieDetailsHeader({
             <div className="fst-italic small">({original_title})</div>
           )}
         </div>
-      </h1>
+      </Heading>
       <div className="small">
-        {Rating} of 5
-        <FontAwesomeIcon className="mx-1 text-warning" icon="star" />
+        {rating} of 5 <Rating count={1} />
         <span className="small">by me</span>
       </div>
       <div className="small">
-        {vote_average} of 10
-        <FontAwesomeIcon className="mx-1 text-warning" icon="star" />
+        {vote_average} of 10 <Rating count={1} />
         <span className="small">{`by ${String(vote_count)} TMDb users`}</span>
       </div>
     </div>

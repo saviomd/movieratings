@@ -1,6 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router";
-
+import { Button, Rating } from "~/components/library";
 import type { IMovieLoggedFormatted, MovieType } from "~/types";
 import { routePaths } from "~/utils";
 
@@ -16,26 +14,23 @@ function MovieButton({ movie, type }: IProps) {
   } else if (type === "Ratings" && movie.DateFormatted) {
     dateText = `rated in ${movie.DateFormatted}`;
   }
-  const stars = [...Array.from({ length: movie.Rating }).keys()];
   return (
-    <Link
-      className="btn btn-secondary d-block"
-      prefetch="intent"
-      to={routePaths.movie({ id: movie.Id })}
+    <Button
+      href={routePaths.movie({ id: movie.Id })}
+      isBlock
+      variant="secondary"
     >
       <div className="text-start text-truncate">
         {movie.Name}
         <span className="ms-1 small">({movie.Year})</span>
       </div>
       <div className="align-items-end row small">
-        <div className="col text-start text-warning">
-          {stars.map((item) => (
-            <FontAwesomeIcon key={item} className="me-1" icon="star" />
-          ))}
+        <div className="col text-start">
+          <Rating count={movie.Rating} />
         </div>
         <div className="col small text-end">{dateText}</div>
       </div>
-    </Link>
+    </Button>
   );
 }
 

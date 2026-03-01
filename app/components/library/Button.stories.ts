@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import Nav from "./Nav";
+import Button from "./Button";
 
 const meta = {
-  title: "app/Nav",
-  component: Nav,
-  parameters: {
-    layout: "fullscreen",
-  },
-} satisfies Meta<typeof Nav>;
+  title: "library/Button",
+  component: Button,
+} satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    children: "Lorem ipsum",
+    href: "#",
+  },
 };

@@ -1,6 +1,26 @@
+import type { ComponentProps } from "react";
 import { NavLink } from "react-router";
 
-import Nav from "./Nav";
+import { Nav } from "~/components/library";
+import { routePaths } from "~/utils";
+
+const navItems: ComponentProps<typeof Nav>["items"] = [
+  {
+    icon: "star",
+    name: "Ratings",
+    path: routePaths.ratings(),
+  },
+  {
+    icon: "calendar-alt",
+    name: "Diary",
+    path: routePaths.diary(),
+  },
+  {
+    icon: "chart-simple",
+    name: "Stats",
+    path: routePaths.stats(),
+  },
+];
 
 function Header() {
   return (
@@ -16,7 +36,7 @@ function Header() {
           </NavLink>
         </h1>
         <div className="col-auto">
-          <Nav />
+          <Nav items={navItems} />
         </div>
       </div>
     </header>

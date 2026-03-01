@@ -1,4 +1,4 @@
-import { Image, ScrollableHorizontalList } from "~/components/library";
+import { Badge, Image, ScrollableHorizontalList } from "~/components/library";
 import { formatMovieDetails } from "~/utils";
 
 type formatMovieDetailsReturn = ReturnType<typeof formatMovieDetails>;
@@ -90,7 +90,7 @@ function MovieDetailsInfo({
                   <ul className="fw-bold list-unstyled">
                     {value.map((item) => (
                       <li key={item}>
-                        <span className="badge bg-secondary">{item}</span>
+                        <Badge>{item}</Badge>
                       </li>
                     ))}
                   </ul>

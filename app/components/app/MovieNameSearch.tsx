@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { ChangeEvent } from "react";
 
+import { Button, TextInput } from "~/components/library";
 import useMovieListStore from "~/stores/useMovieListStore";
 
 interface IProps {
@@ -29,21 +30,15 @@ function MovieNameSearch({
   return (
     <div className="mb-3">
       <div className="input-group mb-1">
-        <input
+        <TextInput
           id="search-movie"
-          className="form-control"
-          placeholder="Search..."
-          type="text"
-          value={movieListSearchString}
           onChange={handleSearch}
+          placeholder="Search..."
+          value={movieListSearchString}
         />
-        <button
-          className="btn btn-secondary"
-          type="button"
-          onClick={handleReset}
-        >
+        <Button onClick={handleReset} variant="secondary">
           <FontAwesomeIcon icon="times" />
-        </button>
+        </Button>
       </div>
       <p className="small text-end">{movieListFiltered.length} movies</p>
     </div>

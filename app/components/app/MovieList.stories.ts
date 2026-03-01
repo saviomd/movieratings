@@ -21,9 +21,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    increaseMovieListPage: fn(),
     movieListPaginated: movieDiaryMock.slice(0, 10),
     type: "Diary",
     hasMorePages: false,
-    increaseMovieListPage: fn(),
   },
 };

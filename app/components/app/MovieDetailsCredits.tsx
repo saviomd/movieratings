@@ -1,7 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react";
 
-import { Anchor, Image, ScrollableHorizontalList } from "~/components/library";
+import {
+  Anchor,
+  Heading,
+  Image,
+  ScrollableHorizontalList,
+} from "~/components/library";
 import { formatMovieDetails } from "~/utils";
 
 interface IProps {
@@ -15,10 +20,10 @@ const creditTypes: CreditType[] = ["cast", "crew"];
 function MovieDetailsCredits({ credits }: IProps) {
   return creditTypes.map((item) => (
     <Fragment key={item}>
-      <h2 className="h4">
+      <Heading level={2}>
         {`${item[0].toUpperCase()}${item.slice(1)}`}
         <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
-      </h2>
+      </Heading>
       {credits[item].length ? (
         <ScrollableHorizontalList>
           {credits[item].map((person) => (
