@@ -6,7 +6,7 @@ type formatMovieDetailsReturn = ReturnType<typeof formatMovieDetails>;
 interface IProps {
   br_title: formatMovieDetailsReturn["br_title"];
   original_title: formatMovieDetailsReturn["original_title"];
-  Rating: formatMovieDetailsReturn["Rating"];
+  rating: formatMovieDetailsReturn["rating"];
   release_year: formatMovieDetailsReturn["release_year"];
   title: formatMovieDetailsReturn["title"];
   vote_average: formatMovieDetailsReturn["vote_average"];
@@ -16,7 +16,7 @@ interface IProps {
 function MovieDetailsHeader({
   br_title,
   original_title,
-  Rating: rating,
+  rating,
   release_year,
   title,
   vote_average,

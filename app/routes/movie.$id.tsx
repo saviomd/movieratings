@@ -19,7 +19,7 @@ export default function Movie({ loaderData }: Route.ComponentProps) {
   });
 
   const description = movieDetails
-    ? `${movieDetails.Rating.toString()} of 5 by me${movieDetails.overview ? ` - ${movieDetails.overview}` : ""}`
+    ? `${movieDetails.rating.toString()} of 5 by me${movieDetails.overview ? ` - ${movieDetails.overview}` : ""}`
     : undefined;
   const title = movieDetails
     ? `${movieDetails.title} (${movieDetails.release_year})`
@@ -31,13 +31,13 @@ export default function Movie({ loaderData }: Route.ComponentProps) {
         <>
           <PageMetadata
             description={description}
-            path={routePaths.movie({ id: loaderData.movie.Id })}
+            path={routePaths.movie({ id: loaderData.movie.id })}
             title={title}
           />
           <MovieDetailsHeader
             br_title={movieDetails.br_title}
             original_title={movieDetails.original_title}
-            Rating={movieDetails.Rating}
+            rating={movieDetails.rating}
             release_year={movieDetails.release_year}
             title={movieDetails.title}
             vote_average={movieDetails.vote_average}
@@ -64,7 +64,7 @@ export default function Movie({ loaderData }: Route.ComponentProps) {
             title={movieDetails.title}
           />
           <MovieDetailsRecommendations
-            LetterboxdURI={movieDetails.LetterboxdURI}
+            letterboxdURI={movieDetails.letterboxdURI}
             recommendations={movieDetails.recommendations}
             tmdbURI={movieDetails.tmdbURI}
           />

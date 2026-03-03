@@ -13,7 +13,7 @@ export function loader() {
 
   const moviesPerDecadeReleased = (() => {
     const groups = movieRatings.reduce<DecadeGroupType>((acc, curr) => {
-      const decade = `${curr.Year.toString().slice(0, 3)}0`;
+      const decade = `${curr.year.toString().slice(0, 3)}0`;
       acc[decade] = acc[decade] ? acc[decade] + 1 : 1;
       return acc;
     }, {});
@@ -26,7 +26,7 @@ export function loader() {
 
   const moviesPerRatingGiven = (() => {
     const groups = movieRatings.reduce<RatingGroupType>((acc, curr) => {
-      const rating = curr.Rating;
+      const rating = curr.rating;
       acc[rating] = acc[rating] ? acc[rating] + 1 : 1;
       return acc;
     }, {});
@@ -39,7 +39,7 @@ export function loader() {
 
   const moviesPerYearWatched = (() => {
     const groups = movieDiary.reduce<YearGroupType>((acc, curr) => {
-      const year = curr.WatchedDate?.split("-")[0] ?? "";
+      const year = curr.watchedDate?.split("-")[0] ?? "";
       acc[year] = acc[year] ? acc[year] + 1 : 1;
       return acc;
     }, {});

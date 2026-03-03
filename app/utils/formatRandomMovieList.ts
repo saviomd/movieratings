@@ -6,8 +6,8 @@ import tmdbApi from "./tmdbApi";
 const { poster } = tmdbApi.img;
 
 export interface IRandomMovie {
-  LetterboxdURI: string;
-  Name: string;
+  letterboxdURI: string;
+  name: string;
   poster_path: PathType;
 }
 
@@ -26,7 +26,7 @@ const formatRandomMovieList = ({
   randomMovieList.map((movie) => ({
     ...movie,
     movie_path: routePaths.movie({
-      id: movie.LetterboxdURI.split("boxd.it/")[1],
+      id: movie.letterboxdURI.split("boxd.it/")[1],
     }),
     poster_url: poster({ path: movie.poster_path }),
   }));

@@ -9,17 +9,15 @@ import {
 
 import MovieDetailsHeader from "./MovieDetailsHeader";
 
-const getArgs = (movieDetails: typeof movieDetailsBatman1989Mock) => {
-  return {
-    br_title: movieDetails.br_title,
-    original_title: movieDetails.original_title,
-    Rating: movieDetails.Rating,
-    release_year: movieDetails.release_year,
-    title: movieDetails.title,
-    vote_average: movieDetails.vote_average,
-    vote_count: movieDetails.vote_count,
-  };
-};
+const getArgs = (movieDetails: typeof movieDetailsBatman1989Mock) => ({
+  br_title: movieDetails.br_title,
+  original_title: movieDetails.original_title,
+  rating: movieDetails.rating,
+  release_year: movieDetails.release_year,
+  title: movieDetails.title,
+  vote_average: movieDetails.vote_average,
+  vote_count: movieDetails.vote_count,
+});
 
 const meta = {
   title: "app/MovieDetailsHeader",

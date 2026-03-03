@@ -4,7 +4,24 @@ import { MemoryRouter } from "react-router";
 import { AppWrapper } from "../app/components/app";
 import { bodyClassName } from "../app/root";
 
+const ratingControl = {
+  max: 5,
+  min: 0,
+  type: "range" as const,
+};
+
 const preview: Preview = {
+  argTypes: {
+    count: {
+      if: { arg: "count", exists: true },
+      control: ratingControl,
+    },
+    rating: {
+      if: { arg: "rating", exists: true },
+      control: ratingControl,
+    },
+  },
+
   decorators: [
     (Story) => (
       <MemoryRouter initialEntries={["/"]}>

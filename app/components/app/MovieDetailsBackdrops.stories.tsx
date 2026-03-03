@@ -9,13 +9,11 @@ import {
 
 import MovieDetailsBackdrops from "./MovieDetailsBackdrops";
 
-const getArgs = (movieDetails: typeof movieDetailsBatman1989Mock) => {
-  return {
-    backdrops: movieDetails.images.backdrops,
-    tagline: movieDetails.tagline,
-    title: movieDetails.title,
-  };
-};
+const getArgs = (movieDetails: typeof movieDetailsBatman1989Mock) => ({
+  backdrops: movieDetails.images.backdrops,
+  tagline: movieDetails.tagline,
+  title: movieDetails.title,
+});
 
 const meta = {
   title: "app/MovieDetailsBackdrops",

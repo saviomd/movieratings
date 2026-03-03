@@ -12,8 +12,8 @@ const randomMovieList = [
   movieDetailsSe7en1995Fixture,
   movieDetailsTheFastAndTheFurious2001Fixture,
 ].map(({ poster_path, title }) => ({
-  LetterboxdURI: "#",
-  Name: title,
+  letterboxdURI: "#",
+  name: title,
   poster_path,
 }));
 

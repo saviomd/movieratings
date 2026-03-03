@@ -9,13 +9,11 @@ import {
 
 import MovieDetailsRecommendations from "./MovieDetailsRecommendations";
 
-const getArgs = (movieDetails: typeof movieDetailsBatman1989Mock) => {
-  return {
-    LetterboxdURI: movieDetails.LetterboxdURI,
-    recommendations: movieDetails.recommendations,
-    tmdbURI: movieDetails.tmdbURI,
-  };
-};
+const getArgs = (movieDetails: typeof movieDetailsBatman1989Mock) => ({
+  letterboxdURI: movieDetails.letterboxdURI,
+  recommendations: movieDetails.recommendations,
+  tmdbURI: movieDetails.tmdbURI,
+});
 
 const meta = {
   title: "app/MovieDetailsRecommendations",

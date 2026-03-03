@@ -26,8 +26,8 @@ interface IMovieDetailsFormatted extends Omit<
     backdrops: { url: ReturnType<typeof backdrop> }[];
     posters: { url: ReturnType<typeof poster> }[];
   };
-  LetterboxdURI: IMovieLoggedFormatted["LetterboxdURI"];
-  Rating: IMovieLoggedFormatted["Rating"];
+  letterboxdURI: IMovieLoggedFormatted["letterboxdURI"];
+  rating: IMovieLoggedFormatted["rating"];
   recommendations: ReturnType<typeof formatMovieRecommendations>;
   release_year: string;
   revenue: ReturnType<typeof formatCurrency>;
@@ -60,9 +60,9 @@ const formatMovieDetails = ({
       url: poster({ path: file_path }),
     })),
   },
-  LetterboxdURI: movie.LetterboxdURI,
+  letterboxdURI: movie.letterboxdURI,
   original_language: movieDetails.original_language.toUpperCase(),
-  Rating: movie.Rating,
+  rating: movie.rating,
   recommendations: formatMovieRecommendations({
     movies: movieDetails.recommendations.results,
   }),

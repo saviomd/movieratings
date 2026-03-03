@@ -25,8 +25,16 @@ function MovieList({
     <>
       <ul className="list-unstyled">
         {movieListPaginated.map((movie) => (
-          <li className="mb-3" key={movie.Id}>
-            <MovieButton movie={movie} type={type} />
+          <li className="mb-3" key={movie.id}>
+            <MovieButton
+              dateFormatted={movie.dateFormatted}
+              id={movie.id}
+              name={movie.name}
+              rating={movie.rating}
+              type={type}
+              watchedDateFormatted={movie.watchedDateFormatted}
+              year={movie.year}
+            />
           </li>
         ))}
       </ul>

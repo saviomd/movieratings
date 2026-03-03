@@ -3,30 +3,39 @@ import type { IMovieLoggedFormatted, MovieType } from "~/types";
 import { routePaths } from "~/utils";
 
 interface IProps {
-  movie: IMovieLoggedFormatted;
+  dateFormatted: IMovieLoggedFormatted["dateFormatted"];
+  id: IMovieLoggedFormatted["id"];
+  name: IMovieLoggedFormatted["name"];
+  rating: IMovieLoggedFormatted["rating"];
   type: MovieType;
+  watchedDateFormatted: IMovieLoggedFormatted["watchedDateFormatted"];
+  year: IMovieLoggedFormatted["year"];
 }
 
-function MovieButton({ movie, type }: IProps) {
+function MovieButton({
+  dateFormatted,
+  id,
+  name,
+  rating,
+  type,
+  watchedDateFormatted,
+  year,
+}: IProps) {
   let dateText;
-  if (type === "Diary" && movie.WatchedDateFormatted) {
-    dateText = `watched in ${movie.WatchedDateFormatted}`;
-  } else if (type === "Ratings" && movie.DateFormatted) {
-    dateText = `rated in ${movie.DateFormatted}`;
+  if (type === "Diary" && watchedDateFormatted) {
+    dateText = `watched in ${watchedDateFormatted}`;
+  } else if (type === "Ratings" && dateFormatted) {
+    dateText = `rated in ${dateFormatted}`;
   }
   return (
-    <Button
-      href={routePaths.movie({ id: movie.Id })}
-      isBlock
-      variant="secondary"
-    >
+    <Button href={routePaths.movie({ id })} isBlock variant="secondary">
       <div className="text-start text-truncate">
-        {movie.Name}
-        <span className="ms-1 small">({movie.Year})</span>
+        {name}
+        <span className="ms-1 small">({year})</span>
       </div>
       <div className="align-items-end row small">
         <div className="col text-start">
-          <Rating count={movie.Rating} />
+          <Rating count={rating} />
         </div>
         <div className="col small text-end">{dateText}</div>
       </div>

@@ -38,8 +38,8 @@ const getMovieDetails = ({
   });
 
 interface IGetSearchMovies {
-  Name: string;
-  Year: number;
+  name: string;
+  year: number;
 }
 
 interface IGetSearchMoviesReturn {
@@ -47,12 +47,12 @@ interface IGetSearchMoviesReturn {
 }
 
 const getSearchMovies = ({
-  Name,
-  Year,
+  name,
+  year,
 }: IGetSearchMovies): Promise<IGetSearchMoviesReturn> =>
   fetchTmdb({
     path: "search/movie",
-    queryString: `&query=${Name}&year=${String(Year)}`,
+    queryString: `&query=${name}&year=${String(year)}`,
   });
 
 interface IUseMovieDetailsQuery {
@@ -64,12 +64,12 @@ const useMovieDetailsQuery = ({ movie }: IUseMovieDetailsQuery) => {
     queryKey: ["movieDetails", movie],
     queryFn: async () => {
       const searchMoviesData = await getSearchMovies({
-        Name: movie.Name,
-        Year: movie.Year,
+        name: movie.name,
+        year: movie.year,
       });
       const newMovie = searchMoviesData.results.find(
         ({ release_date, title }) =>
-          title === movie.Name && release_date.includes(movie.Year.toString()),
+          title === movie.name && release_date.includes(movie.year.toString()),
       );
       if (newMovie) {
         const movieDetails = await getMovieDetails({ movieId: newMovie.id });
@@ -77,7 +77,7 @@ const useMovieDetailsQuery = ({ movie }: IUseMovieDetailsQuery) => {
       }
       return null;
     },
-    enabled: !!movie.Name && !!movie.Year,
+    enabled: !!movie.name && !!movie.year,
   });
 
   return {
@@ -95,16 +95,16 @@ const useRandomMoviesQuery = ({
 }: IUseRandomMoviesQuery) => {
   const { data: randomMovies, status: randomMoviesStatus } = useQueries({
     queries: randomMoviesLogged.length
-      ? randomMoviesLogged.map(({ LetterboxdURI, Name, Year }) => ({
-          queryKey: ["randomMovies", Name, Year],
+      ? randomMoviesLogged.map(({ letterboxdURI, name, year }) => ({
+          queryKey: ["randomMovies", name, year],
           queryFn: async () => {
             const { results } = await getSearchMovies({
-              Name,
-              Year,
+              name,
+              year,
             });
             return {
-              LetterboxdURI,
-              Name,
+              letterboxdURI,
+              name,
               poster_path: results[0]?.poster_path,
             };
           },

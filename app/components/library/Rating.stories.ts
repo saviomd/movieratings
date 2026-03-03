@@ -5,15 +5,6 @@ import Rating from "./Rating";
 const meta = {
   title: "library/Rating",
   component: Rating,
-  argTypes: {
-    count: {
-      control: {
-        max: 5,
-        min: 0,
-        type: "range",
-      },
-    },
-  },
 } satisfies Meta<typeof Rating>;
 
 export default meta;

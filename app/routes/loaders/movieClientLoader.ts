@@ -9,7 +9,7 @@ export function clientLoader({ params }: Route.LoaderArgs) {
   const movieDiary = formatMovieList({ movieList: diary });
   const movieRatings = formatMovieList({ movieList: ratings });
 
-  const movie = [...movieDiary, ...movieRatings].find(({ Id }) => Id === id);
+  const movie = [...movieDiary, ...movieRatings].find((item) => item.id === id);
 
   if (!movie) {
     // eslint-disable-next-line @typescript-eslint/only-throw-error

@@ -9,11 +9,9 @@ import {
 
 import MovieDetailsCredits from "./MovieDetailsCredits";
 
-const getArgs = (movieDetails: typeof movieDetailsBatman1989Mock) => {
-  return {
-    credits: movieDetails.credits,
-  };
-};
+const getArgs = (movieDetails: typeof movieDetailsBatman1989Mock) => ({
+  credits: movieDetails.credits,
+});
 
 const meta = {
   title: "app/MovieDetailsCredits",

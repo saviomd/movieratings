@@ -58,18 +58,23 @@ export interface IMovieDetails {
 
 export interface IMovieLogged {
   Date: string;
-  LetterboxdURI: string;
+  "Letterboxd URI": string;
   Name: string | number;
   Rating: number;
   Year: number;
-  WatchedDate?: string;
+  "Watched Date"?: string;
 }
 
-export interface IMovieLoggedFormatted extends IMovieLogged {
-  DateFormatted: string;
-  Id: string;
-  Name: string;
-  WatchedDateFormatted?: string;
+export interface IMovieLoggedFormatted {
+  date: IMovieLogged["Date"];
+  dateFormatted: string;
+  id: string;
+  letterboxdURI: IMovieLogged["Letterboxd URI"];
+  name: string;
+  rating: IMovieLogged["Rating"];
+  watchedDate?: IMovieLogged["Watched Date"];
+  watchedDateFormatted?: string;
+  year: IMovieLogged["Year"];
 }
 
 export interface IPerson {

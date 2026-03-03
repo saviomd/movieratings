@@ -9,22 +9,20 @@ import {
 
 import MovieDetailsInfo from "./MovieDetailsInfo";
 
-const getArgs = (movieDetails: typeof movieDetailsBatman1989Mock) => {
-  return {
-    budget: movieDetails.budget,
-    flatrate: movieDetails.flatrate,
-    genres: movieDetails.genres,
-    overview: movieDetails.overview,
-    posters: movieDetails.images.posters,
-    production_companies: movieDetails.production_companies,
-    production_countries: movieDetails.production_countries,
-    release_date: movieDetails.release_date,
-    revenue: movieDetails.revenue,
-    runtime: movieDetails.runtime,
-    spoken_languages: movieDetails.spoken_languages,
-    title: movieDetails.title,
-  };
-};
+const getArgs = (movieDetails: typeof movieDetailsBatman1989Mock) => ({
+  budget: movieDetails.budget,
+  flatrate: movieDetails.flatrate,
+  genres: movieDetails.genres,
+  overview: movieDetails.overview,
+  posters: movieDetails.images.posters,
+  production_companies: movieDetails.production_companies,
+  production_countries: movieDetails.production_countries,
+  release_date: movieDetails.release_date,
+  revenue: movieDetails.revenue,
+  runtime: movieDetails.runtime,
+  spoken_languages: movieDetails.spoken_languages,
+  title: movieDetails.title,
+});
 
 const meta = {
   title: "app/MovieDetailsInfo",

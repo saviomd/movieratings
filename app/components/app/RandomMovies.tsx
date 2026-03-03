@@ -15,12 +15,12 @@ function RandomMovies({ randomMovies, randomMoviesStatus }: IProps) {
       hasData={!!randomMovies.length}
     >
       <div className="row">
-        {randomMovies.map(({ movie_path, Name, poster_url }) => (
-          <div className="col-6 col-sm-4 mb-3" key={Name}>
+        {randomMovies.map(({ movie_path, name, poster_url }) => (
+          <div className="col-6 col-sm-4 mb-3" key={name}>
             <MoviePosterButton
               href={movie_path}
               posterUrl={poster_url}
-              title={Name}
+              title={name}
             />
           </div>
         ))}

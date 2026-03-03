@@ -11,18 +11,18 @@ import { formatMovieDetails } from "~/utils";
 type formatMovieDetailsReturn = ReturnType<typeof formatMovieDetails>;
 
 interface IProps {
-  LetterboxdURI: formatMovieDetailsReturn["LetterboxdURI"];
+  letterboxdURI: formatMovieDetailsReturn["letterboxdURI"];
   recommendations: formatMovieDetailsReturn["recommendations"];
   tmdbURI: formatMovieDetailsReturn["tmdbURI"];
 }
 
 function MovieDetailsRecommendations({
-  LetterboxdURI,
+  letterboxdURI,
   recommendations,
   tmdbURI,
 }: IProps) {
   const links = [
-    { href: LetterboxdURI, name: "Letterboxd" },
+    { href: letterboxdURI, name: "Letterboxd" },
     { href: tmdbURI, name: "TMDb" },
   ];
 

@@ -1,9 +1,9 @@
 interface IParams {
   movieRatings: {
-    LetterboxdURI: string;
-    Name: string;
-    Rating: number;
-    Year: number;
+    letterboxdURI: string;
+    name: string;
+    rating: number;
+    year: number;
   }[];
   count: number;
 }
@@ -18,12 +18,12 @@ const getRandomMovies = ({ movieRatings, count }: IParams) => {
     indexes.add(Math.floor(Math.random() * movieRatings.length));
   }
   return Array.from(indexes).map((index) => {
-    const { LetterboxdURI, Name, Rating, Year } = movieRatings[index];
+    const { letterboxdURI, name, rating, year } = movieRatings[index];
     return {
-      LetterboxdURI,
-      Name,
-      Rating,
-      Year,
+      letterboxdURI,
+      name,
+      rating,
+      year,
     };
   });
 };
