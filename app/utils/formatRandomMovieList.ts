@@ -1,23 +1,12 @@
-import type { PathType } from "~/types";
+import type { IRandomMovie, IRandomMovieFormatted } from "~/types";
 
 import routePaths from "./routePaths";
 import tmdbApi from "./tmdbApi";
 
 const { poster } = tmdbApi.img;
 
-export interface IRandomMovie {
-  letterboxdURI: string;
-  name: string;
-  poster_path: PathType;
-}
-
 interface IParams {
   randomMovieList: IRandomMovie[];
-}
-
-interface IRandomMovieFormatted extends IRandomMovie {
-  movie_path: string;
-  poster_url: ReturnType<typeof poster>;
 }
 
 const formatRandomMovieList = ({

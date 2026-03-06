@@ -1,17 +1,16 @@
 import { Heading, Rating } from "~/components/library";
-import { formatMovieDetails } from "~/utils";
+import type { IMovieDetailsFormatted } from "~/types";
 
-type formatMovieDetailsReturn = ReturnType<typeof formatMovieDetails>;
-
-interface IProps {
-  br_title: formatMovieDetailsReturn["br_title"];
-  original_title: formatMovieDetailsReturn["original_title"];
-  rating: formatMovieDetailsReturn["rating"];
-  release_year: formatMovieDetailsReturn["release_year"];
-  title: formatMovieDetailsReturn["title"];
-  vote_average: formatMovieDetailsReturn["vote_average"];
-  vote_count: formatMovieDetailsReturn["vote_count"];
-}
+type IProps = Pick<
+  IMovieDetailsFormatted,
+  | "br_title"
+  | "original_title"
+  | "rating"
+  | "release_year"
+  | "title"
+  | "vote_average"
+  | "vote_count"
+>;
 
 function MovieDetailsHeader({
   br_title,

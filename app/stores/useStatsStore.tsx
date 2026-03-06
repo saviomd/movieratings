@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 
-import { formatMovieList, getRandomMovies, tmdbServices } from "~/utils";
+import type { IMovieLoggedFormatted } from "~/types";
+import { getRandomMovies, tmdbServices } from "~/utils";
 
 interface IUseStatsStore {
-  movieRatings: ReturnType<typeof formatMovieList>;
+  movieRatings: IMovieLoggedFormatted[];
 }
 
 const useStatsStore = ({ movieRatings }: IUseStatsStore) => {

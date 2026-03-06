@@ -6,15 +6,12 @@ import {
   Heading,
   ScrollableHorizontalList,
 } from "~/components/library";
-import { formatMovieDetails } from "~/utils";
+import type { IMovieDetailsFormatted } from "~/types";
 
-type formatMovieDetailsReturn = ReturnType<typeof formatMovieDetails>;
-
-interface IProps {
-  letterboxdURI: formatMovieDetailsReturn["letterboxdURI"];
-  recommendations: formatMovieDetailsReturn["recommendations"];
-  tmdbURI: formatMovieDetailsReturn["tmdbURI"];
-}
+type IProps = Pick<
+  IMovieDetailsFormatted,
+  "letterboxdURI" | "recommendations" | "tmdbURI"
+>;
 
 function MovieDetailsRecommendations({
   letterboxdURI,

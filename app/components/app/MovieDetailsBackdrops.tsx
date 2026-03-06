@@ -1,13 +1,9 @@
 import { Image, ScrollableHorizontalList } from "~/components/library";
-import { formatMovieDetails } from "~/utils";
+import type { IMovieDetailsFormatted } from "~/types";
 
-type formatMovieDetailsReturn = ReturnType<typeof formatMovieDetails>;
-
-interface IProps {
-  backdrops: formatMovieDetailsReturn["images"]["backdrops"];
-  tagline: formatMovieDetailsReturn["tagline"];
-  title: formatMovieDetailsReturn["title"];
-}
+type IProps = Pick<IMovieDetailsFormatted, "tagline" | "title"> & {
+  backdrops: IMovieDetailsFormatted["images"]["backdrops"];
+};
 
 function MovieDetailsBackdrops({ backdrops, tagline, title }: IProps) {
   return (

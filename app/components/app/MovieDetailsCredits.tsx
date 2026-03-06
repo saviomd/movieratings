@@ -7,11 +7,9 @@ import {
   Image,
   ScrollableHorizontalList,
 } from "~/components/library";
-import { formatMovieDetails } from "~/utils";
+import type { IMovieDetailsFormatted } from "~/types";
 
-interface IProps {
-  credits: ReturnType<typeof formatMovieDetails>["credits"];
-}
+type IProps = Pick<IMovieDetailsFormatted, "credits">;
 
 type CreditType = "cast" | "crew";
 

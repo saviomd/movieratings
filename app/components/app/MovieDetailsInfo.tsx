@@ -1,26 +1,26 @@
 import { Badge, Image, ScrollableHorizontalList } from "~/components/library";
-import { formatMovieDetails } from "~/utils";
+import type { IMovieDetailsFormatted } from "~/types";
 
-type formatMovieDetailsReturn = ReturnType<typeof formatMovieDetails>;
-
-interface IProps {
-  budget: formatMovieDetailsReturn["budget"];
-  flatrate: formatMovieDetailsReturn["flatrate"];
-  genres: formatMovieDetailsReturn["genres"];
-  overview: formatMovieDetailsReturn["overview"];
-  posters: formatMovieDetailsReturn["images"]["posters"];
-  production_companies: formatMovieDetailsReturn["production_companies"];
-  production_countries: formatMovieDetailsReturn["production_countries"];
-  release_date: formatMovieDetailsReturn["release_date"];
-  revenue: formatMovieDetailsReturn["revenue"];
-  runtime: formatMovieDetailsReturn["runtime"];
-  spoken_languages: formatMovieDetailsReturn["spoken_languages"];
-  title: formatMovieDetailsReturn["title"];
-}
+type IProps = Pick<
+  IMovieDetailsFormatted,
+  | "budget"
+  | "flatrate"
+  | "genres"
+  | "overview"
+  | "production_companies"
+  | "production_countries"
+  | "release_date"
+  | "revenue"
+  | "runtime"
+  | "spoken_languages"
+  | "title"
+> & {
+  posters: IMovieDetailsFormatted["images"]["posters"];
+};
 
 function MovieDetailsInfo({
   budget,
-  flatrate = [],
+  flatrate,
   genres,
   overview,
   posters,
