@@ -4,14 +4,14 @@ import formatMovieCredits from "./formatMovieCredits";
 import formatMovieRecommendations from "./formatMovieRecommendations";
 import tmdbApi from "./tmdbApi";
 import type {
-  IMovieDetails,
-  IMovieDetailsFormatted,
-  IMovieLoggedFormatted,
+  MovieDetails,
+  MovieDetailsFormatted,
+  MovieLoggedFormatted,
 } from "~/types";
 
-interface IParams {
-  movie: IMovieLoggedFormatted;
-  movieDetails: IMovieDetails;
+interface Params {
+  movie: MovieLoggedFormatted;
+  movieDetails: MovieDetails;
 }
 
 const { backdrop, logo, poster } = tmdbApi.img;
@@ -19,7 +19,7 @@ const { backdrop, logo, poster } = tmdbApi.img;
 const formatMovieDetails = ({
   movie,
   movieDetails,
-}: IParams): IMovieDetailsFormatted => ({
+}: Params): MovieDetailsFormatted => ({
   br_title: movieDetails.alternative_titles.titles.find(
     ({ iso_3166_1 }) => iso_3166_1 === "BR",
   )?.title,

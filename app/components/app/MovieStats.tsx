@@ -5,7 +5,7 @@ import {
 } from "~/components/library";
 import { loader } from "~/routes/loaders/statsLoader";
 
-interface IProps {
+interface Props {
   moviesPerDecadeReleased: ReturnType<typeof loader>["moviesPerDecadeReleased"];
   moviesPerRatingGiven: ReturnType<typeof loader>["moviesPerRatingGiven"];
   moviesPerYearWatched: ReturnType<typeof loader>["moviesPerYearWatched"];
@@ -15,7 +15,7 @@ function MovieStats({
   moviesPerDecadeReleased,
   moviesPerRatingGiven,
   moviesPerYearWatched,
-}: IProps) {
+}: Props) {
   const stats = [
     {
       movies: moviesPerYearWatched,

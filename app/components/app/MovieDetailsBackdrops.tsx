@@ -1,11 +1,11 @@
 import { Image, ScrollableHorizontalList } from "~/components/library";
-import type { IMovieDetailsFormatted } from "~/types";
+import type { MovieDetailsFormatted } from "~/types";
 
-type IProps = Pick<IMovieDetailsFormatted, "tagline" | "title"> & {
-  backdrops: IMovieDetailsFormatted["images"]["backdrops"];
+type Props = Pick<MovieDetailsFormatted, "tagline" | "title"> & {
+  backdrops: MovieDetailsFormatted["images"]["backdrops"];
 };
 
-function MovieDetailsBackdrops({ backdrops, tagline, title }: IProps) {
+function MovieDetailsBackdrops({ backdrops, tagline, title }: Props) {
   return (
     <>
       {tagline && (

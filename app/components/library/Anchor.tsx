@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router";
 
-interface IProps {
+interface Props {
   children: ReactNode;
   href: string;
 }
 
-function Anchor({ children, href }: IProps) {
+function Anchor({ children, href }: Props) {
   const className = "text-danger text-decoration-none";
   if (href.startsWith("http")) {
     return (

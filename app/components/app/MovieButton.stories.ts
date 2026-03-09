@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import MovieButton from "./MovieButton";
 import { movieDiaryMock } from "~/__mocks__";
-import type { IMovieLoggedFormatted, MovieType } from "~/types";
+import type { MovieLoggedFormatted, MovieType } from "~/types";
 
-const getArgs = (movie: IMovieLoggedFormatted) => ({
+const getArgs = (movie: MovieLoggedFormatted) => ({
   dateFormatted: movie.dateFormatted,
   id: movie.id,
   name: movie.name,

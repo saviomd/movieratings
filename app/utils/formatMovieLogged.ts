@@ -1,11 +1,11 @@
 import formatDate from "./formatDate";
-import type { IMovieLogged, IMovieLoggedFormatted } from "~/types";
+import type { MovieLogged, MovieLoggedFormatted } from "~/types";
 
-interface IParams {
-  movieLogged: IMovieLogged;
+interface Params {
+  movieLogged: MovieLogged;
 }
 
-const formatMovieLogged = ({ movieLogged }: IParams): IMovieLoggedFormatted => {
+const formatMovieLogged = ({ movieLogged }: Params): MovieLoggedFormatted => {
   const {
     Date: date,
     "Letterboxd URI": letterboxdURI,

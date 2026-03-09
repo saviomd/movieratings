@@ -1,20 +1,20 @@
 import formatPerson from "./formatPerson";
 import type {
-  IMovieCredits,
-  IMovieCreditsFormatted,
-  IPersonFormatted,
+  MovieCredits,
+  MovieCreditsFormatted,
+  PersonFormatted,
 } from "~/types";
 
-interface IParams {
-  credits: IMovieCredits;
+interface Params {
+  credits: MovieCredits;
 }
 
-const formatMovieCredits = ({ credits }: IParams): IMovieCreditsFormatted => ({
+const formatMovieCredits = ({ credits }: Params): MovieCreditsFormatted => ({
   cast: credits.cast
     .map((person) => formatPerson({ person }))
     .toSorted((a, b) => a.order - b.order),
   crew: credits.crew
-    .reduce<IPersonFormatted[]>((previous, current): IPersonFormatted[] => {
+    .reduce<PersonFormatted[]>((previous, current): PersonFormatted[] => {
       const found = previous.find(({ id }) => id === current.id);
       if (found) {
         found.job = [...found.job, current.job];

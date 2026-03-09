@@ -1,8 +1,8 @@
 import { Heading, Rating } from "~/components/library";
-import type { IMovieDetailsFormatted } from "~/types";
+import type { MovieDetailsFormatted } from "~/types";
 
-type IProps = Pick<
-  IMovieDetailsFormatted,
+type Props = Pick<
+  MovieDetailsFormatted,
   | "br_title"
   | "original_title"
   | "rating"
@@ -20,7 +20,7 @@ function MovieDetailsHeader({
   title,
   vote_average,
   vote_count,
-}: IProps) {
+}: Props) {
   return (
     <div className="bg-secondary border border-secondary mb-3 p-3 rounded">
       <Heading level={1}>

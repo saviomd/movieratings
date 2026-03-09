@@ -4,7 +4,7 @@ import useMovieListStore from "~/stores/useMovieListStore";
 import type { MovieType } from "~/types";
 import { routePaths } from "~/utils";
 
-interface IProps {
+interface Props {
   store: ReturnType<typeof useMovieListStore>;
   type: MovieType;
 }
@@ -19,7 +19,7 @@ const routePath = {
   Ratings: routePaths.ratings,
 };
 
-export default function MovieLayout({ store, type }: IProps) {
+export default function MovieLayout({ store, type }: Props) {
   const {
     boundActions: { increaseMovieListPage, setMovieListSearchString },
     hasMorePages,

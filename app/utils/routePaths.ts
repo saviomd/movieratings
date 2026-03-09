@@ -1,7 +1,7 @@
-import type { IMovieLoggedFormatted } from "~/types";
+import type { MovieLoggedFormatted } from "~/types";
 
 interface IMovieRoutePath {
-  id: IMovieLoggedFormatted["id"];
+  id: MovieLoggedFormatted["id"];
 }
 
 const routePaths = {

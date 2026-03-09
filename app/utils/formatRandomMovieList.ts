@@ -1,17 +1,17 @@
-import type { IRandomMovie, IRandomMovieFormatted } from "~/types";
+import type { RandomMovie, RandomMovieFormatted } from "~/types";
 
 import routePaths from "./routePaths";
 import tmdbApi from "./tmdbApi";
 
 const { poster } = tmdbApi.img;
 
-interface IParams {
-  randomMovieList: IRandomMovie[];
+interface Params {
+  randomMovieList: RandomMovie[];
 }
 
 const formatRandomMovieList = ({
   randomMovieList,
-}: IParams): IRandomMovieFormatted[] =>
+}: Params): RandomMovieFormatted[] =>
   randomMovieList.map((movie) => ({
     ...movie,
     movie_path: routePaths.movie({

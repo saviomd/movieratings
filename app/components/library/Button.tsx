@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Link, NavLink } from "react-router";
 
-interface IProps {
+interface Props {
   as?: keyof typeof components;
   children: ReactNode;
   href?: string;
@@ -35,7 +35,7 @@ function Button({
   onClick,
   size = "md",
   variant = "primary",
-}: IProps) {
+}: Props) {
   if (!href && !onClick) {
     throw new Error("Button must have either href or onClick");
   }

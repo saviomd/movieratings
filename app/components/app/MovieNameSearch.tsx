@@ -4,7 +4,7 @@ import type { ChangeEvent } from "react";
 import { Button, TextInput } from "~/components/library";
 import useMovieListStore from "~/stores/useMovieListStore";
 
-interface IProps {
+interface Props {
   movieListFiltered: ReturnType<typeof useMovieListStore>["movieListFiltered"];
   movieListSearchString: ReturnType<
     typeof useMovieListStore
@@ -18,7 +18,7 @@ function MovieNameSearch({
   movieListFiltered,
   movieListSearchString,
   setMovieListSearchString,
-}: IProps) {
+}: Props) {
   const handleReset = () => {
     setMovieListSearchString("");
   };

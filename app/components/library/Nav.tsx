@@ -3,7 +3,7 @@ import type { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 
 import Button from "./Button";
 
-interface IProps {
+interface Props {
   items: {
     icon: FontAwesomeIconProps["icon"];
     name: string;
@@ -11,7 +11,7 @@ interface IProps {
   }[];
 }
 
-function Nav({ items }: IProps) {
+function Nav({ items }: Props) {
   return (
     <nav className="btn-group">
       {items.map(({ icon, name, path }) => (

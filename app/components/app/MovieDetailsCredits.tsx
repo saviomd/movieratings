@@ -7,15 +7,15 @@ import {
   Image,
   ScrollableHorizontalList,
 } from "~/components/library";
-import type { IMovieDetailsFormatted } from "~/types";
+import type { MovieDetailsFormatted } from "~/types";
 
-type IProps = Pick<IMovieDetailsFormatted, "credits">;
+type Props = Pick<MovieDetailsFormatted, "credits">;
 
 type CreditType = "cast" | "crew";
 
 const creditTypes: CreditType[] = ["cast", "crew"];
 
-function MovieDetailsCredits({ credits }: IProps) {
+function MovieDetailsCredits({ credits }: Props) {
   return creditTypes.map((item) => (
     <Fragment key={item}>
       <Heading level={2}>

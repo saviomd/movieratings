@@ -27,11 +27,11 @@ library.add(
   faTimes,
 );
 
-interface IProps {
+interface Props {
   children: ReactNode;
 }
 
-function AppWrapper({ children }: IProps) {
+function AppWrapper({ children }: Props) {
   return children;
 }
 

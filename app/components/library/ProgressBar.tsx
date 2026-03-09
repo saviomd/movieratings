@@ -1,8 +1,8 @@
-interface IProps {
+interface Props {
   size: number;
 }
 
-const ProgressBar = ({ size }: IProps) => (
+const ProgressBar = ({ size }: Props) => (
   <div
     className="bg-secondary d-inline-block overflow-hidden position-relative px-3 rounded"
     style={{ height: "160px" }}

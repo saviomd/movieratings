@@ -1,10 +1,10 @@
 import type { ElementType, ReactNode } from "react";
 
-type HeadingLevelType = keyof typeof levels;
+type HeadingLevel = keyof typeof levels;
 
-interface IProps {
+interface Props {
   children: ReactNode;
-  level: HeadingLevelType;
+  level: HeadingLevel;
 }
 
 const levels = {
@@ -15,7 +15,7 @@ const levels = {
 };
 const levelKeys = Object.keys(levels).map((item) => Number.parseInt(item, 10));
 
-function Heading({ children, level }: IProps) {
+function Heading({ children, level }: Props) {
   const HeadingTag = `h${String(level)}` as ElementType;
   return (
     <HeadingTag className={`h${levels[level].toString()}`}>
@@ -26,4 +26,4 @@ function Heading({ children, level }: IProps) {
 
 export default Heading;
 export { levelKeys };
-export type { HeadingLevelType };
+export type { HeadingLevel };

@@ -1,8 +1,8 @@
 import { Badge, Image, ScrollableHorizontalList } from "~/components/library";
-import type { IMovieDetailsFormatted } from "~/types";
+import type { MovieDetailsFormatted } from "~/types";
 
-type IProps = Pick<
-  IMovieDetailsFormatted,
+type Props = Pick<
+  MovieDetailsFormatted,
   | "budget"
   | "flatrate"
   | "genres"
@@ -15,7 +15,7 @@ type IProps = Pick<
   | "spoken_languages"
   | "title"
 > & {
-  posters: IMovieDetailsFormatted["images"]["posters"];
+  posters: MovieDetailsFormatted["images"]["posters"];
 };
 
 function MovieDetailsInfo({
@@ -31,7 +31,7 @@ function MovieDetailsInfo({
   runtime,
   spoken_languages,
   title,
-}: IProps) {
+}: Props) {
   const info = [
     { title: "Runtime", value: `${String(runtime)} minutes` },
     { title: "Release date", value: release_date },

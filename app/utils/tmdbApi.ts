@@ -1,11 +1,11 @@
-import type { ImgType, PathType } from "~/types";
+import type { ImgType, Path } from "~/types";
 
 interface IImgMethod {
-  path: PathType;
+  path: Path;
 }
 
 interface IImgUrl {
-  path: PathType;
+  path: Path;
   type: ImgType;
 }
 

@@ -2,13 +2,13 @@ import type { CSSProperties } from "react";
 
 import type { ImgType } from "~/types";
 
-interface IProps {
+interface Props {
   src?: string;
   title: string;
   type: ImgType;
 }
 
-function Image({ src, title, type }: IProps) {
+function Image({ src, title, type }: Props) {
   const types = {
     backdrop: {
       height: 720,

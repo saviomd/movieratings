@@ -1,11 +1,11 @@
 import formatMovieLogged from "./formatMovieLogged";
-import type { IMovieLogged, IMovieLoggedFormatted } from "~/types";
+import type { MovieLogged, MovieLoggedFormatted } from "~/types";
 
-interface IParams {
-  movieList: IMovieLogged[];
+interface Params {
+  movieList: MovieLogged[];
 }
 
-const formatMovieList = ({ movieList }: IParams): IMovieLoggedFormatted[] => {
+const formatMovieList = ({ movieList }: Params): MovieLoggedFormatted[] => {
   return [...movieList]
     .toReversed()
     .map((movieLogged) => formatMovieLogged({ movieLogged }));

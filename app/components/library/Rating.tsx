@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface IProps {
+interface Props {
   count: number;
 }
 
-function Rating({ count }: IProps) {
+function Rating({ count }: Props) {
   const stars = [...Array.from({ length: count }).keys()];
 
   return (

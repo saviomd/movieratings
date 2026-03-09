@@ -6,10 +6,10 @@ import {
   Heading,
   ScrollableHorizontalList,
 } from "~/components/library";
-import type { IMovieDetailsFormatted } from "~/types";
+import type { MovieDetailsFormatted } from "~/types";
 
-type IProps = Pick<
-  IMovieDetailsFormatted,
+type Props = Pick<
+  MovieDetailsFormatted,
   "letterboxdURI" | "recommendations" | "tmdbURI"
 >;
 
@@ -17,7 +17,7 @@ function MovieDetailsRecommendations({
   letterboxdURI,
   recommendations,
   tmdbURI,
-}: IProps) {
+}: Props) {
   const links = [
     { href: letterboxdURI, name: "Letterboxd" },
     { href: tmdbURI, name: "TMDb" },

@@ -1,18 +1,30 @@
-export interface IImage {
-  file_path: PathType;
+export type DataStatus = "error" | "pending" | "success";
+
+export interface Image {
+  file_path: Path;
 }
 
-export interface IMovieCredits {
-  cast: IPerson[];
-  crew: IPerson[];
+export type ImgType = "backdrop" | "logo" | "poster" | "profile";
+
+export type MessageType =
+  | "error"
+  | "noData"
+  | "noMovies"
+  | "noStats"
+  | "pageNotFound"
+  | "pending";
+
+export interface MovieCredits {
+  cast: Person[];
+  crew: Person[];
 }
 
-export interface IMovieCreditsFormatted {
-  cast: IPersonFormatted[];
-  crew: IPersonFormatted[];
+export interface MovieCreditsFormatted {
+  cast: PersonFormatted[];
+  crew: PersonFormatted[];
 }
 
-export interface IMovieDetails {
+export interface MovieDetails {
   alternative_titles: {
     titles: {
       iso_3166_1: string;
@@ -20,19 +32,19 @@ export interface IMovieDetails {
     }[];
   };
   budget?: number;
-  credits: IMovieCredits;
+  credits: MovieCredits;
   genres: {
     name: string;
   }[];
   id: number;
   images: {
-    backdrops: IImage[];
-    posters: IImage[];
+    backdrops: Image[];
+    posters: Image[];
   };
   original_language: string;
   original_title?: string;
   overview?: string;
-  poster_path: PathType;
+  poster_path: Path;
   production_companies: {
     name: string;
   }[];
@@ -40,7 +52,7 @@ export interface IMovieDetails {
     name: string;
   }[];
   recommendations: {
-    results: IMovieDetails[];
+    results: MovieDetails[];
   };
   release_date: string;
   revenue?: number;
@@ -55,14 +67,14 @@ export interface IMovieDetails {
   "watch/providers": {
     results: {
       BR?: {
-        flatrate?: IProvider[];
+        flatrate?: Provider[];
       };
     };
   };
 }
 
-export type IMovieDetailsFormatted = Pick<
-  IMovieDetails,
+export type MovieDetailsFormatted = Pick<
+  MovieDetails,
   | "genres"
   | "original_title"
   | "overview"
@@ -78,21 +90,21 @@ export type IMovieDetailsFormatted = Pick<
 > & {
   br_title: string | undefined;
   budget: string;
-  credits: IMovieCreditsFormatted;
-  flatrate: IProviderFormatted[];
+  credits: MovieCreditsFormatted;
+  flatrate: ProviderFormatted[];
   images: {
     backdrops: { url: string | undefined }[];
     posters: { url: string | undefined }[];
   };
-  letterboxdURI: IMovieLoggedFormatted["letterboxdURI"];
-  rating: IMovieLoggedFormatted["rating"];
-  recommendations: IMovieRecommendationFormatted[];
+  letterboxdURI: MovieLoggedFormatted["letterboxdURI"];
+  rating: MovieLoggedFormatted["rating"];
+  recommendations: MovieRecommendationFormatted[];
   release_year: string;
   revenue: string;
   tmdbURI: string;
 };
 
-export interface IMovieLogged {
+export interface MovieLogged {
   Date: string;
   "Letterboxd URI": string;
   Name: string | number;
@@ -101,37 +113,41 @@ export interface IMovieLogged {
   "Watched Date"?: string;
 }
 
-export interface IMovieLoggedFormatted {
-  date: IMovieLogged["Date"];
+export interface MovieLoggedFormatted {
+  date: MovieLogged["Date"];
   dateFormatted: string;
   id: string;
-  letterboxdURI: IMovieLogged["Letterboxd URI"];
+  letterboxdURI: MovieLogged["Letterboxd URI"];
   name: string;
-  rating: IMovieLogged["Rating"];
-  watchedDate?: IMovieLogged["Watched Date"];
+  rating: MovieLogged["Rating"];
+  watchedDate?: MovieLogged["Watched Date"];
   watchedDateFormatted?: string;
-  year: IMovieLogged["Year"];
+  year: MovieLogged["Year"];
 }
 
-export interface IMovieRecommendationFormatted {
-  id: IMovieDetails["id"];
+export interface MovieRecommendationFormatted {
+  id: MovieDetails["id"];
   poster_url?: string;
-  title: IMovieDetails["title"];
+  title: MovieDetails["title"];
   tmdbURI: string;
 }
 
-export interface IPerson {
+export type MovieType = "Diary" | "Ratings";
+
+export type Path = string;
+
+export interface Person {
   character?: string;
   id: number;
   job?: string;
   name: string;
   order?: number;
   popularity: number;
-  profile_path: PathType;
+  profile_path: Path;
 }
 
-export type IPersonFormatted = Pick<
-  IPerson,
+export type PersonFormatted = Pick<
+  Person,
   "character" | "id" | "name" | "popularity"
 > & {
   job: (string | undefined)[];
@@ -140,40 +156,24 @@ export type IPersonFormatted = Pick<
   tmdbURI: string;
 };
 
-export interface IProvider {
+export interface Provider {
   display_priority: number;
-  logo_path: PathType;
+  logo_path: Path;
   provider_id: number;
   provider_name: string;
 }
 
-type IProviderFormatted = Pick<IProvider, "provider_name"> & {
+type ProviderFormatted = Pick<Provider, "provider_name"> & {
   logo_url?: string;
 };
 
-export interface IRandomMovie {
+export interface RandomMovie {
   letterboxdURI: string;
   name: string;
-  poster_path: PathType;
+  poster_path: Path;
 }
 
-export interface IRandomMovieFormatted extends IRandomMovie {
+export interface RandomMovieFormatted extends RandomMovie {
   movie_path: string;
   poster_url: string | undefined;
 }
-
-export type DataStatusType = "error" | "pending" | "success";
-
-export type ImgType = "backdrop" | "logo" | "poster" | "profile";
-
-export type MessageType =
-  | "error"
-  | "noData"
-  | "noMovies"
-  | "noStats"
-  | "pageNotFound"
-  | "pending";
-
-export type MovieType = "Diary" | "Ratings";
-
-export type PathType = string;

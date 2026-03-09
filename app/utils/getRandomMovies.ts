@@ -1,4 +1,4 @@
-interface IParams {
+interface Params {
   movieRatings: {
     letterboxdURI: string;
     name: string;
@@ -8,7 +8,7 @@ interface IParams {
   count: number;
 }
 
-const getRandomMovies = ({ movieRatings, count }: IParams) => {
+const getRandomMovies = ({ movieRatings, count }: Params) => {
   if (!movieRatings.length) {
     return [];
   }

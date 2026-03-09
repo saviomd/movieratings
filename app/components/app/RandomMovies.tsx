@@ -3,12 +3,12 @@ import useStatsStore from "~/stores/useStatsStore";
 
 import MoviePosterButton from "./MoviePosterButton";
 
-interface IProps {
+interface Props {
   randomMovies: ReturnType<typeof useStatsStore>["randomMovies"];
   randomMoviesStatus: ReturnType<typeof useStatsStore>["randomMoviesStatus"];
 }
 
-function RandomMovies({ randomMovies, randomMoviesStatus }: IProps) {
+function RandomMovies({ randomMovies, randomMoviesStatus }: Props) {
   return (
     <LoadingHandler
       dataStatus={randomMoviesStatus}

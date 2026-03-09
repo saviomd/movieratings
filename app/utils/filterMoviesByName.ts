@@ -1,14 +1,14 @@
-import type { IMovieLoggedFormatted } from "~/types";
+import type { MovieLoggedFormatted } from "~/types";
 
-interface IParams {
-  movieList: IMovieLoggedFormatted[];
+interface Params {
+  movieList: MovieLoggedFormatted[];
   value?: string;
 }
 
 const filterMoviesByName = ({
   movieList,
   value = "",
-}: IParams): IMovieLoggedFormatted[] =>
+}: Params): MovieLoggedFormatted[] =>
   movieList
     .filter(({ name }) => name.toLowerCase().includes(value.toLowerCase()))
     .toSorted(

@@ -1,12 +1,12 @@
 import { Anchor, Image } from "~/components/library";
 
-interface IProps {
+interface Props {
   href: string;
   posterUrl?: string;
   title: string;
 }
 
-function MoviePosterButton({ href, posterUrl, title }: IProps) {
+function MoviePosterButton({ href, posterUrl, title }: Props) {
   return (
     <Anchor href={href}>
       <Image src={posterUrl} title={title} type="poster" />

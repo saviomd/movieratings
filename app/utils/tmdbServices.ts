@@ -6,7 +6,7 @@ import formatMovieDetails from "./formatMovieDetails";
 import formatRandomMovieList from "./formatRandomMovieList";
 import getRandomMovies from "./getRandomMovies";
 import tmdbApi from "./tmdbApi";
-import type { IMovieDetails, IMovieLoggedFormatted } from "~/types";
+import type { MovieDetails, MovieLoggedFormatted } from "~/types";
 
 interface IFetchTmdb {
   path: string;
@@ -30,7 +30,7 @@ interface IGetMovieDetails {
 
 const getMovieDetails = ({
   movieId,
-}: IGetMovieDetails): Promise<IMovieDetails> =>
+}: IGetMovieDetails): Promise<MovieDetails> =>
   fetchTmdb({
     path: `movie/${String(movieId)}`,
     queryString:
@@ -43,7 +43,7 @@ interface IGetSearchMovies {
 }
 
 interface IGetSearchMoviesReturn {
-  results: IMovieDetails[];
+  results: MovieDetails[];
 }
 
 const getSearchMovies = ({
@@ -56,7 +56,7 @@ const getSearchMovies = ({
   });
 
 interface IUseMovieDetailsQuery {
-  movie: IMovieLoggedFormatted;
+  movie: MovieLoggedFormatted;
 }
 
 const useMovieDetailsQuery = ({ movie }: IUseMovieDetailsQuery) => {

@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 
-interface IProps {
+interface Props {
   children: ReactNode;
 }
 
-function Badge({ children }: IProps) {
+function Badge({ children }: Props) {
   return <span className="badge bg-secondary">{children}</span>;
 }
 

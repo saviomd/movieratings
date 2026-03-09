@@ -1,15 +1,15 @@
 import { Button, Rating } from "~/components/library";
-import type { IMovieLoggedFormatted, MovieType } from "~/types";
+import type { MovieLoggedFormatted, MovieType } from "~/types";
 import { routePaths } from "~/utils";
 
-interface IProps {
-  dateFormatted: IMovieLoggedFormatted["dateFormatted"];
-  id: IMovieLoggedFormatted["id"];
-  name: IMovieLoggedFormatted["name"];
-  rating: IMovieLoggedFormatted["rating"];
+interface Props {
+  dateFormatted: MovieLoggedFormatted["dateFormatted"];
+  id: MovieLoggedFormatted["id"];
+  name: MovieLoggedFormatted["name"];
+  rating: MovieLoggedFormatted["rating"];
   type: MovieType;
-  watchedDateFormatted: IMovieLoggedFormatted["watchedDateFormatted"];
-  year: IMovieLoggedFormatted["year"];
+  watchedDateFormatted: MovieLoggedFormatted["watchedDateFormatted"];
+  year: MovieLoggedFormatted["year"];
 }
 
 function MovieButton({
@@ -20,7 +20,7 @@ function MovieButton({
   type,
   watchedDateFormatted,
   year,
-}: IProps) {
+}: Props) {
   let dateText;
   if (type === "Diary" && watchedDateFormatted) {
     dateText = `watched in ${watchedDateFormatted}`;

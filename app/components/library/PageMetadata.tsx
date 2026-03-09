@@ -1,13 +1,13 @@
 import { manifest } from "~/data";
 import { routePaths } from "~/utils";
 
-interface IParams {
+interface Params {
   description?: string;
   path?: string;
   title?: string;
 }
 
-function PageMetadata({ description, path, title }: IParams) {
+function PageMetadata({ description, path, title }: Params) {
   const metaData = {
     description: description ?? manifest.description,
     icon: {

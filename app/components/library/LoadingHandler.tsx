@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 
 import Message from "./Message";
-import type { DataStatusType, MessageType } from "~/types";
+import type { DataStatus, MessageType } from "~/types";
 
-interface IProps {
+interface Props {
   children?: ReactNode;
-  dataStatus: DataStatusType;
+  dataStatus: DataStatus;
   hasData?: boolean;
   messageNoData?: MessageType;
 }
@@ -15,7 +15,7 @@ const LoadingHandler = ({
   dataStatus,
   hasData = true,
   messageNoData = "noData",
-}: IProps) => {
+}: Props) => {
   if (dataStatus === "pending" || dataStatus === "error") {
     return <Message type={dataStatus} />;
   }

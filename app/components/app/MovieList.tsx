@@ -4,7 +4,7 @@ import type { MovieType } from "~/types";
 
 import MovieButton from "./MovieButton";
 
-interface IProps {
+interface Props {
   increaseMovieListPage: ReturnType<
     typeof useMovieListStore
   >["boundActions"]["increaseMovieListPage"];
@@ -20,7 +20,7 @@ function MovieList({
   hasMorePages,
   movieListPaginated,
   type,
-}: IProps) {
+}: Props) {
   return (
     <>
       <ul className="list-unstyled">

@@ -1,15 +1,15 @@
 import tmdbApi from "./tmdbApi";
-import type { IMovieDetails, IMovieRecommendationFormatted } from "~/types";
+import type { MovieDetails, MovieRecommendationFormatted } from "~/types";
 
-interface IParams {
-  movies: IMovieDetails[];
+interface Params {
+  movies: MovieDetails[];
 }
 
 const { poster } = tmdbApi.img;
 
 const formatMovieRecommendations = ({
   movies,
-}: IParams): IMovieRecommendationFormatted[] =>
+}: Params): MovieRecommendationFormatted[] =>
   movies.map((movie) => ({
     id: movie.id,
     poster_url: poster({ path: movie.poster_path }),
