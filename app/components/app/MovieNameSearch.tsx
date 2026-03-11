@@ -5,7 +5,9 @@ import { Button, TextInput } from "~/components/library";
 import useMovieListStore from "~/stores/useMovieListStore";
 
 interface Props {
-  movieListFiltered: ReturnType<typeof useMovieListStore>["movieListFiltered"];
+  movieListFilteredCount: ReturnType<
+    typeof useMovieListStore
+  >["movieListFilteredCount"];
   movieListSearchString: ReturnType<
     typeof useMovieListStore
   >["movieListSearchString"];
@@ -15,7 +17,7 @@ interface Props {
 }
 
 function MovieNameSearch({
-  movieListFiltered,
+  movieListFilteredCount,
   movieListSearchString,
   setMovieListSearchString,
 }: Props) {
@@ -40,7 +42,7 @@ function MovieNameSearch({
           <FontAwesomeIcon icon="times" />
         </Button>
       </div>
-      <p className="small text-end">{movieListFiltered.length} movies</p>
+      <p className="small text-end">{movieListFilteredCount} movies</p>
     </div>
   );
 }

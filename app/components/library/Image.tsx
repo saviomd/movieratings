@@ -1,6 +1,5 @@
-import type { CSSProperties } from "react";
-
 import type { ImgType } from "~/types";
+import { getImageDimensions } from "~/utils";
 
 interface Props {
   src?: string;
@@ -9,46 +8,23 @@ interface Props {
 }
 
 function Image({ src, title, type }: Props) {
-  const types = {
-    backdrop: {
-      height: 720,
-      width: 1280,
-    },
-    logo: {
-      height: 48,
-      width: 48,
-    },
-    poster: {
-      height: 1169,
-      width: 780,
-    },
-    profile: {
-      height: 632,
-      width: 421,
-    },
-  };
-  const dimensions = types[type];
-  if (src) {
-    return (
-      <img
-        alt={`${type} for ${title}`}
-        className="bg-secondary img-fluid"
-        height={dimensions.height}
-        loading="lazy"
-        src={src}
-        width={dimensions.width}
-      />
-    );
-  }
-  const wrapperStyle = {
-    "--bs-aspect-ratio": `${String((dimensions.height / dimensions.width) * 100)}%`,
-  } as CSSProperties;
+  const { aspectRatioStyle, height, width } = getImageDimensions({ type });
   return (
-    <div
-      className="bg-secondary ratio overflow-hidden text-white"
-      style={wrapperStyle}
-    >
-      <div className="p-3 small text-center">{`No ${type} image available for ${title}`}</div>
+    <div className="ratio" style={aspectRatioStyle}>
+      {src ? (
+        <img
+          alt={`${type} for ${title}`}
+          className="bg-secondary img-fluid"
+          height={height}
+          loading="lazy"
+          src={src}
+          width={width}
+        />
+      ) : (
+        <div className="bg-secondary overflow-hidden p-3 small text-center text-white">
+          {`No ${type} image available for ${title}`}
+        </div>
+      )}
     </div>
   );
 }

@@ -9,6 +9,7 @@ export { default as formatMovieLogged } from "./formatMovieLogged";
 export { default as formatMovieRecommendations } from "./formatMovieRecommendations";
 export { default as formatPerson } from "./formatPerson";
 export { default as formatRandomMovieList } from "./formatRandomMovieList";
+export { default as getImageDimensions } from "./getImageDimensions";
 export { default as getRandomMovies } from "./getRandomMovies";
 export { default as routePaths } from "./routePaths";
 export { default as tmdbApi } from "./tmdbApi";

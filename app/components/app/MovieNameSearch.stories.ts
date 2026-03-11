@@ -11,9 +11,6 @@ const meta = {
   parameters: {
     layout: "fullscreen",
   },
-  argTypes: {
-    movieListFiltered: { control: false },
-  },
 } satisfies Meta<typeof MovieNameSearch>;
 
 export default meta;
@@ -21,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    movieListFiltered: movieDiaryMock.slice(0, 10),
+    movieListFilteredCount: movieDiaryMock.length,
     movieListSearchString: "",
     setMovieListSearchString: fn(),
   },

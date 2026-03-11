@@ -24,8 +24,8 @@ const navItems: ComponentProps<typeof Nav>["items"] = [
 
 function Header() {
   return (
-    <header className="border-bottom border-secondary mb-3">
-      <div className="align-items-center my-2 row">
+    <header className="bg-dark border-bottom border-secondary mb-3 py-2 sticky-top">
+      <div className="align-items-center row">
         <h1 className="col h5 mb-0">
           <NavLink
             className="text-decoration-none text-white"

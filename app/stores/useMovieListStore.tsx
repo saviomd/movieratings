@@ -25,7 +25,11 @@ function reducer(state: IState, action: ActionType) {
     case "INCREASE_MOVIE_LIST_PAGE":
       return { ...state, movieListPage: state.movieListPage + 1 };
     case "SET_MOVIE_LIST_SEARCH_STRING":
-      return { ...state, movieListSearchString: action.payload.toLowerCase() };
+      return {
+        ...state,
+        movieListPage: initialState.movieListPage,
+        movieListSearchString: action.payload.toLowerCase(),
+      };
     default:
       throw new Error("Unknown action.type");
   }
@@ -55,6 +59,9 @@ const useMovieListStore = ({ movieList }: IUseMovieListStore) => {
     [movieList, state.movieListSearchString],
   );
 
+  const movieListCount = movieList.length;
+  const movieListFilteredCount = movieListFiltered.length;
+
   const movieListPaginated = useMemo(() => {
     const size = state.movieListPage * 100;
     return movieListFiltered.slice(0, size);
@@ -68,8 +75,8 @@ const useMovieListStore = ({ movieList }: IUseMovieListStore) => {
     ...state,
     boundActions,
     hasMorePages,
-    movieList,
-    movieListFiltered,
+    movieListCount,
+    movieListFilteredCount,
     movieListPaginated,
   };
 };

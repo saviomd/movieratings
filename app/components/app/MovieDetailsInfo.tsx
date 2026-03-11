@@ -72,9 +72,9 @@ function MovieDetailsInfo({
             <li className="col-auto">
               <div>Streaming in Brazil on</div>
               {flatrate.length ? (
-                <ul className="list-inline">
+                <ul className="g-3 list-unstyled row">
                   {flatrate.map(({ logo_url, provider_name }) => (
-                    <li className="list-inline-item" key={provider_name}>
+                    <li className="col-4" key={provider_name}>
                       <Image src={logo_url} title={provider_name} type="logo" />
                     </li>
                   ))}

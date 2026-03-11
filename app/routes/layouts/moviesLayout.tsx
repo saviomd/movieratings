@@ -23,8 +23,8 @@ export default function MovieLayout({ store, type }: Props) {
   const {
     boundActions: { increaseMovieListPage, setMovieListSearchString },
     hasMorePages,
-    movieList,
-    movieListFiltered,
+    movieListCount,
+    movieListFilteredCount,
     movieListPaginated,
     movieListSearchString,
   } = store;
@@ -32,7 +32,7 @@ export default function MovieLayout({ store, type }: Props) {
   return (
     <>
       <PageMetadata
-        description={`${movieList.length.toString()} movies ${descriptionMessage[type]}`}
+        description={`${movieListCount.toString()} movies ${descriptionMessage[type]}`}
         path={routePath[type]()}
         title={type}
       />
@@ -40,7 +40,7 @@ export default function MovieLayout({ store, type }: Props) {
       <div className="row">
         <div className="col-12 col-sm-4 col-lg-6">
           <MovieNameSearch
-            movieListFiltered={movieListFiltered}
+            movieListFilteredCount={movieListFilteredCount}
             movieListSearchString={movieListSearchString}
             setMovieListSearchString={setMovieListSearchString}
           />
