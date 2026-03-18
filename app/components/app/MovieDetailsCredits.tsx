@@ -1,12 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react";
 
-import {
-  Anchor,
-  Heading,
-  Image,
-  ScrollableHorizontalList,
-} from "~/components/library";
+import { Anchor, Carousel, Grid, Heading, Image } from "~/components/library";
 import type { MovieDetailsFormatted } from "~/types";
 
 type Props = Pick<MovieDetailsFormatted, "credits">;
@@ -23,9 +18,9 @@ function MovieDetailsCredits({ credits }: Props) {
         <FontAwesomeIcon className="ms-1 small" icon="external-link-alt" />
       </Heading>
       {credits[item].length ? (
-        <ScrollableHorizontalList>
+        <Carousel>
           {credits[item].map((person) => (
-            <li className="col-5 col-sm-3 col-md-2" key={person.id}>
+            <Grid.Col as="li" key={person.id} width={5} widthSm={3} widthMd={2}>
               <Anchor href={person.tmdbURI}>
                 <Image
                   src={person.profile_url}
@@ -37,9 +32,9 @@ function MovieDetailsCredits({ credits }: Props) {
                   {person.character ?? person.job.join(" / ")}
                 </div>
               </Anchor>
-            </li>
+            </Grid.Col>
           ))}
-        </ScrollableHorizontalList>
+        </Carousel>
       ) : (
         <p>No data available</p>
       )}

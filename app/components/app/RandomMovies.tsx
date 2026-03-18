@@ -1,4 +1,4 @@
-import { LoadingHandler } from "~/components/library";
+import { Grid, LoadingHandler } from "~/components/library";
 import useStatsStore from "~/stores/useStatsStore";
 
 import MoviePosterButton from "./MoviePosterButton";
@@ -14,17 +14,19 @@ function RandomMovies({ randomMovies, randomMoviesStatus }: Props) {
       dataStatus={randomMoviesStatus}
       hasData={!!randomMovies.length}
     >
-      <div className="row">
+      <Grid>
         {randomMovies.map(({ movie_path, name, poster_url }) => (
-          <div className="col-6 col-sm-4 mb-3" key={name}>
-            <MoviePosterButton
-              href={movie_path}
-              posterUrl={poster_url}
-              title={name}
-            />
-          </div>
+          <Grid.Col key={name} width={6} widthSm={4}>
+            <div className="mb-3">
+              <MoviePosterButton
+                href={movie_path}
+                posterUrl={poster_url}
+                title={name}
+              />
+            </div>
+          </Grid.Col>
         ))}
-      </div>
+      </Grid>
     </LoadingHandler>
   );
 }

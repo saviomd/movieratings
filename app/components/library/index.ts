@@ -1,6 +1,8 @@
 export { default as Anchor } from "./Anchor";
 export { default as Badge } from "./Badge";
 export { default as Button } from "./Button";
+export { default as Carousel } from "./Carousel";
+export { default as Grid } from "./Grid";
 export { default as Heading } from "./Heading";
 export { default as Image } from "./Image";
 export { default as LoadingHandler } from "./LoadingHandler";
@@ -9,5 +11,4 @@ export { default as Nav } from "./Nav";
 export { default as PageMetadata } from "./PageMetadata";
 export { default as ProgressBar } from "./ProgressBar";
 export { default as Rating } from "./Rating";
-export { default as ScrollableHorizontalList } from "./ScrollableHorizontalList";
 export { default as TextInput } from "./TextInput";

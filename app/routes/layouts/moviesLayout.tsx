@@ -1,5 +1,5 @@
 import { MovieList, MovieNameSearch } from "~/components/app";
-import { Heading, PageMetadata } from "~/components/library";
+import { Grid, Heading, PageMetadata } from "~/components/library";
 import useMovieListStore from "~/stores/useMovieListStore";
 import type { MovieType } from "~/types";
 import { routePaths } from "~/utils";
@@ -37,23 +37,23 @@ export default function MovieLayout({ store, type }: Props) {
         title={type}
       />
       <Heading level={1}>{type}</Heading>
-      <div className="row">
-        <div className="col-12 col-sm-4 col-lg-6">
+      <Grid>
+        <Grid.Col width={12} widthSm={4} widthLg={6}>
           <MovieNameSearch
             movieListFilteredCount={movieListFilteredCount}
             movieListSearchString={movieListSearchString}
             setMovieListSearchString={setMovieListSearchString}
           />
-        </div>
-        <div className="col-12 col-sm-8 col-lg-6">
+        </Grid.Col>
+        <Grid.Col width={12} widthSm={8} widthLg={6}>
           <MovieList
             increaseMovieListPage={increaseMovieListPage}
             hasMorePages={hasMorePages}
             movieListPaginated={movieListPaginated}
             type={type}
           />
-        </div>
-      </div>
+        </Grid.Col>
+      </Grid>
     </>
   );
 }

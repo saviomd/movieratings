@@ -4,7 +4,7 @@ interface Props {
   children: ReactNode;
 }
 
-function ScrollableHorizontalList({ children }: Props) {
+function Carousel({ children }: Props) {
   const listStyle = {
     overflowX: "scroll",
     WebkitOverflowScrolling: "touch",
@@ -18,4 +18,4 @@ function ScrollableHorizontalList({ children }: Props) {
   );
 }
 
-export default ScrollableHorizontalList;
+export default Carousel;

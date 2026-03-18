@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { Outlet, useLocation, useNavigation } from "react-router";
 
 import { AppWrapper, Footer, Header, SiteInfo } from "~/components/app";
-import { LoadingHandler } from "~/components/library";
+import { Grid, LoadingHandler } from "~/components/library";
 import { trackGaPageView } from "~/utils";
 
 const queryClient = new QueryClient({
@@ -28,8 +28,8 @@ export default function AppLayout() {
     <QueryClientProvider client={queryClient}>
       <AppWrapper>
         <div className="container-fluid">
-          <div className="justify-content-center row">
-            <div className="col-12 col-md-10">
+          <Grid justifyContent="center">
+            <Grid.Col width={12} widthMd={10}>
               <Header />
               {isNavigating ? (
                 <LoadingHandler dataStatus="pending" />
@@ -38,8 +38,8 @@ export default function AppLayout() {
               )}
               <SiteInfo />
               <Footer />
-            </div>
-          </div>
+            </Grid.Col>
+          </Grid>
         </div>
       </AppWrapper>
       <ReactQueryDevtools initialIsOpen={false} />

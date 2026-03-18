@@ -1,4 +1,4 @@
-import { Badge, Image, ScrollableHorizontalList } from "~/components/library";
+import { Badge, Carousel, Grid, Image } from "~/components/library";
 import type { MovieDetailsFormatted } from "~/types";
 
 type Props = Pick<
@@ -53,38 +53,40 @@ function MovieDetailsInfo({
   ];
 
   return (
-    <>
-      <div className="animate__animated animate__fadeInUp mb-3 row">
-        <div className="col-10 col-md-6 col-lg-5 mb-3">
-          {!!posters.length && (
-            <ScrollableHorizontalList>
-              {posters.map(({ url }) => (
-                <li className="col-11" key={url}>
-                  <Image src={url} title={title} type="poster" />
-                </li>
-              ))}
-            </ScrollableHorizontalList>
-          )}
-        </div>
-        <div className="col-12 col-md-6 col-lg-7">
+    <div className="animate__animated animate__fadeInUp mb-3">
+      <Grid>
+        {!!posters.length && (
+          <Grid.Col width={10} widthMd={6} widthLg={5}>
+            <div className="mb-3">
+              <Carousel>
+                {posters.map(({ url }) => (
+                  <Grid.Col as="li" key={url} width={11}>
+                    <Image src={url} title={title} type="poster" />
+                  </Grid.Col>
+                ))}
+              </Carousel>
+            </div>
+          </Grid.Col>
+        )}
+        <Grid.Col width={12} widthMd={6} widthLg={7}>
           <div className="lead mb-3">{overview}</div>
-          <ScrollableHorizontalList>
-            <li className="col-auto">
+          <Carousel>
+            <Grid.Col as="li" width="auto">
               <div>Streaming in Brazil on</div>
               {flatrate.length ? (
-                <ul className="g-3 list-unstyled row">
+                <Grid as="ul" gutter={3}>
                   {flatrate.map(({ logo_url, provider_name }) => (
-                    <li className="col-4" key={provider_name}>
+                    <Grid.Col as="li" key={provider_name} width={4}>
                       <Image src={logo_url} title={provider_name} type="logo" />
-                    </li>
+                    </Grid.Col>
                   ))}
-                </ul>
+                </Grid>
               ) : (
                 <div className="fw-bold">None</div>
               )}
-            </li>
+            </Grid.Col>
             {info.map(({ title, value }) => (
-              <li className="col-auto" key={title}>
+              <Grid.Col as="li" key={title} width="auto">
                 <div>{title}</div>
                 {Array.isArray(value) ? (
                   <ul className="fw-bold list-unstyled">
@@ -97,12 +99,12 @@ function MovieDetailsInfo({
                 ) : (
                   <div className="fw-bold">{value}</div>
                 )}
-              </li>
+              </Grid.Col>
             ))}
-          </ScrollableHorizontalList>
-        </div>
-      </div>
-    </>
+          </Carousel>
+        </Grid.Col>
+      </Grid>
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import { Button, Rating } from "~/components/library";
+import { Button, Grid, Rating } from "~/components/library";
 import type { MovieLoggedFormatted, MovieType } from "~/types";
 import { routePaths } from "~/utils";
 
@@ -33,11 +33,17 @@ function MovieButton({
         {name}
         <span className="ms-1 small">({year})</span>
       </div>
-      <div className="align-items-end row small">
-        <div className="col text-start">
-          <Rating count={rating} />
-        </div>
-        <div className="col small text-end">{dateText}</div>
+      <div className="small">
+        <Grid alignItems="end">
+          <Grid.Col width="equal">
+            <div className="text-start">
+              <Rating count={rating} />
+            </div>
+          </Grid.Col>
+          <Grid.Col width="auto">
+            <div className="small">{dateText}</div>
+          </Grid.Col>
+        </Grid>
       </div>
     </Button>
   );

@@ -1,4 +1,4 @@
-import { Image, ScrollableHorizontalList } from "~/components/library";
+import { Carousel, Grid, Image } from "~/components/library";
 import type { MovieDetailsFormatted } from "~/types";
 
 type Props = Pick<MovieDetailsFormatted, "tagline" | "title"> & {
@@ -12,13 +12,13 @@ function MovieDetailsBackdrops({ backdrops, tagline, title }: Props) {
         <blockquote className="blockquote px-5 text-center">{`"${tagline}"`}</blockquote>
       )}
       {backdrops.length && (
-        <ScrollableHorizontalList>
+        <Carousel>
           {backdrops.map(({ url }) => (
-            <li className="col-11" key={url}>
+            <Grid.Col as="li" key={url} width={11}>
               <Image src={url} title={title} type="backdrop" />
-            </li>
+            </Grid.Col>
           ))}
-        </ScrollableHorizontalList>
+        </Carousel>
       )}
     </>
   );
