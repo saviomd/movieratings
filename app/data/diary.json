@@ -6782,7 +6782,7 @@
   {
     "Date": "2023-09-26",
     "Name": "Street Fighter Alpha: The Movie",
-    "Year": 2000,
+    "Year": 1999,
     "Letterboxd URI": "https://boxd.it/4TFqGh",
     "Rating": 2,
     "Rewatch": "",
@@ -8070,16 +8070,6 @@
     "Watched Date": "2024-12-03"
   },
   {
-    "Date": "2024-12-12",
-    "Name": "Turtle Journey: The Crisis in Our Oceans",
-    "Year": 2020,
-    "Letterboxd URI": "https://boxd.it/81H9WH",
-    "Rating": 4,
-    "Rewatch": "",
-    "Tags": "",
-    "Watched Date": "2024-12-11"
-  },
-  {
     "Date": "2024-12-15",
     "Name": "A Charlie Brown Christmas",
     "Year": 1965,
@@ -8181,7 +8171,7 @@
   },
   {
     "Date": "2025-01-18",
-    "Name": "Armour of God 3: Chinese Zodiac",
+    "Name": "Chinese Zodiac",
     "Year": 2012,
     "Letterboxd URI": "https://boxd.it/8w1ZEb",
     "Rating": 2,
@@ -9648,5 +9638,75 @@
     "Rewatch": "",
     "Tags": "",
     "Watched Date": "2026-02-20"
+  },
+  {
+    "Date": "2026-03-08",
+    "Name": "Good Fortune",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/dqX1zn",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "Watched Date": "2026-03-07"
+  },
+  {
+    "Date": "2026-03-11",
+    "Name": "EVANGELION 30th Anniversary Special Screening",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/dtfN0f",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "Watched Date": "2026-03-10"
+  },
+  {
+    "Date": "2026-03-16",
+    "Name": "No Other Choice",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/dxoGiZ",
+    "Rating": 4,
+    "Rewatch": "",
+    "Tags": "",
+    "Watched Date": "2026-03-15"
+  },
+  {
+    "Date": "2026-03-22",
+    "Name": "Past Lives",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/dCPL4H",
+    "Rating": 5,
+    "Rewatch": "",
+    "Tags": "",
+    "Watched Date": "2026-03-21"
+  },
+  {
+    "Date": "2026-03-28",
+    "Name": "A Night at the Roxbury",
+    "Year": 1998,
+    "Letterboxd URI": "https://boxd.it/dI9INz",
+    "Rating": 2,
+    "Rewatch": "",
+    "Tags": "",
+    "Watched Date": "2026-03-27"
+  },
+  {
+    "Date": "2026-03-29",
+    "Name": "The Rocker",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/dJaWmj",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "Watched Date": "2026-03-28"
+  },
+  {
+    "Date": "2026-04-05",
+    "Name": "Eden Lake",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/dQ3xL3",
+    "Rating": 3,
+    "Rewatch": "",
+    "Tags": "",
+    "Watched Date": "2026-04-04"
   }
 ]

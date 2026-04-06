@@ -12161,7 +12161,7 @@
   {
     "Date": "2023-09-26",
     "Name": "Street Fighter Alpha: The Movie",
-    "Year": 2000,
+    "Year": 1999,
     "Letterboxd URI": "https://boxd.it/1IGw",
     "Rating": 2
   },
@@ -13069,13 +13069,6 @@
     "Rating": 5
   },
   {
-    "Date": "2024-12-12",
-    "Name": "Turtle Journey: The Crisis in Our Oceans",
-    "Year": 2020,
-    "Letterboxd URI": "https://boxd.it/oNC6",
-    "Rating": 4
-  },
-  {
     "Date": "2024-12-15",
     "Name": "A Charlie Brown Christmas",
     "Year": 1965,
@@ -13147,7 +13140,7 @@
   },
   {
     "Date": "2025-01-18",
-    "Name": "Armour of God 3: Chinese Zodiac",
+    "Name": "Chinese Zodiac",
     "Year": 2012,
     "Letterboxd URI": "https://boxd.it/3oAi",
     "Rating": 2
@@ -14172,6 +14165,55 @@
     "Name": "Predator: Badlands",
     "Year": 2025,
     "Letterboxd URI": "https://boxd.it/LeK6",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-03-08",
+    "Name": "Good Fortune",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/GavG",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-03-11",
+    "Name": "EVANGELION 30th Anniversary Special Screening",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/ZDrm",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-03-16",
+    "Name": "No Other Choice",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/nKiA",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-03-22",
+    "Name": "Past Lives",
+    "Year": 2023,
+    "Letterboxd URI": "https://boxd.it/oNB8",
+    "Rating": 5
+  },
+  {
+    "Date": "2026-03-28",
+    "Name": "A Night at the Roxbury",
+    "Year": 1998,
+    "Letterboxd URI": "https://boxd.it/1YHK",
+    "Rating": 2
+  },
+  {
+    "Date": "2026-03-29",
+    "Name": "The Rocker",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/1WSm",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-04-05",
+    "Name": "Eden Lake",
+    "Year": 2008,
+    "Letterboxd URI": "https://boxd.it/1Q1m",
     "Rating": 3
   }
 ]
