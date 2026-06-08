@@ -8282,7 +8282,7 @@
   },
   {
     "Date": "2015-10-13",
-    "Name": "A Messed-Up School",
+    "Name": "Uma Escola Atrapalhada",
     "Year": 1990,
     "Letterboxd URI": "https://boxd.it/4AJo",
     "Rating": 4
@@ -14264,5 +14264,54 @@
     "Year": 2023,
     "Letterboxd URI": "https://boxd.it/uGf2",
     "Rating": 4
+  },
+  {
+    "Date": "2026-05-05",
+    "Name": "The Menu",
+    "Year": 2022,
+    "Letterboxd URI": "https://boxd.it/lScm",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-05-12",
+    "Name": "Mortal Kombat II",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/z6iO",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-05-14",
+    "Name": "Iron Maiden: Burning Ambition",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/11fxu",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-05-17",
+    "Name": "Eternity",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/LYtK",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-05-23",
+    "Name": "Star Wars: The Mandalorian and Grogu",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/KCpk",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-05-26",
+    "Name": "Send Help",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/JuhA",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-05-30",
+    "Name": "Nobody 2",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/C5Lc",
+    "Rating": 3
   }
 ]
