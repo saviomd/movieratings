@@ -11,7 +11,7 @@ function MovieDetailsBackdrops({ backdrops, tagline, title }: Props) {
       {tagline && (
         <blockquote className="blockquote px-5 text-center">{`"${tagline}"`}</blockquote>
       )}
-      {backdrops.length && (
+      {!!backdrops.length && (
         <Carousel>
           {backdrops.map(({ url }) => (
             <Grid.Col as="li" key={url} width={11}>

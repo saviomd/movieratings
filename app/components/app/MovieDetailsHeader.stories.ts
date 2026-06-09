@@ -12,6 +12,8 @@ import MovieDetailsHeader from "./MovieDetailsHeader";
 const getArgs = (movieDetails: typeof movieDetailsBatman1989Mock) => ({
   br_title: movieDetails.br_title,
   original_title: movieDetails.original_title,
+  overview: movieDetails.overview,
+  posters: movieDetails.images.posters,
   rating: movieDetails.rating,
   release_year: movieDetails.release_year,
   title: movieDetails.title,
@@ -24,6 +26,9 @@ const meta = {
   component: MovieDetailsHeader,
   parameters: {
     layout: "fullscreen",
+  },
+  argTypes: {
+    posters: { control: false },
   },
 } satisfies Meta<typeof MovieDetailsHeader>;
 

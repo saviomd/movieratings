@@ -37,6 +37,8 @@ export default function Movie({ loaderData }: Route.ComponentProps) {
           <MovieDetailsHeader
             br_title={movieDetails.br_title}
             original_title={movieDetails.original_title}
+            overview={movieDetails.overview}
+            posters={movieDetails.images.posters}
             rating={movieDetails.rating}
             release_year={movieDetails.release_year}
             title={movieDetails.title}
@@ -47,15 +49,12 @@ export default function Movie({ loaderData }: Route.ComponentProps) {
             budget={movieDetails.budget}
             flatrate={movieDetails.flatrate}
             genres={movieDetails.genres}
-            overview={movieDetails.overview}
-            posters={movieDetails.images.posters}
             production_companies={movieDetails.production_companies}
             production_countries={movieDetails.production_countries}
             release_date={movieDetails.release_date}
             revenue={movieDetails.revenue}
             runtime={movieDetails.runtime}
             spoken_languages={movieDetails.spoken_languages}
-            title={movieDetails.title}
           />
           <MovieDetailsCredits credits={movieDetails.credits} />
           <MovieDetailsBackdrops
