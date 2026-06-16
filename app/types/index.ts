@@ -1,4 +1,6 @@
-export type DataStatus = "error" | "pending" | "success";
+import type { QueryStatus } from "@tanstack/react-query";
+
+export type DataStatus = QueryStatus;
 
 export interface Image {
   file_path: Path;
@@ -156,6 +158,17 @@ export type PersonFormatted = Pick<
   tmdbURI: string;
 };
 
+export interface PosterMovie {
+  letterboxdURI: string;
+  name: string;
+  poster_path: Path;
+}
+
+export interface PosterMovieFormatted extends PosterMovie {
+  movie_path: string;
+  poster_url: string | undefined;
+}
+
 export interface Provider {
   display_priority: number;
   logo_path: Path;
@@ -166,14 +179,3 @@ export interface Provider {
 type ProviderFormatted = Pick<Provider, "provider_name"> & {
   logo_url?: string;
 };
-
-export interface RandomMovie {
-  letterboxdURI: string;
-  name: string;
-  poster_path: Path;
-}
-
-export interface RandomMovieFormatted extends RandomMovie {
-  movie_path: string;
-  poster_url: string | undefined;
-}

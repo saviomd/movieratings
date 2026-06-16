@@ -44,6 +44,12 @@ const moviesPerYearWatched = {
   max: 100,
 };
 
+const listOptions = {
+  "Per decade released": moviesPerDecadeReleased,
+  "Per rating given": moviesPerRatingGiven,
+  "Per year watched": moviesPerYearWatched,
+};
+
 const meta = {
   title: "app/MovieStats",
   component: MovieStats,
@@ -51,9 +57,11 @@ const meta = {
     layout: "fullscreen",
   },
   argTypes: {
-    moviesPerDecadeReleased: { control: false },
-    moviesPerRatingGiven: { control: false },
-    moviesPerYearWatched: { control: false },
+    list: {
+      control: "select",
+      mapping: listOptions,
+      options: Object.keys(listOptions),
+    },
   },
 } satisfies Meta<typeof MovieStats>;
 
@@ -62,8 +70,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    moviesPerDecadeReleased,
-    moviesPerRatingGiven,
-    moviesPerYearWatched,
+    list: moviesPerDecadeReleased,
+    title: "Title",
   },
 };

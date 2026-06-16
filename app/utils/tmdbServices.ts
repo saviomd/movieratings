@@ -3,7 +3,7 @@ import type { QueryStatus } from "@tanstack/react-query";
 
 import fetchClient from "./fetchClient";
 import formatMovieDetails from "./formatMovieDetails";
-import formatRandomMovieList from "./formatRandomMovieList";
+import formatPosterMovieList from "./formatPosterMovieList";
 import getRandomMovies from "./getRandomMovies";
 import tmdbApi from "./tmdbApi";
 import type { MovieDetails, MovieLoggedFormatted } from "~/types";
@@ -55,6 +55,25 @@ const getSearchMovies = ({
     queryString: `&query=${name}&year=${String(year)}`,
   });
 
+interface IUseLastFourWatchedQuery {
+  lastFourWatchedLogged: IUseMoviePostersQuery["movies"];
+}
+
+const useLastFourWatchedQuery = ({
+  lastFourWatchedLogged,
+}: IUseLastFourWatchedQuery) => {
+  const { data: lastFourWatched, status: lastFourWatchedStatus } =
+    useMoviePostersQuery({
+      movies: lastFourWatchedLogged,
+      queryKey: "lastFourWatched",
+    });
+
+  return {
+    lastFourWatched,
+    lastFourWatchedStatus,
+  };
+};
+
 interface IUseMovieDetailsQuery {
   movie: MovieLoggedFormatted;
 }
@@ -86,17 +105,16 @@ const useMovieDetailsQuery = ({ movie }: IUseMovieDetailsQuery) => {
   };
 };
 
-interface IUseRandomMoviesQuery {
-  randomMoviesLogged: ReturnType<typeof getRandomMovies>;
+interface IUseMoviePostersQuery {
+  movies: MovieLoggedFormatted[] | ReturnType<typeof getRandomMovies>;
+  queryKey: string;
 }
 
-const useRandomMoviesQuery = ({
-  randomMoviesLogged,
-}: IUseRandomMoviesQuery) => {
-  const { data: randomMovies, status: randomMoviesStatus } = useQueries({
-    queries: randomMoviesLogged.length
-      ? randomMoviesLogged.map(({ letterboxdURI, name, year }) => ({
-          queryKey: ["randomMovies", name, year],
+const useMoviePostersQuery = ({ movies, queryKey }: IUseMoviePostersQuery) => {
+  const { data, status } = useQueries({
+    queries: movies.length
+      ? movies.map(({ letterboxdURI, name, year }) => ({
+          queryKey: [queryKey, name, year],
           queryFn: async () => {
             const { results } = await getSearchMovies({
               name,
@@ -112,8 +130,8 @@ const useRandomMoviesQuery = ({
       : [],
     combine: (results) => ({
       data: results.every(({ status }) => status === "success")
-        ? formatRandomMovieList({
-            randomMovieList: results.flatMap(({ data }) =>
+        ? formatPosterMovieList({
+            posterMovieList: results.flatMap(({ data }) =>
               data ? [data] : [],
             ),
           })
@@ -127,12 +145,32 @@ const useRandomMoviesQuery = ({
   });
 
   return {
+    data,
+    status,
+  };
+};
+
+interface IUseRandomMoviesQuery {
+  randomMoviesLogged: IUseMoviePostersQuery["movies"];
+}
+
+const useRandomMoviesQuery = ({
+  randomMoviesLogged,
+}: IUseRandomMoviesQuery) => {
+  const { data: randomMovies, status: randomMoviesStatus } =
+    useMoviePostersQuery({
+      movies: randomMoviesLogged,
+      queryKey: "randomMovies",
+    });
+
+  return {
     randomMovies,
     randomMoviesStatus,
   };
 };
 
 export default {
+  useLastFourWatchedQuery,
   useMovieDetailsQuery,
   useRandomMoviesQuery,
 };

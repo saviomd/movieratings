@@ -5,13 +5,6 @@ import ProgressBar from "./ProgressBar";
 const meta = {
   title: "library/ProgressBar",
   component: ProgressBar,
-  argTypes: {
-    size: {
-      control: {
-        type: "range",
-      },
-    },
-  },
 } satisfies Meta<typeof ProgressBar>;
 
 export default meta;
@@ -19,6 +12,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    size: 50,
+    label: "Label",
+    total: 100,
+    value: 50,
   },
 };

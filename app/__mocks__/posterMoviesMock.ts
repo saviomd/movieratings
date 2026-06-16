@@ -4,9 +4,9 @@ import {
   movieDetailsSe7en1995Fixture,
   movieDetailsTheFastAndTheFurious2001Fixture,
 } from "~/__fixtures__";
-import { formatRandomMovieList } from "~/utils";
+import { formatPosterMovieList } from "~/utils";
 
-const randomMovieList = [
+const posterMovieList = [
   movieDetailsBatman1989Fixture,
   movieDetailsGattaca1997Fixture,
   movieDetailsSe7en1995Fixture,
@@ -17,8 +17,6 @@ const randomMovieList = [
   poster_path,
 }));
 
-const randomMoviesMock = formatRandomMovieList({
-  randomMovieList,
-});
+const posterMoviesMock = formatPosterMovieList({ posterMovieList });
 
-export default randomMoviesMock;
+export default posterMoviesMock;
