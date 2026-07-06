@@ -5573,7 +5573,7 @@
   },
   {
     "Date": "2013-05-15",
-    "Name": "Police Story 4: First Strike",
+    "Name": "First Strike",
     "Year": 1996,
     "Letterboxd URI": "https://boxd.it/1YLC",
     "Rating": 4
@@ -14312,6 +14312,34 @@
     "Name": "Nobody 2",
     "Year": 2025,
     "Letterboxd URI": "https://boxd.it/C5Lc",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-06-10",
+    "Name": "The Running Man",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/u36A",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-06-23",
+    "Name": "Snow Bear",
+    "Year": 2024,
+    "Letterboxd URI": "https://boxd.it/KDCa",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-06-28",
+    "Name": "Cruel Intentions 2",
+    "Year": 2000,
+    "Letterboxd URI": "https://boxd.it/235c",
+    "Rating": 2
+  },
+  {
+    "Date": "2026-07-05",
+    "Name": "Anaconda",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/KV9g",
     "Rating": 3
   }
 ]
