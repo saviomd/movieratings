@@ -14,13 +14,15 @@ function MoviesWatchedCard({ movies, status, title }: Props) {
     <Card title={title}>
       <LoadingHandler dataStatus={status} hasData={!!movies.length}>
         <Grid>
-          {movies.map(({ movie_path, name, poster_url }) => (
+          {movies.map(({ movie_path, name, poster_url, rating, year }) => (
             <Grid.Col key={name} width={6} widthSm={3}>
               <div className="mb-3">
                 <MoviePosterButton
                   href={movie_path}
                   posterUrl={poster_url}
+                  rating={rating}
                   title={name}
+                  year={year}
                 />
               </div>
             </Grid.Col>

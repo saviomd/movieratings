@@ -101,7 +101,7 @@ export type MovieDetailsFormatted = Pick<
   letterboxdURI: MovieLoggedFormatted["letterboxdURI"];
   rating: MovieLoggedFormatted["rating"];
   recommendations: MovieRecommendationFormatted[];
-  release_year: string;
+  release_year: number;
   revenue: string;
   tmdbURI: string;
 };
@@ -127,12 +127,13 @@ export interface MovieLoggedFormatted {
   year: MovieLogged["Year"];
 }
 
-export interface MovieRecommendationFormatted {
+export type MovieRecommendationFormatted = Pick<
+  MovieDetailsFormatted,
+  "title" | "release_year" | "tmdbURI"
+> & {
   id: MovieDetails["id"];
   poster_url?: string;
-  title: MovieDetails["title"];
-  tmdbURI: string;
-}
+};
 
 export type MovieType = "Diary" | "Ratings";
 
@@ -158,11 +159,13 @@ export type PersonFormatted = Pick<
   tmdbURI: string;
 };
 
-export interface PosterMovie {
-  letterboxdURI: string;
-  name: string;
+export type PosterMovie = Pick<
+  MovieLoggedFormatted,
+  "letterboxdURI" | "name" | "year"
+> & {
   poster_path: Path;
-}
+  rating?: MovieLoggedFormatted["rating"];
+};
 
 export interface PosterMovieFormatted extends PosterMovie {
   movie_path: string;

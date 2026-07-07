@@ -4,9 +4,10 @@ import { Link } from "react-router";
 interface Props {
   children: ReactNode;
   href: string;
+  title?: string;
 }
 
-function Anchor({ children, href }: Props) {
+function Anchor({ children, href, title }: Props) {
   const className = "text-danger text-decoration-none";
   if (href.startsWith("http")) {
     return (
@@ -15,13 +16,14 @@ function Anchor({ children, href }: Props) {
         href={href}
         rel="noopener noreferrer"
         target="_blank"
+        title={title}
       >
         {children}
       </a>
     );
   }
   return (
-    <Link className={className} prefetch="intent" to={href}>
+    <Link className={className} prefetch="intent" title={title} to={href}>
       {children}
     </Link>
   );

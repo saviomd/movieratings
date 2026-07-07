@@ -11,10 +11,11 @@ const posterMovieList = [
   movieDetailsGattaca1997Fixture,
   movieDetailsSe7en1995Fixture,
   movieDetailsTheFastAndTheFurious2001Fixture,
-].map(({ poster_path, title }) => ({
+].map(({ poster_path, release_date, title }) => ({
   letterboxdURI: "#",
   name: title,
   poster_path,
+  year: Number(release_date.split("-")[0]),
 }));
 
 const posterMoviesMock = formatPosterMovieList({ posterMovieList });

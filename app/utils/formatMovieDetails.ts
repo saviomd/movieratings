@@ -54,7 +54,7 @@ const formatMovieDetails = ({
     movies: movieDetails.recommendations.results,
   }),
   release_date: formatDate({ date: movieDetails.release_date }),
-  release_year: movieDetails.release_date.split("-")[0],
+  release_year: Number(movieDetails.release_date.split("-")[0]),
   revenue: formatCurrency({ value: movieDetails.revenue }),
   runtime: movieDetails.runtime,
   spoken_languages: movieDetails.spoken_languages.map(({ english_name }) => ({

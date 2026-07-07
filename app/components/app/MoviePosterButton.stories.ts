@@ -34,6 +34,8 @@ export const Default: Story = {
   args: {
     href: "#",
     posterUrl: posterUrlOptions[0],
+    rating: 4,
     title: "title",
+    year: 2017,
   },
 };

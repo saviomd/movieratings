@@ -55,6 +55,7 @@ function MovieDetailsRecommendations({
                   href={movie.tmdbURI}
                   posterUrl={movie.poster_url}
                   title={movie.title}
+                  year={movie.release_year}
                 />
               </Grid.Col>
             ))}

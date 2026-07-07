@@ -33,7 +33,7 @@ function MovieDetailsHeader({
           <div className="bg-secondary border border-secondary mb-3 p-3 rounded">
             <Heading level={1}>
               {title}
-              <span className="fst-italic ms-2 small">{`(${release_year})`}</span>
+              <span className="fst-italic ms-2 small">({release_year})</span>
               <div className="fst-italic small">
                 {br_title}
                 {title !== original_title && (

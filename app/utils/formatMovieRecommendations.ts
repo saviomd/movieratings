@@ -15,6 +15,7 @@ const formatMovieRecommendations = ({
     poster_url: poster({ path: movie.poster_path }),
     title: movie.title,
     tmdbURI: `https://www.themoviedb.org/movie/${String(movie.id)}`,
+    release_year: Number(movie.release_date.split("-")[0]),
   }));
 
 export default formatMovieRecommendations;

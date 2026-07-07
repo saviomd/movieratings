@@ -113,17 +113,16 @@ interface IUseMoviePostersQuery {
 const useMoviePostersQuery = ({ movies, queryKey }: IUseMoviePostersQuery) => {
   const { data, status } = useQueries({
     queries: movies.length
-      ? movies.map(({ letterboxdURI, name, year }) => ({
+      ? movies.map(({ letterboxdURI, name, rating, year }) => ({
           queryKey: [queryKey, name, year],
           queryFn: async () => {
-            const { results } = await getSearchMovies({
-              name,
-              year,
-            });
+            const { results } = await getSearchMovies({ name, year });
             return {
               letterboxdURI,
               name,
               poster_path: results[0]?.poster_path,
+              rating,
+              year,
             };
           },
         }))

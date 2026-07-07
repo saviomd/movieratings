@@ -22,7 +22,7 @@ export default function Movie({ loaderData }: Route.ComponentProps) {
     ? `${movieDetails.rating.toString()} of 5 by me${movieDetails.overview ? ` - ${movieDetails.overview}` : ""}`
     : undefined;
   const title = movieDetails
-    ? `${movieDetails.title} (${movieDetails.release_year})`
+    ? `${movieDetails.title} (${String(movieDetails.release_year)})`
     : undefined;
 
   return (
