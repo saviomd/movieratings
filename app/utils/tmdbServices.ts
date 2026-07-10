@@ -1,12 +1,11 @@
 import { useQueries, useQuery } from "@tanstack/react-query";
-import type { QueryStatus } from "@tanstack/react-query";
 
 import fetchClient from "./fetchClient";
 import formatMovieDetails from "./formatMovieDetails";
 import formatPosterMovieList from "./formatPosterMovieList";
 import getRandomMovies from "./getRandomMovies";
 import tmdbApi from "./tmdbApi";
-import type { MovieDetails, MovieLoggedFormatted } from "~/types";
+import type { DataStatus, MovieDetails, MovieLoggedFormatted } from "~/types";
 
 interface IFetchTmdb {
   path: string;
@@ -110,6 +109,11 @@ interface IUseMoviePostersQuery {
   queryKey: string;
 }
 
+interface IUseMoviePostersQueryCombinedReturn {
+  data: ReturnType<typeof formatPosterMovieList>;
+  status: DataStatus;
+}
+
 const useMoviePostersQuery = ({ movies, queryKey }: IUseMoviePostersQuery) => {
   const { data, status } = useQueries({
     queries: movies.length
@@ -127,7 +131,7 @@ const useMoviePostersQuery = ({ movies, queryKey }: IUseMoviePostersQuery) => {
           },
         }))
       : [],
-    combine: (results) => ({
+    combine: (results): IUseMoviePostersQueryCombinedReturn => ({
       data: results.every(({ status }) => status === "success")
         ? formatPosterMovieList({
             posterMovieList: results.flatMap(({ data }) =>
@@ -135,11 +139,11 @@ const useMoviePostersQuery = ({ movies, queryKey }: IUseMoviePostersQuery) => {
             ),
           })
         : [],
-      status: (results.some(({ status }) => status === "error")
+      status: results.some(({ status }) => status === "error")
         ? "error"
         : !results.length || results.some(({ status }) => status === "pending")
           ? "pending"
-          : "success") as QueryStatus,
+          : "success",
     }),
   });
 

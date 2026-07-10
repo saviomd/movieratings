@@ -9,20 +9,7 @@ interface GridProps {
 }
 
 type Width =
-  | "auto"
-  | "equal"
-  | 1
-  | 2
-  | 3
-  | 4
-  | 5
-  | 6
-  | 7
-  | 8
-  | 9
-  | 10
-  | 11
-  | 12;
+  "auto" | "equal" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 interface ColProps {
   as?: "div" | "li";

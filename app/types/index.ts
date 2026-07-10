@@ -9,12 +9,7 @@ export interface Image {
 export type ImgType = "backdrop" | "logo" | "poster" | "profile";
 
 export type MessageType =
-  | "error"
-  | "noData"
-  | "noMovies"
-  | "noStats"
-  | "pageNotFound"
-  | "pending";
+  "error" | "noData" | "noMovies" | "noStats" | "pageNotFound" | "pending";
 
 export interface MovieCredits {
   cast: Person[];
