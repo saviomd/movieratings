@@ -5573,7 +5573,7 @@
   },
   {
     "Date": "2013-05-15",
-    "Name": "First Strike",
+    "Name": "Police Story 4: First Strike",
     "Year": 1996,
     "Letterboxd URI": "https://boxd.it/1YLC",
     "Rating": 4
@@ -14295,7 +14295,7 @@
   },
   {
     "Date": "2026-05-23",
-    "Name": "Star Wars: The Mandalorian and Grogu",
+    "Name": "The Mandalorian and Grogu",
     "Year": 2026,
     "Letterboxd URI": "https://boxd.it/KCpk",
     "Rating": 3
@@ -14341,5 +14341,47 @@
     "Year": 2025,
     "Letterboxd URI": "https://boxd.it/KV9g",
     "Rating": 3
+  },
+  {
+    "Date": "2026-07-09",
+    "Name": "Voicemails for Isabelle",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/mJVk",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-07-13",
+    "Name": "The Furious",
+    "Year": 2025,
+    "Letterboxd URI": "https://boxd.it/MQuM",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-07-20",
+    "Name": "The Odyssey",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/QFQU",
+    "Rating": 4
+  },
+  {
+    "Date": "2026-07-26",
+    "Name": "Masters of the Universe",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/gdKW",
+    "Rating": 3
+  },
+  {
+    "Date": "2026-08-01",
+    "Name": "The Punisher: One Last Kill",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/Thla",
+    "Rating": 2
+  },
+  {
+    "Date": "2026-08-02",
+    "Name": "Spider-Man: Brand New Day",
+    "Year": 2026,
+    "Letterboxd URI": "https://boxd.it/ACJE",
+    "Rating": 4
   }
 ]
