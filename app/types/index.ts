@@ -8,9 +8,6 @@ export interface Image {
 
 export type ImgType = "backdrop" | "logo" | "poster" | "profile";
 
-export type MessageType =
-  "error" | "noData" | "noMovies" | "noStats" | "pageNotFound" | "pending";
-
 export interface MovieCredits {
   cast: Person[];
   crew: Person[];
@@ -177,3 +174,5 @@ export interface Provider {
 type ProviderFormatted = Pick<Provider, "provider_name"> & {
   logo_url?: string;
 };
+
+export type StatusMessageType = "error" | "pageNotFound" | "pending";

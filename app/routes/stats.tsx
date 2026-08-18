@@ -1,28 +1,20 @@
 import type { Route } from "./+types/stats";
+import { clientLoader } from "./loaders/statsClientLoader";
 import { loader } from "./loaders/statsLoader";
 import { MovieStats, MoviesWatchedCard } from "~/components/app";
-import { Heading, PageMetadata } from "~/components/library";
-import useStatsStore from "~/stores/useStatsStore";
+import { Heading, HydrateFallback, PageMetadata } from "~/components/library";
 import { routePaths } from "~/utils";
 
-export { loader };
+export { HydrateFallback, clientLoader, loader };
 
 export default function Stats({ loaderData }: Route.ComponentProps) {
   const {
-    movieRatings,
+    lastFourWatched,
     moviesPerDecadeReleased,
     moviesPerRatingGiven,
     moviesPerYearWatched,
-  } = loaderData;
-
-  const {
-    lastFourWatched,
-    lastFourWatchedStatus,
     randomMovies,
-    randomMoviesStatus,
-  } = useStatsStore({
-    movieRatings,
-  });
+  } = loaderData;
 
   return (
     <>
@@ -32,17 +24,12 @@ export default function Stats({ loaderData }: Route.ComponentProps) {
         title="Stats"
       />
       <Heading level={1}>Stats</Heading>
-      <MoviesWatchedCard
-        movies={lastFourWatched}
-        status={lastFourWatchedStatus}
-        title="Last four watched"
-      />
+      <MoviesWatchedCard movies={lastFourWatched} title="Last four watched" />
       <MovieStats list={moviesPerYearWatched} title="Per year watched" />
       <MovieStats list={moviesPerRatingGiven} title="Per rating given" />
       <MovieStats list={moviesPerDecadeReleased} title="Per decade released" />
       <MoviesWatchedCard
         movies={randomMovies}
-        status={randomMoviesStatus}
         title="Random four (plus four) watched"
       />
     </>

@@ -1,5 +1,5 @@
 import { diary, ratings } from "~/data";
-import { formatMovieList } from "~/utils";
+import { formatMovieList, tmdbServices } from "~/utils";
 
 type DecadeGroupType = Record<string, number>;
 
@@ -7,9 +7,16 @@ type RatingGroupType = Record<number, number>;
 
 type YearGroupType = Record<string, number>;
 
-export function loader() {
+export async function loader() {
   const movieDiary = formatMovieList({ movieList: diary });
   const movieRatings = formatMovieList({ movieList: ratings });
+
+  const lastFourWatchedLogged = movieRatings.slice(0, 4);
+
+  const lastFourWatched = await tmdbServices.queryMoviePosters({
+    movies: lastFourWatchedLogged,
+    queryKey: "lastFourWatched",
+  });
 
   const moviesPerDecadeReleased = (() => {
     const groups = movieRatings.reduce<DecadeGroupType>((acc, curr) => {
@@ -51,9 +58,11 @@ export function loader() {
   })();
 
   return {
+    lastFourWatched,
     movieRatings,
     moviesPerDecadeReleased,
     moviesPerRatingGiven,
     moviesPerYearWatched,
+    randomMovies: [],
   };
 }

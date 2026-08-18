@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import Message from "./Message";
+import StatusMessage from "./StatusMessage";
 
 const meta = {
-  title: "library/Message",
-  component: Message,
-} satisfies Meta<typeof Message>;
+  title: "library/StatusMessage",
+  component: StatusMessage,
+} satisfies Meta<typeof StatusMessage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

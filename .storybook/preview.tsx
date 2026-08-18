@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/react-vite";
 import { MemoryRouter } from "react-router";
 
+import "../app/globals";
 import { AppWrapper } from "../app/components/app";
 import { bodyClassName } from "../app/root";
 

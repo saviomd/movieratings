@@ -1,19 +1,11 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { useEffect } from "react";
 import { Outlet, useLocation, useNavigation } from "react-router";
 
-import { AppWrapper, Footer, Header, SiteInfo } from "~/components/app";
-import { Grid, LoadingHandler } from "~/components/library";
-import { trackGaPageView } from "~/utils";
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: Infinity,
-    },
-  },
-});
+import { Footer, Header, SiteInfo } from "~/components/app";
+import { Grid, StatusMessage } from "~/components/library";
+import { queryClient, trackGaPageView } from "~/utils";
 
 export default function AppLayout() {
   const location = useLocation();
@@ -26,22 +18,16 @@ export default function AppLayout() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AppWrapper>
-        <div className="container-fluid">
-          <Grid justifyContent="center">
-            <Grid.Col width={12} widthMd={10}>
-              <Header />
-              {isNavigating ? (
-                <LoadingHandler dataStatus="pending" />
-              ) : (
-                <Outlet />
-              )}
-              <SiteInfo />
-              <Footer />
-            </Grid.Col>
-          </Grid>
-        </div>
-      </AppWrapper>
+      <div className="container-fluid">
+        <Grid justifyContent="center">
+          <Grid.Col width={12} widthMd={10}>
+            <Header />
+            {isNavigating ? <StatusMessage type="pending" /> : <Outlet />}
+            <SiteInfo />
+            <Footer />
+          </Grid.Col>
+        </Grid>
+      </div>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

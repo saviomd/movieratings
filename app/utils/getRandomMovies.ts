@@ -5,16 +5,15 @@ interface Params {
     rating: number;
     year: number;
   }[];
-  count: number;
 }
 
-const getRandomMovies = ({ movieRatings, count }: Params) => {
+const getRandomMovies = ({ movieRatings }: Params) => {
   if (!movieRatings.length) {
     return [];
   }
 
   const indexes = new Set<number>();
-  while (indexes.size < count) {
+  while (indexes.size < 8) {
     indexes.add(Math.floor(Math.random() * movieRatings.length));
   }
   return Array.from(indexes).map((index) => {

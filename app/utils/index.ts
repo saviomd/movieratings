@@ -11,6 +11,7 @@ export { default as formatPerson } from "./formatPerson";
 export { default as formatPosterMovieList } from "./formatPosterMovieList";
 export { default as getImageDimensions } from "./getImageDimensions";
 export { default as getRandomMovies } from "./getRandomMovies";
+export { default as queryClient } from "./queryClient";
 export { default as routePaths } from "./routePaths";
 export { default as tmdbApi } from "./tmdbApi";
 export { default as tmdbServices } from "./tmdbServices";

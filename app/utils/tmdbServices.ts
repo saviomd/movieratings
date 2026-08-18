@@ -1,11 +1,9 @@
-import { useQueries, useQuery } from "@tanstack/react-query";
-
 import fetchClient from "./fetchClient";
 import formatMovieDetails from "./formatMovieDetails";
 import formatPosterMovieList from "./formatPosterMovieList";
-import getRandomMovies from "./getRandomMovies";
+import queryClient from "./queryClient";
 import tmdbApi from "./tmdbApi";
-import type { DataStatus, MovieDetails, MovieLoggedFormatted } from "~/types";
+import type { MovieDetails, MovieLoggedFormatted } from "~/types";
 
 interface IFetchTmdb {
   path: string;
@@ -54,31 +52,12 @@ const getSearchMovies = ({
     queryString: `&query=${name}&year=${String(year)}`,
   });
 
-interface IUseLastFourWatchedQuery {
-  lastFourWatchedLogged: IUseMoviePostersQuery["movies"];
-}
-
-const useLastFourWatchedQuery = ({
-  lastFourWatchedLogged,
-}: IUseLastFourWatchedQuery) => {
-  const { data: lastFourWatched, status: lastFourWatchedStatus } =
-    useMoviePostersQuery({
-      movies: lastFourWatchedLogged,
-      queryKey: "lastFourWatched",
-    });
-
-  return {
-    lastFourWatched,
-    lastFourWatchedStatus,
-  };
-};
-
-interface IUseMovieDetailsQuery {
+interface IQueryMovieDetails {
   movie: MovieLoggedFormatted;
 }
 
-const useMovieDetailsQuery = ({ movie }: IUseMovieDetailsQuery) => {
-  const { data: movieDetails, status: movieDetailsStatus } = useQuery({
+const queryMovieDetails = async ({ movie }: IQueryMovieDetails) => {
+  return queryClient.fetchQuery({
     queryKey: ["movieDetails", movie],
     queryFn: async () => {
       const searchMoviesData = await getSearchMovies({
@@ -95,85 +74,42 @@ const useMovieDetailsQuery = ({ movie }: IUseMovieDetailsQuery) => {
       }
       return null;
     },
-    enabled: !!movie.name && !!movie.year,
   });
-
-  return {
-    movieDetails,
-    movieDetailsStatus,
-  };
 };
 
-interface IUseMoviePostersQuery {
-  movies: MovieLoggedFormatted[] | ReturnType<typeof getRandomMovies>;
+interface IQueryMoviePosters {
+  movies: Pick<
+    MovieLoggedFormatted,
+    "letterboxdURI" | "name" | "rating" | "year"
+  >[];
   queryKey: string;
 }
 
-interface IUseMoviePostersQueryCombinedReturn {
-  data: ReturnType<typeof formatPosterMovieList>;
-  status: DataStatus;
-}
+const queryMoviePosters = async ({ movies, queryKey }: IQueryMoviePosters) => {
+  const fetchedMovies = await Promise.all(
+    movies.map(({ letterboxdURI, name, rating, year }) =>
+      queryClient.fetchQuery({
+        queryKey: [queryKey, letterboxdURI, name, rating, year],
+        queryFn: async () => {
+          const { results } = await getSearchMovies({ name, year });
+          return {
+            letterboxdURI,
+            name,
+            poster_path: results[0]?.poster_path,
+            rating,
+            year,
+          };
+        },
+      }),
+    ),
+  );
 
-const useMoviePostersQuery = ({ movies, queryKey }: IUseMoviePostersQuery) => {
-  const { data, status } = useQueries({
-    queries: movies.length
-      ? movies.map(({ letterboxdURI, name, rating, year }) => ({
-          queryKey: [queryKey, name, year],
-          queryFn: async () => {
-            const { results } = await getSearchMovies({ name, year });
-            return {
-              letterboxdURI,
-              name,
-              poster_path: results[0]?.poster_path,
-              rating,
-              year,
-            };
-          },
-        }))
-      : [],
-    combine: (results): IUseMoviePostersQueryCombinedReturn => ({
-      data: results.every(({ status }) => status === "success")
-        ? formatPosterMovieList({
-            posterMovieList: results.flatMap(({ data }) =>
-              data ? [data] : [],
-            ),
-          })
-        : [],
-      status: results.some(({ status }) => status === "error")
-        ? "error"
-        : !results.length || results.some(({ status }) => status === "pending")
-          ? "pending"
-          : "success",
-    }),
+  return formatPosterMovieList({
+    posterMovieList: fetchedMovies,
   });
-
-  return {
-    data,
-    status,
-  };
-};
-
-interface IUseRandomMoviesQuery {
-  randomMoviesLogged: IUseMoviePostersQuery["movies"];
-}
-
-const useRandomMoviesQuery = ({
-  randomMoviesLogged,
-}: IUseRandomMoviesQuery) => {
-  const { data: randomMovies, status: randomMoviesStatus } =
-    useMoviePostersQuery({
-      movies: randomMoviesLogged,
-      queryKey: "randomMovies",
-    });
-
-  return {
-    randomMovies,
-    randomMoviesStatus,
-  };
 };
 
 export default {
-  useLastFourWatchedQuery,
-  useMovieDetailsQuery,
-  useRandomMoviesQuery,
+  queryMovieDetails,
+  queryMoviePosters,
 };

@@ -2,10 +2,10 @@ import { Card, Carousel, Grid, ProgressBar } from "~/components/library";
 import { loader } from "~/routes/loaders/statsLoader";
 
 interface Props {
-  list:
-    | ReturnType<typeof loader>["moviesPerDecadeReleased"]
-    | ReturnType<typeof loader>["moviesPerRatingGiven"]
-    | ReturnType<typeof loader>["moviesPerYearWatched"];
+  list: Awaited<ReturnType<typeof loader>>[
+    | "moviesPerDecadeReleased"
+    | "moviesPerRatingGiven"
+    | "moviesPerYearWatched"];
   title: string;
 }
 

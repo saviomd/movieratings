@@ -1,4 +1,3 @@
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import {
   isRouteErrorResponse,
   Links,
@@ -10,6 +9,11 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import "./globals";
+
+import { HydrateFallback } from "~/components/library";
+
+export { HydrateFallback };
 
 export const bodyClassName = "bg-dark text-white";
 

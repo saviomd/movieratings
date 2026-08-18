@@ -2,9 +2,9 @@ import { data } from "react-router";
 
 import type { Route } from "../+types/movie.$id";
 import { diary, ratings } from "~/data";
-import { formatMovieList } from "~/utils";
+import { formatMovieList, tmdbServices } from "~/utils";
 
-export function clientLoader({ params }: Route.LoaderArgs) {
+export async function clientLoader({ params }: Route.LoaderArgs) {
   const { id } = params;
   const movieDiary = formatMovieList({ movieList: diary });
   const movieRatings = formatMovieList({ movieList: ratings });
@@ -16,5 +16,12 @@ export function clientLoader({ params }: Route.LoaderArgs) {
     throw data("Movie Not Found", { status: 404 });
   }
 
-  return { movie };
+  const movieDetails = await tmdbServices.queryMovieDetails({ movie });
+
+  if (!movieDetails) {
+    // eslint-disable-next-line @typescript-eslint/only-throw-error
+    throw data("Movie Not Found", { status: 404 });
+  }
+
+  return { movieDetails };
 }
