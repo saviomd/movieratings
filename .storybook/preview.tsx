@@ -2,7 +2,6 @@ import type { Preview } from "@storybook/react-vite";
 import { MemoryRouter } from "react-router";
 
 import "../app/globals";
-import { AppWrapper } from "../app/components/app";
 import { bodyClassName } from "../app/root";
 
 const ratingControl = {
@@ -26,11 +25,9 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <MemoryRouter initialEntries={["/"]}>
-        <AppWrapper>
-          <div className={`${bodyClassName} p-3`}>
-            <Story />
-          </div>
-        </AppWrapper>
+        <div className={`${bodyClassName} p-3`}>
+          <Story />
+        </div>
       </MemoryRouter>
     ),
   ],
