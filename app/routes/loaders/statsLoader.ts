@@ -1,4 +1,5 @@
 import { diary, ratings } from "~/data";
+import type { PosterMovieFormatted } from "~/types";
 import { formatMovieList, tmdbServices } from "~/utils";
 
 type DecadeGroupType = Record<string, number>;
@@ -63,6 +64,6 @@ export async function loader() {
     moviesPerDecadeReleased,
     moviesPerRatingGiven,
     moviesPerYearWatched,
-    randomMovies: [],
+    randomMovies: new Promise<PosterMovieFormatted[]>(() => null),
   };
 }

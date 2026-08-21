@@ -10,7 +10,7 @@ export async function clientLoader({ serverLoader }: Route.ClientLoaderArgs) {
     moviesPerYearWatched,
   } = await serverLoader();
 
-  const randomMovies = await tmdbServices.queryMoviePosters({
+  const randomMovies = tmdbServices.queryMoviePosters({
     movies: getRandomMovies({ movieRatings }),
     queryKey: "randomMovies",
   });
